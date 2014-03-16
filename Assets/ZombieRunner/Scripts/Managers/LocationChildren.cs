@@ -57,7 +57,7 @@ namespace Runner
 			}
 		}
 		
-		public void Move(float move, Runner.PlayerController player, float minQualityShader)
+		public void Move(float move, Runner.PlayerController player)
 		{
 			vectorHelper.Set(0,0,-move);
 			var len = list.Count;
@@ -68,7 +68,6 @@ namespace Runner
 				p = list[i];
 				p.Move(vectorHelper);
 				distance = p.Distance(player);
-				p.baseShader = distance > minQualityShader;
 			}
 		}
 		

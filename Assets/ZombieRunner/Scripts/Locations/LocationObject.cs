@@ -1,89 +1,60 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 namespace Runner
 {
 	public class LocationObject : MonoBehaviour 
 	{
-		private static bool needInitialize = true;
+		private Material material;
+        private Shader lastShader;
 
-		private static Shader BASE;
-		private static Shader DIFFUSE;
-		private static Shader DIFFUSE_REFLECTION;
-		private static Shader SPECULAR_REFLECTION;
-		private static Shader DIFFUSE_SPECULAR_REFLECTION;
-		private static Shader DIFFUSE_WORLDLIGHT;
-
-		private Shader defaultShader = null;
-		private bool isBase = false;
-		private bool invalidated = true;
-		private Material material = null;
-
-		public bool baseShader
-		{
-			get{ return isBase;}
-			set{
-				if(value != isBase)
-				{
-					isBase = value;
-					invalidated = true;
-				}
-			}
-		}
-
-		void initialize()
-		{
-			BASE = Shader.Find ("Curve/Base Curve");
-			DIFFUSE = Shader.Find ("Curve/Diffuse Curve");
-			DIFFUSE_REFLECTION = Shader.Find ("Curve/Diffuse Curve Reflective");
-			SPECULAR_REFLECTION = Shader.Find ("Curve/Specular Curve Reflective");
-			DIFFUSE_SPECULAR_REFLECTION = Shader.Find ("Curve/Diffuse Specular Curve Reflective");
-			DIFFUSE_WORLDLIGHT = Shader.Find ("Curve/Diffuse Curve WorldLight");
-			needInitialize = false;
-		}
-
-		void validate()
-		{
-			if(isBase)
-			{
-				if(defaultShader == null)
-				{
-					defaultShader = material.shader;
-				}
-				material.shader = DIFFUSE;
-			}
-			else if(defaultShader != null)
-			{
-				material.shader = defaultShader;
-			}
-
-			var components = transform.GetComponentsInChildren<LocationObject> ();
-			foreach (var location in components) 
-			{
-				location.baseShader = isBase;
-			}
-
-			invalidated = false;
-		}
+        [SerializeField]
+        public ShaderInfo[] shaders;
+        [SerializeField]
+        public bool shaderCulling = true;
 
 		void Update()
 		{
-			if (needInitialize) 
-			{
-				initialize ();
-			}
 			if (material == null) 
 			{
 				material = renderer.material;
-			}
-			if (invalidated)
-			{
-				validate();
+                if (material != null)
+                {
+                    lastShader = material.shader;
+                }
 			}
 			if(gameObject.activeSelf)
 			{
 				if(material != null)
 				{
+                    if (shaderCulling)
+                    {
+                        var camera = Camera.current;
+                        if (shaders != null && shaders.Length > 0 && camera != null)
+                        {
+                            var distance = transform.position.Distance(camera.transform.position);
+                            Shader current = null;
+                            foreach (var shaderInfo in shaders)
+                            {
+                                if (distance >= shaderInfo.Distance)
+                                {
+                                    current = shaderInfo.Shader;
+                                    break;
+                                }
+                            }
+                            if (current == null)
+                            {
+                                current = shaders[shaders.Length - 1].Shader;
+                            }
+                            if (lastShader != current)
+                            {
+                                lastShader = current;
+                            }
+                            material.shader = current;
+                        }
+                    }
+
 					material.SetVector("_NearCurve", Runner.EffectManager.Near);
 					material.SetFloat("_Dist", Runner.EffectManager.Dist);
 					material.SetVector("_FarCurve", Runner.EffectManager.Far);

@@ -16,7 +16,6 @@ namespace Runner
 		public float SetMinDisposeMultiply = 1.0f;
 		public float SetGenerateDistance = 100.0f;
 		public int SetMaxGeneratePlatforms = 20;
-		public float SetMinQualityShader = 600.0f;
 		
 		private static GameObject GlobalPlatformContainer;
 		public static GameObject PlatformContainer{get;private set;}
@@ -101,7 +100,7 @@ namespace Runner
 			float moveSpeed = Runner.PlayerManager.Speed * Time.deltaTime;
 			Runner.PlayerManager.Move(moveSpeed);
 			PlatformGenerator.Generate(moveSpeed, player);
-			Platforms.Move(moveSpeed, player, SetMinQualityShader);
+			Platforms.Move(moveSpeed, player);
 			LocationDisposeManager.Update(player);
 			
 		}

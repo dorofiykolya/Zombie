@@ -12,6 +12,7 @@ class PlatformObjectEditor : LocationObjectEditor
 {
     private bool sFoldoutStatus;
     private bool sFoldoutNext;
+    private bool sFoldoutPlatformObject = true;
 
     public override void OnInspectorGUI()
     {
@@ -21,13 +22,23 @@ class PlatformObjectEditor : LocationObjectEditor
         {
             return;
         }
+        GUI.color = ColorEditor.Title;
+        sFoldoutPlatformObject = EditorGUILayout.Foldout(sFoldoutPlatformObject, "PlatformObject Settings");
+        GUI.color = Color.white;
+        if (sFoldoutPlatformObject == false) return;
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(10.0f);
+        GUILayout.BeginVertical();
+        Draw();
+        GUILayout.EndVertical();
+        GUILayout.EndHorizontal();
+    }
 
+    private void Draw()
+    {
         var platform = target as PlatformObject;
         if (platform != null)
         {
-            GUI.color = ColorEditor.Title;
-            GUILayout.Label("Settings");
-            GUI.color = Color.white;
             platform.MinimumDistance = EditorGUILayout.FloatField("Min Distance", platform.MinimumDistance);
             platform.Type = EditorGUILayout.IntField("Type", platform.Type);
             platform.Mode = (PlatformMode)EditorGUILayout.EnumPopup("Mode", platform.Mode);
@@ -99,7 +110,9 @@ class PlatformObjectEditor : LocationObjectEditor
                 return;
             }
 
+            GUI.color = Color.yellow;
             var add = (Runner.PlatformObject)EditorGUILayout.ObjectField("DragToAdd", null, typeof(Runner.PlatformObject));
+            GUI.color = Color.white;
             if (add)
             {
                 if (add == platform)
