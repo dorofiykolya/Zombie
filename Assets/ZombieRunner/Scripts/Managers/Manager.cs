@@ -16,8 +16,9 @@ namespace Runner
     [RequireComponent(typeof(Runner.SettingManager))]
     [RequireComponent(typeof(Runner.MissionManager))]
     [RequireComponent(typeof(Runner.StorageManager))]
+    [RequireComponent(typeof(Runner.QualityManager))]
 	public class Manager : MonoBehaviour {
-		
+
 		public static void Restart ()
 		{
 			LocationManager.Restart();

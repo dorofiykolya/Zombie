@@ -15,6 +15,7 @@ class GameSettingWindowEditor : EditorWindow
     private static bool sFoldoutFog;
     private static bool sFoldoutRenderSettings;
     private static bool sFoldoutSettings;
+    private static bool sFoldoutQuality;
 
     void OnGUI()
     {
@@ -44,14 +45,45 @@ class GameSettingWindowEditor : EditorWindow
         {
             Settings();
         }
+        sFoldoutQuality = EditorGUILayout.Foldout(sFoldoutQuality, "Quality");
+        if (sFoldoutQuality)
+        {
+            Quality();
+        }
 
         EditorGUILayout.EndScrollView();
     }
 
+    private void Quality()
+    {
+        GUI.color = ColorEditor.Title;
+        var names = QualitySettings.names;
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(10.0f);
+
+        GUI.color = Color.green;
+        GUILayout.Box(QualitySettings.names[QualitySettings.GetQualityLevel()]);
+        GUI.color = Color.white;
+        EditorGUILayout.Separator();
+
+        GUILayout.BeginVertical();
+        var len = names.Length;
+        for (var i = 0; i < len; i++)
+        {
+            float red = (float)i / (float)len;
+            GUI.color = new Color(red, 1.0f - red, 1.0f - red);
+            if (GUILayout.Button(names[i]))
+            {
+                QualitySettings.SetQualityLevel(i, true);
+            }
+        }
+        GUI.color = Color.white;
+        GUILayout.EndVertical();
+        GUILayout.EndHorizontal();
+    }
+
     private void Settings()
     {
-        
-
         GUILayout.BeginHorizontal();
         GUILayout.Space(30.0f);
         GUILayout.BeginVertical();
