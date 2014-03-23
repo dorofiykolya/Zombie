@@ -7,6 +7,23 @@ namespace Runner
 {
     public class QualityManager : UnityEngine.MonoBehaviour
     {
-        public string CurrentLevel;
+        private static int currentQuality = -1;
+
+        public static int CurrentQuality
+        {
+            get
+            {
+                if (currentQuality == -1)
+                {
+                    currentQuality = UnityEngine.QualitySettings.GetQualityLevel();
+                }
+                return currentQuality;
+            }
+        }
+
+        void Update()
+        {
+            currentQuality = UnityEngine.QualitySettings.GetQualityLevel();
+        }
     }
 }

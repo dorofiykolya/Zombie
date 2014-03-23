@@ -6,6 +6,7 @@ namespace Runner
 {
 	public class LocationObject : MonoBehaviour 
 	{
+
 		private Material material;
         private Shader lastShader;
 
@@ -13,6 +14,8 @@ namespace Runner
         public Shader[] shaderList;
         [SerializeField]
         public float[] shaderDistances;
+        [SerializeField]
+        public int[] shaderQualities;
 
         [SerializeField]
         public bool shaderCulling = true;
@@ -33,6 +36,7 @@ namespace Runner
 				{
                     if (shaderCulling)
                     {
+                        var currentQuality = QualityManager.CurrentQuality;
                         var camera = Camera.current;
                         if (shaderList != null && shaderList.Length > 0 && camera != null)
                         {
@@ -44,23 +48,17 @@ namespace Runner
                             {
                                 var s = shaderList[i];
                                 var d = shaderDistances[i];
-                                if (distance >= d)
+                                var q = shaderQualities[i];
+                                if ((distance >= d || i == (len - 1)) && q >= currentQuality)
                                 {
                                     current = s;
                                     break;
                                 }
                             }
-                            if (current == null)
-                            {
-                                current = shaderList[shaderList.Length - 1];
-                            }
-                            if (lastShader != current)
+                            if (current != null && lastShader != current)
                             {
                                 lastShader = current;
-                                if (current != null)
-                                {
-                                    material.shader = current;
-                                }
+                                material.shader = current;
                             }
                         }
                     }

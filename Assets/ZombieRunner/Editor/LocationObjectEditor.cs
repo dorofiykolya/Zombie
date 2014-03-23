@@ -11,9 +11,11 @@ public class LocationObjectEditor : Editor
 {
     private static Shader currentAddShader;
     private static float currentAddDistance;
+    private static int currentAddQuality = Math.Max(0, QualitySettings.names.Length - 1);
 
     private static Shader[] copyShaders;
     private static float[] copyDistances;
+    private static int[] copyQuality;
     private static string copyFrom;
 
 	protected LocationManager location;
@@ -41,7 +43,7 @@ public class LocationObjectEditor : Editor
         Draw(target as LocationObject, targets);
 	}
 
-    private void AddShader(Shader shader, float distance, UnityEngine.Object[] targets)
+    private void AddShader(Shader shader, float distance, int minQuality, UnityEngine.Object[] targets)
     {
         foreach (var t in targets)
         {
@@ -50,10 +52,13 @@ public class LocationObjectEditor : Editor
             {
                 var shaderList = target.shaderList != null ? target.shaderList.ToList() : new List<Shader>();
                 var shaderDistances = target.shaderList != null ? target.shaderDistances.ToList() : new List<float>();
+                var shaderQuality = target.shaderList != null ? target.shaderQualities.ToList() : new List<int>();
                 shaderList.Add(shader);
                 shaderDistances.Add(distance);
+                shaderQuality.Add(minQuality);
                 target.shaderList = shaderList.ToArray();
                 target.shaderDistances = shaderDistances.ToArray();
+                target.shaderQualities = shaderQuality.ToArray();
             }
         }
     }
@@ -75,6 +80,7 @@ public class LocationObjectEditor : Editor
                     {
                         var s = target.shaderList[i];
                         var d = target.shaderDistances[i];
+                        var q = target.shaderQualities[i];
                         if (d == distance && s == shader)
                         {
                             changed = true;
@@ -82,8 +88,11 @@ public class LocationObjectEditor : Editor
                             shaderList.RemoveAt(i);
                             var shaderDistance = target.shaderDistances.ToList();
                             shaderDistance.RemoveAt(i);
+                            var shaderQuality = target.shaderQualities.ToList();
+                            shaderQuality.RemoveAt(i);
                             target.shaderList = shaderList.ToArray();
                             target.shaderDistances = shaderDistance.ToArray();
+                            target.shaderQualities = shaderQuality.ToArray();
                             break;
                         }
                     }
@@ -115,6 +124,28 @@ public class LocationObjectEditor : Editor
         }
     }
 
+    private void ChangeQuality(Shader shader, float distance, int minQuality, UnityEngine.Object[] targets)
+    {
+        foreach (var t in targets)
+        {
+            var target = t as LocationObject;
+            if (target != null && target.shaderList != null)
+            {
+                var i = 0;
+                var len = target.shaderList.Length;
+                for (; i < len; i++)
+                {
+                    var s = target.shaderList[i];
+                    var d = target.shaderDistances[i];
+                    if (s == shader && d == distance)
+                    {
+                        target.shaderQualities[i] = minQuality;
+                    }
+                }
+            }
+        }
+    }
+
     private void DrawCopyShader(LocationObject target)
     {
         GUILayout.BeginHorizontal();
@@ -125,6 +156,7 @@ public class LocationObjectEditor : Editor
             {
                 copyShaders = target.shaderList.ToArray();
                 copyDistances = target.shaderDistances.ToArray();
+                copyQuality = target.shaderQualities.ToArray();
                 copyFrom = target.name;
             }
         }
@@ -139,6 +171,7 @@ public class LocationObjectEditor : Editor
                     {
                         currentTarget.shaderList = copyShaders.ToArray();
                         currentTarget.shaderDistances = copyDistances.ToArray();
+                        currentTarget.shaderQualities = copyQuality.ToArray();
                     }
                 }
             }
@@ -159,6 +192,7 @@ public class LocationObjectEditor : Editor
                 {
                     target.shaderList = new Shader[0];
                     target.shaderDistances = new float[0];
+                    target.shaderQualities = new int[0];
                 }
             }
         }
@@ -177,9 +211,10 @@ public class LocationObjectEditor : Editor
                 {
                     var shaderList = target.shaderList;
                     var shaderDistance = target.shaderDistances;
+                    var shaderQuality = target.shaderQualities;
                     if (shaderList != null && shaderList.Length > 0)
                     {
-                        sort(shaderDistance, shaderList, 0, shaderList.Length - 1, true);
+                        sort(shaderDistance, shaderList, shaderQuality, 0, shaderList.Length - 1, true);
                     }
                 }
             }
@@ -242,6 +277,12 @@ public class LocationObjectEditor : Editor
                 EditorGUILayout.Separator();
 
                 var shaderDistance = locationObject.shaderDistances;
+                var shaderQuality = locationObject.shaderQualities;
+
+                var qualityList = new int[QualitySettings.names.Length];
+                for (var qi = 0; qi < qualityList.Length; qi++) qualityList[qi] = qi;
+                var qualityNames = new string[QualitySettings.names.Length];
+                for (var qi = 0; qi < qualityNames.Length; qi++) qualityNames[qi] = QualitySettings.names[qi];
 
                 var i = 0;
                 var len = shaderList.Length;
@@ -252,6 +293,7 @@ public class LocationObjectEditor : Editor
 
                     var shader = shaderList[i];
                     var distance = shaderDistance[i];
+                    var quality = shaderQuality[i];
 
                     var result = HasCopy(locationObject, i, distance);
                     if (result)
@@ -288,6 +330,13 @@ public class LocationObjectEditor : Editor
                         distance = newDistance;
                     }
 
+                    var lastQuality = quality;
+                    var newQuality = EditorGUILayout.IntPopup("Min Quality", lastQuality, qualityNames, qualityList);
+                    if (newQuality != lastQuality)
+                    {
+                        ChangeQuality(shader, distance, newQuality, targets);
+                    }
+
                     EditorGUILayout.EndVertical();
                     GUI.color = Color.red;
                     if (GUILayout.Button("X", GUILayout.ExpandHeight(true), GUILayout.Width(20.0f)) || shader == null)
@@ -306,13 +355,20 @@ public class LocationObjectEditor : Editor
             if (currentAddShader != null)
             {
                 currentAddDistance = EditorGUILayout.FloatField("Distance", currentAddDistance);
+
+                var qualityList = new int[QualitySettings.names.Length];
+                for (var qi = 0; qi < qualityList.Length; qi++) qualityList[qi] = qi;
+                var qualityNames = new string[QualitySettings.names.Length];
+                for (var qi = 0; qi < qualityNames.Length; qi++) qualityNames[qi] = QualitySettings.names[qi];
+
+                currentAddQuality = EditorGUILayout.IntPopup("Min Quality", currentAddQuality, qualityNames, qualityList);
             }
             GUILayout.EndVertical();
             if (currentAddShader != null)
             {
                 if (GUILayout.Button("ADD"))
                 {
-                    AddShader(currentAddShader, currentAddDistance, targets);
+                    AddShader(currentAddShader, currentAddDistance, currentAddQuality, targets);
                 }
             }
             GUILayout.EndHorizontal();
@@ -343,7 +399,7 @@ public class LocationObjectEditor : Editor
 		GUILayout.EndHorizontal();
 	}
 
-    private static void sort(float[] distances, Shader[] shaders, int left, int right, bool reverse = false)
+    private static void sort(float[] distances, Shader[] shaders, int[] minQuality, int left, int right, bool reverse = false)
     {
         int i = left;
         int j = right;
@@ -369,19 +425,23 @@ public class LocationObjectEditor : Editor
             {
                 float tempDist = distances[i];
                 Shader tempShader = shaders[i];
+                int tempMinQ = minQuality[i];
                 distances[i] = distances[j];
                 distances[j] = tempDist;
 
                 shaders[i] = shaders[j];
                 shaders[j] = tempShader;
+
+                minQuality[i] = minQuality[j];
+                minQuality[j] = tempMinQ;
                 i++;
                 j--;
             }
         } while (i < j);
         if (left < j)
-            sort(distances, shaders, left, j, reverse);
+            sort(distances, shaders, minQuality, left, j, reverse);
         if (i < right)
-            sort(distances, shaders, i, right, reverse);
+            sort(distances, shaders, minQuality, i, right, reverse);
     }
 }
 

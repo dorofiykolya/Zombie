@@ -44,6 +44,7 @@ public class ShaderQualityWindowEditor : EditorWindow
         {
             l.shaderList = new Shader[0];
             l.shaderDistances = new float[0];
+            l.shaderQualities = new int[0];
         }
     }
 
