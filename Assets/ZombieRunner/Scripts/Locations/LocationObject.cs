@@ -10,7 +10,10 @@ namespace Runner
         private Shader lastShader;
 
         [SerializeField]
-        public ShaderInfo[] shaders;
+        public Shader[] shaderList;
+        [SerializeField]
+        public float[] shaderDistances;
+
         [SerializeField]
         public bool shaderCulling = true;
 
@@ -31,27 +34,34 @@ namespace Runner
                     if (shaderCulling)
                     {
                         var camera = Camera.current;
-                        if (shaders != null && shaders.Length > 0 && camera != null)
+                        if (shaderList != null && shaderList.Length > 0 && camera != null)
                         {
                             var distance = transform.position.Distance(camera.transform.position);
                             Shader current = null;
-                            foreach (var shaderInfo in shaders)
+                            var i = 0;
+                            var len = shaderList.Length;
+                            for (; i < len; i++)
                             {
-                                if (distance >= shaderInfo.Distance)
+                                var s = shaderList[i];
+                                var d = shaderDistances[i];
+                                if (distance >= d)
                                 {
-                                    current = shaderInfo.Shader;
+                                    current = s;
                                     break;
                                 }
                             }
                             if (current == null)
                             {
-                                current = shaders[shaders.Length - 1].Shader;
+                                current = shaderList[shaderList.Length - 1];
                             }
                             if (lastShader != current)
                             {
                                 lastShader = current;
+                                if (current != null)
+                                {
+                                    material.shader = current;
+                                }
                             }
-                            material.shader = current;
                         }
                     }
 

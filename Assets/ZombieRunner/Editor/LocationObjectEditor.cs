@@ -9,9 +9,17 @@ using UnityEngine;
 [CanEditMultipleObjects]
 public class LocationObjectEditor : Editor
 {
+    private static Shader currentAddShader;
+    private static float currentAddDistance;
+
+    private static Shader[] copyShaders;
+    private static float[] copyDistances;
+    private static string copyFrom;
+
 	protected LocationManager location;
 
     private bool sFoldoutLocationObject = true;
+    
 
 	public override void OnInspectorGUI()
 	{
@@ -26,26 +34,202 @@ public class LocationObjectEditor : Editor
         GUI.color = ColorEditor.Title;
         sFoldoutLocationObject = EditorGUILayout.Foldout(sFoldoutLocationObject, "LocationObject Settings");
         GUI.color = Color.white;
-        if (sFoldoutLocationObject == false) return;
-        Draw();
+        if (sFoldoutLocationObject == false)
+        {
+            return;
+        }
+        Draw(target as LocationObject, targets);
 	}
 
-    private void Draw()
+    private void AddShader(Shader shader, float distance, UnityEngine.Object[] targets)
     {
-        var locationObject = target as LocationObject;
+        foreach (var t in targets)
+        {
+            var target = t as LocationObject;
+            if (target != null)
+            {
+                var shaderList = target.shaderList != null ? target.shaderList.ToList() : new List<Shader>();
+                var shaderDistances = target.shaderList != null ? target.shaderDistances.ToList() : new List<float>();
+                shaderList.Add(shader);
+                shaderDistances.Add(distance);
+                target.shaderList = shaderList.ToArray();
+                target.shaderDistances = shaderDistances.ToArray();
+            }
+        }
+    }
+
+    private void RemoveShader(Shader shader, float distance, UnityEngine.Object[] targets)
+    {
+        foreach (var t in targets)
+        {
+            var target = t as LocationObject;
+            if (target != null && target.shaderList != null)
+            {
+                var changed = true;
+                while (changed)
+                {
+                    changed = false;
+                    var i = 0;
+                    var len = target.shaderList.Length;
+                    for (; i < len; i++)
+                    {
+                        var s = target.shaderList[i];
+                        var d = target.shaderDistances[i];
+                        if (d == distance && s == shader)
+                        {
+                            changed = true;
+                            var shaderList = target.shaderList.ToList();
+                            shaderList.RemoveAt(i);
+                            var shaderDistance = target.shaderDistances.ToList();
+                            shaderDistance.RemoveAt(i);
+                            target.shaderList = shaderList.ToArray();
+                            target.shaderDistances = shaderDistance.ToArray();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void ChangeDistance(Shader shader, float lastDistance, float newDistance, UnityEngine.Object[] targets)
+    {
+        foreach (var t in targets)
+        {
+            var target = t as LocationObject;
+            if (target != null && target.shaderList != null)
+            {
+                var i = 0;
+                var len = target.shaderList.Length;
+                for (; i < len; i++)
+                {
+                    var s = target.shaderList[i];
+                    var d = target.shaderDistances[i];
+                    if (s == shader && d == lastDistance)
+                    {
+                        d = newDistance;
+                        target.shaderDistances[i] = d;
+                    }
+                }
+            }
+        }
+    }
+
+    private void DrawCopyShader(LocationObject target)
+    {
+        GUILayout.BeginHorizontal();
+        GUI.color = Color.grey;
+        if (target != null)
+        {
+            if (target.shaderList != null && target.shaderList.Length > 0 && GUILayout.Button("COPY"))
+            {
+                copyShaders = target.shaderList.ToArray();
+                copyDistances = target.shaderDistances.ToArray();
+                copyFrom = target.name;
+            }
+        }
+        if (copyShaders != null)
+        {
+            if (GUILayout.Button("PASTE FROM: " + copyFrom))
+            {
+                foreach (var item in targets)
+                {
+                    var currentTarget = item as LocationObject;
+                    if (currentTarget != null)
+                    {
+                        currentTarget.shaderList = copyShaders.ToArray();
+                        currentTarget.shaderDistances = copyDistances.ToArray();
+                    }
+                }
+            }
+        }
+        GUI.color = Color.white;
+        GUILayout.EndHorizontal();
+    }
+
+    private void DrawClear(UnityEngine.Object[] targets)
+    {
+        GUI.color = Color.gray;
+        if (GUILayout.Button("CLEAR"))
+        {
+            foreach (var t in targets)
+            {
+                var target = t as LocationObject;
+                if (target != null)
+                {
+                    target.shaderList = new Shader[0];
+                    target.shaderDistances = new float[0];
+                }
+            }
+        }
+        GUI.color = Color.white;
+    }
+
+    private void DrawSortShaders(UnityEngine.Object[] targets)
+    {
+        GUI.color = Color.magenta;
+        if (GUILayout.Button("SORT"))
+        {
+            foreach (var t in targets)
+            {
+                var target = t as LocationObject;
+                if (target != null)
+                {
+                    var shaderList = target.shaderList;
+                    var shaderDistance = target.shaderDistances;
+                    if (shaderList != null && shaderList.Length > 0)
+                    {
+                        sort(shaderDistance, shaderList, 0, shaderList.Length - 1, true);
+                    }
+                }
+            }
+        }
+        GUI.color = Color.white;
+    }
+
+    private bool HasCopy(LocationObject target, int index, float distance)
+    {
+        var i = 0;
+        var shaderList = target.shaderList;
+        var shaderDistance = target.shaderDistances;
+        if (shaderList != null && shaderDistance != null)
+        {
+            var len = shaderList.Length;
+            for (; i < len; i++)
+            {
+                var s = shaderList[i];
+                var d = shaderDistance[i];
+                if (index != i)
+                {
+                    if (d == distance)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    private void Draw(LocationObject target, UnityEngine.Object[] targets)
+    {
+        var locationObject = target;
         if (locationObject != null)
         {
             GUILayout.BeginHorizontal();
             GUILayout.Space(10.0f);
             GUILayout.BeginVertical();
 
+            DrawClear(targets);
+            DrawCopyShader(locationObject);
+
             GUI.color = Color.green;
             locationObject.shaderCulling = EditorGUILayout.Toggle("Shader Culling", locationObject.shaderCulling);
             GUI.color = Color.white;
             EditorGUILayout.Space();
-
-            var shaders = locationObject.shaders;
-            if (shaders == null || shaders.Length == 0)
+            
+            var shaderList = locationObject.shaderList;
+            if (shaderList == null || shaderList.Length == 0)
             {
                 GUI.color = Color.yellow;
                 GUILayout.Box("empty texture, use default");
@@ -53,19 +237,24 @@ public class LocationObjectEditor : Editor
             }
             else
             {
-                var list = shaders.ToList();
-                list.Sort((s1, s2) => {
-                    if (s1.Distance > s2.Distance) return -1;
-                    if (s1.Distance < s2.Distance) return 1;
-                    return 0;
-                });
-                foreach (var shaderInfo in list)
+                
+                DrawSortShaders(targets);
+                EditorGUILayout.Separator();
+
+                var shaderDistance = locationObject.shaderDistances;
+
+                var i = 0;
+                var len = shaderList.Length;
+                for(; i < len; i++)
                 {
                     EditorGUILayout.BeginHorizontal();
                     EditorGUILayout.BeginVertical();
 
-                    var result = list.Where(s => s.Distance == shaderInfo.Distance && s != shaderInfo);
-                    if (result.Any())
+                    var shader = shaderList[i];
+                    var distance = shaderDistance[i];
+
+                    var result = HasCopy(locationObject, i, distance);
+                    if (result)
                     {
                         GUI.color = Color.red;
                     }
@@ -73,9 +262,9 @@ public class LocationObjectEditor : Editor
                     {
                         GUI.color = Color.green;
                     }
-                    if (shaderInfo.Shader != null)
+                    if (shader != null)
                     {
-                        GUILayout.Box(shaderInfo.Shader.name, GUILayout.ExpandWidth(true));
+                        GUILayout.Box(shader.name, GUILayout.ExpandWidth(true));
                     }
                     else
                     {
@@ -83,7 +272,7 @@ public class LocationObjectEditor : Editor
                     }
 
                     
-                    if (result.Any())
+                    if (result)
                     {
                         GUI.color = Color.red;
                     }
@@ -91,37 +280,42 @@ public class LocationObjectEditor : Editor
                     {
                         GUI.color = Color.white;
                     }
-                    //shaderInfo.Shader = (Shader)EditorGUILayout.ObjectField("Shader To Distance", shaderInfo.Shader, typeof(Shader));
-                    shaderInfo.Distance = EditorGUILayout.FloatField("Distance To Camera", shaderInfo.Distance);
+                    var lastDistance = distance;
+                    var newDistance = EditorGUILayout.FloatField("Distance To Camera", lastDistance);
+                    if (newDistance != lastDistance)
+                    {
+                        ChangeDistance(shader, lastDistance, newDistance, targets);
+                        distance = newDistance;
+                    }
+
                     EditorGUILayout.EndVertical();
                     GUI.color = Color.red;
-                    if (GUILayout.Button("X", GUILayout.ExpandHeight(true), GUILayout.Width(20.0f)) || shaderInfo.Shader == null)
+                    if (GUILayout.Button("X", GUILayout.ExpandHeight(true), GUILayout.Width(20.0f)) || shader == null)
                     {
-                        list.Remove(shaderInfo);
-                        break;
+                        RemoveShader(shader, distance, targets);
                     }
                     GUI.color = Color.white;
                     EditorGUILayout.EndHorizontal();
                     EditorGUILayout.Space();
                 }
-                locationObject.shaders = list.ToArray();
             }
             GUI.color = Color.yellow;
-            var shader = EditorGUILayout.ObjectField("DragToAdd", null, typeof(Shader));
-            if (shader != null && shader is Shader)
+            GUILayout.BeginHorizontal();
+            GUILayout.BeginVertical();
+            currentAddShader = EditorGUILayout.ObjectField("DragToAdd", currentAddShader, typeof(Shader)) as Shader;
+            if (currentAddShader != null)
             {
-                var list = shaders != null ? shaders.ToList() : new List<ShaderInfo>();
-                var lastDist = 0.0f;
-                if (list.Where(s => s.Shader == shader).Any())
+                currentAddDistance = EditorGUILayout.FloatField("Distance", currentAddDistance);
+            }
+            GUILayout.EndVertical();
+            if (currentAddShader != null)
+            {
+                if (GUILayout.Button("ADD"))
                 {
-                    EditorUtility.DisplayDialog("Error", "Shader is already exist, " + shader.name, "close");
-                }
-                else
-                {
-                    list.Add(new ShaderInfo((Shader)shader, lastDist));
-                    locationObject.shaders = list.ToArray();
+                    AddShader(currentAddShader, currentAddDistance, targets);
                 }
             }
+            GUILayout.EndHorizontal();
             GUI.color = Color.white;
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
@@ -148,6 +342,47 @@ public class LocationObjectEditor : Editor
 		}
 		GUILayout.EndHorizontal();
 	}
+
+    private static void sort(float[] distances, Shader[] shaders, int left, int right, bool reverse = false)
+    {
+        int i = left;
+        int j = right;
+        float x = distances[(int)((left + right) >> 1)];
+        do
+        {
+            if (reverse)
+            {
+                while (distances[i] > x)
+                    i++;
+                while (distances[j] < x)
+                    j--;
+            }
+            else
+            {
+                while (distances[i] < x)
+                    i++;
+                while (distances[j] > x)
+                    j--;
+            }
+
+            if (i <= j)
+            {
+                float tempDist = distances[i];
+                Shader tempShader = shaders[i];
+                distances[i] = distances[j];
+                distances[j] = tempDist;
+
+                shaders[i] = shaders[j];
+                shaders[j] = tempShader;
+                i++;
+                j--;
+            }
+        } while (i < j);
+        if (left < j)
+            sort(distances, shaders, left, j, reverse);
+        if (i < right)
+            sort(distances, shaders, i, right, reverse);
+    }
 }
 
 

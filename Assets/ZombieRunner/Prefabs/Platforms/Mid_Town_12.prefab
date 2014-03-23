@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
+  - 64: {fileID: 6400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Mid_Town_12
@@ -691,6 +692,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!64 &6400000
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 6102ac079ec94724489910d31a70b0f7, type: 3}
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -699,7 +713,7 @@ BoxCollider:
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 495.971924, y: 211.940125, z: 640.119507}
   m_Center: {x: .00164794922, y: -30.6224766, z: -.0594329834}
@@ -812,6 +826,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c9f3ee3b206d14ea89118b0d2a789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  distaces:
+  - 0
+  shaderCulling: 1
   Mode: 0
   Level: 0
   MinimumDistance: 0
@@ -914,6 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -925,6 +947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -936,6 +961,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -947,6 +975,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -958,6 +989,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -969,6 +1003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -980,6 +1017,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -13,6 +13,7 @@ GameObject:
   - 95: {fileID: 9500000}
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
+  - 64: {fileID: 6400000}
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Mid_Town_05
@@ -3127,6 +3128,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!64 &6400000
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: a9ad468998a37724b8a79ed3c157b5c5, type: 3}
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3614,6 +3628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c9f3ee3b206d14ea89118b0d2a789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  distaces:
+  - 0
+  shaderCulling: 1
   Mode: 0
   Level: 0
   MinimumDistance: 0
@@ -3752,6 +3771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3763,6 +3785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3774,6 +3799,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3785,6 +3813,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3796,6 +3827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3807,6 +3841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3818,6 +3855,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3829,6 +3869,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3840,6 +3883,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3851,6 +3897,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3950,6 +3999,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3961,6 +4013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3972,6 +4027,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3983,6 +4041,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3994,6 +4055,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4005,6 +4069,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4016,6 +4083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4027,6 +4097,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4126,6 +4199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4137,6 +4213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4148,6 +4227,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4159,6 +4241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4170,6 +4255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4181,6 +4269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4192,6 +4283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4203,6 +4297,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4302,6 +4399,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4313,6 +4413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4324,6 +4427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400128
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4335,6 +4441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4346,6 +4455,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4357,6 +4469,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4368,6 +4483,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!114 &11400136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4379,6 +4497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shaders: []
+  distaces: []
+  shaderCulling: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
