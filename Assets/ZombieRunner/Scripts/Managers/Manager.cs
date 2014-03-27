@@ -22,6 +22,8 @@ namespace Runner
 		public static void Restart ()
 		{
 			LocationManager.Restart();
+			StateManager.Current = State.GAME;
+			PlayerManager.isStop = false;
 			Time.timeScale = 1;
 		}
 		

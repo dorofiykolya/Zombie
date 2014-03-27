@@ -4,91 +4,179 @@ using System.Collections.Generic;
 
 namespace Runner
 {
+	public enum SwipeDirection 
+	{
+		Null = 0,
+		Duck = 1,
+		Jump = 2,
+		Right = 3,
+		Left = 4
+	}
+
     public class InputManager : MonoBehaviour
     {
-        public Vector2 swipeDistance = new Vector2(40, 40);
-        public float swipeSensitivty = 2;
-        private Vector2 touchStartPosition;
-        private bool changeUsed;
-        private int patientZeroIndex = 0;
+		private SwipeDirection sSwipeDirection;
+		
+		//distance calculation
+		private float fInitialX;
+		private float fInitialY;
+		private float fFinalX;
+		private float fFinalY;
+		
+		private float inputX;
+		private float inputY;
+		private float slope;
+		private float fDistance;
+		private float iTouchStateFlag;
+		
+		void Start ()
+		{
+			fInitialX = 0.0f;
+			fInitialY = 0.0f;
+			fFinalX = 0.0f;
+			fFinalY = 0.0f;
+			
+			inputX = 0.0f;
+			inputY = 0.0f;
+			
+			iTouchStateFlag = 0;
+			sSwipeDirection = SwipeDirection.Null;
+		}
+		
+		void Update()
+		{
+			if(StateManager.Current == State.LOSE)
+			{
+				return;
+			}
+			//ARROWS
+			if (Input.GetKeyDown(KeyCode.UpArrow))
+			{
+				if (!PlayerManager.currentList[0].isJumping)
+				{
+					for (int i = 0; i < PlayerManager.currentList.Count; i++)
+					{
+						PlayerManager.currentList[i].doJump();
+					}
+				}
+			}
+			if (Input.GetKeyDown(KeyCode.DownArrow))
+			{
+				if (!PlayerManager.currentList[0].isSliding)
+				{
+					for (int i = 0; i < PlayerManager.currentList.Count; i++)
+					{
+						PlayerManager.currentList[i].doSlide();
+					}
+				}
+			}
+			if (Input.GetKeyDown(KeyCode.LeftArrow))
+			{
+				WaypointManager.changeWP(false);
+			}
+			if (Input.GetKeyDown(KeyCode.RightArrow))
+			{
+				WaypointManager.changeWP(true);
+			}
+			//TOUCH
+			if (iTouchStateFlag == 0 && Input.GetMouseButtonDown(0))
+			{		
+				fInitialX = Input.mousePosition.x;
+				fInitialY = Input.mousePosition.y;
+				
+				sSwipeDirection = SwipeDirection.Null;
+				iTouchStateFlag = 1;
+			}
+			if (iTouchStateFlag == 1)
+			{
+				fFinalX = Input.mousePosition.x;
+				fFinalY = Input.mousePosition.y;
+				
+				sSwipeDirection = swipeDirection();
+				if (sSwipeDirection != SwipeDirection.Null)
+				{
+					iTouchStateFlag = 2;
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                if (!PlayerManager.currentList[patientZeroIndex].isJumping)
-                {
-                    for (int i = 0; i < PlayerManager.currentList.Count; i++)
-                    {
-                        PlayerManager.currentList[i].doJump();
-                    }
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                if (!PlayerManager.currentList[patientZeroIndex].isSliding)
-                {
-                    for (int i = 0; i < PlayerManager.currentList.Count; i++)
-                    {
-                        PlayerManager.currentList[i].doSlide();
-                    }
-                }
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                WaypointManager.changeWP(false);
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                WaypointManager.changeWP(true);
-            }
-            if (Input.touchCount == 1)
-            {
-                Touch touch = Input.GetTouch(0);
-                if (touch.phase == TouchPhase.Began)
-                {
-                    touchStartPosition = touch.position;
-                }
-                else if (touch.phase == TouchPhase.Moved)
-                {
-                    Vector2 diff = touch.position - touchStartPosition;
-                    if (diff.x == 0f)
-                        diff.x = 1f;
-                    float verticalPercent = Mathf.Abs(diff.y / diff.x);
-
-                    if (verticalPercent > swipeSensitivty && Mathf.Abs(diff.y) > swipeDistance.y)
-                    {
-                        if (diff.y > 0)
-                        {
-                            if (!PlayerManager.currentList[patientZeroIndex].isJumping)
-                            {
-                                for (int i = 0; i < PlayerManager.currentList.Count; i++)
-                                {
-                                    PlayerManager.currentList[i].doJump();
-                                }
-                            }
-                        }
-                        else if (diff.y < 0)
-                        {
-                            for (int i = 0; i < PlayerManager.currentList.Count; i++)
-                            {
-                                PlayerManager.currentList[i].doSlide();
-                            }
-                        }
-                        touchStartPosition = touch.position;
-                    }
-                    else if (verticalPercent < (1 / swipeSensitivty) && Mathf.Abs(diff.x) > swipeDistance.x && !changeUsed)
-                    {
-                        changeUsed = true;
-                        WaypointManager.changeWP(diff.x > 0);
-                    }
-                }
-                else if (touch.phase == TouchPhase.Ended)
-                {
-                    changeUsed = false;
-                }
-            }
-        }
+					switch (sSwipeDirection)
+					{
+						case SwipeDirection.Jump:
+							if (!PlayerManager.currentList[0].isJumping)
+							{
+								for (int i = 0; i < PlayerManager.currentList.Count; i++)
+								{
+									PlayerManager.currentList[i].doJump();
+								}
+							}
+							break;
+						case SwipeDirection.Duck:
+							if (!PlayerManager.currentList[0].isSliding)
+							{
+								for (int i = 0; i < PlayerManager.currentList.Count; i++)
+								{
+									PlayerManager.currentList[i].doSlide();
+								}
+							}
+						break;
+						case SwipeDirection.Left:
+							WaypointManager.changeWP(false);
+							break;
+						case SwipeDirection.Right:
+							WaypointManager.changeWP(true);
+							break;
+					}
+				}
+			}
+			if (iTouchStateFlag == 2 || Input.GetMouseButtonUp(0))
+			{
+				iTouchStateFlag = 0;
+			}
+		}
+	
+		private SwipeDirection swipeDirection()
+		{
+			inputX = fFinalX - fInitialX;
+			inputY = fFinalY - fInitialY;
+			slope = inputY / inputX;
+			
+			fDistance = Mathf.Sqrt( Mathf.Pow((fFinalY-fInitialY), 2) + Mathf.Pow((fFinalX-fInitialX), 2) );
+			
+			if (fDistance <= (Screen.width / 15))
+				return SwipeDirection.Null;
+			
+			if (inputX >= 0 && inputY > 0 && slope > 1)
+			{		
+				return SwipeDirection.Jump;
+			}
+			else if (inputX <= 0 && inputY > 0 && slope < -1)
+			{
+				return SwipeDirection.Jump;
+			}
+			else if (inputX > 0 && inputY >= 0 && slope < 1 && slope >= 0)
+			{
+				return SwipeDirection.Right;
+			}
+			else if (inputX > 0 && inputY <= 0 && slope > -1 && slope <= 0)
+			{
+				return SwipeDirection.Right;
+			}
+			else if (inputX < 0 && inputY >= 0 && slope > -1 && slope <= 0)
+			{
+				return SwipeDirection.Left;
+			}
+			else if (inputX < 0 && inputY <= 0 && slope >= 0 && slope < 1)
+			{
+				return SwipeDirection.Left;
+			}
+			else if (inputX >= 0 && inputY < 0 && slope < -1)
+			{
+				return SwipeDirection.Duck;
+			}
+			else if (inputX <= 0 && inputY < 0 && slope > 1)
+			{
+				return SwipeDirection.Duck;
+			}
+			
+			return SwipeDirection.Null;	
+		}
     }
 }

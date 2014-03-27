@@ -76,6 +76,11 @@ namespace Runner
         // Update is called once per frame
         void Update()
         {
+			if(StateManager.Current == State.LOSE)
+			{
+				return;
+			}
+
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
 				onDeath();
