@@ -18,6 +18,7 @@ Shader "Curve/Diffuse Curve" {
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest 
 			#pragma multi_compile_fwdbase LIGHTMAP_OFF LIGHTMAP_ON
+			#pragma multi_compile UNITY_EDITOR_SHADOW_ON UNITY_EDITOR_SHADOW_OFF
 			#include "UnityCG.cginc"
 			#ifndef SHADOWS_OFF		
 			#include "AutoLight.cginc"	
@@ -62,8 +63,12 @@ Shader "Curve/Diffuse Curve" {
 					o.uv.y = 1.0-o.uv.y;
 				#endif
 				
-				#ifndef SHADOWS_OFF			  	
-      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+				#ifndef SHADOWS_OFF		
+					#if UNITY_EDITOR_SHADOW_ON	 
+	      			o._ShadowCoord = ComputeScreenPos(mul(UNITY_MATRIX_MVP, v.vertex));
+	      			#else
+	      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+	      			#endif
 				#endif
 
 				return o;
@@ -90,4 +95,5 @@ Shader "Curve/Diffuse Curve" {
         } // end pass
 	} 
 	FallBack "Diffuse"
+	CustomEditor "CurveMaterialEditor"
 }

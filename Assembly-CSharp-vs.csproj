@@ -66,6 +66,13 @@
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\VortexEffect.cs" />
+     <Compile Include="Assets\Mesh Explosion\Demo\ClickOrTapToExplode.cs" />
+     <Compile Include="Assets\Mesh Explosion\Demo\ReloadScene.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\DestroyAfterTime.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\DestroyOnFadeCompletion.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\Fade.cs" />
+     <Compile Include="Assets\Mesh Explosion\Internal\MeshExplosion.cs" />
+     <Compile Include="Assets\Mesh Explosion\MeshExploder.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -289,6 +296,7 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\ZombieRunner\Assets\Shaders\Transparent Base Curve.shader" />
      <None Include="Assets\Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
@@ -333,6 +341,7 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Specular Curve Reflective.shader" />
+     <None Include="Assets\ZombieRunner\Assets\Shaders\Transparent Reflective Curve.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
@@ -350,7 +359,9 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\ShurikenMagic\Shaders\SM_2sided_transparent.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Mesh Explosion\Read Me.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Curve.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
@@ -361,6 +372,7 @@
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Curve WorldLight.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\ShurikenMagic\Shaders\SM_TransparentRim.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

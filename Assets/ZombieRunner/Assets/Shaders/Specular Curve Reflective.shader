@@ -22,6 +22,7 @@ Shader "Curve/Specular Curve Reflective" {
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest 
 			#pragma multi_compile_fwdbase LIGHTMAP_OFF LIGHTMAP_ON
+			#pragma multi_compile UNITY_EDITOR_SHADOW_ON UNITY_EDITOR_SHADOW_OFF
 			#include "UnityCG.cginc"
 			#ifndef SHADOWS_OFF		
 			#include "AutoLight.cginc"	
@@ -83,7 +84,11 @@ Shader "Curve/Specular Curve Reflective" {
 				// СМЕЩЕНИЕ UV
 				
 				#ifndef SHADOWS_OFF			  	
-      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+      				#if UNITY_EDITOR_SHADOW_ON	 
+	      			o._ShadowCoord = ComputeScreenPos(mul(UNITY_MATRIX_MVP, v.vertex));
+	      			#else
+	      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+	      			#endif
 				#endif
 				
 	            float4x4 modelMatrix = _Object2World;
@@ -179,4 +184,5 @@ Shader "Curve/Specular Curve Reflective" {
         
 	} 
 	FallBack "Curve/Diffuse Curve"
+	CustomEditor "CurveMaterialEditor"
 }

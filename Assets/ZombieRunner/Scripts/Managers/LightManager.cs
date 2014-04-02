@@ -11,14 +11,12 @@ public class LightManager : MonoBehaviour {
 
 	void Update () 
 	{
-		time += Time.deltaTime / 2.0f;
-
-		light.intensity = 1.3f + Mathf.Sin (time) / 2.0f;
+		time += Time.deltaTime / 20.0f;
 
 		var r = transform.eulerAngles;
 		r.x = 50.0f;
 		r.z = 50.0f;
-		r.y += Time.deltaTime * 5;
+		r.y += Time.deltaTime * 2;
 		transform.eulerAngles = r;
 	}
 }

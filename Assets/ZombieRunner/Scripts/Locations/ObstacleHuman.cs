@@ -15,6 +15,14 @@ namespace Runner
 			startSpeed = movement.speed;
 		}
 
+		void OnTriggerEnter(Collider other)
+		{
+			if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Obstacle"))
+			{
+				transform.localPosition = Vector3.zero;
+			}
+		}
+		
 		void OnDisable() 
 		{
 			movement.speed = startSpeed;

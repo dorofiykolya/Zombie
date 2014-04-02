@@ -46,17 +46,19 @@ namespace Runner
 
         public void run()
         {
-			thisAnimation.CrossFade(RUN, 0.2f, PlayMode.StopAll);
+			thisAnimation.CrossFade(RUN, 0.1f);
         }
 
         public void jump()
         {
-			thisAnimation.CrossFade(JUMP, 0.2f);
+			thisAnimation.Rewind (JUMP);
+			thisAnimation.CrossFade(JUMP, 0.1f);
         }
 
         public void slide()
         {
-			thisAnimation.CrossFade(SLIDE, 0.2f);
+			thisAnimation.Rewind (SLIDE);
+			thisAnimation.CrossFade(SLIDE, 0.1f);
         }
 
 		public IEnumerator slideRight()
@@ -73,9 +75,11 @@ namespace Runner
 			run();
 		}
 
-		public void eat()
+		public IEnumerator eat()
 		{
-			thisAnimation.CrossFade(EAT, 0.2f);
+			thisAnimation.PlayQueued(EAT, QueueMode.PlayNow);
+			yield return new WaitForSeconds( thisAnimation[EAT].length );
+			run();
 		}
 
 		public void death()

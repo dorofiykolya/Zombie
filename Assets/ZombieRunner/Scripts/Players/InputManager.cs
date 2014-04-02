@@ -45,14 +45,14 @@ namespace Runner
 		
 		void Update()
 		{
-			if(StateManager.Current == State.LOSE)
+			if(StateManager.Current == State.LOSE || StateManager.Current == State.LOAD)
 			{
 				return;
 			}
 			//ARROWS
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
-				if (!PlayerManager.currentList[0].isJumping)
+				if (!PlayerManager.currentList[0].bInAir)
 				{
 					for (int i = 0; i < PlayerManager.currentList.Count; i++)
 					{
@@ -62,7 +62,7 @@ namespace Runner
 			}
 			if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
-				if (!PlayerManager.currentList[0].isSliding)
+				if (!PlayerManager.currentList[0].bInDuck)
 				{
 					for (int i = 0; i < PlayerManager.currentList.Count; i++)
 					{
@@ -100,7 +100,7 @@ namespace Runner
 					switch (sSwipeDirection)
 					{
 						case SwipeDirection.Jump:
-							if (!PlayerManager.currentList[0].isJumping)
+							if (!PlayerManager.currentList[0].bInAir)
 							{
 								for (int i = 0; i < PlayerManager.currentList.Count; i++)
 								{
@@ -109,7 +109,7 @@ namespace Runner
 							}
 							break;
 						case SwipeDirection.Duck:
-							if (!PlayerManager.currentList[0].isSliding)
+							if (!PlayerManager.currentList[0].bInDuck)
 							{
 								for (int i = 0; i < PlayerManager.currentList.Count; i++)
 								{

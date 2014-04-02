@@ -63,7 +63,7 @@ namespace Runner
 			{
 				if (GUI.Button (new Rect (0, Screen.height * .2f, Screen.width, Screen.height * .6f), "", GUIStyle.none)) 
 				{
-					TimerManager.Play ();
+					PlayerManager.isStop = false;
 					SetState (State.GAME);
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.GameMenu).Show();

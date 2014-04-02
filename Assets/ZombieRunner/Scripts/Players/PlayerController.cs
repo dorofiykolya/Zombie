@@ -11,7 +11,7 @@ namespace Runner
             set
             {
                 targetPosition.x = value.x + offset.x;
-				targetPosition.y = value.y + temp;
+				targetPosition.y = value.y;
                 targetPosition.z = value.z + offset.y;
             }
         }
@@ -22,28 +22,39 @@ namespace Runner
 
         public int ID = 0;
 		public int gameID = 0;
-		private int temp;
 
-        public bool isJumping;
-        public bool isSliding;
-		private bool isHalfJump;
-        private bool jumpPending;
-        private bool slidePending;
+		private float tCurrentAngle = 0.0f;
+		private float fJumpForwardFactor = 0.0f;
+		private float fCurrentUpwardVelocity = 0.0f;
+		private float fCurrentHeight = 0.0f;
+		private float fContactPointY = 0.0f;
+
+		public float fJumpPush = 185;
+		public float acceleration = 500;
+
+		public bool bInAir = false;
+		private bool bJumpFlag = false;
+		private bool bInJump = false;
+		public bool bInDuck = false;
+		private bool bDiveFlag = false;
+		private bool bExecuteLand = false;
 
         private AnimationManager am;
 
         private Vector2 offset = Vector2.zero;
 
-        public float sideScrollSpeed;
-        public float jumpHeight;
-        public float jumpForce;
-		public float jumpAcceleration;
-        public float slideDuration;
+		private Vector3 rotateVector = Vector3.zero;
 
-		private float jumpSpeed;
+        public float sideScrollSpeed;
+        public float slideDuration;
+		
 		private float bornTime;
+		private int soldireLife;
 		
 		public float Distance {get{return PlayerManager.Distance;}}
+
+		private Transform playerRotate;
+		private ParticleSystem particle;
 
         public void Initialize()
         {
@@ -58,19 +69,31 @@ namespace Runner
 					offset.y = Random.Range(-2f, 2f);
             }
 
-            isJumping = false;
-            jumpPending = false;
+			bInAir = false;
+			bJumpFlag = false;
+			bInJump = false;
+			bInDuck = false;
+			bDiveFlag = false;
+			bExecuteLand = false;
 
             TargetPosition = transform.position;
             targetPosition.x = WaypointManager.wayPoints[WaypointManager.currentWP].position.x + offset.x;
             transform.position = targetPosition;
 
-            am = transform.GetComponent<AnimationManager>();
+			am = transform.FindChild ("Player").GetComponent<AnimationManager>();
 
 			if(ID == 2)
 			{
 				bornTime = Time.timeSinceLevelLoad;
 			}
+			if(ID == 4)
+			{
+				soldireLife = PlayerValues.levels[ID];
+			}
+
+			playerRotate = transform.FindChild ("Player").transform;
+			particle = transform.FindChild ("Smoke").GetComponent<ParticleSystem> ();
+			particle.Stop ();
         }
 
         // Update is called once per frame
@@ -81,6 +104,8 @@ namespace Runner
 				return;
 			}
 
+			var speed = PlayerManager.Speed / PlayerManager.MinimumSpeed; 
+
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
 				onDeath();
@@ -90,136 +115,132 @@ namespace Runner
             {
                 targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime);
+				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * speed);
+
+				rotateVector.y = Mathf.Sign(targetPosition.x - transform.position.x) * 45 * ((8 - Vector3.Distance(transform.position, targetPosition)) / 8);
+
+				playerRotate.localEulerAngles = rotateVector;
             }
-			if(isJumping)
+			else
 			{
-				targetPosition.y = jumpHeight;
-				if (transform.position.y != targetPosition.y && !isHalfJump)
-            	{
-					jumpSpeed += jumpAcceleration;
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, (jumpForce + jumpSpeed) * Time.deltaTime);
+				if(playerRotate.localEulerAngles.y != 0)
+				{
+					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, playerRotate.position, sideScrollSpeed * Time.deltaTime * 0.01f * speed, 0f);
+				}
+			}
+
+			if(bInAir)
+			{
+				if(bDiveFlag)
+				{
+					setCurrentDiveHeight(speed);
 				}
 				else
 				{
-					if(jumpSpeed >= 0 && ! isHalfJump)
-					{
-						jumpSpeed -= jumpAcceleration * 2;
-					}
-					else
-					{
-						isHalfJump = true;
-						
-						targetPosition.y = temp;
-						if (transform.position.y != targetPosition.y)
-	            		{
-							jumpSpeed += jumpAcceleration;
-							transform.position = Vector3.MoveTowards(transform.position, targetPosition, (jumpForce + jumpSpeed) * Time.deltaTime);
-						}
-						else
-						{
-							am.run();
-							isJumping = false;
-							isHalfJump = false;
-						}
-					}
+					setCurrentJumpHeight(speed);
 				}
+
+				targetPosition.y = fCurrentHeight;
+				transform.position = new Vector3(transform.position.x, fCurrentHeight, transform.position.z);
+				Camera.main.transform.localPosition = new Vector3(PlayerManager.defaultCameraPosition.x, PlayerManager.defaultCameraPosition.y - fCurrentHeight, PlayerManager.defaultCameraPosition.z);
 			}
-			else if(isSliding)
+
+			if(bJumpFlag == true)
 			{
-				targetPosition.y = temp;
-				if (transform.position.y != targetPosition.y)
-            	{
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, (isSliding ? jumpForce * 5 : jumpForce) * Time.deltaTime);
-				}
+				bJumpFlag = false;
+				bExecuteLand = true;
+				bInJump = true;
+				bInAir = true;
+				fCurrentUpwardVelocity = fJumpPush;
+				fCurrentHeight = transform.position.y;
 			}
+
 			am.updateSpeed();
         }
 
+		private void setCurrentJumpHeight(float speed)
+		{
+			fCurrentUpwardVelocity -= Time.deltaTime * acceleration * speed;
+			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
+			fCurrentHeight += fCurrentUpwardVelocity * Time.deltaTime * speed;
+			
+			if(fCurrentHeight < fContactPointY)
+			{
+				fCurrentHeight = fContactPointY;
+				bInAir = false;
+				bInJump = false;
+				
+				if (bDiveFlag)
+					return;
+
+				am.run();
+			}
+		}
+
+		private void setCurrentDiveHeight(float speed)
+		{
+			fCurrentUpwardVelocity -= Time.deltaTime * 2000 * speed;
+			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
+			fCurrentHeight += fCurrentUpwardVelocity * Time.deltaTime * speed;
+			
+			if(fCurrentHeight <= fContactPointY)
+			{
+				fCurrentHeight = fContactPointY;
+				
+				bInAir = false;
+				bInJump = false;
+				
+				duckPlayer();
+				bDiveFlag = false;
+			}
+		}
+
+		private void duckPlayer()
+		{
+			bInDuck = true;
+
+			am.slide();
+
+			Vector3 height = collider.center;
+			height.y /= 6;
+			collider.center = height;
+
+			StartCoroutine (slideDurationTimer ());
+		}
+
+		private IEnumerator slideDurationTimer ()
+		{
+			yield return new WaitForSeconds(slideDuration);
+
+			bInDuck = false;
+
+			Vector3 height = collider.center;
+			height.y *= 6;
+			collider.center = height;
+			
+			am.run();
+		}
+
         public void doJump()
         {
-            if (!isJumping)
-            {
-                isJumping = true;
-                if (isPatientZero)
-                {
-                    am.jump();
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    StartCoroutine(jumpDelay());
-                }
-            }
-            else
-            {
-                jumpPending = true;
-            }
+			if(!bInAir)
+			{
+				bJumpFlag = true;
+				bInDuck = false;
+				am.jump();
+			}
         }
 
         public void doSlide()
         {
-            if (isJumping)
-            {
-                isJumping = false;
-            }
-            if (!isSliding)
-            {
-                isSliding = true;
-                if (isPatientZero)
-                {
-                    am.slide();
-					
-					Vector3 height = collider.size;
-					height.y /= 2;
-                    Vector3 center = collider.center;
-					center.y = height.y;
-					collider.size = height;
-                    collider.center = center;
-
-                    StartCoroutine(slidingDuration());
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    StartCoroutine(slideDelay());
-                }
-            }
-            else
-            {
-                slidePending = true;
-            }
-        }
-
-        IEnumerator slidingDuration()
-        {
-            yield return new WaitForSeconds(slideDuration);
-
-            isSliding = false;
-			
-			Vector3 height = collider.size;
-            height.y *= 2;
-            collider.size = height;
-            Vector3 center = collider.center;
-            center.y = collider.size.y;
-            collider.center = center;
-
-            am.run();
-        }
-
-        IEnumerator jumpDelay()
-        {
-            yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
-
-            am.jump();
-        }
-
-        IEnumerator slideDelay()
-        {
-            yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
-
-            StartCoroutine(slidingDuration());
-            am.slide();
+            if(!bInAir && !bInDuck)
+			{
+				duckPlayer();
+			}
+			else if(bInAir && !bInDuck)
+			{
+				bDiveFlag = true;
+			}
         }
 
         public void changeTarget(Vector3 position, bool right)
@@ -227,7 +248,18 @@ namespace Runner
             if (isPatientZero)
             {
                 TargetPosition = position;
-				if(right) StartCoroutine(am.slideRight()); else StartCoroutine(am.slideLeft());
+
+				if(bInJump)
+					return;
+
+				if(right) 
+				{
+					StartCoroutine(am.slideRight()); 
+				}
+				else 
+				{
+					StartCoroutine(am.slideLeft());
+				}
             }
             else
             {
@@ -241,16 +273,27 @@ namespace Runner
             yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
 
             TargetPosition = position;
-			if(right) StartCoroutine(am.slideRight()); else StartCoroutine(am.slideLeft());
-        }
 
+			if(!bInJump)
+			{			
+				if(right) 
+				{
+					StartCoroutine(am.slideRight()); 
+				}
+				else 
+				{
+					StartCoroutine(am.slideLeft());
+				}
+			}
+		}
+		
 		void onDeath()
 		{
 			if(isPatientZero)
 			{
 				if(PlayerManager.currentList.Count > 1)
 				{
-					PlayerManager.currentList.RemoveAt(0);
+					PlayerManager.currentList.RemoveAt(gameID);
 					
 					for(int i = 0; i < PlayerManager.currentList.Count; i++)
 					{
@@ -292,7 +335,16 @@ namespace Runner
         {
             if (other.gameObject.CompareTag("Obstacle"))
             {
-				onDeath();
+				if(ID == 4)
+				{
+					other.gameObject.GetComponent<MeshExploder>().Explode();
+					other.transform.localPosition = Vector3.zero;
+				}
+
+				if(soldireLife == 0)
+					onDeath();
+				else
+					soldireLife--;
             }
             else if (other.gameObject.CompareTag("Currency"))
             {
@@ -300,7 +352,13 @@ namespace Runner
 				other.transform.localScale = Vector3.zero;
             }
 			else if (other.gameObject.CompareTag("Human"))
-            {
+			{
+				if(isPatientZero)
+				{
+					StartCoroutine(am.eat());
+					particle.Emit(50);
+				}
+
 				other.gameObject.collider.enabled = false;
 				other.GetComponent<ObstacleHuman>().movement.speed = 0;
 				

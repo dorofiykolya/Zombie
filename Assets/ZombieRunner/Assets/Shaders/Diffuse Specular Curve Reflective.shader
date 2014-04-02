@@ -105,14 +105,11 @@ Shader "Curve/Diffuse Specular Curve Reflective" {
 				// СМЕЩЕНИЕ UV
 				
 				#ifndef SHADOWS_OFF			  	
-      			//TRANSFER_VERTEX_TO_FRAGMENT(o);
-      			// КАСТОМНАЯ РЕАЛИЗАЦИЯ TRANSFER_VERTEX_TO_FRAGMENT ДЛЯ ТЕНИ
-	      			float4 sp = mul(UNITY_MATRIX_MVP, v.vertex);
-					float4 p = sp * 0.5f;
-					p.xy = float2(p.x, p.y * _ProjectionParams.x) + p.w;
-					p.zw = sp.zw;
-					o._ShadowCoord = p;
-				// КАСТОМНАЯ РЕАЛИЗАЦИЯ TRANSFER_VERTEX_TO_FRAGMENT ДЛЯ ТЕНИ
+      				#if UNITY_EDITOR_SHADOW_ON	 
+	      			o._ShadowCoord = ComputeScreenPos(mul(UNITY_MATRIX_MVP, v.vertex));
+	      			#else
+	      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+	      			#endif
 				#endif
 				
 	            float4x4 modelMatrix = _Object2World;
@@ -284,4 +281,5 @@ Shader "Curve/Diffuse Specular Curve Reflective" {
         
 	} 
 	FallBack "Curve/Diffuse Curve"
+	CustomEditor "CurveMaterialEditor"
 }

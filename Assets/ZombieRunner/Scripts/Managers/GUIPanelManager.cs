@@ -45,7 +45,7 @@ namespace Runner
 
             if(panel != PanelType.MainMenu)
             {
-				TimerManager.Pause();
+				PlayerManager.isStop = true;
                 gameObject.SetActive(false);
             }
 		}

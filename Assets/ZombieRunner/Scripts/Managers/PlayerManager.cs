@@ -36,7 +36,7 @@ namespace Runner
 		public float distance;
 		public float speed;
 		public float minimumSpeed = 5.0f;
-		public float speedDistanceMultiply = 0.01f;
+		public float speedDistanceMultiply = 1f;
 		public float sideScrollSpeed = 5;
 
         public static Runner.PlayerController[] collection;
@@ -46,10 +46,28 @@ namespace Runner
 		public static float SpeedDistanceMultiply{get; private set;}
 		public static float SideScrollSpeed{get;private set;}
 		public static bool isStop;
+
+		public static Vector3 defaultCameraPosition;
+
+		void Awake()
+		{
+			defaultCameraPosition = Camera.main.transform.position;
+		}
 		
 		public static float Speed
 		{
-			get {return !isStop ? (Distance * SpeedDistanceMultiply) + MinimumSpeed : 0; }
+			get 
+			{
+				if (isStop)
+				{
+					return 0;
+				}
+				else
+				{
+					float speed = (Distance * 0.01f * SpeedDistanceMultiply) + MinimumSpeed;
+					return speed > 80 ? 80 : speed;
+				}
+			}
 		}
 		
 		public static Runner.PlayerController Player
@@ -86,7 +104,7 @@ namespace Runner
 			}
 
 			Camera.main.transform.parent = currentList[0].gameObject.transform;
-			Camera.main.transform.localPosition = new Vector3(0, Camera.main.transform.localPosition.y, Camera.main.transform.localPosition.z);
+			Camera.main.transform.localPosition = defaultCameraPosition;
 		}
 		
 		public static Runner.PlayerController GetById(int id)
