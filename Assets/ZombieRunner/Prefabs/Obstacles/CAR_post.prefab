@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400006}
+  - 54: {fileID: 5400000}
   m_Layer: 12
   m_Name: CAR_post
   m_TagString: Obstacle
@@ -102,7 +103,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1ff010281c7d64605b294848947c3cd9, type: 2}
+  - {fileID: 2100000, guid: 2dab67a679705493b8002c80b42e6b36, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -146,6 +147,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Mesh: {fileID: 4300026, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+--- !u!54 &5400000
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1

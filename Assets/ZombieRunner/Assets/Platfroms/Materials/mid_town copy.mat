@@ -7,9 +7,8 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: mid_town copy
-  m_Shader: {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
-  m_ShaderKeywords:
-  - UNITY_EDITOR_SHADOW_ON
+  m_Shader: {fileID: 4800000, guid: 9cb8122058d912b40aad4b56ad7b7c9d, type: 3}
+  m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -38,25 +37,25 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Shininess
+        second: 10
+      data:
+        first:
           name: _Dist
         second: 0
       data:
         first:
           name: _ReflectVisible
         second: .249999985
-      data:
-        first:
-          name: _Shininess
-        second: 10
-      data:
-        first:
-          name: _Alpha
-        second: 1
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _NearCurve
@@ -65,10 +64,6 @@ Material:
         first:
           name: _FarCurve
         second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _ReflectColor

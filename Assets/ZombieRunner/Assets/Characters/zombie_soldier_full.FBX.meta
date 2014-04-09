@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a98b6b6699f024aaa998053585895e35
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Bip001
     100002: Bip001 Footsteps
@@ -259,8 +259,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
-      firstFrame: 41
-      lastFrame: 65
+      firstFrame: 236
+      lastFrame: 256
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1124,7 +1124,7 @@ ModelImporter:
       name: Idle
       takeName: Take 001
       firstFrame: 158
-      lastFrame: 190
+      lastFrame: 188
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -1300,4 +1300,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
+  additionalBone: 0
   userData: 

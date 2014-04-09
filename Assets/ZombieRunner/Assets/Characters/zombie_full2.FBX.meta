@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 31cf96c76f94f4d4f8c76049a209f5e7
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Bip001
     100002: Bip001 Footsteps
@@ -259,8 +259,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
-      firstFrame: 41
-      lastFrame: 60
+      firstFrame: 191
+      lastFrame: 207.000015
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -692,7 +692,7 @@ ModelImporter:
       name: SlideRight
       takeName: Take 001
       firstFrame: 121
-      lastFrame: 128
+      lastFrame: 126
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -835,8 +835,8 @@ ModelImporter:
     - serializedVersion: 16
       name: SlideLeft
       takeName: Take 001
-      firstFrame: 128
-      lastFrame: 135
+      firstFrame: 129
+      lastFrame: 134
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -980,7 +980,7 @@ ModelImporter:
       name: Death
       takeName: Take 001
       firstFrame: 135
-      lastFrame: 153
+      lastFrame: 154
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1123,8 +1123,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
-      firstFrame: 158
-      lastFrame: 190
+      firstFrame: 156
+      lastFrame: 188
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -1300,4 +1300,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
+  additionalBone: 0
   userData: 

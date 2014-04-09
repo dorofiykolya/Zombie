@@ -104,7 +104,7 @@ namespace Runner
 				return;
 			}
 
-			var speed = PlayerManager.Speed / PlayerManager.MinimumSpeed; 
+			var speed = PlayerManager.Speed / PlayerManager.MinimumSpeed;
 
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
@@ -153,6 +153,12 @@ namespace Runner
 				bInAir = true;
 				fCurrentUpwardVelocity = fJumpPush;
 				fCurrentHeight = transform.position.y;
+			}
+
+			if(fContactPointY != 0)
+			{
+				fContactPointY = 0;
+				bInAir = true;
 			}
 
 			am.updateSpeed();
@@ -331,10 +337,20 @@ namespace Runner
 			}
 		}
 		
-		void OnTriggerEnter(Collider other)
+		void OnCollisionEnter(Collision other)
         {
+			Debug.Log (other.gameObject.name);
             if (other.gameObject.CompareTag("Obstacle"))
             {
+				Debug.Log(other.collider.bounds.size.y + " " + other.contacts[0].point.y);
+				if(other.collider.bounds.center.y < 10)
+				{
+					if(other.collider.bounds.size.y - other.collider.bounds.center.y < other.contacts[0].point.y)
+					{
+						fContactPointY = other.contacts[0].point.y;
+						return;
+					}
+				}
 				if(ID == 4)
 				{
 					other.gameObject.GetComponent<MeshExploder>().Explode();
@@ -349,7 +365,7 @@ namespace Runner
             else if (other.gameObject.CompareTag("Currency"))
             {
 				CurrencyManager.goldCount += (1 + PlayerManager.GetGoldBonus());
-				other.transform.localScale = Vector3.zero;
+				other.transform.localScale = new Vector3(0,-1000,0);
             }
 			else if (other.gameObject.CompareTag("Human"))
 			{
@@ -360,11 +376,11 @@ namespace Runner
 				}
 
 				other.gameObject.collider.enabled = false;
-				other.GetComponent<ObstacleHuman>().movement.speed = 0;
+				other.gameObject.GetComponent<ObstacleHuman>().movement.speed = 0;
 				
 				if(PlayerManager.currentList.Count < PlayerManager.GetMaxPlayers())
 				{
-					PlayerManager.currentList.Add((Runner.PlayerController)GameObject.Instantiate(PlayerManager.GetById(other.GetComponent<ObstacleHuman>().ID)));
+					PlayerManager.currentList.Add((Runner.PlayerController)GameObject.Instantiate(PlayerManager.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
 					PlayerManager.currentList[PlayerManager.currentList.Count - 1].isPatientZero = false;
 					PlayerManager.currentList[PlayerManager.currentList.Count - 1].Initialize();
 					PlayerManager.currentList[PlayerManager.currentList.Count - 1].gameID = PlayerManager.currentList.Count - 1;

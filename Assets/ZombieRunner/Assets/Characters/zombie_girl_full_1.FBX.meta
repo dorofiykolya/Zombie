@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a7a32e6382c114958909e4ea85609547
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Bip001
     100002: Bip001 Footsteps
@@ -259,8 +259,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump
       takeName: Take 001
-      firstFrame: 41
-      lastFrame: 65
+      firstFrame: 200
+      lastFrame: 222
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -403,8 +403,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Slide
       takeName: Take 001
-      firstFrame: 66
-      lastFrame: 74
+      firstFrame: 180
+      lastFrame: 199
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -547,8 +547,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Eat
       takeName: Take 001
-      firstFrame: 75
-      lastFrame: 94
+      firstFrame: 86
+      lastFrame: 105
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -691,8 +691,8 @@ ModelImporter:
     - serializedVersion: 16
       name: SlideRight
       takeName: Take 001
-      firstFrame: 94
-      lastFrame: 100
+      firstFrame: 101
+      lastFrame: 109
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -835,8 +835,8 @@ ModelImporter:
     - serializedVersion: 16
       name: SlideLeft
       takeName: Take 001
-      firstFrame: 100
-      lastFrame: 106
+      firstFrame: 109
+      lastFrame: 115
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -979,7 +979,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Death
       takeName: Take 001
-      firstFrame: 106
+      firstFrame: 114
       lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
@@ -1123,8 +1123,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
-      firstFrame: 141
-      lastFrame: 170
+      firstFrame: 150
+      lastFrame: 178
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -1300,4 +1300,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 1
+  additionalBone: 0
   userData: 

@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100038}
-  m_LocalRotation: {x: -.678790152, y: .07116469, z: .721982598, w: -.113669731}
+  m_LocalRotation: {x: -.678790092, y: .0711646825, z: .721982539, w: -.113669716}
   m_LocalPosition: {x: 1.78647232, y: .127206445, z: 6.7739253}
   m_LocalScale: {x: .99999994, y: 1, z: 1}
   m_Children:
@@ -1151,7 +1151,7 @@ Transform:
   m_GameObject: {fileID: 100082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 140, y: 140, z: 140}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 400078}
   - {fileID: 400076}
@@ -1174,7 +1174,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100080}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 4, z: 2}
@@ -1216,8 +1216,8 @@ MonoBehaviour:
   collider: {fileID: 6500000}
   ID: 4
   gameID: 0
-  fJumpPush: 100
-  acceleration: 300
+  fJumpPush: 60
+  acceleration: 200
   bInAir: 0
   bInDuck: 0
   sideScrollSpeed: 50

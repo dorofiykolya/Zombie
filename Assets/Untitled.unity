@@ -74,19 +74,18 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &1197792618
+--- !u!1 &867895564
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1197792624}
-  - 20: {fileID: 1197792623}
-  - 92: {fileID: 1197792622}
-  - 124: {fileID: 1197792621}
-  - 81: {fileID: 1197792620}
-  - 114: {fileID: 1197792619}
+  - 4: {fileID: 867895569}
+  - 20: {fileID: 867895568}
+  - 92: {fileID: 867895567}
+  - 124: {fileID: 867895566}
+  - 81: {fileID: 867895565}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -94,71 +93,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1197792619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02918671e4cad454e84e6d7cd91bc0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WhenToRender: 0
-  Initialized: 0
-  InitParams:
-    TheASVersion: 1
-    InitVideo: 0
-    InitSound: 1
-    UseDynamicShaderCompilation: 1
-    TheVideoSoundSystem: 0
-    IsInitIME: 0
-    AmpProfiling: 0
-    ProgLoading: 1
-    TheFontCacheConfig:
-      TextureHeight: 1024
-      TextureWidth: 1024
-      MaxNumTextures: 1
-      MaxSlotHeight: 48
-    SetFontCacheParams: 1
-    IsEnableDynamicCache: 1
-    TheFontPackParams:
-      NominalSize: 32
-      PadPixels: 2
-      TextureWidth: 512
-      TextureHeight: 512
-    SetFontPackParams: 1
-    GlyphCountLimit: 1000
-    SoundVolume: 10
-    IsMute: 0
---- !u!81 &1197792620
+--- !u!81 &867895565
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
+  m_GameObject: {fileID: 867895564}
   m_Enabled: 1
---- !u!124 &1197792621
+--- !u!124 &867895566
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
+  m_GameObject: {fileID: 867895564}
   m_Enabled: 1
---- !u!92 &1197792622
+--- !u!92 &867895567
 Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
+  m_GameObject: {fileID: 867895564}
   m_Enabled: 1
---- !u!20 &1197792623
+--- !u!20 &867895568
 Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
+  m_GameObject: {fileID: 867895564}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -182,12 +143,12 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
---- !u!4 &1197792624
+--- !u!4 &867895569
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1197792618}
+  m_GameObject: {fileID: 867895564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
