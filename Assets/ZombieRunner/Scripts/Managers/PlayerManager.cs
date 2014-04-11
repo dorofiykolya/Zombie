@@ -5,25 +5,25 @@ using System.Linq.Expressions;
 using System.Collections.Generic;
 namespace Runner
 {
-	public class PlayerManager : MonoBehaviour 
+    public class PlayerManager : ComponentManager 
 	{
-		public static void Restart ()
-		{
-			Distance = 0;
-			PlayerData.PlatformTypeRemainingDistance = 0.0f;
-			PlayerData.Distance = 0.0f;
-			
-			Camera.main.transform.parent = null;
-			
-			for(int i = 0; i < currentList.Count; i++)
-			{
-				Destroy(currentList[i].gameObject);
-			}
-			currentList.Clear();
-			Select(PlayerData.CharacterId);
-		}
+        public override void GameStart()
+        {
+            Distance = 0;
+            PlayerData.PlatformTypeRemainingDistance = 0.0f;
+            PlayerData.Distance = 0.0f;
+
+            Camera.main.transform.parent = null;
+
+            for (int i = 0; i < currentList.Count; i++)
+            {
+                Destroy(currentList[i].gameObject);
+            }
+            currentList.Clear();
+            Select(PlayerData.CharacterId);
+        }
 		
-		public static void Move (float moveSpeed)
+		public void Move (float moveSpeed)
 		{
 			Distance += Mathf.Abs(moveSpeed);
 			PlayerData.PlatformTypeRemainingDistance -= Mathf.Abs(moveSpeed);
@@ -39,22 +39,22 @@ namespace Runner
 		public float speedDistanceMultiply = 1f;
 		public float sideScrollSpeed = 5;
 
-        public static Runner.PlayerController[] collection;
-        public static List<Runner.PlayerController> currentList = new List<PlayerController>();
-		public static float Distance {get;private set;}
-		public static float MinimumSpeed{get; private set;}
-		public static float SpeedDistanceMultiply{get; private set;}
-		public static float SideScrollSpeed{get;private set;}
-		public static bool isStop;
+        public Runner.PlayerController[] collection;
+        public List<Runner.PlayerController> currentList = new List<PlayerController>();
+		public float Distance {get;private set;}
+		public float MinimumSpeed{get; private set;}
+		public float SpeedDistanceMultiply{get; private set;}
+		public float SideScrollSpeed{get;private set;}
+		public bool isStop;
 
-		public static Vector3 defaultCameraPosition;
+		public Vector3 defaultCameraPosition;
 
-		void Awake()
-		{
-			defaultCameraPosition = Camera.main.transform.position;
-		}
+        public override void Initialize()
+        {
+            defaultCameraPosition = Camera.main.transform.position;
+        }
 		
-		public static float Speed
+		public float Speed
 		{
 			get 
 			{
@@ -70,7 +70,7 @@ namespace Runner
 			}
 		}
 		
-		public static Runner.PlayerController Player
+		public Runner.PlayerController Current
 		{
 			get{
 				if(currentList.Count == 0)
@@ -81,7 +81,7 @@ namespace Runner
 			}
 		}
 		
-		public static void Select(int id)
+		public void Select(int id)
 		{
             currentList.Add((Runner.PlayerController)GameObject.Instantiate(GetById(PlayerValues.player)));
 			
@@ -107,7 +107,7 @@ namespace Runner
 			Camera.main.transform.localPosition = defaultCameraPosition;
 		}
 		
-		public static Runner.PlayerController GetById(int id)
+		public Runner.PlayerController GetById(int id)
 		{
 			foreach(var a in collection)
 			{
@@ -119,7 +119,7 @@ namespace Runner
 			return collection[0];
 		}
 
-		public static Runner.PlayerController GetCurrentById(int id)
+		public Runner.PlayerController GetCurrentById(int id)
 		{
 			foreach(var a in currentList)
 			{
@@ -131,7 +131,7 @@ namespace Runner
 			return currentList[0];
 		}
 
-		public static int GetMult()
+		public int GetMult()
 		{
 			if(GetCurrentById(1).ID == 1)
 			{
@@ -141,7 +141,7 @@ namespace Runner
 			return 0;
 		}
 
-		public static int GetGoldBonus()
+		public int GetGoldBonus()
 		{
 			if(GetCurrentById(2).ID == 2)
 			{
@@ -151,7 +151,7 @@ namespace Runner
 			return 0;
 		}
 
-		public static int GetMaxPlayers()
+		public int GetMaxPlayers()
 		{
 			if(GetCurrentById(0).ID == 0)
 			{

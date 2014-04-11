@@ -216,10 +216,13 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Locations\PlatformObject.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Locations\PlayerController.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\CameraManager.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\ComponentManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\CurrencyManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\EffectManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\ErrorManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\GUIPanelManager.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\GameController.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\ClickAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\InputManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LightManager.cs" />

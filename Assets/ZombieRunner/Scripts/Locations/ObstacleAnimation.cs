@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Runner
 {
-	public class ObstacleAnimation : MonoBehaviour
+    public class ObstacleAnimation : ComponentManager
 	{
 		private Animation thisAnimation;
 		
@@ -13,17 +13,16 @@ namespace Runner
 		
 		public float animationOffset = 0.0f;
 		
-		// Use this for initialization
-		void Awake()
-		{
-			thisAnimation = animation;
-			
-			thisAnimation[RUN1].wrapMode = WrapMode.Loop;
-			thisAnimation[RUN2].wrapMode = WrapMode.Loop;
-			thisAnimation[IDLE].wrapMode = WrapMode.Loop;
-			
-			idle();
-		}
+        public override void Initialize()
+        {
+            thisAnimation = animation;
+
+            thisAnimation[RUN1].wrapMode = WrapMode.Loop;
+            thisAnimation[RUN2].wrapMode = WrapMode.Loop;
+            thisAnimation[IDLE].wrapMode = WrapMode.Loop;
+
+            idle();
+        }
 		
 		public void run1()
 		{

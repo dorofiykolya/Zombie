@@ -13,7 +13,7 @@ namespace Runner
 		Upgrade
 	}
 
-	public class PlayerValues : MonoBehaviour 
+    public class PlayerValues : ComponentManager 
 	{
 		public static int[] levels = new int[]{0, 0, 0, 0, 0};
 		public static int[] player_1_prefs = new int[]{2, 3, 4, 5, 6};

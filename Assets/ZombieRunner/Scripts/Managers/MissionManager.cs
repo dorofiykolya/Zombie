@@ -7,82 +7,87 @@ using UnityEngine;
 namespace Runner 
 {
     [Serializable]
-    public class MissionManager : MonoBehaviour
+    public class MissionManager : ComponentManager
     {
-        private Dictionary<string, Mission> missions = new Dictionary<string, Mission>();
-		[SerializeField]
-        private Mission[] missionList;
-		[SerializeField]
-        private bool invalidated;
+        public Mission[] Missions;
+        [SerializeField]
+        private List<Mission> _queueMissions = new List<Mission>();
+        [SerializeField]
+        private List<Mission> _currentMissions = new List<Mission>(3);
+        [SerializeField]
+        private int _stack = 3;
+        [SerializeField]
+        private List<Mission> _completedMissions = new List<Mission>();
 
-        void Awake()
+        public event Action<Mission[], MissionManager> OnComplete;
+
+        public int Stack
         {
-            if(missionList != null)
+            get { return _stack; }
+            set
             {
-                missions.Clear();
-                foreach(var m in missionList)
+                _stack = value;
+                if (_stack <= 0) _stack = 1;
+                if (_currentMissions.Count < _stack)
                 {
-                    missions.Add(m.Id, m);
+                    var diff = _stack - _currentMissions.Count;
+                    for (var i = 0; i < diff && _queueMissions.Count > 0; i++)
+                    {
+                        _currentMissions.Add(_queueMissions[0]);
+                        _queueMissions.RemoveAt(0);
+                    }
+                }
+                else if(_currentMissions.Count > _stack)
+                {
+                    var diff = _currentMissions.Count - _stack;
+                    for (var i = 0; i < diff; i++)
+                    {
+                        _queueMissions.Add(_currentMissions[_currentMissions.Count - 1]);
+                        _currentMissions.RemoveAt(_currentMissions.Count - 1);
+                    }
                 }
             }
         }
 
-        public Mission this[string id]
+        public void Dispatch(string id, float value)
         {
-            get
+            List<Mission> missions = null;
+            foreach (var mission in _currentMissions)
             {
-                Mission result = null;
-                missions.TryGetValue(id, out result);
-                return result;
+                if (mission.Id == id)
+                {
+                    mission.Current = value;
+                    if (mission.Current >= mission.Target)
+                    {
+                        mission.IsCompleted = true;
+                        if (missions == null)
+                        {
+                            missions = new List<Mission>(1) {mission};
+                        }
+                    }
+                }
             }
-            set
+            if (missions != null && OnComplete != null)
             {
-                if (missions.ContainsKey(id))
-                    throw new ArgumentException("missions.ContainsKey(id) id:" + id);
-
-                missions.Add(id, value);
-                invalidated = true;
+                foreach (var m in missions)
+                {
+                    if (_currentMissions.Remove(m) && _queueMissions.Count > 0)
+                    {
+                        _currentMissions.Add(_queueMissions[0]);
+                        _queueMissions.RemoveAt(0);
+                    }
+                    if (_completedMissions.Contains(m) == false)
+                    {
+                        _currentMissions.Add(m);
+                    }
+                }
+                OnComplete.Invoke(missions.ToArray(), this);
             }
-        }
-
-        public Mission[] Missions
-        {
-            get
-            {
-                validate();
-                return missionList;
-            }
-        }
-
-        private void validate()
-        {
-            if(invalidated || missionList == null)
-            {
-                missionList = missions.Values.ToArray();
-                invalidated = false;
-            }
-        }
-
-        public void Remove(string Id)
-        {
-            missions.Remove(Id);
-            invalidated = true;
         }
 
         public void Load(Mission[] missions)
         {
-            if (missions != null)
-            {
-                foreach (var mission in missions)
-                {
-                    var thisMission = this[mission.Id];
-                    thisMission.Levels = mission.Levels;
-                    thisMission.Current = mission.Current;
-                    thisMission.Description = mission.Description;
-                    thisMission.Name = mission.Name;
-                }
-            }
-            invalidated = true;
+
         }
     }
 }

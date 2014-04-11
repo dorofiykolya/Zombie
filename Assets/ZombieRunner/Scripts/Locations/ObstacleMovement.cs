@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Runner
 {
-	public class ObstacleMovement : MonoBehaviour 
+    public class ObstacleMovement : ComponentManager 
 	{
 		private bool isTriggered;
 		private Transform parent;
@@ -35,7 +35,7 @@ namespace Runner
 			{
 				if (parent.localPosition.z <= parentCoord.z + transform.localPosition.z)
 				{
-					float distance = speed * (PlayerManager.Speed / PlayerManager.MinimumSpeed) * Time.deltaTime;
+					float distance = speed * (Player.Speed / Player.MinimumSpeed) * Time.deltaTime;
 					parent.position = Vector3.MoveTowards(parent.position, transform.position, distance);
 				}
 				else

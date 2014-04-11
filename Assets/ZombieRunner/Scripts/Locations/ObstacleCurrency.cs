@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Runner
 {
-    public class ObstacleCurrency : MonoBehaviour
+    public class ObstacleCurrency : ComponentManager
     {
 		void OnDisable() 
 		{

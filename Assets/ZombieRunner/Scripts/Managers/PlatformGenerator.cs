@@ -7,19 +7,27 @@ namespace Runner
 {
 	public class PlatformGenerator
 	{
-		private static LocationStack stack = new LocationStack();
-		private static Vector3 vectorHelper = new Vector3(0,0,0);
-		private static PlatformObject next;
+		private Vector3 vectorHelper = new Vector3(0,0,0);
+		private PlatformObject _next;
+        private LocationChildren _platforms;
+        private LocationDisposeManager _disposedManager;
+        private PlayerManager _player;
+
+        public PlatformGenerator(LocationChildren Platforms, LocationDisposeManager DisposedManager, PlayerManager player)
+        {
+            this._platforms = Platforms;
+            this._disposedManager = DisposedManager;
+            this._player = player;
+        }
 		
-		public static void Reset()
+		public void Reset()
 		{
-			stack.Reset();	
-			next = null;
+			_next = null;
 		}
 			
-		public static void Generate(float speed, Runner.PlayerController player)
+		public void Generate(float speed, Runner.PlayerController player)
 		{
-			Runner.PlatformObject platform = LocationManager.Platforms.Last;
+			Runner.PlatformObject platform = _platforms.Last;
 			bool isStartPlatform = false;
 			if(platform == null)
 			{
@@ -31,8 +39,8 @@ namespace Runner
 					return;
 				}
 				PlayerData.PlatformTypeRemainingDistance = Runner.LocationPlatformManager.GetDistanceByType(platform.Type);
-				next = platform.GetNextRandom();
-				LocationManager.Platforms.Add(platform);
+				_next = platform.GetNextRandom();
+                _platforms.Add(platform);
 			}
 			float distance = platform.Distance(player);
 			Vector3 size;
@@ -49,47 +57,47 @@ namespace Runner
 					}
 					if(nextType != PlayerData.PlatformType)
 					{
-						next = LocationPlatformManager.GetTransitionPlatform(PlayerData.PlatformType, nextType);
+						_next = LocationPlatformManager.GetTransitionPlatform(PlayerData.PlatformType, nextType);
 					}
-					if(next == null)
+					if(_next == null)
 					{
-						next = LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, Runner.PlayerManager.Distance);
+						_next = LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, player.Distance);
 					}
 					PlayerData.PlatformType = nextType;
 					PlayerData.PlatformTypeRemainingDistance += LocationPlatformManager.GetDistanceByType(nextType);
 				}
 				else
 				{
-					next = next != null? next : LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, Runner.PlayerManager.Distance);
+					_next = _next != null? _next : LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, _player.Distance);
 				}
 				LocationPlatformManager.GetSize(out size, platform);
 				vectorHelper.x = 0;
 				vectorHelper.y = 0;
 				vectorHelper.z = size.z - size.z / 2;
-				next.transform.position = platform.transform.position + vectorHelper;
-				platform = next;
+				_next.transform.position = platform.transform.position + vectorHelper;
+				platform = _next;
 				LocationPlatformManager.GetSize(out size, platform);
 				vectorHelper.x = 0;
 				vectorHelper.y = 0;
 				vectorHelper.z = size.z - size.z / 2;
 				platform.transform.position += vectorHelper;
 				distance = platform.Distance(player);
-				LocationManager.Platforms.Add(platform);
-				next = platform.GetNextRandom();
+                _platforms.Add(platform);
+				_next = platform.GetNextRandom();
 				count++;
 			}
 		}
 		
-		public static void Move(float speed, Runner.PlayerController player)
+		public void Move(float speed, Runner.PlayerController player)
 		{
-			var result = from c in LocationManager.Platforms.List
+            var result = from c in _platforms.List
 				where c.transform.position.z < player.transform.position.z
 					select c;
 			
 			foreach(var current in result)
 			{
 				current.AllowDispose = true;
-				LocationDisposeManager.Add(current);	
+				_disposedManager.Add(current);	
 			}
 		}
 		

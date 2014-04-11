@@ -14,8 +14,8 @@ namespace Runner
 		public string label;
 		public GetData getValue;
 	}
-	
-	public class StatisticsManager : MonoBehaviour
+
+    public class StatisticsManager : ComponentManager
 	{
 		
 		private static bool IsEditor = Application.isEditor;
@@ -36,7 +36,7 @@ namespace Runner
 		{
 			if(IsEditor)
 			{
-				speed = PlayerManager.Speed;
+				speed = Player.Speed;
 			}
 		}
 	}

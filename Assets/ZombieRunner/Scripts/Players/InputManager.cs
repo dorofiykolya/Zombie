@@ -13,7 +13,7 @@ namespace Runner
 		Left = 4
 	}
 
-    public class InputManager : MonoBehaviour
+    public class InputManager : ComponentManager
     {
 		private SwipeDirection sSwipeDirection;
 		
@@ -45,38 +45,38 @@ namespace Runner
 		
 		void Update()
 		{
-			if(StateManager.Current == State.LOSE || StateManager.Current == State.LOAD)
+            if (States.Current == State.LOSE || States.Current == State.LOAD)
 			{
 				return;
 			}
 			//ARROWS
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
-				if (!PlayerManager.currentList[0].bInAir)
+                if (!Player.currentList[0].bInAir)
 				{
-					for (int i = 0; i < PlayerManager.currentList.Count; i++)
+                    for (int i = 0; i < Player.currentList.Count; i++)
 					{
-						PlayerManager.currentList[i].doJump();
+                        Player.currentList[i].doJump();
 					}
 				}
 			}
 			if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
-				if (!PlayerManager.currentList[0].bInDuck)
+                if (!Player.currentList[0].bInDuck)
 				{
-					for (int i = 0; i < PlayerManager.currentList.Count; i++)
+                    for (int i = 0; i < Player.currentList.Count; i++)
 					{
-						PlayerManager.currentList[i].doSlide();
+                        Player.currentList[i].doSlide();
 					}
 				}
 			}
 			if (Input.GetKeyDown(KeyCode.LeftArrow))
 			{
-				WaypointManager.changeWP(false);
+				Waypoint.changeWP(false);
 			}
 			if (Input.GetKeyDown(KeyCode.RightArrow))
 			{
-				WaypointManager.changeWP(true);
+                Waypoint.changeWP(true);
 			}
 			//TOUCH
 			if (iTouchStateFlag == 0 && Input.GetMouseButtonDown(0))
@@ -100,28 +100,28 @@ namespace Runner
 					switch (sSwipeDirection)
 					{
 						case SwipeDirection.Jump:
-							if (!PlayerManager.currentList[0].bInAir)
+                            if (!Player.currentList[0].bInAir)
 							{
-								for (int i = 0; i < PlayerManager.currentList.Count; i++)
+                                for (int i = 0; i < Player.currentList.Count; i++)
 								{
-									PlayerManager.currentList[i].doJump();
+                                    Player.currentList[i].doJump();
 								}
 							}
 							break;
 						case SwipeDirection.Duck:
-							if (!PlayerManager.currentList[0].bInDuck)
+                            if (!Player.currentList[0].bInDuck)
 							{
-								for (int i = 0; i < PlayerManager.currentList.Count; i++)
+                                for (int i = 0; i < Player.currentList.Count; i++)
 								{
-									PlayerManager.currentList[i].doSlide();
+                                    Player.currentList[i].doSlide();
 								}
 							}
 						break;
 						case SwipeDirection.Left:
-							WaypointManager.changeWP(false);
+                            Waypoint.changeWP(false);
 							break;
 						case SwipeDirection.Right:
-							WaypointManager.changeWP(true);
+                            Waypoint.changeWP(true);
 							break;
 					}
 				}

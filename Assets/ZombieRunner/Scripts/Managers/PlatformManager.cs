@@ -4,7 +4,7 @@ using System;
 namespace Runner
 {
 	[ExecuteInEditMode]
-	public class PlatformManager : MonoBehaviour
+    public class PlatformManager : ComponentManager
 	{
 		public PlatformTypeValue[] List;
 		

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 namespace Runner
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : ComponentManager
     {
 
         private Vector3 targetPosition;
@@ -50,8 +50,8 @@ namespace Runner
 		
 		private float bornTime;
 		private int soldireLife;
-		
-		public float Distance {get{return PlayerManager.Distance;}}
+
+        public float Distance { get { return Player.Distance; } }
 
 		private Transform playerRotate;
 		private ParticleSystem particle;
@@ -99,12 +99,12 @@ namespace Runner
         // Update is called once per frame
         void Update()
         {
-			if(StateManager.Current == State.LOSE)
+			if(States.Current == State.LOSE)
 			{
 				return;
 			}
 
-			var speed = PlayerManager.Speed / PlayerManager.MinimumSpeed;
+            var speed = Player.Speed / Player.MinimumSpeed;
 
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
@@ -142,7 +142,7 @@ namespace Runner
 
 				targetPosition.y = fCurrentHeight;
 				transform.position = new Vector3(transform.position.x, fCurrentHeight, transform.position.z);
-				Camera.main.transform.localPosition = new Vector3(PlayerManager.defaultCameraPosition.x, PlayerManager.defaultCameraPosition.y - fCurrentHeight, PlayerManager.defaultCameraPosition.z);
+                Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 			}
 
 			if(bJumpFlag == true)
@@ -297,20 +297,20 @@ namespace Runner
 		{
 			if(isPatientZero)
 			{
-				if(PlayerManager.currentList.Count > 1)
+                if (Player.currentList.Count > 1)
 				{
-					PlayerManager.currentList.RemoveAt(gameID);
-					
-					for(int i = 0; i < PlayerManager.currentList.Count; i++)
+                    Player.currentList.RemoveAt(gameID);
+
+                    for (int i = 0; i < Player.currentList.Count; i++)
 					{
-						PlayerManager.currentList[i].gameID = i;
+                        Player.currentList[i].gameID = i;
 					}
-					
-					PlayerManager.currentList[0].isPatientZero = true;
+
+                    Player.currentList[0].isPatientZero = true;
 					
 					Camera.main.transform.parent = null;
-					
-					Camera.main.transform.parent = PlayerManager.currentList[0].gameObject.transform;
+
+                    Camera.main.transform.parent = Player.currentList[0].gameObject.transform;
 					
 					Camera.main.transform.localPosition = new Vector3(0, Camera.main.transform.localPosition.y, Camera.main.transform.localPosition.z);
 					
@@ -320,17 +320,17 @@ namespace Runner
 				{
 					am.death();
 
-					StateManager.Current = State.LOSE;
-					PlayerManager.isStop = true;
+					States.Current = State.LOSE;
+                    Player.isStop = true;
 				}
 			}
 			else
 			{
-				PlayerManager.currentList.RemoveAt(gameID);
-				
-				for(int i = ID; i < PlayerManager.currentList.Count; i++)
+                Player.currentList.RemoveAt(gameID);
+
+                for (int i = ID; i < Player.currentList.Count; i++)
 				{
-					PlayerManager.currentList[i].gameID = i;
+                    Player.currentList[i].gameID = i;
 				}
 				
 				Destroy(gameObject);
@@ -364,7 +364,7 @@ namespace Runner
             }
             else if (other.gameObject.CompareTag("Currency"))
             {
-				CurrencyManager.goldCount += (1 + PlayerManager.GetGoldBonus());
+                CurrencyManager.goldCount += (1 + Player.GetGoldBonus());
 				other.transform.localScale = new Vector3(0,-1000,0);
             }
 			else if (other.gameObject.CompareTag("Human"))
@@ -377,16 +377,16 @@ namespace Runner
 
 				other.gameObject.collider.enabled = false;
 				other.gameObject.GetComponent<ObstacleHuman>().movement.speed = 0;
-				
-				if(PlayerManager.currentList.Count < PlayerManager.GetMaxPlayers())
+
+                if (Player.currentList.Count < Player.GetMaxPlayers())
 				{
-					PlayerManager.currentList.Add((Runner.PlayerController)GameObject.Instantiate(PlayerManager.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
-					PlayerManager.currentList[PlayerManager.currentList.Count - 1].isPatientZero = false;
-					PlayerManager.currentList[PlayerManager.currentList.Count - 1].Initialize();
-					PlayerManager.currentList[PlayerManager.currentList.Count - 1].gameID = PlayerManager.currentList.Count - 1;
+                    Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
+                    Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
+                    Player.currentList[Player.currentList.Count - 1].Initialize();
+                    Player.currentList[Player.currentList.Count - 1].gameID = Player.currentList.Count - 1;
 					
 					var game = GameObject.FindGameObjectWithTag("Player");
-					PlayerManager.currentList[PlayerManager.currentList.Count - 1].gameObject.transform.parent = game.transform;
+                    Player.currentList[Player.currentList.Count - 1].gameObject.transform.parent = game.transform;
 				}
 			}
         }

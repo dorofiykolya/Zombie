@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Runner;
+using UnityEngine;
 using System.Collections;
 
-public class LightManager : MonoBehaviour {
+public class LightManager : ComponentManager
+{
 
 	private float time = 0.0f;
 

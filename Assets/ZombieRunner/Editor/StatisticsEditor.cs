@@ -23,16 +23,17 @@ namespace Runner
 				DrawInfo("Distance", PlayerData.Distance);
 				DrawInfo("TypeRemainingDistance", PlayerData.PlatformTypeRemainingDistance);
 				DrawInfo("PlatformMode", PlayerData.PlatformType);
-				DrawInfo("Speed", Runner.PlayerManager.Speed);
+                DrawInfo("Speed", ((ComponentManager)target).Player.Speed);
 			Separate();
 			GUI.color = ColorEditor.Title;
 			EditorGUILayout.LabelField("Platform Info", EditorStyles.boldLabel);
 			GUI.color = Color.white;
-				if(Runner.LocationManager.Platforms != null)
+
+                if (((ComponentManager)target).Location.Platforms != null)
 				{
-					DrawInfo("In Location Platform Count:", Runner.LocationManager.Platforms.Count);
+                    DrawInfo("In Location Platform Count:", ((ComponentManager)target).Location.Platforms.Count);
 				}
-				DrawInfo("In Dispose List", Runner.LocationDisposeManager.Count);
+                DrawInfo("In Dispose List", ((ComponentManager)target).Location.DisposedManager.Count);
 		}
         
         private void Separate()

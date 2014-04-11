@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Runner
 {
-	public class LocationObject : MonoBehaviour 
+    public class LocationObject : ComponentManager 
 	{
 
 		private Material material;

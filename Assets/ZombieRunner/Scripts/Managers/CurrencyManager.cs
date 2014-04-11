@@ -2,7 +2,7 @@
 using System.Collections;
 namespace Runner
 {
-	public class CurrencyManager : MonoBehaviour 
+    public class CurrencyManager : ComponentManager 
 	{
 		public UILabel multi;
 		public UILabel gold;
@@ -23,8 +23,8 @@ namespace Runner
 
 		void Update()
 		{
-			score.text = Mathf.Round(PlayerManager.Distance / PlayerManager.MinimumSpeed * currentMult).ToString();
-			multi.text = "x" + (currentMult + PlayerManager.GetMult());
+            score.text = Mathf.Round(Player.Distance / Player.MinimumSpeed * currentMult).ToString();
+            multi.text = "x" + (currentMult + Player.GetMult());
 			gold.text = goldCount.ToString ();
 		}
 	}

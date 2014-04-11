@@ -18,7 +18,7 @@ namespace Runner
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
 	
-	public class ClickAction : MonoBehaviour 
+	public class ClickAction : ComponentManager 
 	{
 		public GUIAction action;
 		void OnClick()
@@ -26,7 +26,7 @@ namespace Runner
 			switch(action)
 			{
 				case GUIAction.Pause:
-					Manager.Restart();
+                    Game.GameRestart();
 					break;
 				case GUIAction.Settings:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();

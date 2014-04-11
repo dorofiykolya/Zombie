@@ -21,7 +21,7 @@ namespace Runner
                 GUI.color = Color.white;
                 return;  
             }
-
+            /*
             var list = mission.Missions;
             GUI.color = ColorEditor.Title;
             GUILayout.Label("Missions:");
@@ -72,9 +72,9 @@ namespace Runner
                     m.Description = "empty";
                     mission[m.Id] = m;
                 }
-            }
+            }*/
         }
-
+        /*
         private void InspectMissionLevel(Mission mission)
         {
             GUILayout.BeginVertical();
@@ -106,6 +106,6 @@ namespace Runner
                 mission.Add(new MissionLevel());
             }
             GUILayout.EndVertical();
-        }
+        }*/
     }
 }

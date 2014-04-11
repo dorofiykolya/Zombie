@@ -1,18 +1,19 @@
+using Runner;
 using UnityEngine;
 using System.Collections;
 
 namespace Runners
 {
-	public class PlayerController : MonoBehaviour
+    public class PlayerController : ComponentManager
 	{
 		private Transform currentTransform;
 		
 		public int ID;
 		
-		void Awake()
-		{
-			currentTransform = gameObject.transform;	
-		}
+        public override void Initialize()
+        {
+            currentTransform = gameObject.transform;	
+        }
 		// Use this for initialization
 		void Start ()
 		{

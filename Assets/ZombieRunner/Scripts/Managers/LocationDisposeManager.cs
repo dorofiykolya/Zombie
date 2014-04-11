@@ -7,11 +7,16 @@ namespace Runner
 {
 	public class LocationDisposeManager
 	{
-		private static List<Runner.PlatformObject> list = new List<Runner.PlatformObject> ();
+		private List<Runner.PlatformObject> list = new List<Runner.PlatformObject> ();
+        private LocationChildren children;
+		public int Count{get{return list.Count;}}
+
+        public LocationDisposeManager(LocationChildren children)
+        {
+            this.children = children;
+        }
 		
-		public static int Count{get{return list.Count;}}
-		
-		public static void Add(Runner.PlatformObject item)
+		public void Add(Runner.PlatformObject item)
 		{
 			if (item.AllowDispose) {
 				if (list.Contains (item) == false) {
@@ -20,14 +25,14 @@ namespace Runner
 			}
 		}
 
-		public static void RemoveAll()
+		public void RemoveAll()
 		{
 			list.Clear();
 		}
 		
-		public static void Update (Runner.PlayerController player)
+		public void Update (Runner.PlayerController player)
 		{
-			List<Runner.PlatformObject> collection = LocationManager.Platforms.List;
+            List<Runner.PlatformObject> collection = children.List;
 			var len = collection.Count;
 			Runner.PlatformObject platform = null;
 			var distance = player.gameObject.transform.position;
@@ -61,7 +66,7 @@ namespace Runner
 				{
 					index++;
 					platform.AllowDispose = false;
-					Runner.LocationManager.Platforms.Remove(platform);
+                    children.Remove(platform);
 				}
 				else
 				{

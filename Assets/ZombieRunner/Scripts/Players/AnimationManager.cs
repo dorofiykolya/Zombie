@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Runner
 {
-    public class AnimationManager : MonoBehaviour
+    public class AnimationManager : ComponentManager
     {
         private Animation thisAnimation;
 
@@ -17,25 +17,24 @@ namespace Runner
 
 		public float animationOffset = 0.0f;
 
-        // Use this for initialization
-        void Awake()
+        public override void Initialize()
         {
             thisAnimation = animation;
 
-			thisAnimation[RUN].wrapMode = WrapMode.Loop;
-			thisAnimation[JUMP].wrapMode = WrapMode.ClampForever;
-			thisAnimation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
-			thisAnimation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
-			thisAnimation[EAT].wrapMode = WrapMode.ClampForever;
-			thisAnimation[DEATH].wrapMode = WrapMode.ClampForever;
-			thisAnimation[SLIDE].wrapMode = WrapMode.Loop;
+            thisAnimation[RUN].wrapMode = WrapMode.Loop;
+            thisAnimation[JUMP].wrapMode = WrapMode.ClampForever;
+            thisAnimation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
+            thisAnimation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
+            thisAnimation[EAT].wrapMode = WrapMode.ClampForever;
+            thisAnimation[DEATH].wrapMode = WrapMode.ClampForever;
+            thisAnimation[SLIDE].wrapMode = WrapMode.Loop;
 
             run();
         }
 
 		public void updateSpeed()
 		{
-			var speed = PlayerManager.Speed / PlayerManager.MinimumSpeed + animationOffset;
+            var speed = Player.Speed / Player.MinimumSpeed + animationOffset;
 			thisAnimation[RUN].speed = speed; 
 			thisAnimation[JUMP].speed = speed;
 			thisAnimation[SLIDE].speed = speed;

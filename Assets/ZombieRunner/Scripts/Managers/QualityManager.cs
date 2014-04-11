@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Runner
 {
-    public class QualityManager : UnityEngine.MonoBehaviour
+    public class QualityManager : ComponentManager
     {
         private static int currentQuality = -1;
 

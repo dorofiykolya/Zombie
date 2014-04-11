@@ -3,14 +3,14 @@ using System.Collections;
 
 namespace Runner
 {
-	public class UIScoreLabel : MonoBehaviour {
+	public class UIScoreLabel : ComponentManager {
 
 		public UILabel Label;
 
 		void Update () 
 		{
 			if(Label == null) return;
-			Label.text = LabelFormat.FormatNumber(PlayerManager.Distance);
+			Label.text = LabelFormat.FormatNumber(Player.Distance);
 		}
 	}
 }

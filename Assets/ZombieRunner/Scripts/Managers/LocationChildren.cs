@@ -8,11 +8,19 @@ namespace Runner
 		private Vector3 vectorHelper = new Vector3(0,0,0);
 		
 		private List<Runner.PlatformObject> list = new List<Runner.PlatformObject>(64);
+        private GameObject platformContainer;
+        private GameObject disposedPlatformContainer;
 		
 		public Runner.PlatformObject Last{get;private set;}
 		public List<Runner.PlatformObject> List {get{return list;}}
 		
 		public int Count{get{return list.Count;}}
+
+        public LocationChildren(GameObject PlatformContainer, GameObject DisposedPlatformContainer)
+        {
+            this.platformContainer = PlatformContainer;
+            this.disposedPlatformContainer = DisposedPlatformContainer;
+        }
 		
 		public void Add(Runner.PlatformObject platform)
 		{
@@ -29,7 +37,7 @@ namespace Runner
 					Last = platform;	
 				}
 				platform.gameObject.SetActive(true);
-				LocationManager.PlatformContainer.AddChild(platform.gameObject);
+				platformContainer.AddChild(platform.gameObject);
 			}
 		}
 		
@@ -43,7 +51,7 @@ namespace Runner
 			}
 			Runner.LocationPlatformManager.PushPlatform(platform);
 			platform.gameObject.SetActive(false);
-			LocationManager.DisposedPlatformContainer.AddChild(platform.gameObject);
+			disposedPlatformContainer.AddChild(platform.gameObject);
 		}
 		
 		public void Move(Vector3 move)
@@ -75,7 +83,7 @@ namespace Runner
 		{
 			foreach(var platform in list)
 			{
-				LocationManager.DisposedPlatformContainer.AddChild(platform.gameObject);
+				disposedPlatformContainer.AddChild(platform.gameObject);
 				Runner.LocationPlatformManager.PushPlatform(platform);
 				platform.InPlatformList = false;
 				platform.AllowDispose = false;

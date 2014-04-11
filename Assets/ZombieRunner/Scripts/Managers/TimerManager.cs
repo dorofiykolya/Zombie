@@ -2,7 +2,8 @@
 using System.Collections;
 namespace Runner
 {
-	public class TimerManager : MonoBehaviour {
+    public class TimerManager : ComponentManager
+    {
 		
 		
 		public static event System.Action<float> OnTimer;

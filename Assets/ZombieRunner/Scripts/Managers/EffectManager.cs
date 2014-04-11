@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Runner
 {
-	public class EffectManager : MonoBehaviour
+    public class EffectManager : ComponentManager
 	{
 		
 		
@@ -30,26 +30,18 @@ namespace Runner
 		float deltaTime = 0.0f;
 		float fps = 0.0f;
 		
-		void Awake()
-		{
-			Dist = SetDist;
-			Near = SetNear;
-			Far = SetFar;
-			Dynamic = SetDynamic;
-			currentCamera = Camera.main; 
-			if(currentCamera != null)
-			{
-				projectionMatrix = currentCamera.projectionMatrix;	
-			}
-		}
-		// Use this for initialization
-		void Start ()
-		{
-			Dist = SetDist;
-			Near = SetNear;
-			Far = SetFar;
-			Dynamic = SetDynamic;
-		}
+        public override void Initialize()
+        {
+            Dist = SetDist;
+            Near = SetNear;
+            Far = SetFar;
+            Dynamic = SetDynamic;
+            currentCamera = Camera.main;
+            if (currentCamera != null)
+            {
+                projectionMatrix = currentCamera.projectionMatrix;
+            }
+        }
 
 		void OnGUI()
 		{
@@ -66,7 +58,7 @@ namespace Runner
 			if(SetDynamic)
 			{
 				//SetNear.Set(Mathf.Abs(Mathf.Sin(PlayerManager.Distance / SetDistanceDelim) * SetDynamicNearMultiply.x), Mathf.Abs(Mathf.Sin(PlayerManager.Distance / SetDistanceDelim)) * SetDynamicNearMultiply.y, 0 ,0);
-				SetFar.Set(Mathf.Sin(PlayerManager.Distance / SetDistanceDelim) * SetDynamicFarMultiply.x, Mathf.Sin(PlayerManager.Distance / SetDistanceDelim) * SetDynamicFarMultiply.y, 0 ,0);
+				SetFar.Set(Mathf.Sin(Player.Distance / SetDistanceDelim) * SetDynamicFarMultiply.x, Mathf.Sin(Player.Distance / SetDistanceDelim) * SetDynamicFarMultiply.y, 0 ,0);
 			}
 			
 			Dist = SetDist;

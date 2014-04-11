@@ -18,7 +18,7 @@ namespace Runner
 	}
 	
 	[AddComponentMenu("Runner/GUI/Panel")]
-	public class GUIPanelManager : MonoBehaviour
+    public class GUIPanelManager : ComponentManager
 	{
 		private static Dictionary<PanelType, GUIPanelManager> dictionary = new Dictionary<PanelType, GUIPanelManager>();
 		public static GUIPanelManager Get(PanelType panel)
@@ -34,32 +34,21 @@ namespace Runner
 		public static PanelType currentPanel = PanelType.MainMenu;
 		public PanelType panel;
 		
-		void Awake()
-		{
-			if(dictionary.ContainsKey(panel))
-			{
-				Debug.LogError("GUIPanelMenu is already exist with key:" + panel);	
-				return;
-			}
-			dictionary.Add(panel, this);
-
-            if(panel != PanelType.MainMenu)
+        public override void Initialize()
+        {
+            if (dictionary.ContainsKey(panel))
             {
-				PlayerManager.isStop = true;
+                Debug.LogError("GUIPanelMenu is already exist with key:" + panel);
+                return;
+            }
+            dictionary.Add(panel, this);
+
+            if (panel != PanelType.MainMenu)
+            {
+                Player.isStop = true;
                 gameObject.SetActive(false);
             }
-		}
-		
-		void Start ()
-		{
-			
-		}
-		
-		
-		void Update ()
-		{
-		
-		}
+        }
 		
 		public void Show()
 		{

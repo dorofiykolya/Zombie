@@ -14,23 +14,24 @@ namespace Runner
 			
 		}
 	}
-	
-	public class PlatformInfoManager : MonoBehaviour {
+
+    public class PlatformInfoManager : ComponentManager
+    {
 		
 		public static List<PlatformInfo> List = new List<PlatformInfo>();
 		private static Dictionary<int,int> Type;
 		
-		void Awake()
-		{
-			if(Type == null)
-			{
-				Type = new Dictionary<int, int>(List.Count);	
-			}
-			foreach(var current in List)
-			{
-				Type[current.type] = current.distance;	
-			}
-		}
+        public override void Initialize()
+        {
+            if (Type == null)
+            {
+                Type = new Dictionary<int, int>(List.Count);
+            }
+            foreach (var current in List)
+            {
+                Type[current.type] = current.distance;
+            }
+        }
 		
 		public static int GetDistanceByType(int type)
 		{

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
 namespace Runner
@@ -17,26 +18,71 @@ namespace Runner
     [RequireComponent(typeof(Runner.MissionManager))]
     [RequireComponent(typeof(Runner.StorageManager))]
     [RequireComponent(typeof(Runner.QualityManager))]
-	public class Manager : MonoBehaviour {
 
-		public static void Restart ()
+	public class Manager : MonoBehaviour 
+    {
+        public static Manager Instance { get; private set; }
+
+        public MissionManager Missions { get; private set; }
+        public QualityManager Quality { get; private set; }
+        public PlayerManager Player { get; private set; }
+        public TimerManager Timer { get; set; }
+        public StateManager States { get; private set; }
+        public CameraManager CamerasManager { get; private set; }
+        public WaypointManager Waypoint { get; private set; }
+        public GameManager Game { get; private set; }
+        public LocationManager Location { get; private set; }
+
+        private List<ComponentManager> components = new List<ComponentManager>();
+        private GameController gameController;
+
+	    void Awake()
+	    {
+	        Instance = this;
+            Game = new GameManager(components);
+	        Missions = GetComponent<MissionManager>();
+	        Quality = GetComponent<QualityManager>();
+	        Player = GetComponent<PlayerManager>();
+	        Timer = GetComponent<TimerManager>();
+	        States = GetComponent<StateManager>();
+	        CamerasManager = GetComponent<CameraManager>();
+            Location = GetComponent<LocationManager>();
+            Waypoint = GetComponent<WaypointManager>();
+            gameController = new GameController(Game, this);
+
+            var componentManagers = GetComponents<ComponentManager>();
+            foreach (var c in componentManagers)
+            {
+                Register(c);
+            }
+	    }
+
+		/*public static void Restart ()
 		{
-			LocationManager.Restart();
+			//LocationManager.Restart();
 			StateManager.Current = State.GAME;
 			PlayerManager.isStop = false;
 			Time.timeScale = 1;
-		}
+		}*/
 		
 		
-		// Use this for initialization
+
 		void Start () {
 			
 		}
 		
-		// Update is called once per frame
+
 		void Update () {
 			
 		}
-		
-	}
+
+
+        internal void Register(ComponentManager componentManager)
+        {
+            if (components.Contains(componentManager) == false)
+            {
+                components.Add(componentManager);
+            }
+        }
+    }
 }
