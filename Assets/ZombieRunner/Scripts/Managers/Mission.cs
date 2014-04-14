@@ -16,5 +16,25 @@ namespace Runner
         public float Current;
         public float Target;
         public bool IsCompleted;
+
+        public Mission Clone()
+        {
+            var m = new Mission();
+            m.Id = Id;
+            m.Name = Name;
+            m.Description = Description;
+            m.Image = Image;
+            m.Target = Target;
+            return m;
+        }
+
+        public void Set(Mission value)
+        {
+            Id = value.Id;
+            Name = value.Name;
+            Description = value.Description;
+            Image = value.Image;
+            Target = value.Target;
+        }
     }
 }

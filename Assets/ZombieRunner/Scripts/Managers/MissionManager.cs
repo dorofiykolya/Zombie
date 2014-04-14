@@ -9,79 +9,100 @@ namespace Runner
     [Serializable]
     public class MissionManager : ComponentManager
     {
-        public Mission[] Missions;
-        [SerializeField]
-        private List<Mission> _queueMissions = new List<Mission>();
-        [SerializeField]
-        private List<Mission> _currentMissions = new List<Mission>(3);
-        [SerializeField]
-        private int _stack = 3;
-        [SerializeField]
-        private List<Mission> _completedMissions = new List<Mission>();
+        public Mission[] QueueMissions;
+        public Mission[] CurrentMissions;
+        public Mission[] CompletedMissions;
+        public Mission[] LastMissions;
+
+        public int Stack = 3;
 
         public event Action<Mission[], MissionManager> OnComplete;
-
-        public int Stack
-        {
-            get { return _stack; }
-            set
-            {
-                _stack = value;
-                if (_stack <= 0) _stack = 1;
-                if (_currentMissions.Count < _stack)
-                {
-                    var diff = _stack - _currentMissions.Count;
-                    for (var i = 0; i < diff && _queueMissions.Count > 0; i++)
-                    {
-                        _currentMissions.Add(_queueMissions[0]);
-                        _queueMissions.RemoveAt(0);
-                    }
-                }
-                else if(_currentMissions.Count > _stack)
-                {
-                    var diff = _currentMissions.Count - _stack;
-                    for (var i = 0; i < diff; i++)
-                    {
-                        _queueMissions.Add(_currentMissions[_currentMissions.Count - 1]);
-                        _currentMissions.RemoveAt(_currentMissions.Count - 1);
-                    }
-                }
-            }
-        }
 
         public void Dispatch(string id, float value)
         {
             List<Mission> missions = null;
-            foreach (var mission in _currentMissions)
+            foreach (var mission in CurrentMissions)
             {
                 if (mission.Id == id)
                 {
                     mission.Current = value;
-                    if (mission.Current >= mission.Target)
+                    if (mission.IsCompleted == false && mission.Current >= mission.Target)
                     {
                         mission.IsCompleted = true;
                         if (missions == null)
                         {
                             missions = new List<Mission>(1) {mission};
                         }
+                        else
+                        {
+                            missions.Add(mission);
+                        }
                     }
                 }
             }
-            if (missions != null && OnComplete != null)
+            if (missions != null)
             {
+                var tempList = new List<Mission>(LastMissions);
                 foreach (var m in missions)
                 {
-                    if (_currentMissions.Remove(m) && _queueMissions.Count > 0)
-                    {
-                        _currentMissions.Add(_queueMissions[0]);
-                        _queueMissions.RemoveAt(0);
-                    }
-                    if (_completedMissions.Contains(m) == false)
-                    {
-                        _currentMissions.Add(m);
-                    }
+                    tempList.Add(m);
                 }
-                OnComplete.Invoke(missions.ToArray(), this);
+                LastMissions = tempList.ToArray();
+                if (OnComplete != null)
+                {
+                    OnComplete.Invoke(missions.ToArray(), this);
+                }
+            }
+        }
+
+        public override void GameStart()
+        {
+            LastMissions = new Mission[0];
+            ClearStack();
+        }
+
+        public override void GameStop()
+        {
+            ClearStack();
+        }
+
+        private void ClearStack()
+        {
+            var tempCompleted = new List<Mission>(CompletedMissions);
+            foreach (var m in CurrentMissions)
+            {
+                if (m.IsCompleted)
+                {
+                    tempCompleted.Add(m);
+                }
+            }
+            CompletedMissions = tempCompleted.ToArray();
+
+            var index = 0;
+            var len = CurrentMissions.Length;
+            Mission current;
+            for (var i = 0; i < len; i++)
+            {
+                current = CurrentMissions[i];
+                if (current.IsCompleted == false)
+                {
+                    CurrentMissions[index] = current;
+                    index++;
+                }
+            }
+            var tempQueue = QueueMissions.ToList();
+            while (index <= Stack && tempQueue.Count > 0)
+            {
+                CurrentMissions[index] = tempQueue[0];
+                tempQueue.RemoveAt(0);
+                index++;
+            }
+            QueueMissions = tempQueue.ToArray();
+            if (CurrentMissions.Length > index)
+            {
+                var temp = CurrentMissions.ToList();
+                temp.Capacity = index;
+                CurrentMissions = temp.ToArray();
             }
         }
 

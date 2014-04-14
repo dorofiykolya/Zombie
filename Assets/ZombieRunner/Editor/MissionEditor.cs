@@ -11,101 +11,99 @@ namespace Runner
     [CanEditMultipleObjects]
     class MissionEditor : Editor
     {
+        private bool mFoldLast;
+        private bool mFoldCurrent;
+        private bool mFoldCompleted;
+
         public override void OnInspectorGUI()
         {
-            var mission = GameObject.FindObjectOfType<MissionManager>();
-            if(mission == null)
+            var manager = GameObject.FindObjectOfType<MissionManager>();
+            if(manager == null)
             {
                 GUI.color = Color.red;
                 GUILayout.Label("ERROR, MissionManager not found!!!");
                 GUI.color = Color.white;
                 return;  
             }
-            /*
-            var list = mission.Missions;
-            GUI.color = ColorEditor.Title;
-            GUILayout.Label("Missions:");
+
+            GUI.color = Color.green;
+            if(GUILayout.Button("EDITOR"))
+            {
+                EditorWindow.GetWindow<MissionWidowEditor>("Missions", true).Show();
+                return;
+            }
             GUI.color = Color.white;
-            bool color = false;
-            foreach(var currentMission in list)
+            manager.Stack = EditorGUILayout.IntSlider("Stack", manager.Stack, 1, 50);
+
+            var queueCount = manager.QueueMissions != null ? manager.QueueMissions.Length : 0;
+
+            EditorGUILayout.LabelField("Missions", queueCount.ToString());
+
+            var completedCount = manager.CompletedMissions != null ? manager.CompletedMissions.Length : 0;
+            var currentCount = manager.CurrentMissions != null ? manager.CurrentMissions.Length : 0;
+            var lastCount = manager.LastMissions != null ? manager.LastMissions.Length : 0;
+
+            mFoldCompleted = EditorGUILayout.Foldout(mFoldCompleted, "Last:\t\t\t" + completedCount);
+            if (mFoldCompleted)
             {
-                color = !color;
-                EditorGUILayout.Separator();
-                GUILayout.BeginHorizontal();
-                GUI.color = color ? Color.white : Color.grey;
-                GUI.contentColor = color ? Color.white : Color.cyan;
-                GUILayout.Label("Mission:");
-                if(GUILayout.Button("X"))
-                {
-                    mission.Remove(currentMission.Id);
-                    return;
-                }
-                GUILayout.EndHorizontal();
-
-                var lastID = currentMission.Id;
-                var id = EditorGUILayout.TextField("id:", currentMission.Id);
-                if(mission[id] == null && id != lastID)
-                {
-                    mission.Remove(currentMission.Id);
-                    currentMission.Id = id;
-                    mission[id] = currentMission;
-                }
-                currentMission.Name = EditorGUILayout.TextField("name:", currentMission.Name);
-                currentMission.Description = EditorGUILayout.TextField("description:", currentMission.Description);
-                currentMission.ResetOnCompleted = EditorGUILayout.Toggle("resetOnCompleted:", currentMission.ResetOnCompleted);
-
-                GUILayout.BeginHorizontal();
-                GUILayout.Space(15.0f);
-                InspectMissionLevel(currentMission);
-                GUILayout.EndHorizontal();
+                Inspect(manager.CompletedMissions);
             }
-
-            GUI.color = Color.cyan;
-
-            if (mission["empty"] == null)
+            mFoldCurrent = EditorGUILayout.Foldout(mFoldCurrent, "Current: \t" + currentCount);
+            if(mFoldCurrent)
             {
-                if (GUILayout.Button("Add Mission"))
-                {
-                    var m = new Mission();
-                    m.Id = "empty";
-                    m.Name = "empty";
-                    m.Description = "empty";
-                    mission[m.Id] = m;
-                }
-            }*/
+                Inspect(manager.CurrentMissions);
+            }
+            mFoldLast = EditorGUILayout.Foldout(mFoldLast, "Last:\t\t\t" + lastCount);
+            if (mFoldLast)
+            {
+                Inspect(manager.LastMissions);
+            }
         }
-        /*
-        private void InspectMissionLevel(Mission mission)
+
+        private void Inspect(Mission[] list)
         {
+            GUILayout.BeginHorizontal();
+            GUILayout.Space(30.0f);
             GUILayout.BeginVertical();
-            var levels = mission.Levels;
-            MissionLevel current;
-            for (var i = 0; i < levels.Length; i++ )
+            if(list == null || list.Length == 0)
             {
-                if(i != 0)
-                {
-                    EditorGUILayout.Separator();
-                }
-                current = levels[i];
-
-                GUILayout.BeginHorizontal();
-                GUILayout.Label("Level");
-                if(GUILayout.Button("X"))
-                {
-                    mission.Remove(current);
-                    return;
-                }
-                GUILayout.EndHorizontal();
-
-                current.target = EditorGUILayout.IntField("target:", current.target);
-                current.name = EditorGUILayout.TextField("name:", current.name);
-                current.description = EditorGUILayout.TextField("description:", current.description);
+                GUILayout.Box("EMPTY", GUILayout.ExpandWidth(true));
             }
-            if (GUILayout.Button("Add Level"))
+            else
             {
-                mission.Add(new MissionLevel());
+                var index = 0;
+                foreach(var m in list)
+                {
+                    if(index == 0)
+                    {
+                        GUI.color = Color.black;
+                        GUILayout.Box(new GUIContent(), GUILayout.ExpandWidth(true), GUILayout.Height(5.0f));
+                        GUI.color = Color.white;
+                        
+                    }
+                    index++;
+                    if(index % 2 == 0)
+                    {
+                        GUI.color = Color.gray;
+                    }
+                    else
+                    {
+                        GUI.color = Color.white;
+                    }
+                    if(m.IsCompleted)
+                    {
+                        GUI.color = Color.green;
+                    }
+                    GUILayout.Label("Id:\t\t" + m.Id);
+                    GUILayout.Label("Name:\t" + m.Name);
+                    GUILayout.Label("Current/Target:\t" + m.Current + "/" + m.Target);
+                    GUI.color = Color.black;
+                    GUILayout.Box(new GUIContent(), GUILayout.ExpandWidth(true), GUILayout.Height(5.0f));
+                    GUI.color = Color.white;
+                }
             }
             GUILayout.EndVertical();
-        }*/
+            GUILayout.EndHorizontal();
+        }
     }
 }

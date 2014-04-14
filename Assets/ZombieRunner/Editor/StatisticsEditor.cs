@@ -15,6 +15,7 @@ namespace Runner
 		
 		public override void OnInspectorGUI ()
 		{
+            if (Application.isEditor == false || Application.isPlaying == false) return;
 			Separate();
 			GUI.color = ColorEditor.Title;
 			EditorGUILayout.LabelField("GameInfo Info", EditorStyles.boldLabel);
