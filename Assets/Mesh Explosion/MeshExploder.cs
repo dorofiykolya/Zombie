@@ -451,7 +451,7 @@ public class MeshExploder : MonoBehaviour {
 			var explosion = SetUpExplosionPiece(explosionPieceName);
 			
 			explosion.AddComponent<MeshExplosion>().Go(
-				preparation, minSpeed, maxSpeed, minRotationSpeed, maxRotationSpeed, useGravity);
+				preparation, minSpeed * 5, maxSpeed * 5, minRotationSpeed, maxRotationSpeed, useGravity);
 			
 			return explosion;
 		}

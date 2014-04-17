@@ -86,6 +86,7 @@ namespace Runner
 				_next = platform.GetNextRandom();
 				count++;
 			}
+
 		}
 		
 		public void Move(float speed, Runner.PlayerController player)

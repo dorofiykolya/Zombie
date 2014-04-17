@@ -49,6 +49,15 @@ namespace Runner
                 gameObject.SetActive(false);
             }
         }
+
+		public void Adjust()
+		{
+			if(panel == PanelType.Missions)
+			{
+				transform.FindChild(State.LOAD.ToString()).gameObject.SetActive(States.Current == State.LOAD);
+				transform.FindChild(State.GAME.ToString()).gameObject.SetActive(States.Current == State.GAME || States.Current == State.LOSE);
+			}
+		}
 		
 		public void Show()
 		{

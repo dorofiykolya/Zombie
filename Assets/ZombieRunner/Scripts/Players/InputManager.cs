@@ -52,7 +52,7 @@ namespace Runner
 			//ARROWS
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
-                if (!Player.currentList[0].bInAir)
+                if (!Player.currentList[0].bInAir && !Player.currentList[0].isJumpPowerUp)
 				{
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
@@ -62,7 +62,7 @@ namespace Runner
 			}
 			if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
-                if (!Player.currentList[0].bInDuck)
+				if (!Player.currentList[0].bInDuck && !Player.currentList[0].isJumpPowerUp)
 				{
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{

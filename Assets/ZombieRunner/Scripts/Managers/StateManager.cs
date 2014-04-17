@@ -56,7 +56,6 @@ namespace Runner
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.GameMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.GameMenu;
-                    Game.GameRestart();
 				}
 			}
 		}

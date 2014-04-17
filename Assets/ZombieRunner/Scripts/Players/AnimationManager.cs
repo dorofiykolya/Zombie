@@ -14,14 +14,15 @@ namespace Runner
 		private const string SLIDE_LEFT = "SlideLeft";
 		private const string EAT = "Eat";
 		private const string DEATH = "Death";
+		private const string IDLE = "Idle";
 
 		public float animationOffset = 0.0f;
 
         public override void Initialize()
         {
             thisAnimation = animation;
-
             thisAnimation[RUN].wrapMode = WrapMode.Loop;
+			thisAnimation[IDLE].wrapMode = WrapMode.Loop;
             thisAnimation[JUMP].wrapMode = WrapMode.ClampForever;
             thisAnimation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
             thisAnimation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
@@ -29,7 +30,10 @@ namespace Runner
             thisAnimation[DEATH].wrapMode = WrapMode.ClampForever;
             thisAnimation[SLIDE].wrapMode = WrapMode.Loop;
 
-            run();
+			if(Player.isStop)
+				idle();
+			else
+				run();
         }
 
 		public void updateSpeed()
@@ -43,10 +47,15 @@ namespace Runner
 			thisAnimation[EAT].speed = speed;
 		}
 
-        public void run()
+        public void idle()
         {
-			thisAnimation.CrossFade(RUN, 0.1f);
+			thisAnimation.CrossFade(IDLE, 0.1f);
         }
+
+		public void run()
+		{
+			thisAnimation.CrossFade(RUN, 0.1f);
+		}
 
         public void jump()
         {

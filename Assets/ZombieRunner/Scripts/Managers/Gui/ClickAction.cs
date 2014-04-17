@@ -26,7 +26,11 @@ namespace Runner
 			switch(action)
 			{
 				case GUIAction.Pause:
-                    Game.GameRestart();
+					Player.isStop = true;
+					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+					GUIPanelManager.Get(PanelType.Missions).Show();
+					GUIPanelManager.Get(PanelType.Missions).Adjust();
+					GUIPanelManager.currentPanel = PanelType.Missions;
 					break;
 				case GUIAction.Settings:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
@@ -36,6 +40,7 @@ namespace Runner
 				case GUIAction.Missions:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Missions).Show();
+					GUIPanelManager.Get(PanelType.Missions).Adjust();
 					GUIPanelManager.currentPanel = PanelType.Missions;
 				break;
 				case GUIAction.Leaderboard:
@@ -54,7 +59,7 @@ namespace Runner
 					GUIPanelManager.currentPanel = PanelType.Shop;
 					break;
 				case GUIAction.Resume:
-					TimerManager.Play();
+					Player.isStop = false;
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.GameMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.GameMenu;
@@ -65,6 +70,12 @@ namespace Runner
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.MainMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.MainMenu;
+					if( States.Current != State.LOAD)
+					{
+						Game.GameRestart();
+						States.Current = State.LOAD;
+						Player.isStop = true;
+					}
 					break;
 			}
 		}

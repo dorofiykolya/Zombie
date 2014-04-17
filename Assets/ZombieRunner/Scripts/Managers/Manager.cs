@@ -18,6 +18,7 @@ namespace Runner
     [RequireComponent(typeof(Runner.MissionManager))]
     [RequireComponent(typeof(Runner.StorageManager))]
     [RequireComponent(typeof(Runner.QualityManager))]
+	[RequireComponent(typeof(Runner.PowerUpManager))]
 
 	public class Manager : MonoBehaviour 
     {
@@ -32,6 +33,7 @@ namespace Runner
         public WaypointManager Waypoint { get; private set; }
         public GameManager Game { get; private set; }
         public LocationManager Location { get; private set; }
+		public PowerUpManager PowerUp { get; private set; }
 
         private List<ComponentManager> components = new List<ComponentManager>();
         private GameController gameController;
@@ -48,6 +50,7 @@ namespace Runner
 	        CamerasManager = GetComponent<CameraManager>();
             Location = GetComponent<LocationManager>();
             Waypoint = GetComponent<WaypointManager>();
+			PowerUp = GetComponent<PowerUpManager>();
             gameController = new GameController(Game, this);
 
             var componentManagers = GetComponents<ComponentManager>();

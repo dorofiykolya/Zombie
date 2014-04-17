@@ -19,6 +19,7 @@ namespace Runner
         public bool isPatientZero = true;
 
         public BoxCollider collider;
+		public SphereCollider magnet { get; private set; }
 
         public int ID = 0;
 		public int gameID = 0;
@@ -29,10 +30,16 @@ namespace Runner
 		private float fCurrentHeight = 0.0f;
 		private float fContactPointY = 0.0f;
 
+		private Transform board;
+
 		public float fJumpPush = 185;
 		public float acceleration = 500;
 
+		private float glideSpeed = 100;
+
 		public bool bInAir = false;
+		public bool isJumpPowerUp = false;
+		public bool glideEnable = false;
 		private bool bJumpFlag = false;
 		private bool bInJump = false;
 		public bool bInDuck = false;
@@ -42,16 +49,17 @@ namespace Runner
         private AnimationManager am;
 
         private Vector2 offset = Vector2.zero;
-
 		private Vector3 rotateVector = Vector3.zero;
 
         public float sideScrollSpeed;
         public float slideDuration;
 		
 		private float bornTime;
-		private int soldireLife;
+		private int soldierLife;
 
         public float Distance { get { return Player.Distance; } }
+		private float speed;
+		private float deathSpeed;
 
 		private Transform playerRotate;
 		private ParticleSystem particle;
@@ -63,18 +71,35 @@ namespace Runner
 
             if (!isPatientZero)
             {
+				if(ID == 4)
+				{
+					offset.y = 4f;
+				}
+				else if(ID == 2)
+				{
+					offset.y = -4f;
+				}
+				else
+				{
+					while(offset.y < 1.5f && offset.y > -1.5f)
+						offset.y = Random.Range(-2f, 2f);
+				}
+
 				while(offset.x < 1.5f && offset.x > -1.5f)
 					offset.x = Random.Range(-2f, 2f);
-				while(offset.y < 1.5f && offset.y > -1.5f)
-					offset.y = Random.Range(-2f, 2f);
             }
 
 			bInAir = false;
 			bJumpFlag = false;
+			isJumpPowerUp = false;
+			glideEnable = false;
 			bInJump = false;
 			bInDuck = false;
 			bDiveFlag = false;
 			bExecuteLand = false;
+
+			magnet = GameObject.Find ("Player").collider as SphereCollider;
+			board = transform.FindChild("Board");
 
             TargetPosition = transform.position;
             targetPosition.x = WaypointManager.wayPoints[WaypointManager.currentWP].position.x + offset.x;
@@ -88,47 +113,100 @@ namespace Runner
 			}
 			if(ID == 4)
 			{
-				soldireLife = PlayerValues.levels[ID];
+				soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
 			}
 
 			playerRotate = transform.FindChild ("Player").transform;
 			particle = transform.FindChild ("Smoke").GetComponent<ParticleSystem> ();
 			particle.Stop ();
+
+			States.OnChanged += OnChanged;
         }
+
+		public override void GameStop ()
+		{
+			States.OnChanged -= OnChanged;
+		}
+
+		
+		public void OnChanged(State state)
+		{
+			if(state == State.GAME)
+			{
+				am.run();
+			}
+		}
 
         // Update is called once per frame
         void Update()
         {
-			if(States.Current == State.LOSE)
+			//falling down if player dies in air
+			if(Player.isStop)
 			{
+				deathFall();
 				return;
 			}
 
-            var speed = Player.Speed / Player.MinimumSpeed;
+			//update game speed
+            speed = Player.Speed / Player.MinimumSpeed;
 
+			//fatman dies
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
 				onDeath();
 			}
 
+			//board flight animation
+			if(isJumpPowerUp)
+			{
+				if(transform.position.y == 18)
+				{
+					glideEnable = false;
+				}
+
+				if(transform.position.y == 20)
+				{
+					glideSpeed = 5;
+					glideEnable = true;
+				}
+
+				if(glideEnable)
+				{
+					targetPosition.y = 18;
+					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
+				}
+				else
+				{
+					targetPosition.y = 20;
+					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
+				}
+
+				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y + 20 - transform.position.y, Player.defaultCameraPosition.z);
+			}
+
+			//change waypoint
             if (transform.position.x != targetPosition.x)
             {
                 targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
 				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * speed);
 
-				rotateVector.y = Mathf.Sign(targetPosition.x - transform.position.x) * 45 * ((8 - Vector3.Distance(transform.position, targetPosition)) / 8);
+				if(!isJumpPowerUp)
+				{
+					rotateVector.y = Mathf.Sign(targetPosition.x - transform.position.x) * 45 * ((8 - Vector3.Distance(transform.position, targetPosition)) / 8);
 
-				playerRotate.localEulerAngles = rotateVector;
+					playerRotate.localEulerAngles = rotateVector;
+				}
             }
 			else
 			{
-				if(playerRotate.localEulerAngles.y != 0)
+				if(playerRotate.localEulerAngles.y != 0 && !isJumpPowerUp)
 				{
-					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, playerRotate.position, sideScrollSpeed * Time.deltaTime * 0.01f * speed, 0f);
+					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, transform.position, sideScrollSpeed * Time.deltaTime * 0.01f * speed, 0f);
 				}
 			}
 
+			//jump
 			if(bInAir)
 			{
 				if(bDiveFlag)
@@ -155,14 +233,17 @@ namespace Runner
 				fCurrentHeight = transform.position.y;
 			}
 
-			if(fContactPointY != 0)
-			{
-				fContactPointY = 0;
-				bInAir = true;
-			}
-
 			am.updateSpeed();
         }
+
+		private void deathFall()
+		{
+			if(transform.position.y != 0)
+			{
+				targetPosition.y = 0;
+				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * deathSpeed);
+			}
+		}
 
 		private void setCurrentJumpHeight(float speed)
 		{
@@ -188,7 +269,7 @@ namespace Runner
 			fCurrentUpwardVelocity -= Time.deltaTime * 2000 * speed;
 			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
 			fCurrentHeight += fCurrentUpwardVelocity * Time.deltaTime * speed;
-			
+
 			if(fCurrentHeight <= fContactPointY)
 			{
 				fCurrentHeight = fContactPointY;
@@ -255,7 +336,7 @@ namespace Runner
             {
                 TargetPosition = position;
 
-				if(bInJump)
+				if(bInJump || isJumpPowerUp)
 					return;
 
 				if(right) 
@@ -320,6 +401,8 @@ namespace Runner
 				{
 					am.death();
 
+					deathSpeed = Player.Speed / Player.MinimumSpeed;
+
 					States.Current = State.LOSE;
                     Player.isStop = true;
 				}
@@ -336,16 +419,42 @@ namespace Runner
 				Destroy(gameObject);
 			}
 		}
-		
+
+		public void OnPowerUpStarted()
+		{
+			board.gameObject.SetActive (true);
+			am.idle ();
+			isJumpPowerUp = true;
+			glideSpeed = 100;
+		}
+
+		public void OnPowerUpEnded()
+		{
+			board.gameObject.SetActive (false);
+			am.run ();
+			fContactPointY = 0;
+			fCurrentUpwardVelocity = 0;
+			fCurrentHeight = transform.position.y;
+			bInAir = true;
+			isJumpPowerUp = false;
+		}
+
+		void OnCollisionExit(Collision other)
+		{
+			if (other.gameObject.CompareTag("Obstacle"))
+			{
+				fContactPointY = 0;
+				bInAir = true;
+			}
+		}
+
 		void OnCollisionEnter(Collision other)
         {
-			Debug.Log (other.gameObject.name);
             if (other.gameObject.CompareTag("Obstacle"))
             {
-				Debug.Log(other.collider.bounds.size.y + " " + other.contacts[0].point.y);
 				if(other.collider.bounds.center.y < 10)
 				{
-					if(other.collider.bounds.size.y - other.collider.bounds.center.y < other.contacts[0].point.y)
+					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
 						fContactPointY = other.contacts[0].point.y;
 						return;
@@ -354,19 +463,25 @@ namespace Runner
 				if(ID == 4)
 				{
 					other.gameObject.GetComponent<MeshExploder>().Explode();
-					other.transform.localPosition = Vector3.zero;
+					other.transform.localScale = Vector3.zero;
+					other.gameObject.collider.enabled = false;
 				}
 
-				if(soldireLife == 0)
+				if(soldierLife == 0)
 					onDeath();
 				else
-					soldireLife--;
+					soldierLife--;
             }
             else if (other.gameObject.CompareTag("Currency"))
             {
                 CurrencyManager.goldCount += (1 + Player.GetGoldBonus());
-				other.transform.localScale = new Vector3(0,-1000,0);
+				other.transform.GetComponent<ObstacleCurrency>().isPickUp = true;
+				other.gameObject.collider.enabled = false;
             }
+			else if (other.gameObject.CompareTag("PowerUp"))
+			{
+				PowerUp.UseBonus(other.gameObject.GetComponent<ObstaclePowerUp>());
+			}
 			else if (other.gameObject.CompareTag("Human"))
 			{
 				if(isPatientZero)

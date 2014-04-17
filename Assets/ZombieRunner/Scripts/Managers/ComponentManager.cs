@@ -17,6 +17,7 @@ namespace Runner
         public WaypointManager Waypoint { get; private set; }
         public GameManager Game { get; private set; }
         public LocationManager Location { get; private set; }
+		public PowerUpManager PowerUp { get; private set; }
         public Manager Manager { get; private set; }
 
         public bool Initialized { get; private set; }
@@ -34,6 +35,7 @@ namespace Runner
             States = Manager.States;
             Cameras = Manager.CamerasManager;
             Waypoint = Manager.Waypoint;
+			PowerUp = Manager.PowerUp;
 
             Initialize();
             Initialized = true;

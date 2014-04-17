@@ -38,13 +38,12 @@ namespace Runner
 				}
 				platform.gameObject.SetActive(true);
 				platformContainer.AddChild(platform.gameObject);
+				PowerUpManager.AddPowerUpObjects(platform);
 			}
 		}
 		
 		public void Remove(Runner.PlatformObject platform)
 		{
-            //ObstacleManager.RemovePlatformObstacle(platform);
-
 			if(list.Remove(platform))
 			{
 				platform.InPlatformList = false;	
@@ -52,6 +51,7 @@ namespace Runner
 			Runner.LocationPlatformManager.PushPlatform(platform);
 			platform.gameObject.SetActive(false);
 			disposedPlatformContainer.AddChild(platform.gameObject);
+			PowerUpManager.RemovePowerUpObjects (platform);
 		}
 		
 		public void Move(Vector3 move)
@@ -88,6 +88,7 @@ namespace Runner
 				platform.InPlatformList = false;
 				platform.AllowDispose = false;
 				platform.gameObject.SetActive(false);
+				PowerUpManager.RemovePowerUpObjects (platform);
 			}
 			list.Clear();
 			Last = null;
