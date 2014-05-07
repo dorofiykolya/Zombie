@@ -20,6 +20,13 @@ namespace Runner
         [SerializeField]
         public bool shaderCulling = true;
 
+		protected Transform mTransform;
+
+		public override void Initialize ()
+		{
+			mTransform = transform;
+		}
+
 		void Update()
 		{
 			if (material == null) 
@@ -40,7 +47,7 @@ namespace Runner
                         var camera = Camera.current;
                         if (shaderList != null && shaderList.Length > 0 && camera != null)
                         {
-                            var distance = transform.position.Distance(camera.transform.position);
+							var distance = DistanceToCamera(camera);//mTransform.position.Distance(camera.transform.position);
                             Shader current = null;
                             var i = 0;
                             var len = shaderList.Length;
@@ -49,7 +56,7 @@ namespace Runner
                                 var s = shaderList[i];
                                 var d = shaderDistances[i];
                                 var q = shaderQualities[i];
-                                if ((distance >= d || i == (len - 1)) && q >= currentQuality)
+                                if ((distance >= d || i == (len - 1)) && q <= currentQuality)
                                 {
                                     current = s;
                                     break;
@@ -68,6 +75,11 @@ namespace Runner
 					material.SetVector("_FarCurve", Runner.EffectManager.Far);
 				}
 			}
+		}
+
+		protected virtual float DistanceToCamera(Camera camera)
+		{
+			return transform.position.Distance(camera.transform.position);
 		}
 	}
 }

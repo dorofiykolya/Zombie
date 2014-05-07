@@ -5,7 +5,7 @@ using System.Text;
 using Runner;
 using UnityEditor;
 using UnityEngine;
-[CustomEditor(typeof(LocationObject))]
+[CustomEditor(typeof(Runner.LocationObject))]
 [CanEditMultipleObjects]
 public class LocationObjectEditor : Editor
 {
@@ -34,6 +34,17 @@ public class LocationObjectEditor : Editor
 			return;
 		}
         GUI.color = ColorEditor.Title;
+		if (target as LocationObject != null) 
+		{
+			var components = ((LocationObject)target).GetComponents<LocationObject>();
+			if(components.Length > 1)
+			{
+				var lastColor = GUI.color;
+				GUI.color = Color.red;
+				EditorGUILayout.LabelField("HAS DUPLICATE LOCATION OBJECT");
+				GUI.color = lastColor;
+			}
+		}
         sFoldoutLocationObject = EditorGUILayout.Foldout(sFoldoutLocationObject, "LocationObject Settings");
         GUI.color = Color.white;
         if (sFoldoutLocationObject == false)
@@ -176,9 +187,45 @@ public class LocationObjectEditor : Editor
                 }
             }
         }
-        GUI.color = Color.white;
         GUILayout.EndHorizontal();
+		if (copyShaders != null)
+		{
+			if (GUILayout.Button("PASTE RECURSIVE FROM: " + copyFrom))
+			{
+				foreach (var item in targets)
+				{
+					var currentTarget = item as LocationObject;
+					if (currentTarget != null)
+					{
+						currentTarget.shaderList = copyShaders.ToArray();
+						currentTarget.shaderDistances = copyDistances.ToArray();
+						currentTarget.shaderQualities = copyQuality.ToArray();
+
+						PasteRecursive(currentTarget.gameObject);
+					}
+				}
+			}
+		}
+		GUI.color = Color.white;
     }
+
+	private void PasteRecursive(GameObject go)
+	{
+		if (go == null)
+			return;
+
+		var currentTarget = go.GetComponent<LocationObject>();
+		if (currentTarget != null)
+		{
+			currentTarget.shaderList = copyShaders.ToArray();
+			currentTarget.shaderDistances = copyDistances.ToArray();
+			currentTarget.shaderQualities = copyQuality.ToArray();
+		}
+
+		foreach (var g in go.GetChildren()) {
+			PasteRecursive(g);
+		}
+	}
 
     private void DrawClear(UnityEngine.Object[] targets)
     {

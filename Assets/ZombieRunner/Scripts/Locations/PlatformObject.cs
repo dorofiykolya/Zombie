@@ -57,6 +57,11 @@ namespace Runner
 			clone.gameObject.SetActive(false);
 			return clone;
 		}
+
+		override protected float DistanceToCamera(Camera camera)
+		{
+			return Mathf.Max(0.0f, base.DistanceToCamera(camera) - (this.Size.z / 2.0f));
+		}
 	}
 
     public enum PlatformMode

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{9EB8F7F0-733E-D3A7-44D1-94DBCA7BCF63}</ProjectGuid>
+	<ProjectGuid>{3BB450CE-B790-00D8-B688-6EF908B89123}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;ENABLE_DUCK_TYPING</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -52,6 +52,8 @@
      <Compile Include="Assets\Editor\SpriteEditor.cs" />
      <Compile Include="Assets\Editor\StageCameraEditor.cs" />
      <Compile Include="Assets\Editor\StageEditor.cs" />
+     <Compile Include="Assets\Editor\unitygems.com\whydoidoit.com\FindAndFixBrokenScripts.cs" />
+     <Compile Include="Assets\Editor\unitygems.com\whydoidoit.com\FixMissingScripts.cs" />
      <Compile Include="Assets\Mesh Explosion\Editor\MeshExploderEditor.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
@@ -126,11 +128,15 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\ColorEditor.cs" />
+     <Compile Include="Assets\ZombieRunner\Editor\CorrectPrefabWindow.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\GameSettingWindowEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\LocationObjectEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\MissingDataEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\MissionEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\MissionWidowEditor.cs" />
+     <Compile Include="Assets\ZombieRunner\Editor\ObstacleEditor.cs" />
+     <Compile Include="Assets\ZombieRunner\Editor\ObstacleObjectEditor.cs" />
+     <Compile Include="Assets\ZombieRunner\Editor\ObstaclePowerUpEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\PlatformObjectEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\PlatformTypeEditor.cs" />
      <Compile Include="Assets\ZombieRunner\Editor\PlatformWindowEditor.cs" />
@@ -274,9 +280,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{A9C6A3E7-F7E6-C880-8FFA-B82E571A36B9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{64E2F6C6-1576-AED7-02C5-6D94F5E99C09}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{6D769005-B82C-57C4-A499-C9E89DE2E068}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+      <Project>{5618C7C2-D584-DA62-451D-499C7D006887}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
