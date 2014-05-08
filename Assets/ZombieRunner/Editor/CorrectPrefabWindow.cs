@@ -8,6 +8,7 @@ using UnityEngine;
 public class CorrectPrefabWindow : EditorWindow {
 
 	private int correctedDuplicates;
+	private int correctedLocationObjects;
 
 	void OnGUI()
 	{
@@ -21,15 +22,34 @@ public class CorrectPrefabWindow : EditorWindow {
 			}
 		}
 		GUILayout.Label ("duplicate result: " + correctedDuplicates);
-		/*var selected = Selection.gameObjects;
-		foreach (var s in selected) 
+
+		if (GUILayout.Button ("REMOVE BLOOM FROM LOCATION OBJECT")) 
 		{
-			var result = s.gameObject.GetComponentsInChildren<Component>(true).Where(r => r==null).ToArray();
-			if(result.Length > 0)
+			correctedLocationObjects = 0;
+			var gameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+			foreach(var go in gameObjects)
 			{
-				EditorGUILayout.LabelField(result.Length.ToString());
+				FixBloom(go);
 			}
-		}*/
+		}
+		GUILayout.Label ("bloom result: " + correctedLocationObjects);
+
+	}
+
+	void FixBloom(GameObject go)
+	{
+		var lo = go.GetComponent<Runner.LocationObject> ();
+		if (lo != null) {
+			var bloom = go.GetComponent<Bloom>();
+			if(bloom != null)
+			{
+				DestroyImmediate(bloom, true);
+				correctedLocationObjects++;
+			}
+			foreach (var g in go.GetChildren()) {
+				FixBloom(g);
+			}
+		}
 	}
 
 	void FixDuplicateLO(GameObject go)

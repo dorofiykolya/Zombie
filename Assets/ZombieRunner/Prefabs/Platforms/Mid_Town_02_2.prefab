@@ -723,7 +723,6 @@ GameObject:
   - 33: {fileID: 3300006}
   - 23: {fileID: 2300006}
   - 95: {fileID: 9500002}
-  - 114: {fileID: 11400018}
   - 114: {fileID: 11400440}
   m_Layer: 0
   m_Name: probirka
@@ -743,7 +742,6 @@ GameObject:
   - 33: {fileID: 3300008}
   - 23: {fileID: 2300008}
   - 95: {fileID: 9500004}
-  - 114: {fileID: 11400022}
   - 114: {fileID: 11400438}
   m_Layer: 0
   m_Name: probirka
@@ -763,7 +761,6 @@ GameObject:
   - 33: {fileID: 3300010}
   - 23: {fileID: 2300010}
   - 95: {fileID: 9500006}
-  - 114: {fileID: 11400026}
   - 114: {fileID: 11400436}
   m_Layer: 0
   m_Name: probirka
@@ -783,7 +780,6 @@ GameObject:
   - 33: {fileID: 3300012}
   - 23: {fileID: 2300012}
   - 95: {fileID: 9500008}
-  - 114: {fileID: 11400030}
   - 114: {fileID: 11400434}
   m_Layer: 0
   m_Name: probirka
@@ -803,7 +799,6 @@ GameObject:
   - 33: {fileID: 3300014}
   - 23: {fileID: 2300014}
   - 95: {fileID: 9500012}
-  - 114: {fileID: 11400034}
   - 114: {fileID: 11400432}
   m_Layer: 0
   m_Name: probirka
@@ -1367,7 +1362,6 @@ GameObject:
   - 33: {fileID: 3300018}
   - 23: {fileID: 2300018}
   - 95: {fileID: 9500020}
-  - 114: {fileID: 11400062}
   - 114: {fileID: 11400414}
   m_Layer: 0
   m_Name: probirka
@@ -1387,7 +1381,6 @@ GameObject:
   - 33: {fileID: 3300020}
   - 23: {fileID: 2300020}
   - 95: {fileID: 9500022}
-  - 114: {fileID: 11400066}
   - 114: {fileID: 11400416}
   m_Layer: 0
   m_Name: probirka
@@ -1407,7 +1400,6 @@ GameObject:
   - 33: {fileID: 3300022}
   - 23: {fileID: 2300022}
   - 95: {fileID: 9500024}
-  - 114: {fileID: 11400070}
   - 114: {fileID: 11400418}
   m_Layer: 0
   m_Name: probirka
@@ -1427,7 +1419,6 @@ GameObject:
   - 33: {fileID: 3300024}
   - 23: {fileID: 2300024}
   - 95: {fileID: 9500026}
-  - 114: {fileID: 11400074}
   - 114: {fileID: 11400420}
   m_Layer: 0
   m_Name: probirka
@@ -1447,7 +1438,6 @@ GameObject:
   - 33: {fileID: 3300026}
   - 23: {fileID: 2300026}
   - 95: {fileID: 9500028}
-  - 114: {fileID: 11400078}
   - 114: {fileID: 11400422}
   m_Layer: 0
   m_Name: probirka
@@ -1467,7 +1457,6 @@ GameObject:
   - 33: {fileID: 3300028}
   - 23: {fileID: 2300028}
   - 95: {fileID: 9500030}
-  - 114: {fileID: 11400082}
   - 114: {fileID: 11400424}
   m_Layer: 0
   m_Name: probirka
@@ -1487,7 +1476,6 @@ GameObject:
   - 33: {fileID: 3300030}
   - 23: {fileID: 2300030}
   - 95: {fileID: 9500032}
-  - 114: {fileID: 11400086}
   - 114: {fileID: 11400426}
   m_Layer: 0
   m_Name: probirka
@@ -1507,7 +1495,6 @@ GameObject:
   - 33: {fileID: 3300032}
   - 23: {fileID: 2300032}
   - 95: {fileID: 9500034}
-  - 114: {fileID: 11400090}
   - 114: {fileID: 11400428}
   m_Layer: 0
   m_Name: probirka
@@ -1527,7 +1514,6 @@ GameObject:
   - 33: {fileID: 3300034}
   - 23: {fileID: 2300034}
   - 95: {fileID: 9500036}
-  - 114: {fileID: 11400094}
   - 114: {fileID: 11400430}
   m_Layer: 0
   m_Name: probirka
@@ -1623,7 +1609,6 @@ GameObject:
   - 33: {fileID: 3300054}
   - 23: {fileID: 2300054}
   - 95: {fileID: 9500046}
-  - 114: {fileID: 11400112}
   - 114: {fileID: 11400402}
   m_Layer: 0
   m_Name: probirka
@@ -13497,9 +13482,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c9f3ee3b206d14ea89118b0d2a789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  shaderQualities: 0000000001000000
   shaderCulling: 1
   Mode: 0
   Level: 0
@@ -13619,17 +13608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400018
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13642,17 +13620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400022
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13665,17 +13632,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400026
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13688,17 +13644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13711,17 +13656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13836,17 +13770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400062
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13859,17 +13782,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13882,17 +13794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13905,17 +13806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400074
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13928,17 +13818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13951,17 +13830,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400082
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13974,17 +13842,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13997,17 +13854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400090
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14020,17 +13866,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400094
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14079,17 +13914,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPickUp: 0
---- !u!114 &11400112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eba5f67c91c9947a6bd680f48c4772ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11400114
 MonoBehaviour:
   m_ObjectHideFlags: 1
