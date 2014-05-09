@@ -13,10 +13,15 @@ public class LocationObjectEditor : Editor
     private static float currentAddDistance;
     private static int currentAddQuality = Math.Max(0, QualitySettings.names.Length - 1);
 
-    private static Shader[] copyShaders;
-    private static float[] copyDistances;
-    private static int[] copyQuality;
-    private static string copyFrom;
+    public static Shader[] copyShaders;
+    public static float[] copyDistances;
+    public static int[] copyQuality;
+    public static string copyFrom;
+
+    public static Shader[] lastCopyShaders;
+    public static float[] lastCopyDistances;
+    public static int[] lastCopyQuality;
+    public static string lastCopyFrom;
 
 	protected LocationManager location;
 
@@ -165,6 +170,11 @@ public class LocationObjectEditor : Editor
         {
             if (target.shaderList != null && target.shaderList.Length > 0 && GUILayout.Button("COPY"))
             {
+                lastCopyShaders = copyShaders;
+                lastCopyDistances = copyDistances;
+                lastCopyQuality = copyQuality;
+                lastCopyFrom = copyFrom;
+
                 copyShaders = target.shaderList.ToArray();
                 copyDistances = target.shaderDistances.ToArray();
                 copyQuality = target.shaderQualities.ToArray();
@@ -269,11 +279,12 @@ public class LocationObjectEditor : Editor
         GUI.color = Color.white;
     }
 
-    private bool HasCopy(LocationObject target, int index, float distance)
+    private bool HasCopy(LocationObject target, int index, float distance, int quality)
     {
         var i = 0;
         var shaderList = target.shaderList;
         var shaderDistance = target.shaderDistances;
+        var shaderQuality = target.shaderQualities;
         if (shaderList != null && shaderDistance != null)
         {
             var len = shaderList.Length;
@@ -281,9 +292,10 @@ public class LocationObjectEditor : Editor
             {
                 var s = shaderList[i];
                 var d = shaderDistance[i];
+                var q = shaderQuality[i];
                 if (index != i)
                 {
-                    if (d == distance)
+                    if (d == distance && q == quality)
                     {
                         return true;
                     }
@@ -342,7 +354,7 @@ public class LocationObjectEditor : Editor
                     var distance = shaderDistance[i];
                     var quality = shaderQuality[i];
 
-                    var result = HasCopy(locationObject, i, distance);
+                    var result = HasCopy(locationObject, i, distance, quality);
                     if (result)
                     {
                         GUI.color = Color.red;

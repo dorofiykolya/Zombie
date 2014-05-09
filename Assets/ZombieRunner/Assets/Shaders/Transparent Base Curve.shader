@@ -1,33 +1,32 @@
 Shader "Curve/Transparent/Transparent Base Curve" {
 	Properties {
-		_MainTex ("Main Texture", 2D) = "black" {}
+		_Color ("Main Color", Color) = (1,1,1,1)
+    	_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
 		_NearCurve ("Near Curve", Vector) = (0, 0, 0, 0)
 		_FarCurve ("Far Curve", Vector) = (0, 0, 0, 0)
 		_Dist ("Distance Mod", Float) = 0.0
-		_Alpha ("Alpha", Range (0.0, 1)) = 1
 	}
 	SubShader {
-		Tags { "RenderType" = "Transparent" }
-		LOD 200
-        Blend SrcAlpha OneMinusSrcAlpha
-        Pass { // pass 0
-
+		Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+		Blend SrcAlpha OneMinusSrcAlpha
+		Alphatest Greater 0 ZWrite Off ColorMask RGB
+        Pass {
+			
 			Tags { "LightMode" = "ForwardBase" }
 
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest 
-			//#pragma multi_compile_fwdbase LIGHTMAP_OFF LIGHTMAP_ON
 			#include "UnityCG.cginc"
 						
 			uniform sampler2D _MainTex;
+			uniform fixed4 _Color;
 			uniform half4 _MainTex_ST;
-			uniform half4 	_MainTex_TexelSize;
+			uniform half4 _MainTex_TexelSize;
 			uniform float4 _NearCurve;
 			uniform float4 _FarCurve;
 			uniform float _Dist;
-			uniform float _Alpha;
 			
 			struct fragmentInput
 			{
@@ -46,25 +45,24 @@ Shader "Curve/Transparent/Transparent Base Curve" {
                 pos.y += (_FarCurve.y - max(1.0 - distanceSquared / _NearCurve.y, 0.0) * _FarCurve.y);
                 o.pos = mul(UNITY_MATRIX_P, pos); 
 				o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-
+				
 				#if UNITY_UV_STARTS_AT_TOP
 				if (_MainTex_TexelSize.y < 0)
 					o.uv.y = 1.0-o.uv.y;
 				#endif
-
+				
 				return o;
 			}
 			
 			fixed4 frag(fragmentInput i) : COLOR
 			{
-				fixed4 color = tex2D(_MainTex, i.uv);
-				color.a *= _Alpha; 
+				float4 color = tex2D(_MainTex, i.uv) * _Color;
 				return color;
 			}
-			
 			ENDCG
-        } // end pass
+		}
+		
 	} 
-	FallBack "Diffuse"
+	FallBack "Transparent/Diffuse"
 	CustomEditor "CurveMaterialEditor"
 }

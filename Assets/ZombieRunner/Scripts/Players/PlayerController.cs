@@ -159,12 +159,12 @@ namespace Runner
 			//board flight animation
 			if(isJumpPowerUp)
 			{
-				if(transform.position.y == 18)
+				if(transform.position.y == 20)
 				{
 					glideEnable = false;
 				}
 
-				if(transform.position.y == 20)
+				if(transform.position.y == 22)
 				{
 					glideSpeed = 5;
 					glideEnable = true;
@@ -172,12 +172,12 @@ namespace Runner
 
 				if(glideEnable)
 				{
-					targetPosition.y = 18;
+					targetPosition.y = 20;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
 				}
 				else
 				{
-					targetPosition.y = 20;
+					targetPosition.y = 22;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
 				}
 
@@ -388,8 +388,7 @@ namespace Runner
 					}
 
                     Player.currentList[0].isPatientZero = true;
-					
-					Camera.main.transform.parent = null;
+					Player.currentList[0].offset = Vector2.zero;
 
                     Camera.main.transform.parent = Player.currentList[0].gameObject.transform;
 					

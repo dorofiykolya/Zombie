@@ -80,6 +80,34 @@ namespace Runner
 				return currentList[0];	
 			}
 		}
+
+		public void Change(int id)
+		{
+			if(currentList.Count > 0)
+			{
+				GameObject go = currentList[0].gameObject;
+
+				currentList[0].GameStop();
+				currentList[0] = (Runner.PlayerController)GameObject.Instantiate(GetById(PlayerValues.player));
+
+				PlayerData.CharacterId = id;
+				var game = GameObject.FindGameObjectWithTag("Player");
+				if(game == null)
+				{
+					game = new GameObject("Player");
+					game.tag = "Player";
+				}
+
+				currentList[0].Initialize();
+				currentList[0].gameObject.transform.parent = game.transform;
+				currentList[0].gameID = 0;
+				
+				Camera.main.transform.parent = currentList[0].gameObject.transform;
+				Camera.main.transform.localPosition = defaultCameraPosition;
+
+				Destroy(go);
+			}
+		}
 		
 		public void Select(int id)
 		{

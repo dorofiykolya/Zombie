@@ -48,24 +48,35 @@ namespace Runner
                         if (shaderList != null && shaderList.Length > 0 && camera != null)
                         {
 							var distance = DistanceToCamera(camera);//mTransform.position.Distance(camera.transform.position);
-                            Shader current = null;
+                            Shader selectedShader = null;
+                            int selectedQuality = 0;
+                            float selectedDistance = 0.0f;
                             var i = 0;
                             var len = shaderList.Length;
                             for (; i < len; i++)
                             {
+                                //if(name == "probirka")
+                                //{
+                                //    selectedShader = selectedShader;
+                                //}
                                 var s = shaderList[i];
                                 var d = shaderDistances[i];
                                 var q = shaderQualities[i];
-                                if ((distance >= d || i == (len - 1)) && q <= currentQuality)
+                                if (selectedShader == null || q <= currentQuality)
                                 {
-                                    current = s;
-                                    break;
+									if (selectedShader == null || q >= selectedQuality && ((distance >= d) || selectedDistance >= d))
+                                    {
+                                        selectedShader = s;
+                                        selectedQuality = q;
+                                        selectedDistance = d;
+                                    }
+                                    //break;
                                 }
                             }
-                            if (current != null && lastShader != current)
+                            if (selectedShader != null && lastShader != selectedShader)
                             {
-                                lastShader = current;
-                                material.shader = current;
+                                lastShader = selectedShader;
+                                material.shader = selectedShader;
                             }
                         }
                     }

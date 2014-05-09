@@ -1,12 +1,10 @@
-Shader "Curve/Transparent/Transparent Reflective Curve" {
+Shader "Curve/Transparent/Transparent Diffuse Curve" {
 	Properties {
 		_Color ("Main Color", Color) = (1,1,1,1)
     	_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
 		_NearCurve ("Near Curve", Vector) = (0, 0, 0, 0)
 		_FarCurve ("Far Curve", Vector) = (0, 0, 0, 0)
 		_Dist ("Distance Mod", Float) = 0.0
-		_Cube("Reflection Map", Cube) = "" {}
-		_ReflectVisible ("Reflection Visible", Range (0.0, 1)) = 1
 	}
 	SubShader {
 		Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
@@ -35,8 +33,6 @@ Shader "Curve/Transparent/Transparent Reflective Curve" {
 			uniform float4 _FarCurve;
 			uniform float _Dist;
 			uniform float4 _LightColor0;
-			uniform samplerCUBE _Cube;
-			uniform float _ReflectVisible;
 			
 			struct fragmentInput
 			{
@@ -48,8 +44,6 @@ Shader "Curve/Transparent/Transparent Reflective Curve" {
 				#ifdef DIRECTIONAL
             	fixed4 color : COLOR;
             	#endif
-            	float3 normalDir : TEXCOORD4;
-            	float3 viewDir : TEXCOORD5;
 			};
 						
 			fragmentInput vert(appdata_full v)
@@ -78,10 +72,7 @@ Shader "Curve/Transparent/Transparent Reflective Curve" {
 				#endif
 				
 				float4x4 modelMatrix = _Object2World;
-            	float4x4 modelMatrixInverse = _World2Object;
-				
-				o.viewDir = float3(mul(modelMatrix, v.vertex) - float4(_WorldSpaceCameraPos, 1.0));
-	            o.normalDir = normalize(float3(mul(float4(v.normal, 0.0), modelMatrixInverse)));
+            	float4x4 modelMatrixInverse = _World2Object; 
 	            
 	            #ifdef DIRECTIONAL
 	            float3 normalDirection = normalize(float3(mul(float4(v.normal, 0.0f), modelMatrixInverse)));
@@ -111,13 +102,6 @@ Shader "Curve/Transparent/Transparent Reflective Curve" {
 		 
 		        color.rgb *= lightColor * sat * i.color * 2;
 		        #endif
-		        
-		        float3 reflectedDir = reflect(i.viewDir, normalize(i.normalDir));
-				#ifdef DIRECTIONAL
-            	color += (texCUBE(_Cube, reflectedDir) * _ReflectVisible) * sat;
-            	#else
-            	color += texCUBE(_Cube, reflectedDir) * _ReflectVisible;
-            	#endif
 
 				return color;
 			}

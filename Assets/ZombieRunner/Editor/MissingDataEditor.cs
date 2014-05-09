@@ -18,6 +18,9 @@ namespace Runner
 			var progressTime = Environment.TickCount;
 			
 			#region Load all assets in project before searching
+
+			mat = AssetDatabase.LoadAssetAtPath("Assets/Assets/probirka_glass.mat", typeof(Material)) as Material;
+			Debug.Log(mat);
 			
 			var allAssetPaths = AssetDatabase.GetAllAssetPaths();
 			for( int i = 0; i < allAssetPaths.Length; i++ )
@@ -46,80 +49,20 @@ namespace Runner
 
 			foreach(GameObject child in prefabs)
 			{
-				UpBonus(child);
+				ObstacleScale(child);
 			}
 		}
 
-
-		private static void GemRigidbody(GameObject gameObject) 
+		private static void ObstacleScale(GameObject gameObject) 
 		{
-			if (gameObject.name == "probirka") 
+			if (gameObject.name == "Human1")
 			{
-				gameObject.AddComponent("LocationObject");
+				gameObject.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
 			}
 			
 			foreach (Transform child in gameObject.transform) 
 			{
-				GemRigidbody(child.gameObject);
-			}
-		}
-
-		private static void GemTagChange(GameObject gameObject)
-		{
-			if (gameObject.name == "gem") 
-			{
-				gameObject.layer = LayerMask.NameToLayer("Default"); 
-			}
-
-			foreach (Transform child in gameObject.transform) 
-			{
-				GemTagChange(child.gameObject);
-			}
-		}
-
-		private static void UpBonus(GameObject gameObject) 
-		{
-			if (gameObject.CompareTag("Currency")) 
-			{
-				if(gameObject.transform.position.x > -4 && gameObject.transform.position.x < 4)
-				{
-					gameObject.transform.position = new Vector3(0,
-					                                            gameObject.transform.position.y,
-					                                            gameObject.transform.position.z);
-				}
-				else if(gameObject.transform.position.x >= 4)
-				{
-					gameObject.transform.position = new Vector3(8,
-					                                            gameObject.transform.position.y,
-					                                            gameObject.transform.position.z);
-				}
-				else if(gameObject.transform.position.x <= -4)
-				{
-					gameObject.transform.position = new Vector3(-8,
-					                                            gameObject.transform.position.y,
-					                                            gameObject.transform.position.z);
-				}
-			}
-			
-			foreach (Transform child in gameObject.transform) 
-			{
-				UpBonus(child.gameObject);
-			}
-		}
-
-		private static void FindMissingMaterial(GameObject gameObject) 
-		{
-			if(gameObject.renderer != null)
-			{
-				if (gameObject.renderer.sharedMaterial == null) 
-				{
-					gameObject.renderer.sharedMaterial = mat;
-				}
-			}
-			
-			foreach (Transform child in gameObject.transform) 
-			{
-				FindMissingMaterial(child.gameObject);
+				ObstacleScale(child.gameObject);
 			}
 		}
 

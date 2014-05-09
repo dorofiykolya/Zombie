@@ -100,7 +100,7 @@ namespace Runner
 					switch (sSwipeDirection)
 					{
 						case SwipeDirection.Jump:
-                            if (!Player.currentList[0].bInAir)
+							if (!Player.currentList[0].bInAir && !Player.currentList[0].isJumpPowerUp)
 							{
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{
@@ -109,7 +109,7 @@ namespace Runner
 							}
 							break;
 						case SwipeDirection.Duck:
-                            if (!Player.currentList[0].bInDuck)
+							if (!Player.currentList[0].bInDuck && !Player.currentList[0].isJumpPowerUp)
 							{
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{

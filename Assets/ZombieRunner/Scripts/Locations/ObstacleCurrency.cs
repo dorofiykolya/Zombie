@@ -8,6 +8,7 @@ namespace Runner
 		private float progress = 0;
 		private bool isTween = false;
 		private Vector3 player;
+		private Vector3 probe;
 
 		public bool isPickUp = false;
 
@@ -18,6 +19,7 @@ namespace Runner
 			if(isPickUp)
 			{
 				player = transform.InverseTransformPoint(WaypointManager.wayPoints[WaypointManager.currentWP].position);
+				probe = transform.position;
 
 				player.z = player.x * -1;
 				player.y = transform.position.y / 2;
@@ -48,6 +50,7 @@ namespace Runner
 		void OnDisable() 
 		{
 			transform.localScale = Vector3.one;
+			if(probe != Vector3.zero) transform.position = probe;
 			gameObject.collider.enabled = true;
 			isPickUp = false;
 			isTween = false;

@@ -23,7 +23,7 @@ namespace Runner
 
 		void Update()
 		{
-			score.text = Mathf.Round(Player.Distance / Player.MinimumSpeed * (currentMult + Player.GetMult() + 5) * PowerUp.scorePowerup).ToString();
+			score.text = Mathf.Round(Player.Distance / Player.MinimumSpeed * (currentMult + Player.GetMult() + 10) * PowerUp.scorePowerup).ToString();
             multi.text = "x" + (currentMult + Player.GetMult());
 			gold.text = goldCount.ToString ();
 		}

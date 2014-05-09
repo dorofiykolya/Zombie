@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: mid_town copy
-  m_Shader: {fileID: 4800000, guid: 9cb8122058d912b40aad4b56ad7b7c9d, type: 3}
+  m_Name: probirka_glass
+  m_Shader: {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,14 +17,14 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 066726c9442baf24c95bf5acae2a5c0e, type: 3}
+          m_Texture: {fileID: 2800000, guid: 73f3defbb2dc940d1a6ad3777f1eb773, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: e4e97d23f9bd614429d7e119e5d3cc51, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -37,21 +37,29 @@ Material:
     m_Floats:
       data:
         first:
+          name: PixelSnap
+        second: 0
+      data:
+        first:
           name: _Dist
         second: 0
       data:
         first:
-          name: _ReflectVisible
-        second: .0535714142
-      data:
-        first:
           name: _Shininess
         second: 10
+      data:
+        first:
+          name: _ReflectVisible
+        second: .607142866
+      data:
+        first:
+          name: _Alpha
+        second: 0
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
+        second: {r: .254901975, g: .454901993, b: .572549045, a: .5}
       data:
         first:
           name: _NearCurve
@@ -63,8 +71,4 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _ReflectColor
         second: {r: 1, g: 1, b: 1, a: 1}
