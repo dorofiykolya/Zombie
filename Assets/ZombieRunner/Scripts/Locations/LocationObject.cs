@@ -31,7 +31,7 @@ namespace Runner
 		{
 			if (material == null) 
 			{
-				material = renderer.material;
+				material = renderer.sharedMaterial;
                 if (material != null)
                 {
                     lastShader = material.shader;
