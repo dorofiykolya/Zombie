@@ -941,10 +941,10 @@ GameObject:
   - 4: {fileID: 400096}
   - 33: {fileID: 3300272}
   - 23: {fileID: 2300272}
-  - 114: {fileID: 11400244}
   - 65: {fileID: 6500140}
   - 114: {fileID: 11400418}
   - 54: {fileID: 5400058}
+  - 114: {fileID: 11400006}
   m_Layer: 12
   m_Name: SWAT_car
   m_TagString: Obstacle
@@ -16670,6 +16670,25 @@ MonoBehaviour:
   - 10
   shaderQualities: 0000000001000000
   shaderCulling: 1
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c442a5cf1122e84da246515657a5d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  shaderQualities: 0000000001000000
+  shaderCulling: 1
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17381,25 +17400,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
---- !u!114 &11400244
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shaderList:
-  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
-  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
-  shaderDistances:
-  - 50
-  - 10
-  shaderQualities: 0000000001000000
-  shaderCulling: 1
 --- !u!114 &11400246
 MonoBehaviour:
   m_ObjectHideFlags: 1

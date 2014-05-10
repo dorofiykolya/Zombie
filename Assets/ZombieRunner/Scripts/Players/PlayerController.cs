@@ -483,17 +483,14 @@ namespace Runner
 			}
 			else if (other.gameObject.CompareTag("Human"))
 			{
-				if(isPatientZero)
-				{
-					StartCoroutine(am.eat());
-					particle.Emit(50);
-				}
-
 				other.gameObject.collider.enabled = false;
 				other.gameObject.GetComponent<ObstacleHuman>().movement.speed = 0;
 
                 if (Player.currentList.Count < Player.GetMaxPlayers())
 				{
+					StartCoroutine(am.eat());
+					particle.Emit(50);
+
                     Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();
