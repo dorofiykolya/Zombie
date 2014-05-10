@@ -45,7 +45,7 @@ namespace Runner
 
 		void OnGUI()
 		{
-			GUI.Label (new Rect (Screen.width / 2, 0, 100, 50), fps.ToString());
+			GUI.Label (new Rect (Screen.width / 2, 0, 100, 50), fps.ToString() + " " + UnityEngine.QualitySettings.GetQualityLevel());
 		}
 		
 		// Update is called once per frame

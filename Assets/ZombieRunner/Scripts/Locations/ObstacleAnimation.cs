@@ -26,17 +26,17 @@ namespace Runner
 		
 		public void run1()
 		{
-			thisAnimation.CrossFade(RUN1, 0.5f, PlayMode.StopAll);
+			thisAnimation.CrossFade(RUN1, 0.1f);
 		}
 		
 		public void run2()
 		{
-			thisAnimation.CrossFade(RUN2, 0.5f, PlayMode.StopAll);
+			thisAnimation.CrossFade(RUN2, 0.1f);
 		}
 		
 		public void idle()
 		{
-			thisAnimation.CrossFade(IDLE, 0.5f, PlayMode.StopAll);
+			thisAnimation.CrossFade(IDLE, 0.1f);
 		}
 	}
 }

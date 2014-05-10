@@ -54,7 +54,8 @@ namespace Runner
 
 		public void run()
 		{
-			thisAnimation.CrossFade(RUN, 0.1f);
+			if(!Player.isStop)
+				thisAnimation.CrossFade(RUN, 0.1f);
 		}
 
         public void jump()

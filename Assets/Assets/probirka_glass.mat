@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: probirka_glass
-  m_Shader: {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 629e5d1c5ec60db4e9a83b3943cb2f9b, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -45,12 +45,12 @@ Material:
         second: 0
       data:
         first:
-          name: _Shininess
-        second: 10
-      data:
-        first:
           name: _ReflectVisible
         second: .607142866
+      data:
+        first:
+          name: _Shininess
+        second: 10
       data:
         first:
           name: _Alpha
