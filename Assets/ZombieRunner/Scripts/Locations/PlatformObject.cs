@@ -25,7 +25,7 @@ namespace Runner
 			{
 				return null;
 			}
-			return LocationPlatformManager.PopPlatform(NextPlatforms[Random.Range(0, NextPlatforms.Length)]);
+			return Location.PlatformsManager.PopPlatform(NextPlatforms[Random.Range(0, NextPlatforms.Length)]);
 		}
 		
 		public void SetStartTransform()

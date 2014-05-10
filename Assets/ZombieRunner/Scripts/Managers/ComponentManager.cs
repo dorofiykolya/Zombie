@@ -6,7 +6,16 @@ using UnityEngine;
 
 namespace Runner
 {
-    public class ComponentManager : MonoBehaviour
+	public interface IComponentManager
+	{
+		 void GameStart();
+		 void GameStop();
+		 void GamePause();
+		 void GameResume();
+		 void GameRestart();
+	}
+
+    public class ComponentManager : MonoBehaviour, IComponentManager
     {
         public MissionManager Missions { get; private set; }
         public QualityManager Quality { get; private set; }

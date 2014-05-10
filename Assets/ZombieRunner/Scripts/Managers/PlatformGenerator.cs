@@ -12,12 +12,14 @@ namespace Runner
         private LocationChildren _platforms;
         private LocationDisposeManager _disposedManager;
         private PlayerManager _player;
+        private LocationPlatformManager _platformsManager;
 
-        public PlatformGenerator(LocationChildren Platforms, LocationDisposeManager DisposedManager, PlayerManager player)
+        public PlatformGenerator(LocationChildren Platforms, LocationDisposeManager DisposedManager, PlayerManager player, LocationPlatformManager PlatformsManager)
         {
             this._platforms = Platforms;
             this._disposedManager = DisposedManager;
             this._player = player;
+            this._platformsManager = PlatformsManager;
         }
 		
 		public void Reset()
@@ -31,14 +33,14 @@ namespace Runner
 			bool isStartPlatform = false;
 			if(platform == null)
 			{
-				platform = LocationPlatformManager.GetRandomStartPlatform(Runner.PlayerData.PlatformType);
+				platform = _platformsManager.GetRandomStartPlatform(Runner.PlayerData.PlatformType);
 				isStartPlatform = true;
 				if(platform == null)
 				{
 					ErrorManager.Show("empty start platform", "add start platforms");
 					return;
 				}
-				PlayerData.PlatformTypeRemainingDistance = Runner.LocationPlatformManager.GetDistanceByType(platform.Type);
+                PlayerData.PlatformTypeRemainingDistance = _platformsManager.GetDistanceByType(platform.Type);
 				_next = platform.GetNextRandom();
                 _platforms.Add(platform);
 			}
@@ -50,33 +52,33 @@ namespace Runner
 				int nextType = -1;
 				if(PlayerData.PlatformTypeRemainingDistance <= 0.0f && isStartPlatform == false)
 				{
-					nextType = LocationPlatformManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
+					nextType = _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
 					if(nextType == -1)
 					{
 						nextType = platform.Type;	
 					}
 					if(nextType != PlayerData.PlatformType)
 					{
-						_next = LocationPlatformManager.GetTransitionPlatform(PlayerData.PlatformType, nextType);
+                        _next = _platformsManager.GetTransitionPlatform(PlayerData.PlatformType, nextType);
 					}
 					if(_next == null)
 					{
-						_next = LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, player.Distance);
+                        _next = _platformsManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, player.Distance);
 					}
 					PlayerData.PlatformType = nextType;
-					PlayerData.PlatformTypeRemainingDistance += LocationPlatformManager.GetDistanceByType(nextType);
+                    PlayerData.PlatformTypeRemainingDistance += _platformsManager.GetDistanceByType(nextType);
 				}
 				else
 				{
-					_next = _next != null? _next : LocationPlatformManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, _player.Distance);
+                    _next = _next != null ? _next : _platformsManager.GetRandomPlatformByTypeAndDistance(PlayerData.PlatformType, _player.Distance);
 				}
-				LocationPlatformManager.GetSize(out size, platform);
+                _platformsManager.GetSize(out size, platform);
 				vectorHelper.x = 0;
 				vectorHelper.y = 0;
 				vectorHelper.z = size.z - size.z / 2;
 				_next.transform.position = platform.transform.position + vectorHelper;
 				platform = _next;
-				LocationPlatformManager.GetSize(out size, platform);
+                _platformsManager.GetSize(out size, platform);
 				vectorHelper.x = 0;
 				vectorHelper.y = 0;
 				vectorHelper.z = size.z - size.z / 2;

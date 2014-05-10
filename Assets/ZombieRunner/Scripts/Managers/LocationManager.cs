@@ -28,6 +28,7 @@ namespace Runner
 		public LocationChildren Platforms{get;private set;}
         public LocationDisposeManager DisposedManager { get; private set; }
         public PlatformGenerator Generator { get; private set; }
+        public LocationPlatformManager PlatformsManager { get; private set; }
 		
         public override void Initialize()
         {
@@ -37,12 +38,12 @@ namespace Runner
             GlobalPlatformContainer.AddChild(PlatformContainer);
             GlobalPlatformContainer.AddChild(DisposedPlatformContainer);
 
-            Platforms = new LocationChildren(PlatformContainer, DisposedPlatformContainer);
-            DisposedManager = new LocationDisposeManager(Platforms);
-            Generator = new PlatformGenerator(Platforms, DisposedManager, Player);
-            LocationPlatformManager.ParsePlatforms(platforms, startPlatforms, transitionPlatforms);
-            LocationPlatformManager.ParseInfo(platformsInfo);
+			PlatformsManager = new LocationPlatformManager(platforms, startPlatforms, transitionPlatforms, platformsInfo);
 
+            Platforms = new LocationChildren(PlatformContainer, DisposedPlatformContainer, PlatformsManager);
+            DisposedManager = new LocationDisposeManager(Platforms);
+            Generator = new PlatformGenerator(Platforms, DisposedManager, Player, PlatformsManager);
+            
             PlayerData.PlatformType = 0;
 
             DisposeDistance = SetDisposeDistance;
@@ -79,7 +80,6 @@ namespace Runner
 
         public override void GameStart()
         {
-            //PlayerManager.Restart();
             Platforms.RemoveAll();
             DisposedManager.RemoveAll();
             Generator.Reset();

@@ -10,16 +10,18 @@ namespace Runner
 		private List<Runner.PlatformObject> list = new List<Runner.PlatformObject>(64);
         private GameObject platformContainer;
         private GameObject disposedPlatformContainer;
+        private LocationPlatformManager platformsManager;
 		
 		public Runner.PlatformObject Last{get;private set;}
 		public List<Runner.PlatformObject> List {get{return list;}}
 		
 		public int Count{get{return list.Count;}}
 
-        public LocationChildren(GameObject PlatformContainer, GameObject DisposedPlatformContainer)
+        public LocationChildren(GameObject PlatformContainer, GameObject DisposedPlatformContainer, LocationPlatformManager PlatformsManager)
         {
             this.platformContainer = PlatformContainer;
             this.disposedPlatformContainer = DisposedPlatformContainer;
+            this.platformsManager = PlatformsManager;
         }
 		
 		public void Add(Runner.PlatformObject platform)
@@ -48,7 +50,7 @@ namespace Runner
 			{
 				platform.InPlatformList = false;	
 			}
-			Runner.LocationPlatformManager.PushPlatform(platform);
+			platformsManager.PushPlatform(platform);
 			platform.gameObject.SetActive(false);
 			disposedPlatformContainer.AddChild(platform.gameObject);
 			PowerUpManager.RemovePowerUpObjects (platform);
@@ -84,7 +86,7 @@ namespace Runner
 			foreach(var platform in list)
 			{
 				disposedPlatformContainer.AddChild(platform.gameObject);
-				Runner.LocationPlatformManager.PushPlatform(platform);
+				platformsManager.PushPlatform(platform);
 				platform.InPlatformList = false;
 				platform.AllowDispose = false;
 				platform.gameObject.SetActive(false);

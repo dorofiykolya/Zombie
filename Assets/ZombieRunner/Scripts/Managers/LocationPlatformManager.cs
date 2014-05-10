@@ -8,19 +8,28 @@ using Random = UnityEngine.Random;
 
 namespace Runner
 {
-	public class LocationPlatformManager
+	public class LocationPlatformManager : GameComponent
 	{
-		private static Runner.PlatformObject[] list;
-		private static Runner.PlatformObject[] startList;
-		private static Runner.PlatformInfo[] infoList;
-		private static Dictionary<int,float> typeDistance;
-		private static List<KeyValuePair<int, float>> typeSortedList;
-		private static Vector3[] listSize;
-		private static Runner.PlatformObject[] ListById;
-		private static Dictionary<int,List<Runner.PlatformObject>> PoolById = new Dictionary<int, List<Runner.PlatformObject>>();
-		private static Dictionary<int,Dictionary<int,Runner.PlatformObject>> transitionByType = new Dictionary<int, Dictionary<int, Runner.PlatformObject>>();
-		
-		private static void ParseSize(Runner.PlatformObject[] list)
+		private Runner.PlatformObject[] list;
+		private Runner.PlatformObject[] startList;
+		private Runner.PlatformInfo[] infoList;
+		private Dictionary<int,float> typeDistance;
+		private Dictionary<int,List<int>> tempPlatforms;
+		private List<KeyValuePair<int, float>> typeSortedList;
+		private Vector3[] listSize;
+		private Runner.PlatformObject[] ListById;
+		private Dictionary<int, List<Runner.PlatformObject>> ListByType;
+		private Dictionary<int,List<Runner.PlatformObject>> PoolById = new Dictionary<int, List<Runner.PlatformObject>>();
+		private Dictionary<int,Dictionary<int,Runner.PlatformObject>> transitionByType = new Dictionary<int, Dictionary<int, Runner.PlatformObject>>();
+
+		public LocationPlatformManager(Runner.PlatformObject[] platforms, Runner.PlatformObject[] startPlatforms, Runner.PlatformObject[] transitionPlatforms, Runner.PlatformInfo[] platformsInfo)
+		{
+			ParsePlatforms(platforms, startPlatforms, transitionPlatforms);
+			ParseInfo(platformsInfo);
+			InitialiazeTempPlatforms ();
+		}
+
+		private void ParseSize(Runner.PlatformObject[] list)
 		{
 			foreach (Runner.PlatformObject p in list)
 			{
@@ -59,12 +68,13 @@ namespace Runner
 			}
 		}
 
-        public static void ParsePlatforms(Runner.PlatformObject[] platforms, Runner.PlatformObject[] startPlatforms, Runner.PlatformObject[] transitionPlatforms)
+        private void ParsePlatforms(Runner.PlatformObject[] platforms, Runner.PlatformObject[] startPlatforms, Runner.PlatformObject[] transitionPlatforms)
 		{
-			Runner.LocationPlatformManager.list = platforms;
-			Runner.LocationPlatformManager.startList = startPlatforms;
+			this.list = platforms;
+			this.startList = startPlatforms;
 			ListById = new Runner.PlatformObject[platforms.Length + startPlatforms.Length + transitionPlatforms.Length];
 			listSize = new Vector3[ListById.Length];
+			ListByType = new Dictionary<int, List<PlatformObject>>();
 			Runner.PlatformObject current = null;
 			int index = 0;
 			for(var i = 0; i < startPlatforms.Length; i++, index++)
@@ -78,7 +88,8 @@ namespace Runner
 			{
 				current = platforms[i];
 				current.Id = index;
-				ListById[index] = current;	 
+				ListById[index] = current;	
+				AddToListByType(current);
 			}
 			for(var i = 0; i < transitionPlatforms.Length; i++, index++)
 			{
@@ -86,7 +97,6 @@ namespace Runner
 			    if (current.Mode != PlatformMode.Transition)
 			    {
                     throw new Exception("platform.Mode != Platform.Transition in transition list");
-			        return;
 			    }
 				current.Id = index;
 				ListById[index] = current;
@@ -98,7 +108,17 @@ namespace Runner
 			ParsePlatformTransition(transitionPlatforms);
 		}
 
-        private static void ParsePlatformTransition(Runner.PlatformObject[] list)
+		private void AddToListByType(PlatformObject platform)
+		{
+			List<Runner.PlatformObject> tempList;
+			if (ListByType.TryGetValue (platform.Type, out tempList) == false) {
+				tempList = new List<PlatformObject>();
+				ListByType.Add(platform.Type, tempList);
+			}
+			tempList.Add (platform);
+		}
+
+        private void ParsePlatformTransition(Runner.PlatformObject[] list)
 		{
 			var checkList = new List<int>();
 			Dictionary<int, Runner.PlatformObject> outDic;
@@ -132,7 +152,7 @@ namespace Runner
 			}
 		}
 		
-		private static int CheckTransitionCount(int count)
+		private int CheckTransitionCount(int count)
 		{
 			if(count <= 1)
 			{
@@ -141,7 +161,7 @@ namespace Runner
 			return count * CheckTransitionCount(count - 1);
 		}
 		
-		public static void ParseInfo(Runner.PlatformInfo[] info)
+		private void ParseInfo(Runner.PlatformInfo[] info)
 		{
 			infoList = info;
 			typeDistance = new Dictionary<int, float>(info.Length);
@@ -164,7 +184,7 @@ namespace Runner
 			);
 		}
 		
-		public static int GetTypeByDistance(float distance, int type, bool random = false)
+		public int GetTypeByDistance(float distance, int type, bool random = false)
 		{
 			var len = typeSortedList.Count;
 			var i = len;
@@ -190,32 +210,32 @@ namespace Runner
 			return -1;
 		}
 		
-		public static float GetDistanceByType(int type)
+		public float GetDistanceByType(int type)
 		{
 			return typeDistance[type];	
 		}
 		
-		public static Vector3 GetSize(Runner.PlatformObject p)
+		public Vector3 GetSize(Runner.PlatformObject p)
 		{
 			return (Vector3)listSize[p.Id];
 		}
 		
-		public static Vector3 GetSize(int id)
+		public Vector3 GetSize(int id)
 		{
 			return (Vector3)listSize[id];
 		}
 		
-		public static void GetSize(out Vector3 result, ref int id)
+		public void GetSize(out Vector3 result, ref int id)
 		{
 			result = (Vector3)listSize[id];
 		}
 		
-		public static void GetSize(out Vector3 result, Runner.PlatformObject p)
+		public void GetSize(out Vector3 result, Runner.PlatformObject p)
 		{
 			result = (Vector3)listSize[p.Id];
 		}
 		
-		public static Runner.PlatformObject GetTransitionPlatform(int typeFrom, int typeTo)
+		public Runner.PlatformObject GetTransitionPlatform(int typeFrom, int typeTo)
 		{
 			Dictionary<int, Runner.PlatformObject> current;
 			Runner.PlatformObject platf;
@@ -230,7 +250,7 @@ namespace Runner
 			return null;
 		}
 		
-		public static Runner.PlatformObject GetRandomStartPlatform(int type = 0)
+		public Runner.PlatformObject GetRandomStartPlatform(int type = 0)
 		{
 			int len = startList.Length;
 			if(len == 1)
@@ -252,7 +272,7 @@ namespace Runner
 			return null;	
 		}
 		
-		public static Runner.PlatformObject GetRandomPlatformByMinimumDistance(float distance)
+		public Runner.PlatformObject GetRandomPlatformByMinimumDistance(float distance)
 		{
 			var result = from p in list
 				where p.MinimumDistance <= distance
@@ -271,26 +291,71 @@ namespace Runner
 			return null;
 		}
 		
-		public static Runner.PlatformObject GetRandomPlatformByTypeAndDistance(int type, float distance)
+		public Runner.PlatformObject GetRandomPlatformByTypeAndDistance(int type, float distance)
 		{
-			var result = from p in list
-				where p.MinimumDistance <= distance && p.Type == type
+			var result = from p in ListByType[type]
+				where p.MinimumDistance <= distance && HasInTempPlatform(p) == false
 					select p;
-			
-			
+
+
 			var len = result.Count();
+			PlatformObject current = null;
 			if(len == 1)
 			{
-				return PopPlatform(result.ElementAt(0).Id);	
+				current = PopPlatform(result.ElementAt(0).Id);	
+				AddToTempPlatform(current);
 			}
 			else if(len > 0)
 			{
-				return PopPlatform(result.ElementAt(Random.Range(0, len)).Id);	
+				current = PopPlatform(result.ElementAt(Random.Range(0, len)).Id);	
+				AddToTempPlatform(current);
 			}
-			return null;	
+			else
+			{
+				Debug.LogError("not available platforms by type: " + type + " and distance: " + distance);
+				current = PopPlatform(ListByType[type][(Random.Range(0, ListByType[type].Count))].Id);
+				AddToTempPlatform(current);
+			}
+			return current;	
+		}
+
+		private bool IsFullTempList(int type)
+		{
+			List<int> tempID;
+			List<PlatformObject> tempPO;
+			if (tempPlatforms.TryGetValue (type, out tempID) && ListByType.TryGetValue(type, out tempPO)) {
+				return tempID.Count == tempPO.Count;
+			}
+			return false;
+		}
+
+		private bool HasInTempPlatform(PlatformObject platform)
+		{
+			List<int> temp;
+			if (tempPlatforms.TryGetValue (platform.Type, out temp)) {
+				return temp.Contains (platform.Id);
+			}
+			return false;
+		}
+
+		private void AddToTempPlatform(PlatformObject platform)
+		{
+			List<int> temp;
+			if (tempPlatforms.TryGetValue (platform.Type, out temp)) {
+				temp.Add (platform.Id);
+			}
+			if(temp != null && IsFullTempList(platform.Type))
+			{
+				RemoveTempType(platform.Type);
+			}
+		}
+
+		private void RemoveTempType(int type)
+		{
+			tempPlatforms.Remove (type);
 		}
 		
-		public static Runner.PlatformObject PopPlatform(int id)
+		public Runner.PlatformObject PopPlatform(int id)
 		{
 			List<Runner.PlatformObject> array;
 			Runner.PlatformObject result = null;
@@ -313,7 +378,7 @@ namespace Runner
 			return result;
 		}
 		
-		public static void PushPlatform(Runner.PlatformObject p)
+		public void PushPlatform(Runner.PlatformObject p)
 		{
 			List<Runner.PlatformObject> array;
 			if(PoolById.TryGetValue(p.Id, out array) == false)
@@ -325,9 +390,27 @@ namespace Runner
 			array.Add(p);
 		}
 		
-		public static Runner.PlatformObject PopPlatform(Runner.PlatformObject p)
+		public Runner.PlatformObject PopPlatform(Runner.PlatformObject p)
 		{
 			return PopPlatform(p.Id);	
+		}
+
+		public override void GameStop ()
+		{
+
+		}
+
+		public override void GameStart ()
+		{
+			InitialiazeTempPlatforms ();
+		}
+
+		private void InitialiazeTempPlatforms()
+		{
+			tempPlatforms = new Dictionary<int, List<int>> ();
+			foreach (var t in ListByType) {
+				tempPlatforms.Add(t.Key, new List<int>(16));
+			}
 		}
 	}
 }

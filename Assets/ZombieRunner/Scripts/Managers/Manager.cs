@@ -35,7 +35,7 @@ namespace Runner
         public LocationManager Location { get; private set; }
 		public PowerUpManager PowerUp { get; private set; }
 
-        private List<ComponentManager> components = new List<ComponentManager>();
+		private List<IComponentManager> components = new List<IComponentManager>();
         private GameController gameController;
 
 	    void Awake()
@@ -53,7 +53,7 @@ namespace Runner
 			PowerUp = GetComponent<PowerUpManager>();
             gameController = new GameController(Game, this);
 
-            var componentManagers = GetComponents<ComponentManager>();
+			var componentManagers = GetComponents<ComponentManager>();
             foreach (var c in componentManagers)
             {
                 Register(c);
@@ -80,7 +80,7 @@ namespace Runner
 		}
 
 
-        internal void Register(ComponentManager componentManager)
+		internal void Register(IComponentManager componentManager)
         {
             if (components.Contains(componentManager) == false)
             {

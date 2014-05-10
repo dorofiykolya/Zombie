@@ -12,12 +12,12 @@ namespace Runner
         public event Action OnStop;
         public event Action OnResume;
         public event Action OnRestart;
-        private List<ComponentManager> components;
+		private List<IComponentManager> components;
 
         public bool Paused { get; private set; }
         public bool Started { get; private set; }
 
-        public GameManager(List<ComponentManager> components)
+		public GameManager(List<IComponentManager> components)
         {
             this.components = components;
         }
