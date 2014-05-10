@@ -125,6 +125,6 @@ Shader "Curve/Transparent/Transparent Reflective Curve" {
 		}
 		
 	} 
-	FallBack "Transparent/Diffuse"
+	FallBack "Curve/Transparent/Transparent Diffuse Curve"
 	CustomEditor "CurveMaterialEditor"
 }

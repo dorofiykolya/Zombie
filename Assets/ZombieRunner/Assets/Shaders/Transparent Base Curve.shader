@@ -63,6 +63,6 @@ Shader "Curve/Transparent/Transparent Base Curve" {
 		}
 		
 	} 
-	FallBack "Transparent/Diffuse"
+	FallBack "Curve/Base Curve"
 	CustomEditor "CurveMaterialEditor"
 }
