@@ -132,6 +132,7 @@ public class ShaderQualityWindowEditor : EditorWindow
             l.shaderList = copyShaders.ToArray();
             l.shaderDistances = copyDistances.ToArray();
             l.shaderQualities = copyQuality.ToArray();
+            EditorUtility.SetDirty(l);
         }
     }
 
@@ -145,6 +146,7 @@ public class ShaderQualityWindowEditor : EditorWindow
                 lo.shaderList = copyShaders.ToArray();
                 lo.shaderDistances = copyDistances.ToArray();
                 lo.shaderQualities = copyQuality.ToArray();
+                EditorUtility.SetDirty(o);
             }
         }
 
@@ -165,6 +167,7 @@ public class ShaderQualityWindowEditor : EditorWindow
             }
             if (!string.IsNullOrEmpty(whereName) && whereName != l.name) continue;
             l.shaderCulling = true;
+            EditorUtility.SetDirty(l);
         }
     }
 
@@ -176,6 +179,7 @@ public class ShaderQualityWindowEditor : EditorWindow
             if (lo != null)
             {
                 lo.shaderCulling = true;
+                EditorUtility.SetDirty(o);
             }
         }
 
@@ -196,6 +200,7 @@ public class ShaderQualityWindowEditor : EditorWindow
             }
             if (!string.IsNullOrEmpty(whereName) && whereName != l.name) continue;
             l.shaderCulling = false;
+            EditorUtility.SetDirty(l);
         }
     }
 
@@ -207,6 +212,7 @@ public class ShaderQualityWindowEditor : EditorWindow
             if (lo != null)
             {
                 lo.shaderCulling = false;
+                EditorUtility.SetDirty(o);
             }
         }
 

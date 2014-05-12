@@ -75,6 +75,7 @@ public class LocationObjectEditor : Editor
                 target.shaderList = shaderList.ToArray();
                 target.shaderDistances = shaderDistances.ToArray();
                 target.shaderQualities = shaderQuality.ToArray();
+                EditorUtility.SetDirty(target.gameObject);
             }
         }
     }
@@ -109,6 +110,7 @@ public class LocationObjectEditor : Editor
                             target.shaderList = shaderList.ToArray();
                             target.shaderDistances = shaderDistance.ToArray();
                             target.shaderQualities = shaderQuality.ToArray();
+                            EditorUtility.SetDirty(target.gameObject);
                             break;
                         }
                     }
@@ -134,6 +136,7 @@ public class LocationObjectEditor : Editor
                     {
                         d = newDistance;
                         target.shaderDistances[i] = d;
+                        EditorUtility.SetDirty(target.gameObject);
                     }
                 }
             }
@@ -156,6 +159,7 @@ public class LocationObjectEditor : Editor
                     if (s == shader && d == distance)
                     {
                         target.shaderQualities[i] = minQuality;
+                        EditorUtility.SetDirty(target.gameObject);
                     }
                 }
             }
@@ -230,6 +234,7 @@ public class LocationObjectEditor : Editor
 			currentTarget.shaderList = copyShaders.ToArray();
 			currentTarget.shaderDistances = copyDistances.ToArray();
 			currentTarget.shaderQualities = copyQuality.ToArray();
+            EditorUtility.SetDirty(currentTarget.gameObject);
 		}
 
 		foreach (var g in go.GetChildren()) {
