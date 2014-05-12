@@ -13,7 +13,8 @@ namespace Runner
 		Shop,
 		Resume,
 		Credits,
-		Home
+		Home,
+		Back
 	}
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
@@ -67,15 +68,15 @@ namespace Runner
 				case GUIAction.Credits:
 					break;
 				case GUIAction.Home:
-					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
-					GUIPanelManager.Get(PanelType.MainMenu).Show();
-					GUIPanelManager.currentPanel = PanelType.MainMenu;
 					if( States.Current != State.LOAD)
 					{
 						Game.GameRestart();
-						States.Current = State.LOAD;
-						Player.isStop = true;
 					}
+					break;
+				case GUIAction.Back:
+					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+					GUIPanelManager.Get(PanelType.MainMenu).Show();
+					GUIPanelManager.currentPanel = PanelType.MainMenu;
 					break;
 			}
 		}

@@ -52,7 +52,7 @@ namespace Runner
 			//ARROWS
 			if (Input.GetKeyDown(KeyCode.UpArrow))
 			{
-                if (!Player.currentList[0].bInAir && !Player.currentList[0].isJumpPowerUp)
+                if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 				{
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
@@ -62,7 +62,7 @@ namespace Runner
 			}
 			if (Input.GetKeyDown(KeyCode.DownArrow))
 			{
-				if (!Player.currentList[0].bInDuck && !Player.currentList[0].isJumpPowerUp)
+				if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
 				{
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
@@ -100,7 +100,7 @@ namespace Runner
 					switch (sSwipeDirection)
 					{
 						case SwipeDirection.Jump:
-							if (!Player.currentList[0].bInAir && !Player.currentList[0].isJumpPowerUp)
+							if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 							{
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{
@@ -109,7 +109,7 @@ namespace Runner
 							}
 							break;
 						case SwipeDirection.Duck:
-							if (!Player.currentList[0].bInDuck && !Player.currentList[0].isJumpPowerUp)
+							if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
 							{
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{

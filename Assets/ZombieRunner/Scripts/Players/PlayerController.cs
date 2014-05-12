@@ -38,13 +38,14 @@ namespace Runner
 		private float glideSpeed = 100;
 
 		public bool bInAir = false;
-		public bool isJumpPowerUp = false;
 		public bool glideEnable = false;
 		private bool bJumpFlag = false;
 		private bool bInJump = false;
 		public bool bInDuck = false;
 		private bool bDiveFlag = false;
 		private bool bExecuteLand = false;
+		private bool isBridge = false;
+		private bool isBrigeKey = false;
 
         private AnimationManager am;
 
@@ -54,7 +55,7 @@ namespace Runner
         public float sideScrollSpeed;
         public float slideDuration;
 		
-		private float bornTime;
+		public float bornTime;
 		private int soldierLife;
 
         public float Distance { get { return Player.Distance; } }
@@ -69,6 +70,8 @@ namespace Runner
 			offset.x = 0;
 			offset.y = 0;
 
+			fContactPointY = 0;
+
             if (!isPatientZero)
             {
 				if(ID == 4)
@@ -81,8 +84,16 @@ namespace Runner
 				}
 				else
 				{
-					while(offset.y < 1.5f && offset.y > -1.5f)
-						offset.y = Random.Range(-2f, 2f);
+					if(Player.currentList[0].ID == 4)
+					{
+						while(offset.y < 1.5f && offset.y > 0f)
+							offset.y = Random.Range(0f, 2f);
+					}
+					else
+					{
+						while(offset.y < 1.5f && offset.y > -1.5f)
+							offset.y = Random.Range(-2f, 2f);
+					}
 				}
 
 				while(offset.x < 1.5f && offset.x > -1.5f)
@@ -91,18 +102,19 @@ namespace Runner
 
 			bInAir = false;
 			bJumpFlag = false;
-			isJumpPowerUp = false;
 			glideEnable = false;
 			bInJump = false;
 			bInDuck = false;
 			bDiveFlag = false;
 			bExecuteLand = false;
+			isBridge = false;
+			isBrigeKey = false;
 
 			magnet = GameObject.Find ("Player").collider as SphereCollider;
 			board = transform.FindChild("Board");
 
             TargetPosition = transform.position;
-            targetPosition.x = WaypointManager.wayPoints[WaypointManager.currentWP].position.x + offset.x;
+			targetPosition.x = Waypoint.wayPoints[Waypoint.currentWP].position.x + offset.x;
             transform.position = targetPosition;
 
 			am = transform.FindChild ("Player").GetComponent<AnimationManager>();
@@ -157,7 +169,7 @@ namespace Runner
 			}
 
 			//board flight animation
-			if(isJumpPowerUp)
+			if(Player.isJumpPowerUp)
 			{
 				if(transform.position.y == 20)
 				{
@@ -191,7 +203,7 @@ namespace Runner
 				targetPosition.y = transform.position.y;
 				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * speed);
 
-				if(!isJumpPowerUp)
+				if(!Player.isJumpPowerUp)
 				{
 					rotateVector.y = Mathf.Sign(targetPosition.x - transform.position.x) * 45 * ((8 - Vector3.Distance(transform.position, targetPosition)) / 8);
 
@@ -200,7 +212,7 @@ namespace Runner
             }
 			else
 			{
-				if(playerRotate.localEulerAngles.y != 0 && !isJumpPowerUp)
+				if(playerRotate.localEulerAngles.y != 0 && !Player.isJumpPowerUp)
 				{
 					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, transform.position, sideScrollSpeed * Time.deltaTime * 0.01f * speed, 0f);
 				}
@@ -231,6 +243,29 @@ namespace Runner
 				bInAir = true;
 				fCurrentUpwardVelocity = fJumpPush;
 				fCurrentHeight = transform.position.y;
+			}
+
+			if(isBridge)
+			{
+				if(transform.position.y == 8 && !bInJump)
+				{
+					isBrigeKey = true;
+					targetPosition.y = 0;
+				}
+
+				if(!isBrigeKey && !bInJump)
+				{
+					targetPosition.y = 8;
+				}
+
+				transform.position = Vector3.MoveTowards(transform.position, targetPosition, 4 * Time.deltaTime * speed);
+				
+				if(transform.position.y == 0 && !bInJump && isBrigeKey)
+				{
+					isBridge = false;
+					isBrigeKey = false;
+					fContactPointY = 0;
+				}
 			}
 
 			am.updateSpeed();
@@ -336,7 +371,7 @@ namespace Runner
             {
                 TargetPosition = position;
 
-				if(bInJump || isJumpPowerUp)
+				if(bInJump || Player.isJumpPowerUp)
 					return;
 
 				if(right) 
@@ -402,8 +437,7 @@ namespace Runner
 
 					deathSpeed = Player.Speed / Player.MinimumSpeed;
 
-					States.Current = State.LOSE;
-                    Player.isStop = true;
+					Game.GameStop();
 				}
 			}
 			else
@@ -423,7 +457,7 @@ namespace Runner
 		{
 			board.gameObject.SetActive (true);
 			am.idle ();
-			isJumpPowerUp = true;
+			Player.isJumpPowerUp = true;
 			glideSpeed = 100;
 		}
 
@@ -435,7 +469,7 @@ namespace Runner
 			fCurrentUpwardVelocity = 0;
 			fCurrentHeight = transform.position.y;
 			bInAir = true;
-			isJumpPowerUp = false;
+			Player.isJumpPowerUp = false;
 		}
 
 		void OnCollisionExit(Collision other)
@@ -459,6 +493,13 @@ namespace Runner
 						return;
 					}
 				}
+
+				if(Mathf.Round(other.contacts[0].normal.z) != -1)
+				{
+					Waypoint.changeWP(Waypoint.currentWP < Waypoint.prevWP);
+					return;
+				}
+
 				if(ID == 4)
 				{
 					other.gameObject.GetComponent<MeshExploder>().Explode();
@@ -471,7 +512,12 @@ namespace Runner
 				else
 					soldierLife--;
             }
-            else if (other.gameObject.CompareTag("Currency"))
+			else if (other.gameObject.CompareTag("Bridge"))
+			{
+				isBridge = true;
+				isBrigeKey = false;
+			}
+			else if (other.gameObject.CompareTag("Currency"))
             {
                 CurrencyManager.goldCount += (1 + Player.GetGoldBonus());
 				other.transform.GetComponent<ObstacleCurrency>().isPickUp = true;

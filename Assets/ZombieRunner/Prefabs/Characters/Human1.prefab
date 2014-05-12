@@ -610,12 +610,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400080}
-  - 111: {fileID: 11100000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 54: {fileID: 5400000}
-  m_Layer: 0
+  - 111: {fileID: 11100000}
+  - 65: {fileID: 6500002}
+  m_Layer: 17
   m_Name: Human1
   m_TagString: Human
   m_Icon: {fileID: 0}
@@ -632,7 +633,7 @@ GameObject:
   - 4: {fileID: 400082}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400006}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: destination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,6 +1170,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 4, z: 2}
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!65 &6500002
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 4, z: 2}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!111 &11100000
 Animation:
   m_ObjectHideFlags: 1
@@ -1177,11 +1190,12 @@ Animation:
   m_GameObject: {fileID: 100080}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400004, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
+  m_Animation: {fileID: 7400000, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
   - {fileID: 7400002, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
   - {fileID: 7400004, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
+  - {fileID: 7400006, guid: 0033c1ae0bc364a5ba462619d6cf6493, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1245,7 +1259,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100082}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 20

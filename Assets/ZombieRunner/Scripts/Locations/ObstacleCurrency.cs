@@ -12,18 +12,22 @@ namespace Runner
 
 		public bool isPickUp = false;
 
+		public override void Initialize ()
+		{
+			probe = transform.position;
+		}
+
 		void Update () 
 		{
 			transform.Rotate(Vector3.up * Time.deltaTime * 100);
 
 			if(isPickUp)
 			{
-				player = transform.InverseTransformPoint(WaypointManager.wayPoints[WaypointManager.currentWP].position);
-				probe = transform.position;
+				player = transform.InverseTransformPoint(Waypoint.wayPoints[Waypoint.currentWP].position);
 
 				player.z = player.x * -1;
 				player.y = transform.position.y / 2;
-				player.x = WaypointManager.wayPoints[WaypointManager.currentWP].position.x;
+				player.x = Waypoint.wayPoints[Waypoint.currentWP].position.x;
 
 				isPickUp = false;
 				isTween = true;

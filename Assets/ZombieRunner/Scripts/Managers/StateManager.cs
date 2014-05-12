@@ -42,8 +42,19 @@ namespace Runner
 
         public override void GameStart()
         {
-            Current = State.GAME;
+            Current = State.LOAD;
+			GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+			GUIPanelManager.Get(PanelType.MainMenu).Show();
+			GUIPanelManager.currentPanel = PanelType.MainMenu;
         }
+
+		public override void GameStop ()
+		{
+			Current = State.LOSE;
+			GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+			GUIPanelManager.Get(PanelType.Lose).Show();
+			GUIPanelManager.currentPanel = PanelType.Lose;
+		}
         
 		void OnGUI ()
 		{

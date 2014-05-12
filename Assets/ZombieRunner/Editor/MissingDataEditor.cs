@@ -7,20 +7,30 @@ using UnityEngine;
 
 namespace Runner
 {
-	[CustomEditor(typeof(MonoBehaviour))]
-	public class MissingDataEditor : Editor 
+	public class MissingDataEditor : EditorWindow 
 	{
-		private static Material mat;
+		private Animation death;
+		private string name;
 
-		[MenuItem( "Window/Find Missing Data In Prefabs", priority = 1 )]
-		public static void FindMissingMaterialInPrefabs()
+		void OnGUI()
+		{
+			death = EditorGUILayout.ObjectField("Death", death, typeof(Animation)) as Animation;
+			name = EditorGUILayout.TextField("Name", name);
+
+			if (death != null)
+			{
+				if (GUILayout.Button("ADD"))
+				{
+					AddAnimation();
+				}
+			}
+		}
+
+		private void AddAnimation()
 		{
 			var progressTime = Environment.TickCount;
 			
 			#region Load all assets in project before searching
-
-			mat = AssetDatabase.LoadAssetAtPath("Assets/Assets/probirka_glass.mat", typeof(Material)) as Material;
-			Debug.Log(mat);
 			
 			var allAssetPaths = AssetDatabase.GetAllAssetPaths();
 			for( int i = 0; i < allAssetPaths.Length; i++ )
@@ -29,7 +39,7 @@ namespace Runner
 				if( Environment.TickCount - progressTime > 250 )
 				{
 					progressTime = Environment.TickCount;
-					EditorUtility.DisplayProgressBar( "Find Missing Data", "Searching prefabs", (float)i / (float)allAssetPaths.Length );
+					EditorUtility.DisplayProgressBar( "Prefabs Adjustment", "Searching prefabs", (float)i / (float)allAssetPaths.Length );
 				}
 				
 				AssetDatabase.LoadMainAssetAtPath( allAssetPaths[ i ] );
@@ -37,36 +47,42 @@ namespace Runner
 			}
 			
 			EditorUtility.ClearProgressBar();
-
+			
 			#endregion
-
+			
 			var prefabs = Resources
 				.FindObjectsOfTypeAll( typeof( GameObject ) )
 					.Cast<GameObject>()
 					.Where( x => x.transform.parent == null && isPrefab( x ) )
 					.OrderBy( x => x.name )
 					.ToList();
-
+			
 			foreach(GameObject child in prefabs)
 			{
-				ObstacleScale(child);
+				Adjustment(child);
 			}
 		}
 
-		private static void ObstacleScale(GameObject gameObject) 
+		[MenuItem("Runner/Prefabs Adjustment")]
+		public static void ShowShaderQualityWindowEditor()
 		{
-			if (gameObject.name == "Human1")
+			EditorWindow.GetWindow<MissingDataEditor>("Prefabs Adjustment", true).Show();
+		}
+
+		private void Adjustment(GameObject gameObject) 
+		{
+			if (gameObject.CompareTag("Human"))
 			{
-				gameObject.transform.localScale = new Vector3(1.2f,1.2f,1.2f);
+				gameObject.collider.isTrigger = false;
 			}
 			
 			foreach (Transform child in gameObject.transform) 
 			{
-				ObstacleScale(child.gameObject);
+				Adjustment(child.gameObject);
 			}
 		}
 
-		private static bool isPrefab( GameObject item )
+		private bool isPrefab( GameObject item )
 		{
 			if( item == null )
 				return false;

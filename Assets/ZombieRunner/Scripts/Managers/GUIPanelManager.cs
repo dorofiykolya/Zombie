@@ -14,7 +14,8 @@ namespace Runner
 		Shop,
 		Character,
 		Missions,
-		Leaderboard
+		Leaderboard,
+		Lose
 	}
 	
 	[AddComponentMenu("Runner/GUI/Panel")]

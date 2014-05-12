@@ -14,9 +14,19 @@ namespace Runner
         {
             startSpeed = movement.speed;
         }
+
+		void OnTriggerEnter(Collider other) 
+		{
+			if (other.gameObject.CompareTag("Obstacle"))
+			{
+				movement.Stop();
+				GetComponent<ObstacleAnimation> ().death ();
+			}
+		}
 		
 		void OnDisable() 
 		{
+			StopAllCoroutines ();
 			movement.speed = startSpeed;
 			gameObject.collider.enabled = true;
 			GetComponent<ObstacleAnimation> ().idle ();

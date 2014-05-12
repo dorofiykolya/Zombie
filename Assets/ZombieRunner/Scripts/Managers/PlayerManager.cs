@@ -10,6 +10,7 @@ namespace Runner
         public override void GameStart()
         {
             Distance = 0;
+			isJumpPowerUp = false;
             PlayerData.PlatformTypeRemainingDistance = 0.0f;
             PlayerData.Distance = 0.0f;
 
@@ -22,6 +23,11 @@ namespace Runner
             currentList.Clear();
             Select(PlayerData.CharacterId);
         }
+
+		public override void GameStop ()
+		{
+			isStop = true;
+		}
 		
 		public void Move (float moveSpeed)
 		{
@@ -46,6 +52,7 @@ namespace Runner
 		public float SpeedDistanceMultiply{get; private set;}
 		public float SideScrollSpeed{get;private set;}
 		public bool isStop;
+		public bool isJumpPowerUp;
 
 		public Vector3 defaultCameraPosition;
 
@@ -120,6 +127,7 @@ namespace Runner
 				game = new GameObject("Player");
 				game.tag = "Player";
 			}
+
 			for(int i = 0; i < currentList.Count; i++)
 			{
 				if(i != 0)

@@ -22,11 +22,17 @@ namespace Runner
 			if (other.gameObject.CompareTag ("Player")) 
 			{
 				isTriggered = true;
+				collider.enabled = false;
 			}
 			if(parent.CompareTag("Human"))
 			{
 				parent.GetComponent<ObstacleAnimation> ().run1();
 			}
+		}
+
+		public void Stop()
+		{
+			isTriggered = false;
 		}
 
 		void Update()
@@ -50,6 +56,7 @@ namespace Runner
 			if(parent != null)
 			{
 				isTriggered = false;
+				collider.enabled = true;
 				parent.localPosition = parentCoord;
 			}
 		}

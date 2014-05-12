@@ -25,9 +25,6 @@ namespace Runner
 
         private void OnGameRestart()
         {
-
-            //StateManager.Current = State.GAME;
-            manager.Player.isStop = false;
             Time.timeScale = 1;
         }
     }

@@ -6,15 +6,15 @@ namespace Runner
 {
     public class WaypointManager : ComponentManager
     {
-        public Transform[] list;
-        public static Transform[] wayPoints;
-        public static int currentWP;
+        public Transform[] wayPoints;
+        public int currentWP;
+		public int prevWP;
 
-        public override void Initialize()
-        {
-            currentWP = 1;
-            wayPoints = list;
-        }
+		public override void GameStop ()
+		{
+			currentWP = 1;
+			prevWP = 1;
+		}
 
         public void changeWP(bool right)
         {
@@ -24,6 +24,7 @@ namespace Runner
             if (newWp == currentWP)
                 return;
 
+			prevWP = currentWP;
             currentWP = newWp;
 
             for (int i = 0; i < Player.currentList.Count; i++)
