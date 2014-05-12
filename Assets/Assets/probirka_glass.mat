@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: probirka_glass
-  m_Shader: {fileID: 4800000, guid: 629e5d1c5ec60db4e9a83b3943cb2f9b, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0c8fbbe4410755944a77d9cf85b018c7, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -41,16 +41,16 @@ Material:
         second: 0
       data:
         first:
-          name: _Shininess
-        second: 10
-      data:
-        first:
           name: _Dist
         second: .00300000003
       data:
         first:
           name: _ReflectVisible
-        second: .607142866
+        second: 1
+      data:
+        first:
+          name: _Shininess
+        second: 10
       data:
         first:
           name: _Alpha
@@ -59,11 +59,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .254901975, g: .454901993, b: .572549045, a: .5}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .409547985, g: .563462615, b: .742647052, a: .435294122}
       data:
         first:
           name: _NearCurve
@@ -72,3 +68,7 @@ Material:
         first:
           name: _FarCurve
         second: {r: 500, g: -250, b: 0, a: 0}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}

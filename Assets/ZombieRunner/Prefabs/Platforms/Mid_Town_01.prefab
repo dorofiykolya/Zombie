@@ -1310,9 +1310,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c9f3ee3b206d14ea89118b0d2a789d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  shaderQualities: 0000000001000000
   shaderCulling: 1
   Mode: 0
   Level: 0
@@ -1332,9 +1336,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  shaderQualities: 0000000001000000
   shaderCulling: 1
 --- !u!114 &11400004
 MonoBehaviour:
