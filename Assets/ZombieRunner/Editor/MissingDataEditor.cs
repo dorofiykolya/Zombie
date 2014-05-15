@@ -9,13 +9,11 @@ namespace Runner
 {
 	public class MissingDataEditor : EditorWindow 
 	{
-		private Animation death;
-		private string name;
+		private Mesh death;
 
 		void OnGUI()
 		{
-			death = EditorGUILayout.ObjectField("Death", death, typeof(Animation)) as Animation;
-			name = EditorGUILayout.TextField("Name", name);
+			death = EditorGUILayout.ObjectField("Bus Mesh", death, typeof(Mesh)) as Mesh;
 
 			if (death != null)
 			{
@@ -71,9 +69,12 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if (gameObject.CompareTag("Human"))
+			if (gameObject.CompareTag("Obstacle"))
 			{
-				gameObject.collider.isTrigger = false;
+				if(gameObject.transform.eulerAngles.z > 80 && gameObject.transform.position.y < gameObject.collider.bounds.size.y / 2)
+				{
+					gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.collider.bounds.size.y / 2, gameObject.transform.position.z);
+				}
 			}
 			
 			foreach (Transform child in gameObject.transform) 

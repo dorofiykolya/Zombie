@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3fa15af875a02476ca5e57a028a2fee6, type: 2}
+  - {fileID: 2100000, guid: 5b596ad5d4e1c4c3db464dcc85f44b67, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -97,9 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f824e65b1d20943b7a0891255d386faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0c8fbbe4410755944a77d9cf85b018c7, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
   Id: 3
 --- !u!1001 &100100000

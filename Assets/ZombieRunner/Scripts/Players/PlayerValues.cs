@@ -19,7 +19,7 @@ namespace Runner
 		public static int[] player_1_prefs = new int[]{2, 3, 4, 5, 6};
 		public static int[] player_2_prefs = new int[]{1, 2, 3, 4, 5};
 		public static int[] player_3_prefs = new int[]{10, 20, 30, 40, 50};
-		public static int[] player_4_prefs = new int[]{5, 7, 9, 11, 13};
+		public static int[] player_4_prefs = new int[]{10, 20, 30, 40, 50};
 		public static int[] player_5_prefs = new int[]{1, 2, 3, 4, 5};
 
 		public static int player = 0;

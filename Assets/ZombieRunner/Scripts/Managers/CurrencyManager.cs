@@ -10,12 +10,14 @@ namespace Runner
 		public UILabel fatman;
 
 		public static int goldCount;
+		public static float scoreCount;
 		public static int currentMult;
 
 		public override void Initialize ()
 		{
 			currentMult = 1;
 			goldCount = 0;
+			scoreCount = 0;
 
 			multi.text = "x" + currentMult;
 			gold.text = "0";
@@ -31,7 +33,8 @@ namespace Runner
 
 		void Update()
 		{
-			score.text = Mathf.Round(Player.Distance / Player.MinimumSpeed * (currentMult + Player.GetMult() + 10) * PowerUp.scorePowerup).ToString();
+			scoreCount += (Player.Speed / Player.MinimumSpeed * (currentMult + Player.GetMult ()) * PowerUp.scorePowerup) / 5;
+			score.text = ((int)scoreCount).ToString();
             multi.text = "x" + (currentMult + Player.GetMult());
 			gold.text = goldCount.ToString ();
 

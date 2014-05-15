@@ -9321,28 +9321,28 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_Mesh: {fileID: 4300004, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300008
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
-  m_Mesh: {fileID: 4300002, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300010
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
-  m_Mesh: {fileID: 4300002, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300012
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100018}
-  m_Mesh: {fileID: 4300004, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300014
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -9447,14 +9447,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100056}
-  m_Mesh: {fileID: 4300004, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300044
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100060}
-  m_Mesh: {fileID: 4300002, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300046
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -12984,7 +12984,7 @@ MonoBehaviour:
   Mode: 0
   Level: 0
   MinimumDistance: 0
-  Type: 0
+  Type: 2
   TypeTo: 0
   InPlatformList: 0
   NextPlatforms: []
@@ -13045,10 +13045,12 @@ MonoBehaviour:
   shaderList:
   - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
   - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
   shaderDistances:
   - 50
   - 10
-  shaderQualities: 0000000001000000
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
 --- !u!114 &11400016
 MonoBehaviour:
@@ -13064,10 +13066,12 @@ MonoBehaviour:
   shaderList:
   - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
   - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
   shaderDistances:
   - 50
   - 10
-  shaderQualities: 0000000001000000
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
 --- !u!114 &11400018
 MonoBehaviour:
@@ -13243,10 +13247,12 @@ MonoBehaviour:
   shaderList:
   - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
   - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
   shaderDistances:
   - 50
   - 10
-  shaderQualities: 0000000001000000
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
 --- !u!114 &11400062
 MonoBehaviour:

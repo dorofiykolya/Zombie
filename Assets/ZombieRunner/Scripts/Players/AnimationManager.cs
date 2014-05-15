@@ -5,8 +5,6 @@ namespace Runner
 {
     public class AnimationManager : ComponentManager
     {
-        private Animation thisAnimation;
-
 		private const string RUN = "Run";
 		private const string JUMP = "Jump";
 		private const string SLIDE = "Slide";
@@ -18,17 +16,18 @@ namespace Runner
 
 		public float animationOffset = 0.0f;
 
+		public string current;
+
         public override void Initialize()
         {
-            thisAnimation = animation;
-            thisAnimation[RUN].wrapMode = WrapMode.Loop;
-			thisAnimation[IDLE].wrapMode = WrapMode.Loop;
-            thisAnimation[JUMP].wrapMode = WrapMode.ClampForever;
-            thisAnimation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
-            thisAnimation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
-            thisAnimation[EAT].wrapMode = WrapMode.ClampForever;
-            thisAnimation[DEATH].wrapMode = WrapMode.ClampForever;
-            thisAnimation[SLIDE].wrapMode = WrapMode.Loop;
+			animation[RUN].wrapMode = WrapMode.Loop;
+			animation[IDLE].wrapMode = WrapMode.Loop;
+			animation[JUMP].wrapMode = WrapMode.ClampForever;
+			animation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
+			animation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
+			animation[EAT].wrapMode = WrapMode.ClampForever;
+			animation[DEATH].wrapMode = WrapMode.ClampForever;
+			animation[SLIDE].wrapMode = WrapMode.Loop;
 
 			if(Player.isStop)
 				idle();
@@ -39,61 +38,77 @@ namespace Runner
 		public void updateSpeed()
 		{
             var speed = Player.Speed / Player.MinimumSpeed + animationOffset;
-			thisAnimation[RUN].speed = speed; 
-			thisAnimation[JUMP].speed = speed;
-			thisAnimation[SLIDE].speed = speed;
-			thisAnimation[SLIDE_RIGHT].speed = speed;
-			thisAnimation[SLIDE_LEFT].speed = speed;
-			thisAnimation[EAT].speed = speed;
+			animation[RUN].speed = speed; 
+			animation[JUMP].speed = speed;
+			animation[SLIDE].speed = speed;
+			animation[SLIDE_RIGHT].speed = speed;
+			animation[SLIDE_LEFT].speed = speed;
+			animation[EAT].speed = speed;
 		}
 
         public void idle()
         {
-			thisAnimation.CrossFade(IDLE, 0.1f);
+			if(current == IDLE) return;
+			current = IDLE;
+			animation.CrossFade(IDLE, 0.1f);
         }
 
 		public void run()
 		{
-			if(!Player.isStop && !Player.isJumpPowerUp)
-				thisAnimation.CrossFade(RUN, 0.1f);
+			if(current == RUN) return;
+			current = RUN;
+			if(!Player.isStop)
+				animation.CrossFade(RUN, 0.1f);
 		}
 
         public void jump()
         {
-			thisAnimation.Rewind (JUMP);
-			thisAnimation.CrossFade(JUMP, 0.1f);
+			if(current == JUMP) return;
+			current = JUMP;
+			animation.Rewind (JUMP);
+			animation.CrossFade(JUMP, 0.1f);
         }
 
         public void slide()
         {
-			thisAnimation.Rewind (SLIDE);
-			thisAnimation.CrossFade(SLIDE, 0.1f);
+			if(current == SLIDE) return;
+			current = SLIDE;
+			animation.Rewind (SLIDE);
+			animation.CrossFade(SLIDE, 0.1f);
         }
 
 		public IEnumerator slideRight()
 		{
-			thisAnimation.PlayQueued(SLIDE_RIGHT, QueueMode.PlayNow);
-			yield return new WaitForSeconds( thisAnimation[SLIDE_RIGHT].length );
+			if(current == SLIDE_RIGHT) yield return null;
+			current = SLIDE_RIGHT;
+			animation.PlayQueued(SLIDE_RIGHT, QueueMode.PlayNow);
+			yield return new WaitForSeconds( animation[SLIDE_RIGHT].length );
 			run();
 		}
 
 		public IEnumerator slideLeft()
 		{
-			thisAnimation.PlayQueued(SLIDE_LEFT, QueueMode.PlayNow);
-			yield return new WaitForSeconds( thisAnimation[SLIDE_LEFT].length );
+			if(current == SLIDE_LEFT) yield return null;
+			current = SLIDE_LEFT;
+			animation.PlayQueued(SLIDE_LEFT, QueueMode.PlayNow);
+			yield return new WaitForSeconds( animation[SLIDE_LEFT].length );
 			run();
 		}
 
 		public IEnumerator eat()
 		{
-			thisAnimation.PlayQueued(EAT, QueueMode.PlayNow);
-			yield return new WaitForSeconds( thisAnimation[EAT].length );
+			if(current == EAT) yield return null;
+			current = EAT;
+			animation.PlayQueued(EAT, QueueMode.PlayNow);
+			yield return new WaitForSeconds( animation[EAT].length );
 			run();
 		}
 
 		public void death()
 		{
-			thisAnimation.Play(DEATH);
+			if(current == DEATH) return;
+			current = DEATH;
+			animation.Play(DEATH);
 		}
     }
 }

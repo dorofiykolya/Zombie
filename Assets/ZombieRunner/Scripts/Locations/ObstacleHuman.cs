@@ -29,7 +29,6 @@ namespace Runner
 			StopAllCoroutines ();
 			movement.speed = startSpeed;
 			gameObject.collider.enabled = true;
-			GetComponent<ObstacleAnimation> ().idle ();
 		}
     }
 }

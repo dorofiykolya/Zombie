@@ -8,12 +8,12 @@ namespace Runner
     {
         public Transform[] wayPoints;
         public int currentWP;
-		public int prevWP;
+		public int transitWP;
 
 		public override void GameStop ()
 		{
+			transitWP = currentWP;
 			currentWP = 1;
-			prevWP = 1;
 		}
 
         public void changeWP(bool right)
@@ -24,7 +24,7 @@ namespace Runner
             if (newWp == currentWP)
                 return;
 
-			prevWP = currentWP;
+			transitWP = currentWP;
             currentWP = newWp;
 
             for (int i = 0; i < Player.currentList.Count; i++)

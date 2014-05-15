@@ -14,7 +14,8 @@ namespace Runner
 		Resume,
 		Credits,
 		Home,
-		Back
+		Back,
+		Revive
 	}
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
@@ -77,6 +78,13 @@ namespace Runner
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.MainMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.MainMenu;
+					break;
+				case GUIAction.Revive:
+					States.Current = State.GAME;
+					Player.Revive();
+					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+					GUIPanelManager.Get(PanelType.GameMenu).Show();
+					GUIPanelManager.currentPanel = PanelType.GameMenu;
 					break;
 			}
 		}

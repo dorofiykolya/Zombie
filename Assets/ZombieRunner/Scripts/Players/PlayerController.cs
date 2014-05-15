@@ -17,7 +17,6 @@ namespace Runner
         }
 
         public bool isPatientZero = true;
-
         public BoxCollider collider;
 		public SphereCollider magnet { get; private set; }
 
@@ -37,15 +36,16 @@ namespace Runner
 
 		private float glideSpeed = 100;
 
-		public bool bInAir = false;
-		public bool glideEnable = false;
-		private bool bJumpFlag = false;
-		private bool bInJump = false;
-		public bool bInDuck = false;
-		private bool bDiveFlag = false;
-		private bool bExecuteLand = false;
-		private bool isBridge = false;
-		private bool isBrigeKey = false;
+		public bool bInAir;
+		public bool glideEnable;
+		private bool bJumpFlag;
+		private bool bInJump;
+		public bool bInDuck;
+		private bool bDiveFlag;
+		private bool bExecuteLand;
+		private bool isBridge;
+		private Vector3 bridgeHeight;
+		private float brigeDistance;
 
         private AnimationManager am;
 
@@ -57,6 +57,7 @@ namespace Runner
 		
 		public float bornTime;
 		private int soldierLife;
+		private float reviveTime;
 
         public float Distance { get { return Player.Distance; } }
 		private float speed;
@@ -64,6 +65,8 @@ namespace Runner
 
 		private Transform playerRotate;
 		private ParticleSystem particle;
+		private bool blink;
+		private float blinkTime;
 
         public void Initialize()
         {
@@ -108,7 +111,7 @@ namespace Runner
 			bDiveFlag = false;
 			bExecuteLand = false;
 			isBridge = false;
-			isBrigeKey = false;
+			bridgeHeight = Vector3.zero;
 
 			magnet = GameObject.Find ("Player").collider as SphereCollider;
 			board = transform.FindChild("Board");
@@ -126,6 +129,10 @@ namespace Runner
 			if(ID == 4)
 			{
 				soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+			}
+			if(Player.isRevive)
+			{
+				reviveTime = Time.timeSinceLevelLoad;
 			}
 
 			playerRotate = transform.FindChild ("Player").transform;
@@ -162,6 +169,23 @@ namespace Runner
 			//update game speed
             speed = Player.Speed / Player.MinimumSpeed;
 
+			//revive
+			if(Player.isRevive)
+			{
+				if(Time.timeSinceLevelLoad - reviveTime > 3)
+				{
+					Player.isRevive = false;
+					am.gameObject.SetActive(true);
+				}
+
+				if(Time.timeSinceLevelLoad - blinkTime > 0.4)
+				{
+					am.gameObject.SetActive(blink);
+					blink = !blink;
+					blinkTime = Time.timeSinceLevelLoad;
+				}
+			}
+
 			//fatman dies
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
 			{
@@ -169,14 +193,16 @@ namespace Runner
 			}
 
 			//board flight animation
-			if(Player.isJumpPowerUp)
+			if(Player.isJumpPowerUp && isPatientZero)
 			{
-				if(transform.position.y == 20)
+				am.idle();
+
+				if(transform.position.y == 26)
 				{
 					glideEnable = false;
 				}
 
-				if(transform.position.y == 22)
+				if(transform.position.y == 28)
 				{
 					glideSpeed = 5;
 					glideEnable = true;
@@ -184,12 +210,12 @@ namespace Runner
 
 				if(glideEnable)
 				{
-					targetPosition.y = 20;
+					targetPosition.y = 26;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
 				}
 				else
 				{
-					targetPosition.y = 22;
+					targetPosition.y = 28;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
 				}
 
@@ -199,6 +225,11 @@ namespace Runner
 			//change waypoint
             if (transform.position.x != targetPosition.x)
             {
+				if(Mathf.Abs(transform.position.x - targetPosition.x) <= 4)
+				{
+					Waypoint.transitWP = Waypoint.currentWP;
+				}
+
                 targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
 				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * speed);
@@ -245,31 +276,56 @@ namespace Runner
 				fCurrentHeight = transform.position.y;
 			}
 
+			//step on bridge
 			if(isBridge)
 			{
-				if(transform.position.y == 8 && !bInJump)
-				{
-					isBrigeKey = true;
-					targetPosition.y = 0;
-				}
-
-				if(!isBrigeKey && !bInJump)
+				var length = Player.Distance - brigeDistance;
+				if(length < 100)
 				{
 					targetPosition.y = 8;
 				}
-
-				transform.position = Vector3.MoveTowards(transform.position, targetPosition, 4 * Time.deltaTime * speed);
-				
-				if(transform.position.y == 0 && !bInJump && isBrigeKey)
+				else if(length > 100)
 				{
-					isBridge = false;
-					isBrigeKey = false;
-					fContactPointY = 0;
+					if(length > 400)
+					{
+						isBridge = false;
+						fContactPointY = 0;
+						bridgeHeight = Vector3.zero;
+						return;
+					}
+
+					targetPosition.y = 0;
+				}
+
+				bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, 4 * Time.deltaTime * speed);
+				fContactPointY = bridgeHeight.y;
+
+				if(!bInJump)
+				{
+					bridgeHeight.x = transform.position.x;
+					bridgeHeight.z = transform.position.z;
+					transform.position = bridgeHeight;
 				}
 			}
 
 			am.updateSpeed();
         }
+
+		public void Revive()
+		{
+			am.run ();
+
+			reviveTime = Time.timeSinceLevelLoad;
+
+			if(ID == 2)
+			{
+				bornTime = Time.timeSinceLevelLoad;
+			}
+			if(ID == 4)
+			{
+				soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+			}
+		}
 
 		private void deathFall()
 		{
@@ -456,7 +512,6 @@ namespace Runner
 		public void OnPowerUpStarted()
 		{
 			board.gameObject.SetActive (true);
-			am.idle ();
 			Player.isJumpPowerUp = true;
 			glideSpeed = 100;
 		}
@@ -483,10 +538,12 @@ namespace Runner
 
 		void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Obstacle"))
+            if (other.gameObject.CompareTag("Obstacle") && !Player.isJumpPowerUp && !Player.isRevive)
             {
 				if(other.collider.bounds.center.y < 10)
 				{
+
+					Debug.Log(other.collider.bounds.size + " " + other.contacts[0].point.y);
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
 						fContactPointY = other.contacts[0].point.y;
@@ -494,9 +551,12 @@ namespace Runner
 					}
 				}
 
-				if(Mathf.Round(other.contacts[0].normal.z) != -1)
+				var targetX = Mathf.Round(other.transform.position.x);
+				var playerX = Mathf.Round(transform.position.x);
+
+				if(Waypoint.currentWP != Waypoint.transitWP)
 				{
-					Waypoint.changeWP(Waypoint.currentWP < Waypoint.prevWP);
+					Waypoint.changeWP(Waypoint.currentWP < Waypoint.transitWP);
 					return;
 				}
 
@@ -515,7 +575,8 @@ namespace Runner
 			else if (other.gameObject.CompareTag("Bridge"))
 			{
 				isBridge = true;
-				isBrigeKey = false;
+				brigeDistance = Player.Distance;
+				bridgeHeight = Vector3.zero;
 			}
 			else if (other.gameObject.CompareTag("Currency"))
             {

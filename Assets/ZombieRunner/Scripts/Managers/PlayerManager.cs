@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Linq;
 using System.Linq.Expressions;
@@ -11,6 +11,7 @@ namespace Runner
         {
             Distance = 0;
 			isJumpPowerUp = false;
+			isRevive = false;
             PlayerData.PlatformTypeRemainingDistance = 0.0f;
             PlayerData.Distance = 0.0f;
 
@@ -53,6 +54,7 @@ namespace Runner
 		public float SideScrollSpeed{get;private set;}
 		public bool isStop;
 		public bool isJumpPowerUp;
+		public bool isRevive;
 
 		public Vector3 defaultCameraPosition;
 
@@ -86,6 +88,16 @@ namespace Runner
 				}
 				return currentList[0];	
 			}
+		}
+
+		public void Revive ()
+		{
+			isRevive = true;
+			isStop = false;
+
+			Waypoint.currentWP = Waypoint.transitWP;
+
+			currentList [0].Revive ();
 		}
 
 		public void Change(int id)

@@ -8187,14 +8187,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100156}
-  m_Mesh: {fileID: 4300004, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300050
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100160}
-  m_Mesh: {fileID: 4300002, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300052
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -8509,14 +8509,14 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100558}
-  m_Mesh: {fileID: 4300004, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!33 &3300328
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100562}
-  m_Mesh: {fileID: 4300002, guid: c81f87cf9bd824abb9bae073749f2a2d, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 7f1943c8ee8f84f749eacf0e2ff50c81, type: 3}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -11450,9 +11450,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
 --- !u!114 &11400060
 MonoBehaviour:
@@ -12099,9 +12105,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderList: []
-  shaderDistances: []
-  shaderQualities: 
+  shaderList:
+  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
+  - {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
+  - {fileID: 4800000, guid: 0cf8b295c5cb49b41acd9e50795f087d, type: 3}
+  shaderDistances:
+  - 50
+  - 10
+  - 10
+  shaderQualities: 000000000000000003000000
   shaderCulling: 1
 --- !u!114 &11400296
 MonoBehaviour:
