@@ -30,15 +30,15 @@ Material:
     m_Floats:
       data:
         first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _Dist
-        second: 0
+        second: .00300000003
       data:
         first:
           name: _ReflectVisible
+        second: 1
+      data:
+        first:
+          name: _InvFade
         second: 1
     m_Colors:
       data:
@@ -48,11 +48,11 @@ Material:
       data:
         first:
           name: _NearCurve
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 5000, g: 5000, b: 5000, a: 0}
       data:
         first:
           name: _FarCurve
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 36.2374763, g: -54.3562126, b: 0, a: 0}
       data:
         first:
           name: _TintColor

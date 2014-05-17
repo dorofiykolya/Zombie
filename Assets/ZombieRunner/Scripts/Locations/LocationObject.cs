@@ -96,9 +96,9 @@ namespace Runner
                         }
                     }
 
-					material.SetVector("_NearCurve", Runner.EffectManager.Near);
-					material.SetFloat("_Dist", Runner.EffectManager.Dist);
-					material.SetVector("_FarCurve", Runner.EffectManager.Far);
+					//material.SetVector("_NearCurve", Runner.EffectManager.Near);
+					//material.SetFloat("_Dist", Runner.EffectManager.Dist);
+					//material.SetVector("_FarCurve", Runner.EffectManager.Far);
 				}
 			}
 		}

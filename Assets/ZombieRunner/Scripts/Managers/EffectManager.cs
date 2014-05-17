@@ -4,9 +4,9 @@ using System.Collections;
 namespace Runner
 {
     public class EffectManager : ComponentManager
-	{
-		
-		
+    {
+
+        public Material[] materials;
 		public Matrix4x4 projectionMatrix;
 		public bool useMatrix = true;
 		
@@ -65,6 +65,17 @@ namespace Runner
 			Near = SetNear;
 			Far = SetFar;
 			Dynamic = SetDynamic;
+
+
+            foreach (var material in materials)
+            {
+                if (material != null)
+                {
+                    material.SetVector("_NearCurve", SetNear);
+                    material.SetFloat("_Dist", SetDist);
+                    material.SetVector("_FarCurve", SetFar);   
+                }
+            }
 			
 			if(ErrorManager.HasError)
 			{
