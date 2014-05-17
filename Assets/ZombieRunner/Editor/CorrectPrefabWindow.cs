@@ -33,7 +33,30 @@ public class CorrectPrefabWindow : EditorWindow {
 			}
 		}
 		GUILayout.Label ("bloom result: " + correctedLocationObjects);
+		if (GUILayout.Button ("REMOVE ANIMATOR FROM GAME OBJECTS")) 
+		{
+			var gameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+			foreach(var go in gameObjects)
+			{
+				FixAnimator(go);
+			}
+		}
+	}
 
+	void FixAnimator(GameObject go)
+	{
+		var anim = go.GetComponent<Animator> ();
+
+		if(anim != null)
+		{
+			Debug.Log(go.name);
+			DestroyImmediate(anim, true);
+		}
+
+		foreach (var g in go.GetChildren()) 
+		{
+			FixAnimator(g);
+		}
 	}
 
 	void FixBloom(GameObject go)

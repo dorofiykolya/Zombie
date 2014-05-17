@@ -66,12 +66,7 @@ namespace Runner
 		{
 			if (gameObject.name == "Bus")
 			{
-				if(gameObject.transform.eulerAngles.z > 80 && 
-				   (gameObject.transform.position.y < (gameObject.collider as BoxCollider).size.y / 2.0f + 1 && 
-				   gameObject.transform.position.y > (gameObject.collider as BoxCollider).size.y / 2.0f - 1))
-				{
-					gameObject.transform.position = new Vector3(gameObject.transform.position.x, ((gameObject.collider as BoxCollider).size.x / 2.0f) * .9f, gameObject.transform.position.z);
-				}
+
 			}
 			
 			foreach (Transform child in gameObject.transform) 

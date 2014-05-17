@@ -54,7 +54,7 @@ namespace Runner
 			clone.MinimumDistance = this.MinimumDistance;
 			clone.AllowDispose = false;
 			clone.Size = this.Size;
-			clone.gameObject.SetActive(false);
+			//clone.gameObject.SetActive(false);
 			return clone;
 		}
 

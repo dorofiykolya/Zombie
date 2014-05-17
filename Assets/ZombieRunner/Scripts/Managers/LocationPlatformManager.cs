@@ -373,7 +373,7 @@ namespace Runner
 			{
 				result = ListById[id].Clone();
 			}
-			result.gameObject.SetActive(false);
+			//result.gameObject.SetActive(false);
 			result.SetStartTransform();
 			return result;
 		}
