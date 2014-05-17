@@ -30,17 +30,29 @@ namespace Runner
 		
 		public void SetStartTransform()
 		{
-			transform.position = Vector3.zero;
+            if (mTransform == null)
+            {
+                mTransform = transform;
+            }
+            mTransform.position = Vector3.zero;
 		}
 		
 		public void Move(Vector3 move)
 		{
-			transform.position += move;	
+            if (mTransform == null)
+            {
+                mTransform = transform;
+            }
+            mTransform.position += move;	
 		}
 		
 		public float Distance(Runner.PlayerController player)
 		{
-			return player.transform.position.Distance(transform.position);	
+		    if (mTransform == null)
+		    {
+                mTransform = transform;   
+		    }
+            return player.transform.position.Distance(mTransform.position);
 		}
 		
 		public Runner.PlatformObject Clone()
@@ -58,9 +70,10 @@ namespace Runner
 			return clone;
 		}
 
-		override protected float DistanceToCamera(Camera camera)
+		override protected float DistanceTo(Transform aTransform)
 		{
-			return Mathf.Max(0.0f, base.DistanceToCamera(camera) - (this.Size.z / 2.0f));
+            float result = mTransform.position.Distance(aTransform.position) - (this.Size.z / 2.0f);
+		    return result > 0.0f ? result : 0.0f;
 		}
 	}
 

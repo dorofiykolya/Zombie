@@ -35,7 +35,8 @@ namespace Runner
         public LocationManager Location { get; private set; }
 		public PowerUpManager PowerUp { get; private set; }
 
-		private List<IComponentManager> components = new List<IComponentManager>();
+		private List<IComponentManager> components = new List<IComponentManager>(2048);
+
         private GameController gameController;
 
 	    void Awake()

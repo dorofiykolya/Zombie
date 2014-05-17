@@ -31,6 +31,7 @@ namespace Runner
         public Manager Manager { get; private set; }
 
         public bool Initialized { get; private set; }
+        protected bool mInitialized;
 
         void Awake()
         {
@@ -50,6 +51,7 @@ namespace Runner
 
             Initialize();
             Initialized = true;
+            mInitialized = true;
         }
 
         public virtual void Initialize()
