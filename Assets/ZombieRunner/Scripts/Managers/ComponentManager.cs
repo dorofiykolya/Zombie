@@ -8,6 +8,7 @@ namespace Runner
 {
 	public interface IComponentManager
 	{
+         bool Initialized { get;}
 		 void GameStart();
 		 void GameStop();
 		 void GamePause();
@@ -33,6 +34,7 @@ namespace Runner
 
         void Awake()
         {
+            if (Initialized) return;
             Manager = Runner.Manager.Instance;
             Manager.Register(this);
             Game = Manager.Game;

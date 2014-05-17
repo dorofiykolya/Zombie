@@ -82,10 +82,8 @@ namespace Runner
 
 		internal void Register(IComponentManager componentManager)
         {
-            if (components.Contains(componentManager) == false)
-            {
-                components.Add(componentManager);
-            }
+            if(componentManager.Initialized) return;
+            components.Add(componentManager);
         }
     }
 }
