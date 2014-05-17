@@ -152,6 +152,15 @@ namespace Runner
 		{
 			if(state == State.GAME)
 			{
+				if(ID == 2)
+				{
+					bornTime = Time.timeSinceLevelLoad;
+				}
+				if(ID == 4)
+				{
+					soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+				}
+
 				am.run();
 			}
 		}
@@ -187,7 +196,7 @@ namespace Runner
 			}
 
 			//fatman dies
-			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]])
+			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]] && !Player.isJumpPowerUp)
 			{
 				onDeath();
 			}
@@ -542,8 +551,6 @@ namespace Runner
             {
 				if(other.collider.bounds.center.y < 10)
 				{
-
-					Debug.Log(other.collider.bounds.size + " " + other.contacts[0].point.y);
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
 						fContactPointY = other.contacts[0].point.y;
@@ -567,10 +574,11 @@ namespace Runner
 					other.gameObject.collider.enabled = false;
 				}
 
-				if(soldierLife == 0)
+				soldierLife--;
+
+				if(soldierLife <= 0)
 					onDeath();
-				else
-					soldierLife--;
+
             }
 			else if (other.gameObject.CompareTag("Bridge"))
 			{

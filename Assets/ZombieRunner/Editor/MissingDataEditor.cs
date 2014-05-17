@@ -13,14 +13,9 @@ namespace Runner
 
 		void OnGUI()
 		{
-			death = EditorGUILayout.ObjectField("Bus Mesh", death, typeof(Mesh)) as Mesh;
-
-			if (death != null)
+			if (GUILayout.Button("ADD"))
 			{
-				if (GUILayout.Button("ADD"))
-				{
-					AddAnimation();
-				}
+				AddAnimation();
 			}
 		}
 
@@ -69,11 +64,13 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if (gameObject.CompareTag("Obstacle"))
+			if (gameObject.name == "Bus")
 			{
-				if(gameObject.transform.eulerAngles.z > 80 && gameObject.transform.position.y < gameObject.collider.bounds.size.y / 2)
+				if(gameObject.transform.eulerAngles.z > 80 && 
+				   (gameObject.transform.position.y < (gameObject.collider as BoxCollider).size.y / 2.0f + 1 && 
+				   gameObject.transform.position.y > (gameObject.collider as BoxCollider).size.y / 2.0f - 1))
 				{
-					gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.collider.bounds.size.y / 2, gameObject.transform.position.z);
+					gameObject.transform.position = new Vector3(gameObject.transform.position.x, ((gameObject.collider as BoxCollider).size.x / 2.0f) * .9f, gameObject.transform.position.z);
 				}
 			}
 			

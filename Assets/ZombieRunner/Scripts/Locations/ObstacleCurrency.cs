@@ -14,7 +14,7 @@ namespace Runner
 
 		public override void Initialize ()
 		{
-			probe = transform.position;
+			probe = transform.localPosition;
 		}
 
 		void Update () 
@@ -47,6 +47,8 @@ namespace Runner
 				{
 					isTween = false;
 					transform.localScale = Vector3.zero;
+
+					transform.localPosition = probe;
 				}
 			}
 		}
@@ -54,7 +56,6 @@ namespace Runner
 		void OnDisable() 
 		{
 			transform.localScale = Vector3.one;
-			if(probe != Vector3.zero) transform.position = probe;
 			gameObject.collider.enabled = true;
 			isPickUp = false;
 			isTween = false;

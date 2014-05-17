@@ -33,6 +33,7 @@ namespace Runner
 		public void Stop()
 		{
 			isTriggered = false;
+			collider.enabled = false;
 		}
 
 		void Update()

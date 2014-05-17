@@ -35,7 +35,7 @@ namespace Runner
 		{
 			scoreCount += (Player.Speed / Player.MinimumSpeed * (currentMult + Player.GetMult ()) * PowerUp.scorePowerup) / 5;
 			score.text = ((int)scoreCount).ToString();
-            multi.text = "x" + (currentMult + Player.GetMult());
+			multi.text = "x" + (currentMult + Player.GetMult() + PowerUp.scorePowerup - 1);
 			gold.text = goldCount.ToString ();
 
 			if(Player.currentList[0].ID == 2 && Player.currentList.Count == 1 && !Player.isStop)
