@@ -103,6 +103,11 @@ namespace Runner
 			}
 		}
 
+		void OnBecameInvisible() 
+		{
+			enabled = false;
+		}
+
 		protected virtual float DistanceTo(Transform aTransform)
 		{
             return mTransform.position.Distance(aTransform.position);

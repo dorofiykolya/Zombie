@@ -29,7 +29,6 @@ GameObject:
   - 33: {fileID: 3300002}
   - 23: {fileID: 2300002}
   - 65: {fileID: 6500000}
-  - 114: {fileID: 11400006}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400012}
   m_Layer: 12
@@ -201,30 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1

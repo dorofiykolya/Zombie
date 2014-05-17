@@ -114,13 +114,8 @@ namespace Runner
 
 			foreach(Collider boom in boomCollider)
 			{
-				MeshExploder exp = boom.gameObject.GetComponent<MeshExploder>();
-				if(exp)
-				{
-					exp.Explode();
-					boom.transform.localScale = Vector3.zero;
-					boom.gameObject.collider.enabled = false;
-				}
+				boom.transform.localScale = Vector3.zero;
+				boom.gameObject.collider.enabled = false;
 			}
 		}
 

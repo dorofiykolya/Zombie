@@ -569,7 +569,6 @@ namespace Runner
 
 				if(ID == 4)
 				{
-					other.gameObject.GetComponent<MeshExploder>().Explode();
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
 				}

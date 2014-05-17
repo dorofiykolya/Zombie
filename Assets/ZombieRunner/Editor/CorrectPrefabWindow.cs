@@ -41,6 +41,14 @@ public class CorrectPrefabWindow : EditorWindow {
 				FixAnimator(go);
 			}
 		}
+		if (GUILayout.Button ("REMOVE MeshExploder FROM GAME OBJECTS")) 
+		{
+			var gameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+			foreach(var go in gameObjects)
+			{
+				FixExplode(go);
+			}
+		}
 	}
 
 	void FixAnimator(GameObject go)
@@ -49,13 +57,27 @@ public class CorrectPrefabWindow : EditorWindow {
 
 		if(anim != null)
 		{
-			Debug.Log(go.name);
 			DestroyImmediate(anim, true);
 		}
 
 		foreach (var g in go.GetChildren()) 
 		{
 			FixAnimator(g);
+		}
+	}
+
+	void FixExplode(GameObject go)
+	{
+		var expl = go.GetComponent<MeshExploder> ();
+		
+		if(expl != null)
+		{
+			DestroyImmediate(expl, true);
+		}
+		
+		foreach (var g in go.GetChildren()) 
+		{
+			FixExplode(g);
 		}
 	}
 
