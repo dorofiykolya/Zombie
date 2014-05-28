@@ -103,6 +103,11 @@ namespace Runner
 			}
 		}
 
+		void OnBecameVisible() 
+		{
+			enabled = true;
+		}
+
 		void OnBecameInvisible() 
 		{
 			enabled = false;

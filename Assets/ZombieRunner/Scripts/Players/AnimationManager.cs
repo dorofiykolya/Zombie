@@ -25,7 +25,6 @@ namespace Runner
 			animation[JUMP].wrapMode = WrapMode.ClampForever;
 			animation[SLIDE_RIGHT].wrapMode = WrapMode.ClampForever;
 			animation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
-			animation[EAT].wrapMode = WrapMode.ClampForever;
 			animation[DEATH].wrapMode = WrapMode.ClampForever;
 			animation[SLIDE].wrapMode = WrapMode.Loop;
 
@@ -43,7 +42,6 @@ namespace Runner
 			animation[SLIDE].speed = speed;
 			animation[SLIDE_RIGHT].speed = speed;
 			animation[SLIDE_LEFT].speed = speed;
-			animation[EAT].speed = speed;
 		}
 
         public void idle()
@@ -57,7 +55,7 @@ namespace Runner
 		{
 			if(current == RUN) return;
 			current = RUN;
-			if(!Player.isStop)
+			if(!Player.isStop && this)
 				animation.CrossFade(RUN, 0.1f);
 		}
 
@@ -92,15 +90,6 @@ namespace Runner
 			current = SLIDE_LEFT;
 			animation.PlayQueued(SLIDE_LEFT, QueueMode.PlayNow);
 			yield return new WaitForSeconds( animation[SLIDE_LEFT].length );
-			run();
-		}
-
-		public IEnumerator eat()
-		{
-			if(current == EAT) yield return null;
-			current = EAT;
-			animation.PlayQueued(EAT, QueueMode.PlayNow);
-			yield return new WaitForSeconds( animation[EAT].length );
 			run();
 		}
 

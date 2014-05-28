@@ -160,8 +160,8 @@ namespace Runner
 				{
 					soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
 				}
-
-				am.run();
+				if(am != null);
+					am.run();
 			}
 		}
 
@@ -602,7 +602,6 @@ namespace Runner
 
                 if (Player.currentList.Count < Player.GetMaxPlayers())
 				{
-					StartCoroutine(am.eat());
 					particle.Emit(50);
 
                     Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));

@@ -26,7 +26,7 @@ namespace Runner
 			}
 			if(parent.CompareTag("Human"))
 			{
-				parent.GetComponent<ObstacleAnimation> ().run1();
+				parent.GetComponent<ObstacleAnimation> ().run();
 			}
 		}
 

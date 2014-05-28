@@ -38,7 +38,7 @@ namespace Runner
 				{
 					Last = platform;	
 				}
-				//platform.gameObject.SetActive(true);
+				if(!platform.gameObject.activeSelf) platform.gameObject.SetActive(true);
 				platformContainer.AddChild(platform.gameObject);
 				PowerUpManager.AddPowerUpObjects(platform);
 			}
