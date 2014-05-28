@@ -55,7 +55,7 @@ namespace Runner
             }
         }
 
-        public override void GameStart()
+        public override void Initialize()
         {
             LastMissions = new Mission[0];
             ClearStack();
@@ -90,6 +90,12 @@ namespace Runner
                     index++;
                 }
             }
+			if (CurrentMissions.Length < Stack) 
+			{
+				var temp = CurrentMissions.ToList();
+				temp.Capacity = Stack;
+				CurrentMissions = temp.ToArray();
+			}
             var tempQueue = QueueMissions.ToList();
             while (index <= Stack && tempQueue.Count > 0)
             {

@@ -400,7 +400,7 @@ namespace Runner
 
 		}
 
-		public override void GameStart ()
+		public override void GameRestart ()
 		{
 			InitialiazeTempPlatforms ();
 		}

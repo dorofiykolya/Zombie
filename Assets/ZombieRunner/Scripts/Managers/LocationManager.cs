@@ -75,10 +75,10 @@ namespace Runner
 			Generator.Generate(moveSpeed, player);
 			Platforms.Move(moveSpeed, player);
 			DisposedManager.Update(player);
-			
+			Missions.Dispatch ("run", player.Distance);
 		}
 
-        public override void GameStart()
+        public override void GameRestart()
         {
             Platforms.RemoveAll();
             DisposedManager.RemoveAll();

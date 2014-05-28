@@ -272,7 +272,8 @@ namespace Runner
 
 				targetPosition.y = fCurrentHeight;
 				transform.position = new Vector3(transform.position.x, fCurrentHeight, transform.position.z);
-                Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
+				if(isPatientZero)               
+					Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 			}
 
 			if(bJumpFlag == true)

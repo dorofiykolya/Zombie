@@ -23,7 +23,7 @@ namespace Runner
         }
 
         public void GameStart()
-        {
+		{
             Paused = false;
             Started = true;
             foreach (var component in components.ToArray())
@@ -79,7 +79,6 @@ namespace Runner
         public void GameRestart()
         {
             GameStop();
-            GameStart();
             foreach (var component in components.ToArray())
             {
                 component.GameRestart();

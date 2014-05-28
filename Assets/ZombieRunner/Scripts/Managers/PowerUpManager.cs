@@ -90,6 +90,10 @@ namespace Runner
 				{
 					player.OnPowerUpStarted();
 				}
+				else
+				{
+					player.TargetPosition = new Vector3(player.transform.position.x, player.transform.position.y, -15);
+				}
 			}
 			yield return new WaitForSeconds (_bonusTime);
 			foreach(PlayerController player in Player.currentList)
@@ -97,6 +101,10 @@ namespace Runner
 				if(player.isPatientZero)
 				{
 					player.OnPowerUpEnded();
+				}
+				else
+				{
+					player.TargetPosition = new Vector3(player.transform.position.x, player.transform.position.y, 0);
 				}
 			}
 		}

@@ -40,7 +40,7 @@ namespace Runner
 			}
 		}
 
-        public override void GameStart()
+        public override void Initialize()
         {
             Current = State.LOAD;
 			GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
@@ -67,6 +67,7 @@ namespace Runner
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.GameMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.GameMenu;
+					Game.GameStart();
 				}
 			}
 		}

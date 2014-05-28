@@ -26,7 +26,7 @@ namespace Runner
 			fatman.text = "";
 		}
 
-		public override void GameStart ()
+		public override void GameStop ()
 		{
 			Initialize ();
 		}
