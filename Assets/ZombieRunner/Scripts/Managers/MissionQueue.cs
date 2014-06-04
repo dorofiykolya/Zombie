@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 
 namespace Runner
 {
@@ -79,12 +80,11 @@ namespace Runner
             }
             if (CurrentMissions.Length < Stack)
             {
-                var temp = CurrentMissions.ToList();
-                temp.Capacity = Stack;
-                CurrentMissions = temp.ToArray();
+				Array.Resize(ref CurrentMissions, Stack);
             }
             var tempQueue = QueueMissions.ToList();
-            while (index <= Stack && tempQueue.Count > 0)
+
+            while (index < Stack && tempQueue.Count > 0)
             {
                 CurrentMissions[index] = tempQueue[0];
                 tempQueue.RemoveAt(0);
@@ -93,9 +93,7 @@ namespace Runner
             QueueMissions = tempQueue.ToArray();
             if (CurrentMissions.Length > index)
             {
-                var temp = CurrentMissions.ToList();
-                temp.Capacity = index;
-                CurrentMissions = temp.ToArray();
+				Array.Resize(ref CurrentMissions, index);
             }
         }
     }
