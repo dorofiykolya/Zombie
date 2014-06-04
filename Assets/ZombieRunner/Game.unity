@@ -22874,32 +22874,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6e80cb6d7eca04ab04b4a771f490d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QueueMissions:
-  - Id: run
-    Name: run1
-    Description: distance
-    Image: 
-    Current: 0
-    Target: 1000
-    IsCompleted: 0
-  - Id: run
-    Name: run2
-    Description: distance
-    Image: 
-    Current: 0
-    Target: 2000
-    IsCompleted: 0
-  - Id: run
-    Name: run2
-    Description: distance
-    Image: 
-    Current: 0
-    Target: 2000
-    IsCompleted: 0
-  CurrentMissions: []
-  CompletedMissions: []
-  LastMissions: []
-  Stack: 3
+  MissionQueues:
+  - QueueMissions: []
+    CurrentMissions: []
+    CompletedMissions: []
+    LastMissions: []
+    Stack: 3
+  - QueueMissions: []
+    CurrentMissions: []
+    CompletedMissions: []
+    LastMissions: []
+    Stack: 3
 --- !u!114 &1819186591
 MonoBehaviour:
   m_ObjectHideFlags: 0

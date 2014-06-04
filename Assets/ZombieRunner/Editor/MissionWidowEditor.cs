@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
@@ -11,13 +12,14 @@ namespace Runner
     {
         private Vector2 mScrollView = new Vector2();
         private static Mission copyMission;
+        private int mIndex;
         private bool mFold;
         private bool mFoldLast;
         private bool mFoldCurrent;
         private bool mFoldCompleted;
         void OnGUI()
         {
-            var target = GameObject.FindObjectOfType<Runner.MissionManager>();
+            var target = FindObjectOfType<Runner.MissionManager>();
             if (target == null)
             {
                 GUI.color = Color.red;
@@ -27,6 +29,54 @@ namespace Runner
             }
 
             EditorGUILayout.Separator();
+
+            EditorGUILayout.BeginHorizontal();
+            
+            GUI.color = Color.green;
+            if (GUILayout.Button("ADD QUEUE"))
+            {
+                var list = target.MissionQueues != null? target.MissionQueues.ToList() : new List<MissionQueue>();
+                list.Add(new MissionQueue());
+                target.MissionQueues = list.ToArray();
+            }
+            GUI.color = Color.white;
+            EditorGUILayout.EndHorizontal();
+            
+            if (target.MissionQueues != null && target.MissionQueues.Length > 0)
+            {
+                var toolList = new string[target.MissionQueues.Length];
+                for (int i = 0; i < target.MissionQueues.Length; i++)
+                {
+                    toolList[i] = i.ToString();
+                }
+                if (mIndex >= toolList.Length)
+                {
+                    mIndex = toolList.Length - 1;
+                }
+                GUI.color = Color.green;
+                mIndex = GUILayout.Toolbar(mIndex, toolList);
+                GUI.color = Color.white;
+                Draw(mIndex, target.MissionQueues[mIndex], target);
+            }
+        }
+
+        private void Draw(int indexQueue, MissionQueue target, MissionManager manager)
+        {
+            EditorGUILayout.Separator();
+            EditorGUILayout.Separator();
+            GUI.color = Color.yellow;
+            EditorGUILayout.LabelField("QUEUE:", indexQueue.ToString(), GUILayout.ExpandWidth(true));
+            EditorGUILayout.Separator();
+            GUI.color = Color.red;
+            if (GUILayout.Button("REMOVE QUEUE"))
+            {
+                var tempList = manager.MissionQueues.ToList();
+                tempList.Remove(target);
+                manager.MissionQueues = tempList.ToArray();
+                return;
+            }
+            GUI.color = Color.white;
+
             target.Stack = EditorGUILayout.IntSlider("Stack", target.Stack, 1, 50);
 
             var completedCount = target.CompletedMissions != null ? target.CompletedMissions.Length : 0;
@@ -217,7 +267,7 @@ namespace Runner
             GUILayout.EndHorizontal();
         }
 
-        private void AddMission(MissionManager manager)
+        private void AddMission(MissionQueue manager)
         {
             GUI.color = Color.green;
             if (GUILayout.Button("ADD MISSION"))

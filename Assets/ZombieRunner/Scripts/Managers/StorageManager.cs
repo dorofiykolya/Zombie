@@ -25,7 +25,7 @@ namespace Runner
             PlayerData.PlatformType = PlayerPrefs.GetInt("PlatformType");
             PlayerData.PlatformTypeRemainingDistance = PlayerPrefs.GetFloat("PlatformTypeRemainingDistance");
             PlayerData.MaxDistance = PlayerPrefs.GetFloat("MaxDistance");
-            var missions = Deserialize(PlayerPrefs.GetString("Missions")) as Mission[];
+            var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
         }
 
@@ -37,7 +37,7 @@ namespace Runner
             PlayerPrefs.SetInt("PlatformType", PlayerData.PlatformType);
             PlayerPrefs.SetFloat("PlatformTypeRemainingDistance", PlayerData.PlatformTypeRemainingDistance);
             PlayerPrefs.SetFloat("MaxDistance", PlayerData.MaxDistance);
-            PlayerPrefs.SetString("Missions", Serialize(missionManager.Missions));
+            PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionQueues));
         }
 
         private static string Serialize(object obj)

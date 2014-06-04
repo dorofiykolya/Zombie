@@ -32,7 +32,7 @@ namespace Runner
                 EditorWindow.GetWindow<MissionWidowEditor>("Missions", true).Show();
                 return;
             }
-            GUI.color = Color.white;
+           /* GUI.color = Color.white;
             manager.Stack = EditorGUILayout.IntSlider("Stack", manager.Stack, 1, 50);
 
             var queueCount = manager.QueueMissions != null ? manager.QueueMissions.Length : 0;
@@ -57,7 +57,7 @@ namespace Runner
             if (mFoldLast)
             {
                 Inspect(manager.LastMissions);
-            }
+            }*/
         }
 
         private void Inspect(Mission[] list)

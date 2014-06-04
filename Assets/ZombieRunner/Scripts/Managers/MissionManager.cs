@@ -1,63 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
 
 namespace Runner 
 {
     [Serializable]
     public class MissionManager : ComponentManager
     {
-        public Mission[] QueueMissions;
-        public Mission[] CurrentMissions;
-        public Mission[] CompletedMissions;
-        public Mission[] LastMissions;
-
-        public int Stack = 3;
+        public MissionQueue[] MissionQueues;
 
         public event Action<Mission[], MissionManager> OnComplete;
 
+        public MissionManager()
+        {
+            MissionQueues = new MissionQueue[0];
+        }
+
         public void Dispatch(string id, float value)
         {
-            List<Mission> missions = null;
-            foreach (var mission in CurrentMissions)
+            List<Mission> tempMissions = null;
+            foreach (var queue in MissionQueues)
             {
-                if (mission.Id == id)
+                var result = queue.Dispatch(id, value);
+                if (result != null)
                 {
-                    mission.Current = value;
-                    if (mission.IsCompleted == false && mission.Current >= mission.Target)
+                    if (tempMissions == null)
                     {
-                        mission.IsCompleted = true;
-                        if (missions == null)
-                        {
-                            missions = new List<Mission>(1) {mission};
-                        }
-                        else
-                        {
-                            missions.Add(mission);
-                        }
+                        tempMissions = new List<Mission>(result);
+                    }
+                    else
+                    {
+                        tempMissions.AddRange(result);
                     }
                 }
             }
-            if (missions != null)
+            if (OnComplete != null && tempMissions != null && tempMissions.Count > 0)
             {
-                var tempList = new List<Mission>(LastMissions);
-                foreach (var m in missions)
-                {
-                    tempList.Add(m);
-                }
-                LastMissions = tempList.ToArray();
-                if (OnComplete != null)
-                {
-                    OnComplete.Invoke(missions.ToArray(), this);
-                }
+                OnComplete.Invoke(tempMissions.ToArray(), this);
             }
         }
 
         public override void Initialize()
         {
-            LastMissions = new Mission[0];
+            ClearLastMissions();
             ClearStack();
         }
 
@@ -66,55 +50,26 @@ namespace Runner
             ClearStack();
         }
 
-        private void ClearStack()
+        private void ClearLastMissions()
         {
-            var tempCompleted = new List<Mission>(CompletedMissions);
-            foreach (var m in CurrentMissions)
+            foreach (var queue in MissionQueues)
             {
-                if (m.IsCompleted)
-                {
-                    tempCompleted.Add(m);
-                }
-            }
-            CompletedMissions = tempCompleted.ToArray();
-
-            var index = 0;
-            var len = CurrentMissions.Length;
-            Mission current;
-            for (var i = 0; i < len; i++)
-            {
-                current = CurrentMissions[i];
-                if (current.IsCompleted == false)
-                {
-                    CurrentMissions[index] = current;
-                    index++;
-                }
-            }
-			if (CurrentMissions.Length < Stack) 
-			{
-				var temp = CurrentMissions.ToList();
-				temp.Capacity = Stack;
-				CurrentMissions = temp.ToArray();
-			}
-            var tempQueue = QueueMissions.ToList();
-            while (index <= Stack && tempQueue.Count > 0)
-            {
-                CurrentMissions[index] = tempQueue[0];
-                tempQueue.RemoveAt(0);
-                index++;
-            }
-            QueueMissions = tempQueue.ToArray();
-            if (CurrentMissions.Length > index)
-            {
-                var temp = CurrentMissions.ToList();
-                temp.Capacity = index;
-                CurrentMissions = temp.ToArray();
+                queue.LastMissions = new Mission[0];
             }
         }
 
-        public void Load(Mission[] missions)
+        private void ClearStack()
         {
+            foreach (var queue in MissionQueues)
+            {
+                queue.ClearStack();
+            }
+        }
 
+        public void Load(MissionQueue[] missions)
+        {
+            if(missions == null) return;
+            MissionQueues = missions;
         }
     }
 }
