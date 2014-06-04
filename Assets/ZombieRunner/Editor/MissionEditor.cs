@@ -11,7 +11,6 @@ namespace Runner
     [CanEditMultipleObjects]
     class MissionEditor : Editor
     {
-        private bool mFoldLast;
         private bool mFoldCurrent;
         private bool mFoldCompleted;
 
@@ -35,15 +34,25 @@ namespace Runner
            /* GUI.color = Color.white;
             manager.Stack = EditorGUILayout.IntSlider("Stack", manager.Stack, 1, 50);
 
+			if(manager.visualMission.Length != manager.Stack)
+			{
+				Array.Resize(ref manager.visualMission, manager.Stack);
+			}
+
+			var len = manager.visualMission.Length;
+			for (var i = 0; i < len; i++)
+			{
+				manager.visualMission[i] = EditorGUILayout.ObjectField("Visual Mission:", manager.visualMission[i], typeof(GameObject)) as GameObject;
+			}
+
             var queueCount = manager.QueueMissions != null ? manager.QueueMissions.Length : 0;
 
             EditorGUILayout.LabelField("Missions", queueCount.ToString());
 
             var completedCount = manager.CompletedMissions != null ? manager.CompletedMissions.Length : 0;
             var currentCount = manager.CurrentMissions != null ? manager.CurrentMissions.Length : 0;
-            var lastCount = manager.LastMissions != null ? manager.LastMissions.Length : 0;
 
-            mFoldCompleted = EditorGUILayout.Foldout(mFoldCompleted, "Last:\t\t\t" + completedCount);
+            mFoldCompleted = EditorGUILayout.Foldout(mFoldCompleted, "Completed:\t\t\t" + completedCount);
             if (mFoldCompleted)
             {
                 Inspect(manager.CompletedMissions);

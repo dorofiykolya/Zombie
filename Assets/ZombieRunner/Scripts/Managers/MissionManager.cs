@@ -8,6 +8,10 @@ namespace Runner
     {
         public MissionQueue[] MissionQueues;
 
+		public GameObject[] visualMission = new GameObject[3];
+
+		public GameObject[] visualMission = new GameObject[3];
+
         public event Action<Mission[], MissionManager> OnComplete;
 
         public MissionManager()

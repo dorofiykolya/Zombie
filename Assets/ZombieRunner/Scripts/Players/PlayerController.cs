@@ -79,28 +79,25 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = 4f;
+					offset.y = 5f;
 				}
 				else if(ID == 2)
 				{
-					offset.y = -4f;
+					offset.y = -5f;
 				}
 				else
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						while(offset.y < 1.5f && offset.y > 0f)
-							offset.y = Random.Range(0f, 2f);
+						offset.y = Random.Range(-2f, -4f);
 					}
 					else
 					{
-						while(offset.y < 1.5f && offset.y > -1.5f)
-							offset.y = Random.Range(-2f, 2f);
+						offset.y = Random.Range(-4f, 4f);
 					}
 				}
 
-				while(offset.x < 1.5f && offset.x > -1.5f)
-					offset.x = Random.Range(-2f, 2f);
+				offset.x = Random.Range(-2f, 2f);
             }
 
 			bInAir = false;

@@ -14,7 +14,6 @@ namespace Runner
         private static Mission copyMission;
         private int mIndex;
         private bool mFold;
-        private bool mFoldLast;
         private bool mFoldCurrent;
         private bool mFoldCompleted;
         void OnGUI()
@@ -81,7 +80,6 @@ namespace Runner
 
             var completedCount = target.CompletedMissions != null ? target.CompletedMissions.Length : 0;
             var currentCount = target.CurrentMissions != null ? target.CurrentMissions.Length : 0;
-            var lastCount = target.LastMissions != null ? target.LastMissions.Length : 0;
 
             mFoldCompleted = EditorGUILayout.Foldout(mFoldCompleted, "Last:\t\t\t" + completedCount);
             if (mFoldCompleted)
@@ -92,11 +90,6 @@ namespace Runner
             if (mFoldCurrent)
             {
                 Inspect(target.CurrentMissions);
-            }
-            mFoldLast = EditorGUILayout.Foldout(mFoldLast, "Last:\t\t\t" + lastCount);
-            if (mFoldLast)
-            {
-                Inspect(target.LastMissions);
             }
 
             EditorGUILayout.Separator();

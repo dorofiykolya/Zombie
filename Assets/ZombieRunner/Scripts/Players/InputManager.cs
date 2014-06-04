@@ -28,8 +28,11 @@ namespace Runner
 		private float slope;
 		private float fDistance;
 		private float iTouchStateFlag;
-		
-		void Start ()
+
+		private int jumpCount;
+		private int slideCount;
+
+		public override void GameStart()
 		{
 			fInitialX = 0.0f;
 			fInitialY = 0.0f;
@@ -38,6 +41,9 @@ namespace Runner
 			
 			inputX = 0.0f;
 			inputY = 0.0f;
+
+			jumpCount = 0;
+			slideCount = 0;
 			
 			iTouchStateFlag = 0;
 			sSwipeDirection = SwipeDirection.Null;
@@ -54,6 +60,9 @@ namespace Runner
 			{
                 if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 				{
+					jumpCount++;
+					Missions.Dispatch ("jump", jumpCount);
+
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
                         Player.currentList[i].doJump();
@@ -64,6 +73,9 @@ namespace Runner
 			{
 				if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
 				{
+					slideCount++;
+					Missions.Dispatch ("slide", slideCount);
+
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
                         Player.currentList[i].doSlide();
@@ -102,6 +114,8 @@ namespace Runner
 						case SwipeDirection.Jump:
 							if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 							{
+								jumpCount++;
+								Missions.Dispatch ("jump", jumpCount);
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{
                                     Player.currentList[i].doJump();
@@ -111,6 +125,8 @@ namespace Runner
 						case SwipeDirection.Duck:
 							if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
 							{
+								slideCount++;
+								Missions.Dispatch ("slide", slideCount);
                                 for (int i = 0; i < Player.currentList.Count; i++)
 								{
                                     Player.currentList[i].doSlide();

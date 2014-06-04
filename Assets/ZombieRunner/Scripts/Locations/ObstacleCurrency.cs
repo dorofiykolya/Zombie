@@ -15,6 +15,14 @@ namespace Runner
 		public override void Initialize ()
 		{
 			probe = transform.localPosition;
+			if(QualityManager.CurrentQuality == 2)
+			{
+				gameObject.transform.FindChild("probirka").gameObject.SetActive(false);
+			}
+			else
+			{
+				gameObject.transform.FindChild("Coin").gameObject.SetActive(false);
+			}
 		}
 
 		void Update () 
@@ -53,7 +61,7 @@ namespace Runner
 			}
 		}
 
-		void OnDisable() 
+		void OnEnbale() 
 		{
 			transform.localScale = Vector3.one;
 			gameObject.collider.enabled = true;

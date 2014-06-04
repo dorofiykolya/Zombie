@@ -92,7 +92,7 @@ namespace Runner
 				}
 				else
 				{
-					player.TargetPosition = new Vector3(player.transform.position.x, player.transform.position.y, -15);
+					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -15);
 				}
 			}
 			yield return new WaitForSeconds (_bonusTime);
@@ -104,7 +104,7 @@ namespace Runner
 				}
 				else
 				{
-					player.TargetPosition = new Vector3(player.transform.position.x, player.transform.position.y, 0);
+					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
 				}
 			}
 		}

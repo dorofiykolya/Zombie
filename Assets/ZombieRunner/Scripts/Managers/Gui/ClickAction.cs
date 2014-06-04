@@ -29,6 +29,7 @@ namespace Runner
 			{
 				case GUIAction.Pause:
 					Player.isStop = true;
+					Game.GamePause();
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Missions).Show();
 					GUIPanelManager.Get(PanelType.Missions).Adjust();

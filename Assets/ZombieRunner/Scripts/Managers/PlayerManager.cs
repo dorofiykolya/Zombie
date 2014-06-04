@@ -7,7 +7,7 @@ namespace Runner
 {
     public class PlayerManager : ComponentManager 
 	{
-        public override void GameStart()
+        public override void GameRestart()
         {
             Distance = 0;
 			isJumpPowerUp = false;

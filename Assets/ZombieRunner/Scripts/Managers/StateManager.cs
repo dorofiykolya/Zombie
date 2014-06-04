@@ -48,6 +48,11 @@ namespace Runner
 			GUIPanelManager.currentPanel = PanelType.MainMenu;
         }
 
+		public override void GameRestart ()
+		{
+			Initialize ();
+		}
+
 		public override void GameStop ()
 		{
 			Current = State.LOSE;
