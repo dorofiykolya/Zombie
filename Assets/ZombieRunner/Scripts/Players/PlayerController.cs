@@ -660,7 +660,7 @@ namespace Runner
 								}
 							}
 						}
-						fContactPointY = other.contacts[0].point.y;
+						fContactPointY = other.collider.bounds.size.y;
 						return;
 					}
 				}
