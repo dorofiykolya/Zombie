@@ -468,7 +468,7 @@ namespace Runner
 			am.run();
 
 			if (!isPatientZero)
-				return;
+				return false;
 			if(intersectName.ToLower().Contains("sign"))
 			{
 				Missions.Dispatch("slideundersign", 1);
