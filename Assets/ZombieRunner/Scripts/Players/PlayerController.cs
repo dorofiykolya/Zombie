@@ -642,7 +642,8 @@ namespace Runner
             {
 				if(other.collider.bounds.center.y < 10)
 				{
-					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
+					Debug.Log(other.collider.bounds.size.y * .7f + "  " + other.contacts[0].point.y);
+					if(other.collider.bounds.size.y * .7f < other.contacts[0].point.y)
 					{
 						if(fContactPointY == 0)
 						{
