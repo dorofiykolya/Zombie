@@ -912,7 +912,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 0, z: 4}
+  m_Size: {x: 5, y: 0, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!111 &11100000
 Animation:
@@ -963,8 +963,8 @@ MonoBehaviour:
   collider: {fileID: 6500000}
   ID: 0
   gameID: 0
-  fJumpPush: 70
-  acceleration: 200
+  fJumpPush: 185
+  acceleration: 500
   bInAir: 0
   glideEnable: 0
   bInDuck: 0

@@ -74,7 +74,12 @@ namespace Runner
 				else
 				{
 					float speed = (Distance * 0.01f * SpeedDistanceMultiply) + MinimumSpeed;
-					return speed > 80 ? 80 : speed;
+					if(Current.bInAir)
+					{
+						speed += MinimumSpeed * 0.1f;
+						return Mathf.Clamp(speed, MinimumSpeed, 80 + MinimumSpeed * 0.1f);
+					}
+					return Mathf.Clamp(speed, MinimumSpeed, 80);
 				}
 			}
 		}

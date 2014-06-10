@@ -24,15 +24,16 @@ namespace Runner
 		public int gameID = 0;
 
 		private float tCurrentAngle = 0.0f;
-		private float fJumpForwardFactor = 0.0f;
 		private float fCurrentUpwardVelocity = 0.0f;
+		private float fDistance = 0.0f;
 		private float fCurrentHeight = 0.0f;
 		private float fContactPointY = 0.0f;
 
 		private Transform board;
 
-		public float fJumpPush = 185;
-		public float acceleration = 500;
+		public float jumpHeight = 25;
+		public float gravity = 500;
+		public float speedCoeff = 4;
 
 		private float glideSpeed = 100;
 
@@ -74,6 +75,7 @@ namespace Runner
 			offset.y = 0;
 
 			fContactPointY = 0;
+			fDistance = 0;
 
             if (!isPatientZero)
             {
@@ -163,7 +165,7 @@ namespace Runner
 		}
 
         // Update is called once per frame
-        void Update()
+		void FixedUpdate()
         {
 			//falling down if player dies in air
 			if(Player.isStop)
@@ -218,12 +220,12 @@ namespace Runner
 				if(glideEnable)
 				{
 					targetPosition.y = 26;
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
+					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 				else
 				{
 					targetPosition.y = 28;
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.deltaTime * speed);
+					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 
 				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y + 20 - transform.position.y, Player.defaultCameraPosition.z);
@@ -239,7 +241,7 @@ namespace Runner
 
                 targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
-				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * speed);
+				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.fixedDeltaTime * speed);
 
 				if(!Player.isJumpPowerUp)
 				{
@@ -252,7 +254,7 @@ namespace Runner
 			{
 				if(playerRotate.localEulerAngles.y != 0 && !Player.isJumpPowerUp)
 				{
-					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, transform.position, sideScrollSpeed * Time.deltaTime * 0.01f * speed, 0f);
+					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, transform.position, sideScrollSpeed * Time.fixedDeltaTime * 0.01f * speed, 0f);
 				}
 			}
 
@@ -270,8 +272,10 @@ namespace Runner
 
 				targetPosition.y = fCurrentHeight;
 				transform.position = new Vector3(transform.position.x, fCurrentHeight, transform.position.z);
-				if(isPatientZero)               
+				if(isPatientZero)  
+				{
 					Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
+				}
 			}
 
 			if(bJumpFlag == true)
@@ -280,7 +284,8 @@ namespace Runner
 				bExecuteLand = true;
 				bInJump = true;
 				bInAir = true;
-				fCurrentUpwardVelocity = fJumpPush;
+				fDistance = 0;
+				fCurrentUpwardVelocity = CalculateJumpVerticalSpeed(jumpHeight);
 				fCurrentHeight = transform.position.y;
 			}
 
@@ -305,7 +310,7 @@ namespace Runner
 					targetPosition.y = 0;
 				}
 
-				bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, 4 * Time.deltaTime * speed);
+				bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, 4 * Time.fixedDeltaTime * speed);
 				fContactPointY = bridgeHeight.y;
 
 				if(!bInJump)
@@ -347,15 +352,18 @@ namespace Runner
 			if(transform.position.y != 0)
 			{
 				targetPosition.y = 0;
-				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.deltaTime * deathSpeed);
+				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.fixedDeltaTime * deathSpeed);
 			}
 		}
 
 		private void setCurrentJumpHeight(float speed)
 		{
-			fCurrentUpwardVelocity -= Time.deltaTime * acceleration * speed;
-			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
-			fCurrentHeight += fCurrentUpwardVelocity * (Time.deltaTime / 1.4f) * speed;
+			fCurrentUpwardVelocity -= Time.deltaTime * gravity * speed;
+			if(transform.position.y >= jumpHeight && fCurrentUpwardVelocity > 0)
+			{
+				return;
+			}
+			fCurrentHeight += fCurrentUpwardVelocity * Time.fixedDeltaTime * speed;
 			
 			if(fCurrentHeight < fContactPointY)
 			{
@@ -370,11 +378,15 @@ namespace Runner
 			}
 		}
 
+		public float CalculateJumpVerticalSpeed(float jumpHeight)
+		{
+			return Mathf.Sqrt(speedCoeff * jumpHeight * gravity * speed);
+		}
+
 		private void setCurrentDiveHeight(float speed)
 		{
-			fCurrentUpwardVelocity -= Time.deltaTime * 2000 * speed;
-			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
-			fCurrentHeight += fCurrentUpwardVelocity * Time.deltaTime * speed;
+			fCurrentUpwardVelocity -= Time.fixedDeltaTime * 2000 * speed;
+			fCurrentHeight += fCurrentUpwardVelocity * Time.fixedDeltaTime * speed;
 
 			if(fCurrentHeight <= fContactPointY)
 			{
