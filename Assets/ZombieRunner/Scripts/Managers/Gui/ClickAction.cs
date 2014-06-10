@@ -46,12 +46,12 @@ namespace Runner
 					GUIPanelManager.Get(PanelType.Missions).Show();
 					GUIPanelManager.Get(PanelType.Missions).Adjust();
 					GUIPanelManager.currentPanel = PanelType.Missions;
-				break;
+					break;
 				case GUIAction.Leaderboard:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Leaderboard).Show();
 					GUIPanelManager.currentPanel = PanelType.Leaderboard;
-				break;
+					break;
 				case GUIAction.Characters:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Character).Show();

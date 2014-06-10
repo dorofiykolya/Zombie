@@ -23,6 +23,8 @@ namespace Runner
         public int ID = 0;
 		public int gameID = 0;
 
+		private string intersectName;
+
 		private float tCurrentAngle = 0.0f;
 		private float fCurrentUpwardVelocity = 0.0f;
 		private float fDistance = 0.0f;
@@ -321,13 +323,22 @@ namespace Runner
 				}
 			}
 
-			if(bInDuck)
+			if(bInDuck && intersectName == "")
 			{
 				RaycastHit hit;
-				Physics.Raycast(transform.position, Vector3.down, out hit, 200);
-				Debug.Log(hit.transform);
+				Vector3 dir = transform.TransformDirection(Vector3.up);
+				if (Physics.Raycast(transform.position, dir, out hit, 10))
+					intersectName = hit.transform.name;
 			}
 
+			if(bInAir && intersectName == "")
+			{
+				RaycastHit hit;
+				Vector3 dir = transform.TransformDirection(Vector3.down);
+				if (Physics.Raycast(transform.position, dir, out hit, 10))
+					intersectName = hit.transform.name;
+			}
+			
 			am.updateSpeed();
         }
 
@@ -375,6 +386,37 @@ namespace Runner
 					return;
 
 				am.run();
+
+				if (!isPatientZero)
+					return;
+				if(intersectName != "")
+				{
+					Missions.Dispatch("jumpoverobstacles", 1);
+				}
+				if(intersectName.ToLower().Contains("taxi"))
+				{
+					Missions.Dispatch("jumpovertaxi", 1);
+				}
+				if(intersectName.ToLower().Contains("cone"))
+				{
+					Missions.Dispatch("jumpovercone", 1);
+				}
+				if(intersectName.ToLower().Contains("red"))
+				{
+					Missions.Dispatch("jumpoverredcar", 1);
+				}
+				if(intersectName.ToLower().Contains("car"))
+				{
+					Missions.Dispatch("jumpovercars", 1);
+				}
+				if(intersectName.ToLower().Contains("barrel"))
+				{
+					Missions.Dispatch("jumpoverbarrel", 1);
+				}
+				if(intersectName.ToLower().Contains("police"))
+				{
+					Missions.Dispatch("jumpoverpolice", 1);
+				}
 			}
 		}
 
@@ -418,24 +460,48 @@ namespace Runner
 			yield return new WaitForSeconds(slideDuration);
 
 			bInDuck = false;
-
+			
 			Vector3 height = collider.center;
 			height.y *= 6;
 			collider.center = height;
 			
 			am.run();
+
+			if (!isPatientZero)
+				return;
+			if(intersectName.ToLower().Contains("sign"))
+			{
+				Missions.Dispatch("slideundersign", 1);
+			}
+			if(intersectName.ToLower().Contains("bus"))
+			{
+				Missions.Dispatch("slideunderbus", 1);
+			}
+			if(intersectName.ToLower().Contains("sign") && ID == 2)
+			{
+				Missions.Dispatch("slideundersignbobby", 1);
+			}
+			if(intersectName.ToLower().Contains("barrel"))
+			{
+				Missions.Dispatch("slideunderbarrel", 1);
+			}
 		}
 
         public void doJump()
         {
 			if(!bInAir)
 			{
+				intersectName = "";
 				bJumpFlag = true;
 				bInDuck = false;
 				am.jump();
-				if(isBridge)
+				if(isBridge && isPatientZero)
 				{
 					Missions.Dispatch("jumponbridge", 1);
+				}
+				if(ID == 2)
+				{
+					Missions.Dispatch("jumpwithjessy", 1);
 				}
 			}
         }
@@ -444,6 +510,7 @@ namespace Runner
         {
             if(!bInAir && !bInDuck)
 			{
+				intersectName = "";
 				duckPlayer();
 			}
 			else if(bInAir && !bInDuck)
@@ -579,14 +646,17 @@ namespace Runner
 					{
 						if(fContactPointY == 0)
 						{
-							Missions.Dispatch("jumpoverobstacles", 1);
-							if(other.gameObject.name.ToLower().Contains("orange"))
+							if (isPatientZero)
 							{
-								Missions.Dispatch("jumponorangecar", 1);
-							}
-							else if(other.gameObject.name.ToLower().Contains("bus"))
-							{
-								Missions.Dispatch("jumponbus", 1);
+								Missions.Dispatch("jumpoverobstacles", 1);
+								if(other.gameObject.name.ToLower().Contains("orange"))
+								{
+									Missions.Dispatch("jumponorangecar", 1);
+								}
+								else if(other.gameObject.name.ToLower().Contains("bus"))
+								{
+									Missions.Dispatch("jumponbus", 1);
+								}
 							}
 						}
 						fContactPointY = other.contacts[0].point.y;
