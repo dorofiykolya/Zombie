@@ -72,6 +72,7 @@ namespace Runner
             {
                 queue.ClearStack();
 				visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
+				visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = queue.CurrentMissions[0];
 				index++;
             }
         }

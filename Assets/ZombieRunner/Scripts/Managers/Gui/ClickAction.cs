@@ -41,6 +41,7 @@ namespace Runner
 					GUIPanelManager.currentPanel = PanelType.Settings;
 					break;
 				case GUIAction.Missions:
+					Game.GamePause();
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Missions).Show();
 					GUIPanelManager.Get(PanelType.Missions).Adjust();

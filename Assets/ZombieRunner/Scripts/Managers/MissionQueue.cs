@@ -42,6 +42,7 @@ namespace Runner
                     
                     if (mission.IsCompleted == false && mission.Current >= mission.Target)
                     {
+						Debug.Log("Completed");
                         mission.IsCompleted = true;
                         if (missions == null)
                         {
