@@ -15,17 +15,19 @@ namespace Runner
 
     public class PlayerValues : ComponentManager 
 	{
-		public static int[] levels = new int[]{0, 0, 0, 0, 0};
-		public static int[] player_1_prefs = new int[]{2, 3, 4, 5, 6};
-		public static int[] player_2_prefs = new int[]{1, 2, 3, 4, 5};
-		public static int[] player_3_prefs = new int[]{10, 20, 30, 40, 50};
-		public static int[] player_4_prefs = new int[]{10, 20, 30, 40, 50};
-		public static int[] player_5_prefs = new int[]{1, 2, 3, 4, 5};
+		public static int[] levels = new int[]{1, 0, 0, 0, 0};
+		public static int[] player_1_prefs = new int[]{0, 2, 3, 4, 5, 6};
+		public static int[] player_2_prefs = new int[]{0, 1, 2, 3, 4, 5};
+		public static int[] player_3_prefs = new int[]{0, 10, 20, 30, 40, 50};
+		public static int[] player_4_prefs = new int[]{0, 10, 20, 30, 40, 50};
+		public static int[] player_5_prefs = new int[]{0, 1, 2, 3, 4, 5};
 
 		public static int player = 0;
+		private static Renderer currentRenderer;
 
 		public CharacterAction action;
 		public Transform stars;
+		public Renderer humanRenderer;
 		public UILabel desc;
 
 		public override void Initialize()
@@ -61,11 +63,50 @@ namespace Runner
 					Player.Change(player);
 					break;
 				case CharacterAction.Upgrade:
-					levels[player] = Mathf.Clamp(levels[player] + 1, 0, 4);
+					levels[player] = Mathf.Clamp(levels[player] + 1, 0, 5);
+					if(levels[player] == 1)
+					{	
+						switch(player)
+						{
+							case 2:
+								Missions.Dispatch ("unlockbobby", levels[player]);
+								break;
+							case 3:
+								Missions.Dispatch ("unlockdrwhite", levels[player]);
+								break;
+							case 4:
+								Missions.Dispatch ("unlocksgtwall", levels[player]);
+								break;
+						}
+					}
+					else
+					{
+						switch(player)
+						{
+							case 0:
+								Missions.Dispatch ("upgradeandy", levels[player]);
+								break;
+							case 1:
+								Missions.Dispatch ("upgradejessy", levels[player]);
+								break;
+							case 2:
+								Missions.Dispatch ("upgradebobby", levels[player]);
+								break;
+							case 3:
+								Missions.Dispatch ("upgradedrwhite", levels[player]);
+								break;
+							case 4:
+								Missions.Dispatch ("upgradesgtwall", levels[player]);
+								break;
+						}
+					}
+
 					break;
 			}
+			if(currentRenderer != null)
+				currentRenderer.sharedMaterial.color = Color.white;
 			int i;
-			for(i = 0; i <= levels[player]; i++)
+			for(i = 0; i < levels[player]; i++)
 			{
 				stars.GetChild(i).gameObject.SetActive(true);
 			}
@@ -91,6 +132,13 @@ namespace Runner
 			case 4:
 				desc.text = "Sergeant Wall, military Can break the obstacle\r\n(Power: " + player_5_prefs[levels[player]] + "strikes)";
 				break;
+			}
+
+			if(levels[player] == 0)
+			{
+				humanRenderer.sharedMaterial.color = Color.black;
+				currentRenderer = humanRenderer;
+				desc.text = "";
 			}
 		}
 	}

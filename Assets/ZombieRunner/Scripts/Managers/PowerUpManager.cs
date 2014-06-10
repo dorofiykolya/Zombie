@@ -11,9 +11,7 @@ namespace Runner
 		private static Dictionary<int,List<ObstaclePowerUp>> PoolById = new Dictionary<int, List<ObstaclePowerUp>>();
 		private static int bonusChance;
 		public int _bonusChance;
-		public int _bonusTime;
 		public int _boomDistance;
-		public int _boomRadius;
 		public ObstaclePowerUp[] List;
 
 		public int scorePowerup{ get; private set; }
@@ -43,27 +41,35 @@ namespace Runner
 		public void UseBonus(ObstaclePowerUp p)
 		{
 			RemovePowerUpObject (p);
-
+			Missions.Dispatch("pickupanybonus", 1);
 			switch (p.Id)
 			{
 			case 1:
-				StartCoroutine(Magnet());
+				StartCoroutine(Magnet(p));
+				Missions.Dispatch("pickupmagnet", 1);
+				if(Player.Current.ID == 1)
+				{
+					Missions.Dispatch("pickupmagnetbyjessy", 1);
+				}
 				break;
 			case 2:
 				break;
 			case 3:
-				Boom();
+				Boom(p);
+				Missions.Dispatch("pickupexplosive", 1);
 				break;
 			case 4:
-				StartCoroutine(Flight());
+				StartCoroutine(Flight(p));
+				Missions.Dispatch("pickupboard", 1);
 				break;
 			case 5:
-				StartCoroutine(ScoreBoost());
+				StartCoroutine(ScoreBoost(p));
+				Missions.Dispatch("pickupstar", 1);
 				break;
 			}
 		}
 
-		public IEnumerator Magnet()
+		public IEnumerator Magnet(ObstaclePowerUp p)
 		{
 			foreach(PlayerController player in Player.currentList)
 			{
@@ -72,7 +78,7 @@ namespace Runner
 					player.magnet.enabled = true;
 				}
 			}
-			yield return new WaitForSeconds (_bonusTime);
+			yield return new WaitForSeconds (p.effect[p.currentLevel]);
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -82,7 +88,7 @@ namespace Runner
 			}
 		}
 
-		public IEnumerator Flight()
+		public IEnumerator Flight(ObstaclePowerUp p)
 		{
 			foreach(PlayerController player in Player.currentList)
 			{
@@ -95,7 +101,7 @@ namespace Runner
 					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -15);
 				}
 			}
-			yield return new WaitForSeconds (_bonusTime);
+			yield return new WaitForSeconds (p.effect[p.currentLevel]);
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -109,21 +115,31 @@ namespace Runner
 			}
 		}
 
-		public IEnumerator ScoreBoost()
+		public IEnumerator ScoreBoost(ObstaclePowerUp p)
 		{
 			scorePowerup = 2;
-			yield return new WaitForSeconds (_bonusTime);
+			yield return new WaitForSeconds (p.effect[p.currentLevel]);
 			scorePowerup = 1;
 		}
 
-		public void Boom()
+		public void Boom(ObstaclePowerUp p)
 		{
-			Collider[] boomCollider = Physics.OverlapSphere(new Vector3(0, 0, _boomDistance), _boomRadius, 1 << 12);
+			Collider[] boomCollider = Physics.OverlapSphere(new Vector3(0, 0, _boomDistance), p.effect[p.currentLevel], 1 << 12);
 
 			foreach(Collider boom in boomCollider)
 			{
 				boom.transform.localScale = Vector3.zero;
 				boom.gameObject.collider.enabled = false;
+				if(boom.gameObject.name.ToLower().Contains("red"))
+				{
+					Missions.Dispatch("dieredcar", 1);
+				}
+				if(Player.Current.ID == 1)
+				{
+					Missions.Dispatch("destroyobstaclesjessy", 1);
+				}
+				Missions.Dispatch("destroyexplosivecars", 1);
+				Missions.Dispatch("destroyexplosive", 1);
 			}
 		}
 

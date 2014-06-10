@@ -157,7 +157,7 @@ namespace Runner
 				{
 					soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
 				}
-				if(am != null);
+				if(am != null)
 					am.run();
 			}
 		}
@@ -195,6 +195,7 @@ namespace Runner
 			//fatman dies
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]] && !Player.isJumpPowerUp)
 			{
+				Missions.Dispatch("diewithouttouching", 1);
 				onDeath();
 			}
 
@@ -315,6 +316,13 @@ namespace Runner
 				}
 			}
 
+			if(bInDuck)
+			{
+				RaycastHit hit;
+				Physics.Raycast(transform.position, Vector3.down, out hit, 200);
+				Debug.Log(hit.transform);
+			}
+
 			am.updateSpeed();
         }
 
@@ -347,7 +355,7 @@ namespace Runner
 		{
 			fCurrentUpwardVelocity -= Time.deltaTime * acceleration * speed;
 			fCurrentUpwardVelocity = Mathf.Clamp(fCurrentUpwardVelocity, -fJumpPush, fJumpPush);
-			fCurrentHeight += fCurrentUpwardVelocity * Time.deltaTime * speed;
+			fCurrentHeight += fCurrentUpwardVelocity * (Time.deltaTime / 1.4f) * speed;
 			
 			if(fCurrentHeight < fContactPointY)
 			{
@@ -413,6 +421,10 @@ namespace Runner
 				bJumpFlag = true;
 				bInDuck = false;
 				am.jump();
+				if(isBridge)
+				{
+					Missions.Dispatch("jumponbridge", 1);
+				}
 			}
         }
 
@@ -505,6 +517,8 @@ namespace Runner
 			}
 			else
 			{
+				Missions.Dispatch("die5butnotmain", 1);
+
                 Player.currentList.RemoveAt(gameID);
 
                 for (int i = ID; i < Player.currentList.Count; i++)
@@ -551,6 +565,18 @@ namespace Runner
 				{
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
+						if(fContactPointY == 0)
+						{
+							Missions.Dispatch("jumpoverobstacles", 1);
+							if(other.gameObject.name.ToLower().Contains("orange"))
+							{
+								Missions.Dispatch("jumponorangecar", 1);
+							}
+							else if(other.gameObject.name.ToLower().Contains("bus"))
+							{
+								Missions.Dispatch("jumponbus", 1);
+							}
+						}
 						fContactPointY = other.contacts[0].point.y;
 						return;
 					}
@@ -569,12 +595,57 @@ namespace Runner
 				{
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
+
+					if(other.gameObject.name.ToLower().Contains("taxi"))
+					{
+						Missions.Dispatch("destroytaximarine", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("red"))
+					{
+						Missions.Dispatch("destroyredcar", 1);
+					}
+
+					Missions.Dispatch("destroyobstaclesmarine", 1);
 				}
 
 				soldierLife--;
 
 				if(soldierLife <= 0)
+				{
+					if(other.gameObject.name.ToLower().Contains("taxi") && ID == 3)
+					{
+						Missions.Dispatch("diedrwhitetaxi", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("er"))
+					{
+						Missions.Dispatch("dieambulance", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("police"))
+					{
+						Missions.Dispatch("diefrompolice", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("cone"))
+					{
+						Missions.Dispatch("diecone", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("red"))
+					{
+						Missions.Dispatch("dieredcar", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("swat"))
+					{
+						Missions.Dispatch("dieswat", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("bus"))
+					{
+						Missions.Dispatch("diebus", 1);
+					}
+					if(other.gameObject.name.ToLower().Contains("swat") && ID == 4)
+					{
+						Missions.Dispatch("diemarinefromswat", 1);
+					}
 					onDeath();
+				}
 
             }
 			else if (other.gameObject.CompareTag("Bridge"))
@@ -588,6 +659,15 @@ namespace Runner
                 CurrencyManager.goldCount += (1 + Player.GetGoldBonus());
 				other.transform.GetComponent<ObstacleCurrency>().isPickUp = true;
 				other.gameObject.collider.enabled = false;
+				Missions.Dispatch("gatherbrain", 1);
+				if(ID == 4)
+				{
+					Missions.Dispatch("gatherbrainbymarine", 1);
+				}
+				else if(ID == 1)
+				{
+					Missions.Dispatch("gatherbrainjessy", 1);
+				}
             }
 			else if (other.gameObject.CompareTag("PowerUp"))
 			{
@@ -609,6 +689,25 @@ namespace Runner
 					
 					var game = GameObject.FindGameObjectWithTag("Player");
                     Player.currentList[Player.currentList.Count - 1].gameObject.transform.parent = game.transform;
+
+					Missions.Dispatch ("infect", 1);
+
+					if(other.gameObject.GetComponent<ObstacleHuman>().ID == 3)
+					{
+						Missions.Dispatch("infectprofessor", 1);
+					}
+					else if(other.gameObject.GetComponent<ObstacleHuman>().ID == 2)
+					{
+						Missions.Dispatch("infectfatso", 1);
+					}
+					else if(ID == 1 && other.gameObject.GetComponent<ObstacleHuman>().ID == 1)
+					{
+						Missions.Dispatch("infecthousewifewithjessy", 1);
+					}
+					if(ID == 3)
+					{
+						Missions.Dispatch("infectbydrwhite", 1);
+					}
 				}
 			}
         }

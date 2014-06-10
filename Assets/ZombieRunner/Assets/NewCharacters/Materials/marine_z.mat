@@ -20,9 +20,21 @@ Material:
           m_Texture: {fileID: 2800000, guid: 3be808821583c4979a9fc77296c01796, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _Dist
+        second: 0
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .588, g: .588, b: .588, a: 1}
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _NearCurve
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _FarCurve
+        second: {r: 0, g: 0, b: 0, a: 0}

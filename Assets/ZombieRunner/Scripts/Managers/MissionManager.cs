@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Runner 
 {
@@ -7,6 +8,7 @@ namespace Runner
     public class MissionManager : ComponentManager
     {
         public MissionQueue[] MissionQueues;
+		public GameObject[] visualMissions = new GameObject[3];
 
         public event Action<Mission[], MissionManager> OnComplete;
 
@@ -50,6 +52,11 @@ namespace Runner
             ClearStack();
         }
 
+		public override void GamePause ()
+		{
+			ClearStack ();
+		}
+
         private void ClearLastMissions()
         {
             foreach (var queue in MissionQueues)
@@ -60,9 +67,12 @@ namespace Runner
 
         private void ClearStack()
         {
+			int index = 0;
             foreach (var queue in MissionQueues)
             {
                 queue.ClearStack();
+				visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
+				index++;
             }
         }
 

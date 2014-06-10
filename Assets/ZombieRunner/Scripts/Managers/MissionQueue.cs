@@ -31,7 +31,15 @@ namespace Runner
             {
                 if (mission.Id == id)
                 {
-                    mission.Current = value;
+					if(id.Contains("run"))
+					{
+						mission.Current = value;
+					}
+					else
+					{
+						mission.Current += value;
+					}
+                    
                     if (mission.IsCompleted == false && mission.Current >= mission.Target)
                     {
                         mission.IsCompleted = true;

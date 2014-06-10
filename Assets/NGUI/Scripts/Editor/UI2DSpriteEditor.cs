@@ -33,7 +33,7 @@ public class UI2DSpriteEditor : UIWidgetInspector
 	{
 		SerializedProperty sp = NGUIEditorTools.DrawProperty("2D Sprite", serializedObject, "mSprite");
 
-		NGUISettings.sprite2D = sp.objectReferenceValue as UnityEngine.Sprite;
+		NGUISettings.sprite2D = sp.objectReferenceValue as Sprite;
 
 		NGUIEditorTools.DrawProperty("Material", serializedObject, "mMat");
 

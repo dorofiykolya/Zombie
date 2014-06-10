@@ -172,6 +172,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Specular Curve Reflective.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\ZombieRunner\Temp\CgBatchOutput.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
@@ -198,6 +199,7 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\ZombieRunner\Temp\CgBatchInput.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
@@ -275,6 +277,8 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{A9C6A3E7-F7E6-C880-8FFA-B82E571A36B9}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
       <Project>{6D769005-B82C-57C4-A499-C9E89DE2E068}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>

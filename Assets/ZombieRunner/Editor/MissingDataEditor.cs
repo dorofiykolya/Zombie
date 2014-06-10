@@ -69,9 +69,9 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.name == "Coin")
+			if(gameObject.name == "Human5")
 			{
-				gameObject.AddComponent<LocationObject>();
+				(gameObject.GetComponent<ObstacleHuman>().movement.collider as SphereCollider).radius = 20;
 			}
 			
 			foreach (Transform child in gameObject.transform) 

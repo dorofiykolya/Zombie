@@ -76,6 +76,18 @@ namespace Runner
 			Platforms.Move(moveSpeed, player);
 			DisposedManager.Update(player);
 			Missions.Dispatch ("run", player.Distance);
+			if(Waypoint.currentWP == 0)
+			{
+				Missions.Dispatch("runonleft", player.Distance);
+			}
+			else if(Waypoint.currentWP == 2)
+			{
+				Missions.Dispatch("runonright", player.Distance);
+			}
+			if(Player.Current.ID == 3)
+			{
+				Missions.Dispatch("rundrwhite", player.Distance);
+			}
 		}
 
         public override void GameRestart()

@@ -224,9 +224,9 @@ public class NGUISettings
 	}
 
 #if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_1 && !UNITY_4_2
-	static public UnityEngine.Sprite sprite2D
+	static public Sprite sprite2D
 	{
-		get { return Get<UnityEngine.Sprite>("NGUI Sprite2D", null); }
+		get { return Get<Sprite>("NGUI Sprite2D", null); }
 		set { Set("NGUI Sprite2D", value); }
 	}
 #endif
@@ -371,23 +371,7 @@ public class NGUISettings
 		w.height = 100;
 		return w;
 	}
-
-#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_1 && !UNITY_4_2
-	/// <summary>
-	/// Convenience method -- add a UnityEngine.Sprite.
-	/// </summary>
-
-	static public UI2DSprite Add2DSprite (GameObject go)
-	{
-		UI2DSprite w = NGUITools.AddWidget<UI2DSprite>(go);
-		w.name = "2D Sprite";
-		w.pivot = pivot;
-		w.sprite2D = sprite2D;
-		w.width = 100;
-		w.height = 100;
-		return w;
-	}
-#endif
+	
 	/// <summary>
 	/// Convenience method -- add a sprite.
 	/// </summary>

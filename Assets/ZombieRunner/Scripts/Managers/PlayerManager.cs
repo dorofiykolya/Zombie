@@ -97,7 +97,14 @@ namespace Runner
 
 			Waypoint.currentWP = Waypoint.transitWP;
 
-			currentList [0].Revive ();
+			currentList[0].Revive ();
+
+			Missions.Dispatch ("revive", 1);
+
+			if(Current.ID == 1)
+			{
+				Missions.Dispatch("revivejessy", 1);
+			}
 		}
 
 		public void Change(int id)
