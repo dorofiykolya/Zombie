@@ -963,8 +963,9 @@ MonoBehaviour:
   collider: {fileID: 6500000}
   ID: 2
   gameID: 0
-  fJumpPush: 70
-  acceleration: 200
+  jumpHeight: 6
+  gravity: 150
+  speedCoeff: 7
   bInAir: 0
   glideEnable: 0
   bInDuck: 0

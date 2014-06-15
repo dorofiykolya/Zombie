@@ -23,7 +23,7 @@ namespace Runner
         public int ID = 0;
 		public int gameID = 0;
 
-		private string intersectName;
+		private string intersectName = "";
 
 		private float tCurrentAngle = 0.0f;
 		private float fCurrentUpwardVelocity = 0.0f;
@@ -640,10 +640,9 @@ namespace Runner
         {
             if (other.gameObject.CompareTag("Obstacle") && !Player.isJumpPowerUp && !Player.isRevive)
             {
-				if(other.collider.bounds.center.y < 10)
+				if(other.collider.bounds.center.y < 10 && fContactPointY == 0)
 				{
-					Debug.Log(other.collider.bounds.size.y * .7f + "  " + other.contacts[0].point.y);
-					if(other.collider.bounds.size.y * .7f < other.contacts[0].point.y)
+					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
 						if(fContactPointY == 0)
 						{
@@ -660,7 +659,7 @@ namespace Runner
 								}
 							}
 						}
-						fContactPointY = other.collider.bounds.size.y;
+						fContactPointY = transform.position.y;
 						return;
 					}
 				}

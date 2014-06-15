@@ -719,7 +719,7 @@ GameObject:
   - 54: {fileID: 5400012}
   - 114: {fileID: 11400678}
   m_Layer: 12
-  m_Name: CAR_red
+  m_Name: red_car
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6543,7 +6543,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.99698639, y: 10.8292065, z: 14.719986}
+  m_Size: {x: 8.99698639, y: 10, z: 14.719986}
   m_Center: {x: 0, y: 5.47553539, z: 3.81469727e-05}
 --- !u!65 &6500006
 BoxCollider:
@@ -6567,7 +6567,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.16682434, y: 10.9895887, z: 15.2442017}
+  m_Size: {x: 8.16682434, y: 10.6000004, z: 15.2442017}
   m_Center: {x: 0, y: 5.45176935, z: 3.05175781e-05}
 --- !u!65 &6500010
 BoxCollider:
@@ -6591,7 +6591,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.28585815, y: 8.83504105, z: 12.9074707}
+  m_Size: {x: 7.28585815, y: 8.60000038, z: 12.9074707}
   m_Center: {x: 0, y: 4.45097923, z: 0}
 --- !u!65 &6500014
 BoxCollider:
@@ -6603,7 +6603,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.34480667, y: 15.8770905, z: 39.7117004}
+  m_Size: {x: 8, y: 15.8770905, z: 39.7117004}
   m_Center: {x: 0, y: 7.93854427, z: -2.0980835e-05}
 --- !u!65 &6500018
 BoxCollider:
@@ -6795,7 +6795,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.16682434, y: 10.9895887, z: 15.2442017}
+  m_Size: {x: 8.16682434, y: 10.6000004, z: 15.2442017}
   m_Center: {x: 0, y: 5.45176935, z: 3.05175781e-05}
 --- !u!65 &6500078
 BoxCollider:
@@ -6819,7 +6819,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.16682434, y: 10.9895887, z: 15.2442017}
+  m_Size: {x: 8.16682434, y: 10.6000004, z: 15.2442017}
   m_Center: {x: 0, y: 5.45176935, z: 3.05175781e-05}
 --- !u!65 &6500096
 BoxCollider:
@@ -6831,7 +6831,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.28585815, y: 8.83504105, z: 12.9074707}
+  m_Size: {x: 7.28585815, y: 8.60000038, z: 12.9074707}
   m_Center: {x: 0, y: 4.45097923, z: 0}
 --- !u!65 &6500098
 BoxCollider:
@@ -6843,7 +6843,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.28585815, y: 8.83504105, z: 12.9074707}
+  m_Size: {x: 7.28585815, y: 8.60000038, z: 12.9074707}
   m_Center: {x: 0, y: 4.45097923, z: 0}
 --- !u!65 &6500100
 BoxCollider:
@@ -6855,7 +6855,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.28585815, y: 8.83504105, z: 12.9074707}
+  m_Size: {x: 7.28585815, y: 8.60000038, z: 12.9074707}
   m_Center: {x: 0, y: 4.45097923, z: 0}
 --- !u!65 &6500102
 BoxCollider:
