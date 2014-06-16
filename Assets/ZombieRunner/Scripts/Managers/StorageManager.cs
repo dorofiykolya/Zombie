@@ -22,9 +22,8 @@ namespace Runner
             var missionManager = GameObject.FindObjectOfType<MissionManager>();
 
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
-            PlayerData.PlatformType = PlayerPrefs.GetInt("PlatformType");
-            PlayerData.PlatformTypeRemainingDistance = PlayerPrefs.GetFloat("PlatformTypeRemainingDistance");
-            PlayerData.MaxDistance = PlayerPrefs.GetFloat("MaxDistance");
+			PlayerData.Distance = PlayerPrefs.GetFloat("Distance");
+			PlayerData.Brains = PlayerPrefs.GetInt("Brains");
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
         }
@@ -34,9 +33,8 @@ namespace Runner
             var missionManager = GameObject.FindObjectOfType<MissionManager>();
 
             PlayerPrefs.SetInt("CharacterId", PlayerData.CharacterId);
-            PlayerPrefs.SetInt("PlatformType", PlayerData.PlatformType);
-            PlayerPrefs.SetFloat("PlatformTypeRemainingDistance", PlayerData.PlatformTypeRemainingDistance);
-            PlayerPrefs.SetFloat("MaxDistance", PlayerData.MaxDistance);
+			PlayerPrefs.SetFloat("Distance", PlayerData.Distance);
+			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
             PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionQueues));
         }
 

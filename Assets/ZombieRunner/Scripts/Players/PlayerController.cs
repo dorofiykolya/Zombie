@@ -27,6 +27,7 @@ namespace Runner
 
 		private float tCurrentAngle = 0.0f;
 		private float fCurrentUpwardVelocity = 0.0f;
+		private float fTargetUpwardVelocity = 0.0f;
 		private float fDistance = 0.0f;
 		private float fCurrentHeight = 0.0f;
 		private float fContactPointY = 0.0f;
@@ -40,6 +41,7 @@ namespace Runner
 		private float glideSpeed = 100;
 
 		public bool bInAir;
+		private bool bInTop;
 		public bool glideEnable;
 		private bool bJumpFlag;
 		private bool bInJump;
@@ -283,11 +285,13 @@ namespace Runner
 			if(bJumpFlag == true)
 			{
 				bJumpFlag = false;
+				bInTop = false;
 				bExecuteLand = true;
 				bInJump = true;
 				bInAir = true;
 				fDistance = 0;
 				fCurrentUpwardVelocity = CalculateJumpVerticalSpeed(jumpHeight);
+				fTargetUpwardVelocity = 0.0f;
 				fCurrentHeight = transform.position.y;
 			}
 
@@ -370,8 +374,13 @@ namespace Runner
 		private void setCurrentJumpHeight(float speed)
 		{
 			fCurrentUpwardVelocity -= Time.deltaTime * gravity * speed;
-			if(transform.position.y >= jumpHeight && fCurrentUpwardVelocity > 0)
+			if(transform.position.y >= jumpHeight && fCurrentUpwardVelocity >= -fTargetUpwardVelocity)
 			{
+				if(!bInTop)
+				{
+					fTargetUpwardVelocity = fCurrentUpwardVelocity;
+					bInTop = true;
+				}
 				return;
 			}
 			fCurrentHeight += fCurrentUpwardVelocity * Time.fixedDeltaTime * speed;

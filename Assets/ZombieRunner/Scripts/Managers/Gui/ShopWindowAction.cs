@@ -19,10 +19,29 @@ namespace Runner
 	public class ShopWindowAction : ComponentManager 
 	{
 		public ShopAction action;
+		public UILabel price;
+
+		public override void Initialize ()
+		{
+			switch(action)
+			{
+				case ShopAction.Magnet:
+					price.text = PowerUp.List[0].prices[PowerUp.List[0].currentLevel].ToString();
+					break;
+				case ShopAction.Hoverboard:
+					price.text = PowerUp.List[1].prices[PowerUp.List[1].currentLevel].ToString();
+					break;
+				case ShopAction.Score:
+					price.text = PowerUp.List[2].prices[PowerUp.List[2].currentLevel].ToString();
+					break;
+				case ShopAction.Explosive:
+					price.text = PowerUp.List[3].prices[PowerUp.List[3].currentLevel].ToString();
+					break;
+			}
+		}
 
 		void OnClick()
 		{
-			Debug.Log (action);
 			switch(action)
 			{
 				case ShopAction.CoinPack1:

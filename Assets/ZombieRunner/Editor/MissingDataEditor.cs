@@ -12,11 +12,11 @@ namespace Runner
 		private GameObject[] selectList;
 		private Vector2 scrollPosition;
 
-		private GameObject coin;
+		private Mesh coin;
 
 		void OnGUI()
 		{
-			coin = EditorGUILayout.ObjectField ("Coin", coin, typeof(GameObject)) as GameObject;
+			coin = EditorGUILayout.ObjectField ("mind", coin, typeof(Mesh)) as Mesh;
 
 			if (GUILayout.Button("ADD"))
 			{
@@ -69,9 +69,9 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.name == "Human5")
+			if(gameObject.name == "probirka")
 			{
-				(gameObject.GetComponent<ObstacleHuman>().movement.collider as SphereCollider).radius = 20;
+				gameObject.GetComponent<MeshFilter>().mesh = coin;
 			}
 			
 			foreach (Transform child in gameObject.transform) 
