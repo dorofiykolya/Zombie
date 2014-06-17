@@ -28,6 +28,7 @@ namespace Runner
 
 		public override void GameStop ()
 		{
+			PlayerData.Brains += goldCount;
 			Initialize ();
 		}
 

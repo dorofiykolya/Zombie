@@ -40,6 +40,9 @@ namespace Runner
         {
             Paused = false;
             Started = false;
+
+			StorageManager.Save();
+
             foreach (var component in components.ToArray())
             {
                 component.GameStop();

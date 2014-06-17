@@ -13,6 +13,7 @@ namespace Runner
 		public int _bonusChance;
 		public int _boomDistance;
 		public ObstaclePowerUp[] List;
+		public GameObject[] visualList;
 
 		public int scorePowerup{ get; private set; }
 
@@ -20,6 +21,11 @@ namespace Runner
 		{
 			PowerUpContainer = new GameObject("PowerUpContainer");
 			ListById = List;
+
+			for(int i = 0; i < visualList.Length; i++)
+			{
+				visualList[i].SetActive(false);
+			}
 
 			States.OnChanged += OnChanged;
 		}
@@ -78,7 +84,9 @@ namespace Runner
 					player.magnet.enabled = true;
 				}
 			}
+			visualList [0].SetActive (true);
 			yield return new WaitForSeconds (p.effect[p.currentLevel]);
+			visualList [0].SetActive (false);
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -101,7 +109,9 @@ namespace Runner
 					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -15);
 				}
 			}
+			visualList [1].SetActive (true);
 			yield return new WaitForSeconds (p.effect[p.currentLevel]);
+			visualList [1].SetActive (false);
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -118,7 +128,9 @@ namespace Runner
 		public IEnumerator ScoreBoost(ObstaclePowerUp p)
 		{
 			scorePowerup = 2;
+			visualList [2].SetActive (true);
 			yield return new WaitForSeconds (p.effect[p.currentLevel]);
+			visualList [2].SetActive (false);
 			scorePowerup = 1;
 		}
 
