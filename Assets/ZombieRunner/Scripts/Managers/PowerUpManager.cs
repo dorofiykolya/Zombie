@@ -1,9 +1,19 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 namespace Runner
 {
+	[Serializable]
+	public class PowerUpVisual
+	{
+		[HideInInspector]
+		public float time;
+		public UILabel text;
+		public GameObject visual;
+	}
+
 	public class PowerUpManager : ComponentManager
 	{
 		public static GameObject PowerUpContainer{get;private set;}
@@ -13,7 +23,7 @@ namespace Runner
 		public int _bonusChance;
 		public int _boomDistance;
 		public ObstaclePowerUp[] List;
-		public GameObject[] visualList;
+		public List<PowerUpVisual> visualList;
 
 		public int scorePowerup{ get; private set; }
 
@@ -21,15 +31,15 @@ namespace Runner
 		{
 			PowerUpContainer = new GameObject("PowerUpContainer");
 			ListById = List;
-
+			scorePowerup = 1;
 			States.OnChanged += OnChanged;
 		}
 		
 		public override void GameStop ()
 		{
-			for(int i = 0; i < visualList.Length; i++)
+			for(int i = 0; i < visualList.Count; i++)
 			{
-				visualList[i].SetActive(false);
+				visualList[i].visual.SetActive(false);
 			}
 
 			StopAllCoroutines ();
@@ -53,7 +63,56 @@ namespace Runner
 			}
 		}
 
+		void Update()
+		{
+			if (Player.isStop)
+				return;
 
+			for(int i = 0; i < visualList.Count; i++)
+			{
+				if(visualList[i].time < Time.timeSinceLevelLoad)
+				{
+					if(visualList[i].visual.activeSelf)
+					{
+						if(i == 0)
+						{
+							foreach(PlayerController player in Player.currentList)
+							{
+								if(player.isPatientZero)
+								{
+									player.magnet.enabled = false;
+								}
+							}
+						}
+						else if(i == 1)
+						{
+							foreach(PlayerController player in Player.currentList)
+							{
+								if(player.isPatientZero)
+								{
+									player.OnPowerUpEnded();
+								}
+								else
+								{
+									player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
+								}
+							}
+						}
+						else if(i == 2)
+						{
+							scorePowerup = 1;
+						}
+						visualList[i].visual.SetActive(false);
+					}
+					continue;
+				}
+
+				if(!visualList[i].visual.activeSelf)
+					visualList[i].visual.SetActive(true);
+
+				visualList[i].text.text = ((int)(visualList[i].time - Time.timeSinceLevelLoad)).ToString();
+			}
+		}
 
 		public void UseBonus(ObstaclePowerUp p)
 		{
@@ -62,32 +121,32 @@ namespace Runner
 			switch (p.Id)
 			{
 			case 1:
-				StartCoroutine(Magnet(p));
+				Magnet(p);
 				Missions.Dispatch("pickupmagnet", 1);
 				if(Player.Current.ID == 1)
 				{
 					Missions.Dispatch("pickupmagnetbyjessy", 1);
 				}
 				break;
-			case 2:
-				break;
 			case 3:
 				Boom(p);
 				Missions.Dispatch("pickupexplosive", 1);
 				break;
 			case 4:
-				StartCoroutine(Flight(p));
+				Flight(p);
 				Missions.Dispatch("pickupboard", 1);
 				break;
 			case 5:
-				StartCoroutine(ScoreBoost(p));
+				ScoreBoost(p);
 				Missions.Dispatch("pickupstar", 1);
 				break;
 			}
 		}
 
-		public IEnumerator Magnet(ObstaclePowerUp p)
+		public void Magnet(ObstaclePowerUp p)
 		{
+			visualList [0].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -95,20 +154,12 @@ namespace Runner
 					player.magnet.enabled = true;
 				}
 			}
-			visualList [0].SetActive (true);
-			yield return new WaitForSeconds (p.effect[p.currentLevel]);
-			visualList [0].SetActive (false);
-			foreach(PlayerController player in Player.currentList)
-			{
-				if(player.isPatientZero)
-				{
-					player.magnet.enabled = false;
-				}
-			}
 		}
 
-		public IEnumerator Flight(ObstaclePowerUp p)
+		public void Flight(ObstaclePowerUp p)
 		{
+			visualList [1].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+
 			foreach(PlayerController player in Player.currentList)
 			{
 				if(player.isPatientZero)
@@ -120,29 +171,13 @@ namespace Runner
 					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -15);
 				}
 			}
-			visualList [1].SetActive (true);
-			yield return new WaitForSeconds (p.effect[p.currentLevel]);
-			visualList [1].SetActive (false);
-			foreach(PlayerController player in Player.currentList)
-			{
-				if(player.isPatientZero)
-				{
-					player.OnPowerUpEnded();
-				}
-				else
-				{
-					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
-				}
-			}
 		}
 
-		public IEnumerator ScoreBoost(ObstaclePowerUp p)
+		public void ScoreBoost(ObstaclePowerUp p)
 		{
+			visualList [2].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+
 			scorePowerup = 2;
-			visualList [2].SetActive (true);
-			yield return new WaitForSeconds (p.effect[p.currentLevel]);
-			visualList [2].SetActive (false);
-			scorePowerup = 1;
 		}
 
 		public void Boom(ObstaclePowerUp p)
@@ -172,9 +207,9 @@ namespace Runner
 			{
 				if(child.CompareTag("Bonus"))
 				{
-					if(Random.Range(1, 100) <= bonusChance)
+					if(UnityEngine.Random.Range(1, 100) <= bonusChance)
 					{
-						ObstaclePowerUp o = PopPowerUp(Random.Range(0, ListById.Length));
+						ObstaclePowerUp o = PopPowerUp(UnityEngine.Random.Range(0, ListById.Length));
 						p.gameObject.AddChild(o.gameObject);
 						o.gameObject.SetActive(true);
 						o.transform.position = child.position;

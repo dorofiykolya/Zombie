@@ -29,6 +29,7 @@ namespace Runner
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
 			PlayerData.Distance = PlayerPrefs.GetFloat("Distance");
 			PlayerData.Brains = PlayerPrefs.GetInt("Brains");
+			PlayerData.missionMulti = PlayerPrefs.GetInt("Multi");
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
 			var characterLevels = Deserialize(PlayerPrefs.GetString("CharacterLevels")) as int[];
@@ -49,6 +50,7 @@ namespace Runner
             PlayerPrefs.SetInt("CharacterId", PlayerData.CharacterId);
 			PlayerPrefs.SetFloat("Distance", PlayerData.Distance);
 			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
+			PlayerPrefs.SetInt("Multi", PlayerData.missionMulti);
             PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionQueues));
 			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
         }

@@ -55,7 +55,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: board_shop_icon
     x: 1074
-    y: 657
+    y: 531
     width: 95
     height: 92
     borderLeft: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: explosive_shop_icon
-    x: 513
-    y: 22
+    x: 1902
+    y: 932
     width: 95
     height: 92
     borderLeft: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: few_brains
     x: 1074
-    y: 565
+    y: 163
     width: 94
     height: 91
     borderLeft: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     paddingBottom: 1
   - name: great_pile_of_brains
     x: 1074
-    y: 289
+    y: 255
     width: 94
     height: 91
     borderLeft: 0
@@ -198,7 +198,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: greater_pile_of_brains
     x: 1074
-    y: 381
+    y: 347
     width: 94
     height: 91
     borderLeft: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: magnet_shop_icon
-    x: 1902
-    y: 932
+    x: 513
+    y: 22
     width: 95
     height: 92
     borderLeft: 0
@@ -253,6 +253,45 @@ MonoBehaviour:
     y: 927
     width: 189
     height: 97
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: missions_progress_bar_33_percent
+    x: 1074
+    y: 643
+    width: 494
+    height: 41
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: missions_progress_bar_66_percent
+    x: 1074
+    y: 727
+    width: 494
+    height: 41
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: missions_progress_bar_full
+    x: 1074
+    y: 685
+    width: 494
+    height: 41
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -289,7 +328,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: pile_of_brains
     x: 1074
-    y: 473
+    y: 439
     width: 94
     height: 91
     borderLeft: 0
@@ -302,7 +341,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: placeholder_shadow
     x: 1074
-    y: 750
+    y: 624
     width: 510
     height: 18
     borderLeft: 0
@@ -354,7 +393,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: settings
     x: 1170
-    y: 684
+    y: 470
     width: 60
     height: 65
     borderLeft: 0
@@ -366,8 +405,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_icon_placeholder
-    x: 1074
-    y: 112
+    x: 1170
+    y: 536
     width: 86
     height: 87
     borderLeft: 0
@@ -380,7 +419,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: shop_icon_placeholder_revers
     x: 1074
-    y: 200
+    y: 74
     width: 90
     height: 88
     borderLeft: 0
@@ -393,7 +432,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: shop_placeholder
     x: 1074
-    y: 918
+    y: 811
     width: 508
     height: 106
     borderLeft: 0
@@ -406,7 +445,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: shop_placeholder_revers
     x: 1074
-    y: 811
+    y: 918
     width: 508
     height: 106
     borderLeft: 0
@@ -523,7 +562,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: toggle_arrow
     x: 1074
-    y: 55
+    y: 17
     width: 77
     height: 56
     borderLeft: 0

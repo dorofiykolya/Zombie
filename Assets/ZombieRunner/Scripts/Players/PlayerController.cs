@@ -89,25 +89,26 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = 5f;
+					offset.y = 5;
 				}
 				else if(ID == 2)
 				{
-					offset.y = -5f;
+					offset.y = -5;
 				}
 				else
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						offset.y = Random.Range(-2f, -6f);
+						offset.y = Random.Range(-3, -6);
 					}
 					else
 					{
-						offset.y = Random.Range(-6f, 6f);
+						while(offset.y == 0)
+							offset.y = Random.Range(-6, 6);
 					}
 				}
-
-				offset.x = Random.Range(-3f, 3f);
+				while(offset.x == 0)
+					offset.x = Random.Range(-3, 3);
             }
 
 			bInAir = false;
@@ -193,8 +194,7 @@ namespace Runner
 					Player.isRevive = false;
 					(am.gameObject.GetComponentInChildren(typeof(SkinnedMeshRenderer)) as SkinnedMeshRenderer).enabled = true;
 				}
-
-				if(Time.timeSinceLevelLoad - blinkTime > 0.1)
+				else if(Time.timeSinceLevelLoad - blinkTime > 0.1)
 				{
 					(am.gameObject.GetComponentInChildren(typeof(SkinnedMeshRenderer)) as SkinnedMeshRenderer).enabled = blink;
 					blink = !blink;
@@ -761,13 +761,15 @@ namespace Runner
 			else if (other.gameObject.CompareTag("Human"))
 			{
 				other.gameObject.collider.enabled = false;
-				other.gameObject.GetComponent<ObstacleHuman>().movement.speed = 0;
+				var human = other.gameObject.GetComponent<ObstacleHuman>();
+				human.movement.Stop();
+				human.GetComponent<ObstacleAnimation>().death();
 
-				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[other.gameObject.GetComponent<ObstacleHuman>().ID] != 0)
+				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0)
 				{
 					particle.Emit(50);
 
-                    Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
+					Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(human.ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();
 					
@@ -776,15 +778,15 @@ namespace Runner
 
 					Missions.Dispatch ("infect", 1);
 
-					if(other.gameObject.GetComponent<ObstacleHuman>().ID == 3)
+					if(human.ID == 3)
 					{
 						Missions.Dispatch("infectprofessor", 1);
 					}
-					else if(other.gameObject.GetComponent<ObstacleHuman>().ID == 2)
+					else if(human.ID == 2)
 					{
 						Missions.Dispatch("infectfatso", 1);
 					}
-					else if(ID == 1 && other.gameObject.GetComponent<ObstacleHuman>().ID == 1)
+					else if(ID == 1 && human.ID == 1)
 					{
 						Missions.Dispatch("infecthousewifewithjessy", 1);
 					}

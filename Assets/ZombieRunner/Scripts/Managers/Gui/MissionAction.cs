@@ -4,6 +4,7 @@ namespace Runner
 {
 	public class MissionAction : ComponentManager 
 	{
+		[HideInInspector]
 		public Mission mission;
 		// Update is called once per frame
 		void OnClick()

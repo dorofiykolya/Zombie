@@ -34,6 +34,11 @@ namespace Runner
 				target.visualMissions[i] = EditorGUILayout.ObjectField("Visual Mission:", target.visualMissions[i], typeof(GameObject)) as GameObject;
 			}
 
+			for(int i = 0; i < target.progressMissions.Length; i++)
+			{
+				target.progressMissions[i] = EditorGUILayout.ObjectField("Progress Mission:", target.progressMissions[i], typeof(GameObject)) as GameObject;
+			}
+
             EditorGUILayout.BeginHorizontal();
             
             GUI.color = Color.green;

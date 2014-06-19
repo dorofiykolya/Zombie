@@ -9,8 +9,7 @@ namespace Runner
     {
         public MissionQueue[] MissionQueues;
 		public GameObject[] visualMissions = new GameObject[3];
-
-        public event Action<Mission[], MissionManager> OnComplete;
+		public GameObject[] progressMissions = new GameObject[3];
 
         public MissionManager()
         {
@@ -35,9 +34,16 @@ namespace Runner
                     }
                 }
             }
-            if (OnComplete != null && tempMissions != null && tempMissions.Count > 0)
+            if (tempMissions != null && tempMissions.Count > 0)
             {
-                OnComplete.Invoke(tempMissions.ToArray(), this);
+				PlayerData.missionMulti += tempMissions.Count;
+				for(int i = 0; i < progressMissions.Length; i++)
+				{
+					progressMissions[i].SetActive(false);
+				}
+				progressMissions[PlayerData.missionMulti % 3].SetActive(true);
+
+				StorageManager.Save();
             }
         }
 
@@ -45,6 +51,12 @@ namespace Runner
         {
             ClearLastMissions();
             ClearStack();
+
+			for(int i = 0; i < progressMissions.Length; i++)
+			{
+				progressMissions[i].SetActive(false);
+			}
+			progressMissions[PlayerData.missionMulti % 3].SetActive(true);
         }
 
         public override void GameStop()
