@@ -1220,6 +1220,94 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: 2
+--- !u!1 &90184637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 90184638}
+  - 114: {fileID: 90184639}
+  m_Layer: 11
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90184638
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90184637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 751111290}
+--- !u!114 &90184639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 90184637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  mColor: {r: .655172348, g: 1, b: 0, a: 1}
+  mPivot: 4
+  mWidth: 148
+  mHeight: 60
+  mDepth: 14
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.4666667
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: 758b20efa27044211adba4252c3759fc, type: 2}
+  mText: 3
+  mFontSize: 50
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 1
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &95940741
 GameObject:
   m_ObjectHideFlags: 0
@@ -10553,6 +10641,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 348291490}
   draggablePanel: {fileID: 0}
+--- !u!1 &700363373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 700363374}
+  - 114: {fileID: 700363375}
+  m_Layer: 11
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700363374
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700363373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -14.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1813022177}
+--- !u!114 &700363375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700363373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  mColor: {r: .655172348, g: 1, b: 0, a: 1}
+  mPivot: 4
+  mWidth: 148
+  mHeight: 60
+  mDepth: 14
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.4666667
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: 758b20efa27044211adba4252c3759fc, type: 2}
+  mText: 1
+  mFontSize: 50
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 1
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &702315821
 GameObject:
   m_ObjectHideFlags: 0
@@ -11557,6 +11733,7 @@ Transform:
   - {fileID: 1363417725}
   - {fileID: 2038266949}
   - {fileID: 773951841}
+  - {fileID: 90184638}
   m_Father: {fileID: 431086155}
 --- !u!114 &751111292
 MonoBehaviour:
@@ -12722,7 +12899,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 758b20efa27044211adba4252c3759fc, type: 2}
-  mText: -234532
+  mText: -249132
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -13916,7 +14093,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 758b20efa27044211adba4252c3759fc, type: 2}
-  mText: -234532
+  mText: -249132
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -17195,6 +17372,7 @@ Transform:
   - {fileID: 30947888}
   - {fileID: 1861760424}
   - {fileID: 229003358}
+  - {fileID: 1728927378}
   m_Father: {fileID: 431086155}
 --- !u!114 &1131070762
 MonoBehaviour:
@@ -25304,10 +25482,10 @@ MonoBehaviour:
   startingRenderQueue: 3008
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 3.48291016, y: 202.310638, z: 1140.20508, w: 230.076828}
+  mClipRange: {x: 3.48297119, y: 202.233826, z: 1140.20508, w: 230.076797}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 474.51709, y: -203.310638}
+  mClipOffset: {x: 474.517029, y: -203.233826}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -26063,6 +26241,94 @@ MonoBehaviour:
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
+--- !u!1 &1728927377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1728927378}
+  - 114: {fileID: 1728927379}
+  m_Layer: 11
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1728927378
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1728927377}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1131070760}
+--- !u!114 &1728927379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1728927377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  mColor: {r: .655172348, g: 1, b: 0, a: 1}
+  mPivot: 4
+  mWidth: 148
+  mHeight: 60
+  mDepth: 14
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.4666667
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: 758b20efa27044211adba4252c3759fc, type: 2}
+  mText: 2
+  mFontSize: 50
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 1
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
@@ -27375,6 +27641,7 @@ Transform:
   - {fileID: 1317814081}
   - {fileID: 1349458035}
   - {fileID: 40937237}
+  - {fileID: 700363374}
   m_Father: {fileID: 431086155}
 --- !u!114 &1813022179
 MonoBehaviour:
@@ -28177,14 +28444,7 @@ MonoBehaviour:
       Current: 2
       Target: 2
       IsCompleted: 1
-    LastMissions:
-    - Id: upgradejessy
-      Name: 
-      Description: Upgrade Jessy to level 2
-      Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
+    LastMissions: []
     Stack: 1
   - QueueMissions:
     - Id: gatherbrainjessy
@@ -28434,23 +28694,9 @@ MonoBehaviour:
       Current: 1000
       Target: 1000
       IsCompleted: 1
-    LastMissions:
-    - Id: gatherbrain1run
-      Name: 
-      Description: gather 1000 brains in 1 run
-      Image: 
-      Current: 1000
-      Target: 1000
-      IsCompleted: 1
+    LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: infect
-      Name: 
-      Description: Infect 15 people
-      Image: 
-      Current: 0
-      Target: 15
-      IsCompleted: 0
     - Id: revive
       Name: 
       Description: Revive 1 time
@@ -28655,13 +28901,13 @@ MonoBehaviour:
       Target: 5
       IsCompleted: 0
     CurrentMissions:
-    - Id: run
+    - Id: infect
       Name: 
-      Description: Run 5000 meters
+      Description: Infect 15 people
       Image: 
-      Current: 5000
-      Target: 5000
-      IsCompleted: 1
+      Current: 1
+      Target: 15
+      IsCompleted: 0
     CompletedMissions:
     - Id: infect
       Name: 
@@ -28691,7 +28937,6 @@ MonoBehaviour:
       Current: 1
       Target: 1
       IsCompleted: 1
-    LastMissions:
     - Id: run
       Name: 
       Description: Run 5000 meters
@@ -28699,6 +28944,7 @@ MonoBehaviour:
       Current: 5000
       Target: 5000
       IsCompleted: 1
+    LastMissions: []
     Stack: 1
   visualMissions:
   - {fileID: 1813022176}

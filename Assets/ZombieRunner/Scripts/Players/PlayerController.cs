@@ -89,22 +89,21 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = 5;
+					offset.y = 7;
 				}
 				else if(ID == 2)
 				{
-					offset.y = -5;
+					offset.y = -7;
 				}
 				else
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						offset.y = Random.Range(-3, -6);
+						offset.y = Player.currentList[0].transform.position.z - Player.currentList.Count;
 					}
 					else
 					{
-						while(offset.y == 0)
-							offset.y = Random.Range(-6, 6);
+						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count + 2) * (Random.value < .5? 1 : -1);
 					}
 				}
 				while(offset.x == 0)

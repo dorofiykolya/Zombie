@@ -50,7 +50,10 @@ namespace Runner
 			if(desc != null)
 				descText = desc.text;
 
-			desc.text = descText + " (lasts for " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
+			if(current != 3)
+				desc.text = descText + " (lasts " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
+			else
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " m)";
 
 			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
 			{
