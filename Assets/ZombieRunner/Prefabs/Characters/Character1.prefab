@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382115ac5df484a4bbc874ba3c189cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationOffset: 0
+  animationOffset: -.300000012
   current: 
 --- !u!114 &11400002
 MonoBehaviour:
@@ -962,10 +962,11 @@ MonoBehaviour:
   isPatientZero: 1
   collider: {fileID: 6500000}
   ID: 0
-  gameID: 0
-  jumpHeight: 6
-  gravity: 60
-  speedCoeff: 3
+  prices: 00000000d007000010270000d859000050c30000
+  prefs: 000000000200000003000000040000000500000006000000
+  jumpHeight: 4.5
+  gravity: 70
+  speedCoeff: 4.5
   bInAir: 0
   glideEnable: 0
   bInDuck: 0

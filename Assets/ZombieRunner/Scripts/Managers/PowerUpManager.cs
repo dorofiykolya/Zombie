@@ -22,27 +22,38 @@ namespace Runner
 			PowerUpContainer = new GameObject("PowerUpContainer");
 			ListById = List;
 
-			for(int i = 0; i < visualList.Length; i++)
-			{
-				visualList[i].SetActive(false);
-			}
-
 			States.OnChanged += OnChanged;
 		}
 		
 		public override void GameStop ()
 		{
-			States.OnChanged -= OnChanged;
+			for(int i = 0; i < visualList.Length; i++)
+			{
+				visualList[i].SetActive(false);
+			}
+
+			StopAllCoroutines ();
+
+			scorePowerup = 1;
+
+			foreach(PlayerController player in Player.currentList)
+			{
+				if(player.isPatientZero)
+				{
+					player.magnet.enabled = false;
+				}
+			}
 		}
 
 		public void OnChanged(State state)
 		{
 			if(state == State.GAME)
 			{
-				bonusChance = _bonusChance + PlayerValues.player_4_prefs[PlayerValues.levels[3]];
-				scorePowerup = 1;
+				bonusChance = _bonusChance + Player.collection[3].prefs[PlayerManager.levels[3]];
 			}
 		}
+
+
 
 		public void UseBonus(ObstaclePowerUp p)
 		{
@@ -174,11 +185,12 @@ namespace Runner
 
 		public static void RemovePowerUpObjects(PlatformObject p)
 		{
-			foreach (Transform child in p.transform)
+			for (int i = 0; i < p.transform.childCount; i++)
 			{
-				if(child.CompareTag("PowerUp"))
+				if(p.transform.GetChild(i).CompareTag("PowerUp"))
 				{
-					RemovePowerUpObject(child.GetComponent<ObstaclePowerUp>());
+					RemovePowerUpObject(p.transform.GetChild(i).GetComponent<ObstaclePowerUp>());
+					i--;
 				}
 			}
 		}

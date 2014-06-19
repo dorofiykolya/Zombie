@@ -49,8 +49,6 @@ namespace Runner
             Waypoint = Manager.Waypoint;
 			PowerUp = Manager.PowerUp;
 
-			StorageManager.Load();
-
             Initialize();
             Initialized = true;
             mInitialized = true;

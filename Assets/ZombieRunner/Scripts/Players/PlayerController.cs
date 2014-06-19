@@ -21,7 +21,9 @@ namespace Runner
 		public SphereCollider magnet { get; private set; }
 
         public int ID = 0;
-		public int gameID = 0;
+
+		public int[] prices;
+		public int[] prefs;
 
 		private string intersectName = "";
 
@@ -39,10 +41,13 @@ namespace Runner
 
 		private float glideSpeed = 100;
 
+		[HideInInspector]
 		public bool bInAir;
+		[HideInInspector]
 		public bool glideEnable;
 		private bool bJumpFlag;
 		private bool bInJump;
+		[HideInInspector]
 		public bool bInDuck;
 		private bool bDiveFlag;
 		private bool bExecuteLand;
@@ -57,7 +62,8 @@ namespace Runner
 
         public float sideScrollSpeed;
         public float slideDuration;
-		
+
+		[HideInInspector]
 		public float bornTime;
 		private int soldierLife;
 		private float reviveTime;
@@ -93,15 +99,15 @@ namespace Runner
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						offset.y = Random.Range(-2f, -4f);
+						offset.y = Random.Range(-2f, -6f);
 					}
 					else
 					{
-						offset.y = Random.Range(-4f, 4f);
+						offset.y = Random.Range(-6f, 6f);
 					}
 				}
 
-				offset.x = Random.Range(-2f, 2f);
+				offset.x = Random.Range(-3f, 3f);
             }
 
 			bInAir = false;
@@ -129,7 +135,7 @@ namespace Runner
 			}
 			if(ID == 4)
 			{
-				soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+				soldierLife = prefs[PlayerManager.levels[ID]];
 			}
 			if(Player.isRevive)
 			{
@@ -159,7 +165,7 @@ namespace Runner
 				}
 				if(ID == 4)
 				{
-					soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+					soldierLife = prefs[PlayerManager.levels[ID]];
 				}
 				if(am != null)
 					am.run();
@@ -185,19 +191,19 @@ namespace Runner
 				if(Time.timeSinceLevelLoad - reviveTime > 3)
 				{
 					Player.isRevive = false;
-					am.gameObject.SetActive(true);
+					(am.gameObject.GetComponentInChildren(typeof(SkinnedMeshRenderer)) as SkinnedMeshRenderer).enabled = true;
 				}
 
-				if(Time.timeSinceLevelLoad - blinkTime > 0.4)
+				if(Time.timeSinceLevelLoad - blinkTime > 0.1)
 				{
-					am.gameObject.SetActive(blink);
+					(am.gameObject.GetComponentInChildren(typeof(SkinnedMeshRenderer)) as SkinnedMeshRenderer).enabled = blink;
 					blink = !blink;
 					blinkTime = Time.timeSinceLevelLoad;
 				}
 			}
 
 			//fatman dies
-			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > PlayerValues.player_3_prefs[PlayerValues.levels[2]] && !Player.isJumpPowerUp)
+			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > prefs[PlayerManager.levels[ID]] && !Player.isJumpPowerUp)
 			{
 				Missions.Dispatch("diewithouttouching", 1);
 				onDeath();
@@ -354,7 +360,7 @@ namespace Runner
 			}
 			if(ID == 4)
 			{
-				soldierLife = PlayerValues.player_5_prefs[PlayerValues.levels[ID]];
+				soldierLife = prefs[PlayerManager.levels[ID]];
 			}
 		}
 
@@ -456,15 +462,20 @@ namespace Runner
 			yield return new WaitForSeconds(slideDuration);
 
 			bInDuck = false;
+
+			restoreAfterDuck ();
 			
+			am.run();
+		}
+
+		private void restoreAfterDuck()
+		{
 			Vector3 height = collider.center;
 			height.y *= 6;
 			collider.center = height;
 			
-			am.run();
-
 			if (!isPatientZero)
-				return false;
+				return;
 			if(intersectName.ToLower().Contains("sign"))
 			{
 				Missions.Dispatch("slideundersign", 1);
@@ -487,9 +498,15 @@ namespace Runner
         {
 			if(!bInAir)
 			{
+				StopAllCoroutines();
 				intersectName = "";
 				bJumpFlag = true;
-				bInDuck = false;
+
+				if(bInDuck)
+				{
+					bInDuck = false;
+					restoreAfterDuck();
+				}
 				am.jump();
 				if(isBridge && isPatientZero)
 				{
@@ -565,12 +582,7 @@ namespace Runner
 			{
                 if (Player.currentList.Count > 1)
 				{
-                    Player.currentList.RemoveAt(gameID);
-
-                    for (int i = 0; i < Player.currentList.Count; i++)
-					{
-                        Player.currentList[i].gameID = i;
-					}
+					Player.currentList.Remove(this);
 
                     Player.currentList[0].isPatientZero = true;
 					Player.currentList[0].offset = Vector2.zero;
@@ -594,12 +606,7 @@ namespace Runner
 			{
 				Missions.Dispatch("die5butnotmain", 1);
 
-                Player.currentList.RemoveAt(gameID);
-
-                for (int i = ID; i < Player.currentList.Count; i++)
-				{
-                    Player.currentList[i].gameID = i;
-				}
+                Player.currentList.Remove(this);
 				
 				Destroy(gameObject);
 			}
@@ -756,14 +763,13 @@ namespace Runner
 				other.gameObject.collider.enabled = false;
 				other.gameObject.GetComponent<ObstacleHuman>().movement.speed = 0;
 
-                if (Player.currentList.Count < Player.GetMaxPlayers())
+				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[other.gameObject.GetComponent<ObstacleHuman>().ID] != 0)
 				{
 					particle.Emit(50);
 
                     Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(other.gameObject.GetComponent<ObstacleHuman>().ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();
-                    Player.currentList[Player.currentList.Count - 1].gameID = Player.currentList.Count - 1;
 					
 					var game = GameObject.FindGameObjectWithTag("Player");
                     Player.currentList[Player.currentList.Count - 1].gameObject.transform.parent = game.transform;
@@ -786,6 +792,10 @@ namespace Runner
 					{
 						Missions.Dispatch("infectbydrwhite", 1);
 					}
+				}
+				else
+				{
+					CurrencyManager.goldCount += 20;
 				}
 			}
         }

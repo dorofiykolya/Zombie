@@ -12,6 +12,11 @@ namespace Runner
 	public class StorageManager : ScriptableObject
     {
         private static fastJSON.JSON json = fastJSON.JSON.Instance;
+		void Awake()
+		{
+			Load ();
+		}
+
         internal static void Load()
         {
             if (PlayerPrefs.HasKey("CharacterId") == false)
@@ -26,6 +31,15 @@ namespace Runner
 			PlayerData.Brains = PlayerPrefs.GetInt("Brains");
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
+			var characterLevels = Deserialize(PlayerPrefs.GetString("CharacterLevels")) as int[];
+			if(characterLevels == null)
+			{
+				PlayerManager.levels = PlayerManager.defaultLevels;
+			}
+			else
+			{
+				PlayerManager.levels = characterLevels;
+			}
         }
 
         internal static void Save()
@@ -36,6 +50,7 @@ namespace Runner
 			PlayerPrefs.SetFloat("Distance", PlayerData.Distance);
 			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
             PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionQueues));
+			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
         }
 
         private static string Serialize(object obj)

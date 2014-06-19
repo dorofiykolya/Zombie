@@ -36,9 +36,9 @@ namespace Runner
 
 		public void updateSpeed()
 		{
-            var speed = Player.Speed / Player.MinimumSpeed + animationOffset;
+            var speed = Player.Speed / Player.MinimumSpeed;
 			animation[RUN].speed = speed; 
-			animation[JUMP].speed = speed;
+			animation[JUMP].speed = speed + animationOffset;
 			animation[SLIDE].speed = speed;
 			animation[SLIDE_RIGHT].speed = speed;
 			animation[SLIDE_LEFT].speed = speed;

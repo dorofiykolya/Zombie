@@ -21,6 +21,9 @@ namespace Runner
 		public ShopAction action;
 		public UILabel price;
 		public UILabel brains;
+		public UILabel desc;
+
+		private string descText;
 
 		public override void Initialize ()
 		{
@@ -44,6 +47,11 @@ namespace Runner
 
 			if(current == -1)
 				return;
+
+			if(desc != null)
+				descText = desc.text;
+
+			desc.text = descText + " (lasts for " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
 
 			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
 			{
@@ -106,7 +114,11 @@ namespace Runner
 				price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
 			}
 
+			desc.text = descText + " (lasts for " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
+
 			brains.text = PlayerData.Brains.ToString();
+
+			StorageManager.Save ();
 		}
 	}
 }

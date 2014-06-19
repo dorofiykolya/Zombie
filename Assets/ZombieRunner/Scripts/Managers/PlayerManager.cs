@@ -52,11 +52,17 @@ namespace Runner
 		public float MinimumSpeed{get; private set;}
 		public float SpeedDistanceMultiply{get; private set;}
 		public float SideScrollSpeed{get;private set;}
+		[HideInInspector]
 		public bool isStop;
+		[HideInInspector]
 		public bool isJumpPowerUp;
+		[HideInInspector]
 		public bool isRevive;
-
+		[HideInInspector]
 		public Vector3 defaultCameraPosition;
+
+		public static int[] levels;
+		public static int[] defaultLevels = new int[]{1, 1, 0, 0, 0};
 
         public override void Initialize()
         {
@@ -131,7 +137,6 @@ namespace Runner
 
 				currentList[0].Initialize();
 				currentList[0].gameObject.transform.parent = game.transform;
-				currentList[0].gameID = 0;
 				
 				Camera.main.transform.parent = currentList[0].gameObject.transform;
 				Camera.main.transform.localPosition = defaultCameraPosition;
@@ -160,7 +165,6 @@ namespace Runner
 				}
 				currentList[i].Initialize();
 				currentList[i].gameObject.transform.parent = game.transform;
-				currentList[i].gameID = i;
 			}
 
 			Camera.main.transform.parent = currentList[0].gameObject.transform;
@@ -195,7 +199,7 @@ namespace Runner
 		{
 			if(GetCurrentById(1).ID == 1)
 			{
-				return PlayerValues.player_2_prefs[PlayerValues.levels[1]];
+				return Player.collection[1].prefs[PlayerManager.levels[1]];
 			}
 			
 			return 0;
@@ -215,7 +219,7 @@ namespace Runner
 		{
 			if(GetCurrentById(0).ID == 0)
 			{
-				return PlayerValues.player_1_prefs[PlayerValues.levels[0]];
+				return Player.collection[0].prefs[PlayerManager.levels[0]];
 			}
 
 			return 2;

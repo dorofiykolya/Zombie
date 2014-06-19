@@ -10,7 +10,7 @@ namespace Runner
         public int currentWP;
 		public int transitWP;
 
-		public override void GameStop ()
+		public override void GameRestart ()
 		{
 			transitWP = currentWP;
 			currentWP = 1;

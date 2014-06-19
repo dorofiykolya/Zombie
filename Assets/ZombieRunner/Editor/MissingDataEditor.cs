@@ -69,9 +69,10 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.name == "probirka")
+			if(gameObject.name.ToLower().Contains("bus") && !gameObject.name.ToLower().Contains("glass"))
 			{
-				gameObject.GetComponent<MeshFilter>().mesh = coin;
+				Debug.Log(gameObject.name);
+				(gameObject.collider as BoxCollider).size = new Vector3((gameObject.collider as BoxCollider).size.x, 20, (gameObject.collider as BoxCollider).size.z);
 			}
 			
 			foreach (Transform child in gameObject.transform) 

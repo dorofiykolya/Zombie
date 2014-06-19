@@ -26,7 +26,7 @@ namespace Runner
 			fatman.text = "";
 		}
 
-		public override void GameStop ()
+		public override void GameRestart ()
 		{
 			PlayerData.Brains += goldCount;
 			Initialize ();
@@ -41,7 +41,7 @@ namespace Runner
 
 			if(Player.currentList[0].ID == 2 && Player.currentList.Count == 1 && !Player.isStop)
 			{
-				fatman.text = "Bite someone or you will die in: " + Mathf.Round(PlayerValues.player_3_prefs[PlayerValues.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+				fatman.text = "Bite someone or you will die in: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
 			}
 			else
 			{

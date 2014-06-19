@@ -50,10 +50,10 @@ namespace Runner
 			{
 				platform.InPlatformList = false;	
 			}
+			PowerUpManager.RemovePowerUpObjects (platform);
 			platformsManager.PushPlatform(platform);
 			platform.gameObject.SetActive(false);
 			disposedPlatformContainer.AddChild(platform.gameObject);
-			PowerUpManager.RemovePowerUpObjects (platform);
 		}
 		
 		public void Move(Vector3 move)
