@@ -349,6 +349,7 @@ namespace Runner
 
 		public void Revive()
 		{
+			am.current = "";
 			am.run ();
 
 			reviveTime = Time.timeSinceLevelLoad;
@@ -797,6 +798,7 @@ namespace Runner
 				else
 				{
 					CurrencyManager.goldCount += 20;
+					CurrencyManager.showEatBrains();
 				}
 			}
         }

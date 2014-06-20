@@ -9,7 +9,11 @@ namespace Runner
 		public UILabel score;
 		public UILabel fatman;
 
+		public GameObject _eatBrains;
+
 		public static int goldCount;
+		private static GameObject eatBrains;
+		private static float time;
 		private float scoreCount;
 
 		public override void Initialize ()
@@ -22,12 +26,21 @@ namespace Runner
 			score.text = "0";
 
 			fatman.text = "";
+
+			eatBrains = _eatBrains;
+			eatBrains.SetActive(false);
 		}
 
 		public override void GameRestart ()
 		{
 			PlayerData.Brains += goldCount;
 			Initialize ();
+		}
+
+		public static void showEatBrains()
+		{
+			eatBrains.SetActive(true);
+			time = Time.timeSinceLevelLoad + 1;
 		}
 
 		void Update()
@@ -45,6 +58,11 @@ namespace Runner
 			{
 				fatman.text = "";
 			}
+
+			if (!eatBrains.activeSelf || time > Time.timeSinceLevelLoad)
+				return;
+
+			eatBrains.SetActive (false);
 		}
 	}
 }

@@ -120,6 +120,9 @@ namespace Runner
 
 		public void Change(int id)
 		{
+			if (levels [id] == 0)
+				return;
+
 			if(currentList.Count > 0)
 			{
 				GameObject go = currentList[0].gameObject;
