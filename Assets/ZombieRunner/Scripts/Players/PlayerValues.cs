@@ -65,34 +65,33 @@ namespace Runner
 					Player.Change(player);
 					break;
 				case CharacterAction.Upgrade:
-					if(price.text == "Done")
+					if(PlayerManager.levels[player] == 5)
 						return;
+
+					if(!PlayerData.SetBrains(-Player.collection[player].prices[PlayerManager.levels[player]]))
+						return;
+					
 					switch(player)
 					{
 						case 0:
-							PlayerData.Brains -= Player.collection[player].prices[PlayerManager.levels[player]];
 							Missions.Dispatch ("upgradeandy", PlayerManager.levels[player]);
 							break;
 						case 1:
-							PlayerData.Brains -= Player.collection[player].prices[PlayerManager.levels[player]];
 							Missions.Dispatch ("upgradejessy", PlayerManager.levels[player]);
 							break;
 						case 2:
-							PlayerData.Brains -= Player.collection[player].prices[PlayerManager.levels[player]];
 							if(PlayerManager.levels[player] == 1)
 								Missions.Dispatch ("unlockbobby", PlayerManager.levels[player]);
 							else
 								Missions.Dispatch ("upgradebobby", PlayerManager.levels[player]);
 							break;
 						case 3:
-							PlayerData.Brains -= Player.collection[player].prices[PlayerManager.levels[player]];
 							if(PlayerManager.levels[player] == 1)
 								Missions.Dispatch ("unlockdrwhite", PlayerManager.levels[player]);
 							else
 								Missions.Dispatch ("upgradedrwhite", PlayerManager.levels[player]);
 							break;
 						case 4:
-							PlayerData.Brains -= Player.collection[player].prices[PlayerManager.levels[player]];
 							if(PlayerManager.levels[player] == 1)
 								Missions.Dispatch ("unlocksgtwall", PlayerManager.levels[player]);
 							else

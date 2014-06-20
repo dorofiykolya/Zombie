@@ -98,15 +98,19 @@ namespace Runner
 			if(current == -1)
 				return;
 
-			PowerUp.List[current].currentLevel = Mathf.Min(PowerUp.List[current].currentLevel + 1, PowerUp.List[current].prices.Length);
-			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
+			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length) return;
+
+			if(PlayerData.SetBrains(-PowerUp.List[current].prices[PowerUp.List[current].currentLevel]))
 			{
-				price.text = "Готово";
-			}
-			else
-			{
-				PlayerData.Brains -= PowerUp.List[current].prices[PowerUp.List[current].currentLevel - 1];
-				price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
+				PowerUp.List[current].currentLevel = Mathf.Min(PowerUp.List[current].currentLevel + 1, PowerUp.List[current].prices.Length);
+				if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
+				{
+					price.text = "Готово";
+				}
+				else
+				{
+					price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
+				}
 			}
 
 			if(current != 3)

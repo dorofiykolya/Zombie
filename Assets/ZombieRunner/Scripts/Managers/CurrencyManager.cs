@@ -33,7 +33,7 @@ namespace Runner
 
 		public override void GameRestart ()
 		{
-			PlayerData.Brains += goldCount;
+			PlayerData.SetBrains(goldCount);
 			Initialize ();
 		}
 

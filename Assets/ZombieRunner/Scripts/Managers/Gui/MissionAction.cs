@@ -11,8 +11,11 @@ namespace Runner
 		{
 			if(mission != null)
 			{
-				Missions.Dispatch(mission.Id, mission.Target);
-				Game.GamePause();
+				if(PlayerData.SetBrains(-500))
+				{
+					Missions.Dispatch(mission.Id, mission.Target);
+					Game.GamePause();
+				}
 			}
 
 			Audio.PlaySound (12);

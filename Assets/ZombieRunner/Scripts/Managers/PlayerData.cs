@@ -21,13 +21,24 @@ namespace Runner
 		public static int Brains
 		{
 			get { return BrainsAmount; }
-			set {
-					BrainsAmount = value; 
-					if(OnChanged != null)
-					{
-						OnChanged(value.ToString());	
-					}
-				}
+		}
+
+		public static bool SetBrains(int value)
+		{
+			if(BrainsAmount + value < 0)
+			{
+				GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+				GUIPanelManager.Get(PanelType.Shop).Show();
+				GUIPanelManager.currentPanel = PanelType.Shop;
+				return false;
+			}
+			BrainsAmount += value; 
+			if(OnChanged != null)
+			{
+				OnChanged(BrainsAmount.ToString());	
+			}
+
+			return true;
 		}
     }
 }

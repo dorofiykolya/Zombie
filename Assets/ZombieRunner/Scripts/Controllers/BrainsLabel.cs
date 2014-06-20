@@ -8,6 +8,7 @@ namespace Runner
 		void Awake()
 		{
 			PlayerData.OnChanged += UpdateLabel;
+			GetComponent<UILabel> ().text = PlayerData.Brains.ToString();
 		}
 
 		private void UpdateLabel(string count)

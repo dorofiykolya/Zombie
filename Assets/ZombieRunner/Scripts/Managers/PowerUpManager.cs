@@ -117,6 +117,8 @@ namespace Runner
 		public void UseBonus(ObstaclePowerUp p)
 		{
 			RemovePowerUpObject (p);
+			if (p.currentLevel == 0)
+				return;
 			Missions.Dispatch("pickupanybonus", 1);
 			switch (p.Id)
 			{

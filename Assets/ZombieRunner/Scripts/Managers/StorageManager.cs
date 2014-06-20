@@ -23,7 +23,7 @@ namespace Runner
 
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
 			PlayerData.Distance = PlayerPrefs.GetFloat("Distance");
-			PlayerData.Brains = PlayerPrefs.GetInt("Brains");
+			PlayerData.SetBrains(PlayerPrefs.GetInt("Brains"));
 			PlayerData.missionMulti = PlayerPrefs.GetInt("Multi");
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
