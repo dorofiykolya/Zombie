@@ -51,13 +51,13 @@ namespace Runner
 				descText = desc.text;
 
 			if(current != 3)
-				desc.text = descText + " (lasts " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
+				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " m)";
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
 
 			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
 			{
-				price.text = "Done";
+				price.text = "Готово";
 			}
 			else
 			{
@@ -101,7 +101,7 @@ namespace Runner
 			PowerUp.List[current].currentLevel = Mathf.Min(PowerUp.List[current].currentLevel + 1, PowerUp.List[current].prices.Length);
 			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
 			{
-				price.text = "Done";
+				price.text = "Готово";
 			}
 			else
 			{
@@ -110,9 +110,9 @@ namespace Runner
 			}
 
 			if(current != 3)
-				desc.text = descText + " (lasts " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " sec)";
+				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " m)";
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
 
 			StorageManager.Save ();
 		}

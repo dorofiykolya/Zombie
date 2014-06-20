@@ -14,7 +14,7 @@ namespace Runner
         private static fastJSON.JSON json = fastJSON.JSON.Instance;
 		void Awake()
 		{
-			Load ();
+			//Load ();
 		}
 
         internal static void Load()
