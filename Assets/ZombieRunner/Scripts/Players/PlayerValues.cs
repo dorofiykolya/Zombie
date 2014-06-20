@@ -100,6 +100,8 @@ namespace Runner
 							break;
 					}
 
+					Audio.PlaySound (17);
+
 					PlayerManager.levels[player] = Mathf.Clamp(PlayerManager.levels[player] + 1, 0, 5);
 
 					StorageManager.Save();

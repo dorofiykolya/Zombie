@@ -12905,7 +12905,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: -333977
+  mText: -12000
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -14099,7 +14099,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: -333977
+  mText: -12000
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -25666,10 +25666,10 @@ MonoBehaviour:
   startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 3.4831543, y: 202.003387, z: 500.102417, w: 230.076828}
+  mClipRange: {x: 3.25500488, y: 201.043228, z: 500.102417, w: 230.076813}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 154.516846, y: -203.003387}
+  mClipOffset: {x: 154.744995, y: -202.043228}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -28039,6 +28039,9 @@ GameObject:
   - 114: {fileID: 1819186589}
   - 114: {fileID: 1819186591}
   - 114: {fileID: 1819186592}
+  - 114: {fileID: 1819186595}
+  - 82: {fileID: 1819186594}
+  - 82: {fileID: 1819186593}
   m_Layer: 0
   m_Name: Game
   m_TagString: GameController
@@ -28387,761 +28390,1701 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissionQueues:
   - QueueMissions:
-    - Id: pickupstar
+    - Id: jump
       Name: 
-      Description: Pick up 3 score multipliers
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
       Current: 0
-      Target: 3
+      Target: 10
       IsCompleted: 0
-    - Id: upgradeandy
+    - Id: jumpoverobstacles
       Name: 
-      Description: Upgrade Andy to level 3
-      Image: 
-      Current: 0
-      Target: 3
-      IsCompleted: 0
-    - Id: pickupboard1run
-      Name: 
-      Description: Pick up 2 hoverboards in 1 run
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
-    - Id: jumpoverredcar
-      Name: 
-      Description: Jump over 15 red cars
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
       Image: 
       Current: 0
       Target: 15
       IsCompleted: 0
     - Id: jumpwithjessy
       Name: 
-      Description: Jump 10 times being in party with Jessy
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
+        \u0441 \u0422\u043E\u043D\u0435\u0439 "
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
-    - Id: pickupmagnet
+    - Id: upgradeandy
       Name: 
-      Description: 'Pick up 5 brains magnets '
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
-      Target: 5
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupboard
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: jumpovertaxi
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 8 \u0442\u0430\u043A\u0441\u0438"
+      Image: 
+      Current: 0
+      Target: 8
+      IsCompleted: 0
+    - Id: jumpovercone
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 15 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
+        \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 15
       IsCompleted: 0
     - Id: upgradejessy
       Name: 
-      Description: Upgrade Jessy to level 3
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupexplosive
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0443"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 100 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 100
+      IsCompleted: 0
+    - Id: upgradeandy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 3
       IsCompleted: 0
-    - Id: pickupanybonus
+    - Id: pickupmagnet
       Name: 
-      Description: 'Pick up any 5 power ups '
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0439
+        \u043C\u0430\u0433\u043D\u0438\u0442 2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: upgradejessy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+        \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: pickupmagnet
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u043C\u043E\u0437\u0433\u043E\u0432\u044B\u0445
+        \u043C\u0430\u0433\u043D\u0438\u0442\u043E\u0432"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: jumponbus
       Name: 
-      Description: Jump on bus
+      Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
+        \u0430\u0432\u0442\u043E\u0431\u0443\u0441"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
+    - Id: pickupanybonus
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u0435\u043B\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
     - Id: jumponbridge
       Name: 
-      Description: Jump 20 times on bridge
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 20 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u043D\u0430 \u043C\u043E\u0441\u0442\u0443"
       Image: 
       Current: 0
       Target: 20
       IsCompleted: 0
     - Id: upgradebobby
       Name: 
-      Description: Upgrade Bobby to level 2
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0421\u0430\u043D\u044E
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
     - Id: pickupboard
       Name: 
-      Description: 'Pick up 5 hoverboards '
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u043E\u0432"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: jumpovercars
       Name: 
-      Description: Jump over any 40 cars
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        40 \u043C\u0430\u0448\u0438\u043D"
       Image: 
       Current: 0
       Target: 40
       IsCompleted: 0
-    - Id: upgradedrwhite
-      Name: 
-      Description: Upgrade Dr.White to level 2
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
     - Id: jumpoverbarrel
       Name: 
-      Description: Jump over 5 barrels
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        5 \u0431\u043E\u0447\u0435\u043A"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: pickupexplosive
       Name: 
-      Description: Pick up 1 explosive
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0438"
       Image: 
       Current: 0
-      Target: 1
+      Target: 3
+      IsCompleted: 0
+    - Id: upgradedrwhite
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043A\u0442\u043E\u0440\u0430
+        \u0411\u0435\u043B\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
       IsCompleted: 0
     - Id: jumponorangecar
       Name: 
-      Description: Jump on orange cars 15 times
+      Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
+        15 \u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
       Image: 
       Current: 0
       Target: 15
       IsCompleted: 0
     - Id: pickupmagnetbyjessy
       Name: 
-      Description: Pick up 2 brains magnet with Jessy
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
     - Id: jump
       Name: 
-      Description: 'Jump 200 times '
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 200 \u0440\u0430\u0437"
       Image: 
       Current: 0
       Target: 200
       IsCompleted: 0
     - Id: pickupmagnet
       Name: 
-      Description: 'Pick up 2 brains magnets '
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
     - Id: upgradesgtwall
       Name: 
-      Description: Upgrade Sgt.Wall to level 2
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
+        \u041F\u0435\u0442\u0440\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
-    - Id: getallchars1run
+    - Id: pickupboard1
       Name: 
-      Description: Get all characters in party in 1 run
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
-    - Id: pickupboard1run
-      Name: 
-      Description: Pick up 3 hoverboards in 1 run
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u0430
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
       Image: 
       Current: 0
       Target: 3
       IsCompleted: 0
     - Id: jumpoverpolice
       Name: 
-      Description: Jump over any 25 police cars
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 25 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438\u0445
+        \u043C\u0430\u0448\u0438\u043D"
       Image: 
       Current: 0
-      Target: 25
+      Target: 0
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: Upgrade Andy to level 4
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 4
       IsCompleted: 0
     - Id: pickupstar
       Name: 
-      Description: 'Pick up 3 score multipliers in 1 run '
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0437\u0432\u0435\u0437\u0434\u044B"
       Image: 
       Current: 0
       Target: 3
       IsCompleted: 0
-    CurrentMissions:
-    - Id: jump
+    - Id: pickupboard1
       Name: 
-      Description: Jump 100 times
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u0430
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
       Image: 
       Current: 0
-      Target: 100
+      Target: 2
       IsCompleted: 0
-    CompletedMissions:
-    - Id: jumpoverobstacles
+    - Id: getallchars1
       Name: 
-      Description: Jump over any 10 obstacles
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0432\u0441\u0435\u0445
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435\u0439 \u0437\u0430
+        1 \u0437\u0430\u0431\u0435\u0433"
       Image: 
-      Current: 11
-      Target: 10
-      IsCompleted: 1
-    - Id: pickupmagnet
-      Name: 
-      Description: 'Pick up 2 brains magnets '
-      Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
-    - Id: upgradeandy
-      Name: 
-      Description: Upgrade Andy to level 2
-      Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
-    - Id: pickupboard
-      Name: 
-      Description: Find and use hoverboard
-      Image: 
-      Current: 1
-      Target: 1
-      IsCompleted: 1
-    - Id: jumpovertaxi
-      Name: 
-      Description: Jump over 8 taxi
-      Image: 
-      Current: 8
-      Target: 8
-      IsCompleted: 1
-    - Id: jumpovercone
-      Name: 
-      Description: Jump over 15 traffic cones
-      Image: 
-      Current: 15
-      Target: 15
-      IsCompleted: 1
-    - Id: upgradejessy
-      Name: 
-      Description: Upgrade Jessy to level 2
-      Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
-    - Id: pickupexplosive
-      Name: 
-      Description: Pick up 3 explosives
-      Image: 
-      Current: 3
-      Target: 3
-      IsCompleted: 1
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    CurrentMissions: []
+    CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
+    - Id: slideundersign
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: diebus
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 500
+      IsCompleted: 0
+    - Id: slideunderbus
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u043E\u043C
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: dieswat
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: slide
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        40 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 40
+      IsCompleted: 0
+    - Id: dieredcar
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
+        \u043E\u0442 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
     - Id: gatherbrainjessy
       Name: 
-      Description: gather 1000 brains with Jessy
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
       Image: 
       Current: 0
       Target: 1000
       IsCompleted: 0
-    - Id: dieredcar
-      Name: 
-      Description: Get killed by red car twice
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
     - Id: slideunderbarrel
       Name: 
-      Description: Slide under barrels
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 \u0431\u043E\u0447\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: diecone
       Name: 
-      Description: Get killed by 11 traffic cones
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 11 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
+        \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
       Image: 
       Current: 0
       Target: 11
       IsCompleted: 0
     - Id: gatherbrain
       Name: 
-      Description: gather 5000 brains
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 5000 \u043C\u043E\u0437\u0433\u043E\u0432"
       Image: 
       Current: 0
       Target: 5000
       IsCompleted: 0
-    - Id: dieoncrossroad
+    - Id: slide
       Name: 
-      Description: Get killed on a crossroad
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        50 \u0440\u0430\u0437"
       Image: 
       Current: 0
-      Target: 1
-      IsCompleted: 0
-    - Id: gatherbrain1run
-      Name: 
-      Description: gather 1000 brains in 1 run
-      Image: 
-      Current: 0
-      Target: 1000
+      Target: 50
       IsCompleted: 0
     - Id: unlockbobby
       Name: 
-      Description: Unlock Bobby
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0421\u0430\u043D\u044E"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: slideundersignbobby
       Name: 
-      Description: Slide under 5 signs with Bobby
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u0421\u0430\u043D\u0435\u0439 \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: diewithouttouching
       Name: 
-      Description: Die 5 times without touching anything (Bobby will help)
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
+        \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        (\u0421\u0430\u043D\u044F \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: slideunderbus
       Name: 
-      Description: Slide under 4 buses
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 4 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
       Image: 
       Current: 0
       Target: 4
       IsCompleted: 0
-    - Id: dieer
+    - Id: dieambulance
       Name: 
-      Description: Die from ER
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
+        \u043F\u043E\u043C\u043E\u0449\u0438"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
-    - Id: gatherbrain5minutes
+    - Id: 'slide '
       Name: 
-      Description: gather 200 brains in 5 minutes
-      Image: 
-      Current: 0
-      Target: 200
-      IsCompleted: 0
-    - Id: slide
-      Name: 
-      Description: Slide 100 times
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        100 \u0440\u0430\u0437"
       Image: 
       Current: 0
       Target: 100
       IsCompleted: 0
     - Id: gatherbrain
       Name: 
-      Description: gather 500 brains
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
       Image: 
       Current: 0
       Target: 500
       IsCompleted: 0
-    - Id: slideundersignin1min
-      Name: 
-      Description: Slide under 5 signs in 1 minute
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
-    - Id: diesign1run
-      Name: 
-      Description: Die from road sign twice in 1 run
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
     - Id: slideunderbus
       Name: 
-      Description: Slide under 10 buses
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 10 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
     - Id: unlockdrwhite
       Name: 
-      Description: Unlock Dr.White
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0434\u043E\u043A\u0442\u043E\u0440\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: diedrwhitetaxi
       Name: 
-      Description: Let professor die from taxi
+      Description: "\u0414\u0430\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0443
+        \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0442\u0430\u043A\u0441\u0438"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: gatherbrain
       Name: 
-      Description: gather 10000 brains
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 10000 \u043C\u043E\u0437\u0433\u043E\u0432"
       Image: 
       Current: 0
       Target: 10000
       IsCompleted: 0
     - Id: unlocksgtwall
       Name: 
-      Description: Unlock Sgt.Wall
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430 \u041F\u0435\u0442\u0440\u043E\u0432\u0430"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: gatherbrainbymarine
       Name: 
-      Description: gather 1000 brains with marine
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
       Image: 
       Current: 0
       Target: 1000
       IsCompleted: 0
     - Id: diemarinefromswat
       Name: 
-      Description: Let marine die from SWAT car
+      Description: "\u0414\u0430\u0442\u044C \u0441\u043E\u043B\u0434\u0430\u0442\u0443
+        \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
-    - Id: gatherbrain
+    - Id: dieambulance
       Name: 
-      Description: gather 25000 brains
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
+        \u043F\u043E\u043C\u043E\u0449\u0438 5 \u0440\u0430\u0437"
       Image: 
       Current: 0
-      Target: 25000
+      Target: 5
       IsCompleted: 0
-    - Id: gatherscore
+    - Id: slideundersign
       Name: 
-      Description: Get 500000 score points
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 40 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
       Current: 0
-      Target: 500000
+      Target: 40
+      IsCompleted: 0
+    - Id: diebus
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
+        10 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 10
       IsCompleted: 0
     - Id: die5butnotmain
       Name: 
-      Description: Let 5 of your party members die instead of you
+      Description: "\u0414\u0430\u0442\u044C \u0443\u043C\u0435\u0440\u0435\u0442\u044C
+        5 \u0437\u043E\u043C\u0431\u0438 \u0438\u0437 \u0433\u0440\u0443\u043F\u043F\u044B
+        \u043D\u043E \u043D\u0435 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u043C\u0443"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
-    - Id: slideundersign
+    - Id: diesign1
       Name: 
-      Description: Slide under signs 150 times
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
+        \u043E\u0442 \u0437\u043D\u0430\u043A\u043E\u0432 \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
       Image: 
       Current: 0
-      Target: 150
-      IsCompleted: 0
-    CurrentMissions:
-    - Id: slide
-      Name: 
-      Description: slide 40 times
-      Image: 
-      Current: 15
-      Target: 40
-      IsCompleted: 0
-    CompletedMissions:
-    - Id: slideundersign
-      Name: 
-      Description: Slide under 5 signs
-      Image: 
-      Current: 6
-      Target: 5
-      IsCompleted: 1
-    - Id: gatherbrain
-      Name: 
-      Description: gather 500 brains
-      Image: 
-      Current: 800
-      Target: 500
-      IsCompleted: 1
-    - Id: diebus
-      Name: 
-      Description: Get killed by 2 buses
-      Image: 
-      Current: 2
       Target: 2
-      IsCompleted: 1
-    - Id: slideunderbus
+      IsCompleted: 0
+    - Id: slideundersignin1min
       Name: 
-      Description: Slide under 2 buses
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438 \u0437\u0430
+        1 \u043C\u0438\u043D\u0443\u0442\u0443"
       Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
-    - Id: dieswat
-      Name: 
-      Description: Get killed by 5 SWAT cars
-      Image: 
-      Current: 5
+      Current: 0
       Target: 5
-      IsCompleted: 1
-    - Id: gatherbrain1run
+      IsCompleted: 0
+    - Id: gatherbrainin5min
       Name: 
-      Description: gather 1000 brains in 1 run
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 200 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0437\u0430 5 \u043C\u0438\u043D\u0443\u0442"
       Image: 
-      Current: 1000
+      Current: 0
+      Target: 200
+      IsCompleted: 0
+    - Id: gatherbrain1
+      Name: 
+      Description: "\u0441\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
       Target: 1000
-      IsCompleted: 1
+      IsCompleted: 0
+    CurrentMissions: []
+    CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      Image: 
+      Current: 0
+      Target: 2500
+      IsCompleted: 0
+    - Id: destroyexplosive
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
+      Image: 
+      Current: 0
+      Target: 5000
+      IsCompleted: 0
     - Id: revive
       Name: 
-      Description: Revive 1 time
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        1 \u0440\u0430\u0437"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
-    - Id: infecthousewife1run
-      Name: 
-      Description: Infect 2 housewives in 1 run
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
-    - Id: runwithoutbrains
-      Name: 
-      Description: Run 2000 meters withour picking up brains
-      Image: 
-      Current: 0
-      Target: 2000
-      IsCompleted: 0
-    - Id: destroyexplosivecars
-      Name: 
-      Description: Destroy 5 cars with explosives
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
     - Id: infect
       Name: 
-      Description: Infect 25 people
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 25 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
       Current: 0
       Target: 25
       IsCompleted: 0
+    - Id: destroyexplosivecars
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 5
+        \u043C\u0430\u0448\u0438\u043D \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u043E\u0439"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
     - Id: runonright
       Name: 
-      Description: Run 3500 meters on a right side
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 3500 \u043C
+        \u043F\u043E \u043F\u0440\u0430\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435"
       Image: 
       Current: 0
       Target: 3500
       IsCompleted: 0
     - Id: infect
       Name: 
-      Description: Infect 10 people
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
     - Id: run
       Name: 
-      Description: Run 7500 meters
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 7500 \u043C"
       Image: 
       Current: 0
       Target: 7500
       IsCompleted: 0
-    - Id: destroyexplosive
-      Name: 
-      Description: Blow up 1 bus
-      Image: 
-      Current: 0
-      Target: 1
-      IsCompleted: 0
     - Id: infecthousewifewithjessy
       Name: 
-      Description: infect housewife with Jessy
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
+        \u0438\u0433\u0440\u0430\u044F \u0422\u043E\u043D\u0435\u0439"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: destroyexplosive
       Name: 
-      Description: Blow up 20 obstacles
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 20 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
       Current: 0
       Target: 20
       IsCompleted: 0
     - Id: run
       Name: 
-      Description: Run 10000 meters
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 10000 \u043C"
       Image: 
       Current: 0
       Target: 10000
       IsCompleted: 0
     - Id: revive
       Name: 
-      Description: Revive 2 times
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        2 \u0440\u0430\u0437\u0430"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
-    - Id: runwithoutinfect
-      Name: 
-      Description: Run 2500 meters without infecting any people
-      Image: 
-      Current: 0
-      Target: 2500
-      IsCompleted: 0
-    - Id: destroybyexplosive1run
-      Name: 
-      Description: Blow up 7 obstacles in 1 run
-      Image: 
-      Current: 0
-      Target: 7
-      IsCompleted: 0
     - Id: infectfatso
       Name: 
-      Description: Infect 5 fatso
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 5 \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u0432"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: revivejessy
       Name: 
-      Description: Revive 1 time with Jessy
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u0422\u043E\u043D\u0435\u0439"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: infectprofessor
       Name: 
-      Description: Infect 3 professors
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 3 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u0432"
       Image: 
       Current: 0
       Target: 3
       IsCompleted: 0
     - Id: destroyobstaclesjessy
       Name: 
-      Description: Let Jessy blow up 5 obstacles
+      Description: "\u0414\u0430\u0442\u044C \u0422\u043E\u043D\u0435 \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C
+        5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
-    - Id: runbobbyalone
-      Name: 
-      Description: Run 5000 m with Bobby alone
-      Image: 
-      Current: 0
-      Target: 5000
-      IsCompleted: 0
     - Id: infect
       Name: 
-      Description: Infect 50 people
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 50 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
       Current: 0
       Target: 50
       IsCompleted: 0
     - Id: runonleft
       Name: 
-      Description: Run 10000m on the left side of the road
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 1000 \u043C\u0435\u0442\u0440\u043E\u0432
+        \u043F\u043E \u043B\u0435\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
+        \u0434\u043E\u0440\u043E\u0433\u0438"
       Image: 
       Current: 0
-      Target: 10000
-      IsCompleted: 0
-    - Id: reviveafterbus
-      Name: 
-      Description: Revive after being killed by bus
-      Image: 
-      Current: 0
-      Target: 1
+      Target: 1000
       IsCompleted: 0
     - Id: destroyobstaclesmarine
       Name: 
-      Description: Destroy 5 obstacles with marine
+      Description: "\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     - Id: rundrwhite
       Name: 
-      Description: Run 20000 meters with professor
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 20000 \u043C
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
       Image: 
       Current: 0
       Target: 20000
       IsCompleted: 0
-    - Id: infectbydrwhite
+    - Id: infectprofessor
       Name: 
-      Description: infect 10 people with professor
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
     - Id: destroytaximarine
       Name: 
-      Description: Destroy 15 taxi cars with marine
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 15
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
       Image: 
       Current: 0
       Target: 15
       IsCompleted: 0
     - Id: run
       Name: 
-      Description: run 50000
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 50000 \u043C"
       Image: 
       Current: 0
       Target: 50000
       IsCompleted: 0
     - Id: destroyredcar
       Name: 
-      Description: Destroy 5 red cars with marine
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 5
+        \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 30 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 30
+      IsCompleted: 0
+    - Id: runonleft
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u043F\u043E
+        \u043B\u0435\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435
+        10000 \u043C"
+      Image: 
+      Current: 0
+      Target: 10000
+      IsCompleted: 0
+    - Id: infectbydrwhite
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+      Image: 
+      Current: 0
+      Target: 20
+      IsCompleted: 0
+    - Id: destroytaximarine
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 4
+      IsCompleted: 0
+    - Id: reviveaftercar
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438 \u043E\u0442
+        \u043C\u0430\u0448\u0438\u043D\u044B"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: infecthousewife1
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 2 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0438
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: runwithoutbrains
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2000 \u043C
+        \u043D\u0435 \u0441\u043E\u0431\u0438\u0440\u0430\u044F \u043C\u043E\u0437\u0433\u0438"
+      Image: 
+      Current: 0
+      Target: 2000
+      IsCompleted: 0
+    - Id: destroyexplosivebus
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C \u0430\u0432\u0442\u043E\u0431\u0443\u0441"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: runwithoutinfect
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C
+        \u043D\u0435 \u0437\u0430\u0440\u0430\u0436\u0430\u044F \u043B\u044E\u0434\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 2500
+      IsCompleted: 0
+    - Id: destroybyexplosive1
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 7 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 7
+      IsCompleted: 0
+    - Id: runbobbyalone
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u0421\u0430\u043D\u0435\u0439
+        5000 \u043C \u0432 \u043E\u0434\u0438\u043D\u043E\u0447\u043A\u0443"
+      Image: 
+      Current: 0
+      Target: 5000
+      IsCompleted: 0
+    - Id: reviveafterbus
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438 \u043E\u0442
+        \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    CurrentMissions: []
+    CompletedMissions: []
+    LastMissions: []
+    Stack: 1
+  MissionPlayerQueues:
+  - QueueMissions:
+    - Id: jumpoverobstacles
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 15
+      IsCompleted: 0
+    - Id: jumpwithjessy
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
+        \u0441 \u0422\u043E\u043D\u0435\u0439 "
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: upgradeandy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupboard
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: jumpovertaxi
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 8 \u0442\u0430\u043A\u0441\u0438"
+      Image: 
+      Current: 0
+      Target: 8
+      IsCompleted: 0
+    - Id: jumpovercone
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 15 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
+        \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 15
+      IsCompleted: 0
+    - Id: upgradejessy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupexplosive
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0443"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 100 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 100
+      IsCompleted: 0
+    - Id: upgradeandy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: pickupmagnet
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0439
+        \u043C\u0430\u0433\u043D\u0438\u0442 2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: upgradejessy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+        \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: pickupmagnet
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u043C\u043E\u0437\u0433\u043E\u0432\u044B\u0445
+        \u043C\u0430\u0433\u043D\u0438\u0442\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: jumponbus
+      Name: 
+      Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
+        \u0430\u0432\u0442\u043E\u0431\u0443\u0441"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: pickupanybonus
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u0435\u043B\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: jumponbridge
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 20 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u043D\u0430 \u043C\u043E\u0441\u0442\u0443"
+      Image: 
+      Current: 0
+      Target: 20
+      IsCompleted: 0
+    - Id: upgradebobby
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0421\u0430\u043D\u044E
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupboard
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: jumpovercars
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        40 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 40
+      IsCompleted: 0
+    - Id: jumpoverbarrel
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        5 \u0431\u043E\u0447\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: pickupexplosive
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0438"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: upgradedrwhite
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043A\u0442\u043E\u0440\u0430
+        \u0411\u0435\u043B\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: jumponorangecar
+      Name: 
+      Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
+        15 \u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 15
+      IsCompleted: 0
+    - Id: pickupmagnetbyjessy
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 200 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 200
+      IsCompleted: 0
+    - Id: pickupmagnet
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: upgradesgtwall
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
+        \u041F\u0435\u0442\u0440\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: pickupboard1
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u0430
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: jumpoverpolice
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 25 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438\u0445
+        \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 0
+      IsCompleted: 0
+    - Id: upgradeandy
+      Name: 
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+        \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Image: 
+      Current: 0
+      Target: 4
+      IsCompleted: 0
+    - Id: pickupstar
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0437\u0432\u0435\u0437\u0434\u044B"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: pickupboard1
+      Name: 
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u0445\u043E\u0432\u0435\u0440\u0431\u043E\u0440\u0434\u0430
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: getallchars1
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0432\u0441\u0435\u0445
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435\u0439 \u0437\u0430
+        1 \u0437\u0430\u0431\u0435\u0433"
       Image: 
       Current: 0
       Target: 5
       IsCompleted: 0
     CurrentMissions:
-    - Id: infect
+    - Id: jump
       Name: 
-      Description: Infect 15 people
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
-      Current: 15
-      Target: 15
-      IsCompleted: 1
-    CompletedMissions:
-    - Id: infect
-      Name: 
-      Description: Infect 10 people
-      Image: 
-      Current: 10
+      Current: 0
       Target: 10
-      IsCompleted: 1
+      IsCompleted: 0
+    CompletedMissions: []
+    LastMissions: []
+    Stack: 1
+  - QueueMissions:
+    - Id: diebus
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 500
+      IsCompleted: 0
+    - Id: slideunderbus
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u043E\u043C
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: dieswat
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: slide
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        40 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 40
+      IsCompleted: 0
+    - Id: dieredcar
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
+        \u043E\u0442 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: gatherbrainjessy
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+      Image: 
+      Current: 0
+      Target: 1000
+      IsCompleted: 0
+    - Id: slideunderbarrel
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 \u0431\u043E\u0447\u043A\u043E\u0439"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: diecone
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 11 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
+        \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 11
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 5000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 5000
+      IsCompleted: 0
+    - Id: slide
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        50 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 50
+      IsCompleted: 0
+    - Id: unlockbobby
+      Name: 
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0421\u0430\u043D\u044E"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: slideundersignbobby
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u0421\u0430\u043D\u0435\u0439 \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: diewithouttouching
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
+        \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        (\u0421\u0430\u043D\u044F \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: slideunderbus
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 4 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 4
+      IsCompleted: 0
+    - Id: dieambulance
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
+        \u043F\u043E\u043C\u043E\u0449\u0438"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: 'slide '
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        100 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 100
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 500
+      IsCompleted: 0
+    - Id: slideunderbus
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 10 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: unlockdrwhite
+      Name: 
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0434\u043E\u043A\u0442\u043E\u0440\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: diedrwhitetaxi
+      Name: 
+      Description: "\u0414\u0430\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0443
+        \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0442\u0430\u043A\u0441\u0438"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 10000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 10000
+      IsCompleted: 0
+    - Id: unlocksgtwall
+      Name: 
+      Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
+        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430 \u041F\u0435\u0442\u0440\u043E\u0432\u0430"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: gatherbrainbymarine
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 1000
+      IsCompleted: 0
+    - Id: diemarinefromswat
+      Name: 
+      Description: "\u0414\u0430\u0442\u044C \u0441\u043E\u043B\u0434\u0430\u0442\u0443
+        \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: dieambulance
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
+        \u043F\u043E\u043C\u043E\u0449\u0438 5 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: slideundersign
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 40 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 40
+      IsCompleted: 0
+    - Id: diebus
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
+        10 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: die5butnotmain
+      Name: 
+      Description: "\u0414\u0430\u0442\u044C \u0443\u043C\u0435\u0440\u0435\u0442\u044C
+        5 \u0437\u043E\u043C\u0431\u0438 \u0438\u0437 \u0433\u0440\u0443\u043F\u043F\u044B
+        \u043D\u043E \u043D\u0435 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u043C\u0443"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: diesign1
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
+        \u043E\u0442 \u0437\u043D\u0430\u043A\u043E\u0432 \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: slideundersignin1min
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438 \u0437\u0430
+        1 \u043C\u0438\u043D\u0443\u0442\u0443"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: gatherbrainin5min
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 200 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0437\u0430 5 \u043C\u0438\u043D\u0443\u0442"
+      Image: 
+      Current: 0
+      Target: 200
+      IsCompleted: 0
+    - Id: gatherbrain1
+      Name: 
+      Description: "\u0441\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 1000
+      IsCompleted: 0
+    CurrentMissions:
+    - Id: slideundersign
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    CompletedMissions: []
+    LastMissions: []
+    Stack: 1
+  - QueueMissions:
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      Image: 
+      Current: 0
+      Target: 2500
+      IsCompleted: 0
     - Id: destroyexplosive
       Name: 
-      Description: Destroy 2 obstacles with explosive
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
       Image: 
-      Current: 3
+      Current: 0
       Target: 2
-      IsCompleted: 1
+      IsCompleted: 0
     - Id: run
       Name: 
-      Description: Run 2500 meters
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
       Image: 
-      Current: 2500
-      Target: 2500
-      IsCompleted: 1
-    - Id: reviveaftercar
-      Name: 
-      Description: Revive after death by any car
-      Image: 
-      Current: 1
-      Target: 1
-      IsCompleted: 1
-    - Id: run
-      Name: 
-      Description: Run 5000 meters
-      Image: 
-      Current: 5000
+      Current: 0
       Target: 5000
-      IsCompleted: 1
-    LastMissions:
+      IsCompleted: 0
+    - Id: revive
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        1 \u0440\u0430\u0437"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
     - Id: infect
       Name: 
-      Description: Infect 15 people
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 25 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
-      Current: 15
+      Current: 0
+      Target: 25
+      IsCompleted: 0
+    - Id: destroyexplosivecars
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 5
+        \u043C\u0430\u0448\u0438\u043D \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u043E\u0439"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: runonright
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 3500 \u043C
+        \u043F\u043E \u043F\u0440\u0430\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435"
+      Image: 
+      Current: 0
+      Target: 3500
+      IsCompleted: 0
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 7500 \u043C"
+      Image: 
+      Current: 0
+      Target: 7500
+      IsCompleted: 0
+    - Id: infecthousewifewithjessy
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
+        \u0438\u0433\u0440\u0430\u044F \u0422\u043E\u043D\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: destroyexplosive
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 20 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      Image: 
+      Current: 0
+      Target: 20
+      IsCompleted: 0
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 10000 \u043C"
+      Image: 
+      Current: 0
+      Target: 10000
+      IsCompleted: 0
+    - Id: revive
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: infectfatso
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 5 \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: revivejessy
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u0422\u043E\u043D\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: infectprofessor
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 3 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 3
+      IsCompleted: 0
+    - Id: destroyobstaclesjessy
+      Name: 
+      Description: "\u0414\u0430\u0442\u044C \u0422\u043E\u043D\u0435 \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C
+        5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 50 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 50
+      IsCompleted: 0
+    - Id: runonleft
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 1000 \u043C\u0435\u0442\u0440\u043E\u0432
+        \u043F\u043E \u043B\u0435\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
+        \u0434\u043E\u0440\u043E\u0433\u0438"
+      Image: 
+      Current: 0
+      Target: 1000
+      IsCompleted: 0
+    - Id: destroyobstaclesmarine
+      Name: 
+      Description: "\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: rundrwhite
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 20000 \u043C
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 20000
+      IsCompleted: 0
+    - Id: infectprofessor
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
+    - Id: destroytaximarine
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 15
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      Image: 
+      Current: 0
       Target: 15
-      IsCompleted: 1
+      IsCompleted: 0
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 50000 \u043C"
+      Image: 
+      Current: 0
+      Target: 50000
+      IsCompleted: 0
+    - Id: destroyredcar
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 5
+        \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 30 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 30
+      IsCompleted: 0
+    - Id: runonleft
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u043F\u043E
+        \u043B\u0435\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435
+        10000 \u043C"
+      Image: 
+      Current: 0
+      Target: 10000
+      IsCompleted: 0
+    - Id: infectbydrwhite
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+      Image: 
+      Current: 0
+      Target: 20
+      IsCompleted: 0
+    - Id: destroytaximarine
+      Name: 
+      Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      Image: 
+      Current: 0
+      Target: 4
+      IsCompleted: 0
+    - Id: reviveaftercar
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438 \u043E\u0442
+        \u043C\u0430\u0448\u0438\u043D\u044B"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: infecthousewife1
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 2 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0438
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: runwithoutbrains
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2000 \u043C
+        \u043D\u0435 \u0441\u043E\u0431\u0438\u0440\u0430\u044F \u043C\u043E\u0437\u0433\u0438"
+      Image: 
+      Current: 0
+      Target: 2000
+      IsCompleted: 0
+    - Id: destroyexplosivebus
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C \u0430\u0432\u0442\u043E\u0431\u0443\u0441"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    - Id: runwithoutinfect
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C
+        \u043D\u0435 \u0437\u0430\u0440\u0430\u0436\u0430\u044F \u043B\u044E\u0434\u0435\u0439"
+      Image: 
+      Current: 0
+      Target: 2500
+      IsCompleted: 0
+    - Id: destroybyexplosive1
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 7 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
+        \u0437\u0430 1 \u0437\u0430\u0431\u0435\u0433"
+      Image: 
+      Current: 0
+      Target: 7
+      IsCompleted: 0
+    - Id: runbobbyalone
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u0421\u0430\u043D\u0435\u0439
+        5000 \u043C \u0432 \u043E\u0434\u0438\u043D\u043E\u0447\u043A\u0443"
+      Image: 
+      Current: 0
+      Target: 5000
+      IsCompleted: 0
+    - Id: reviveafterbus
+      Name: 
+      Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0441\u043B\u0435 \u0441\u043C\u0435\u0440\u0442\u0438 \u043E\u0442
+        \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430"
+      Image: 
+      Current: 0
+      Target: 1
+      IsCompleted: 0
+    CurrentMissions:
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 2
+      Target: 10
+      IsCompleted: 0
+    CompletedMissions: []
+    LastMissions: []
     Stack: 1
   visualMissions:
   - {fileID: 1813022176}
@@ -29190,6 +30133,154 @@ MonoBehaviour:
   - time: 0
     text: {fileID: 728883722}
     visual: {fileID: 1954254150}
+--- !u!82 &1819186593
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819186574}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &1819186594
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819186574}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &1819186595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819186574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b0100d7aaa0a4096a0a6c4c8875c861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio:
+  - {fileID: 8300000, guid: a6938f6fb6bdb433fb2861fc5cd35878, type: 3}
+  - {fileID: 8300000, guid: 03e27129d26ce47479c85ebb8d520d3c, type: 3}
+  - {fileID: 8300000, guid: 7421020cc96e947f7b136c83d4411d75, type: 3}
+  - {fileID: 8300000, guid: 3dbe62081de864570aff674c67cbd585, type: 3}
+  - {fileID: 8300000, guid: 1603e8abe13464d7f97bd28d8e7a2148, type: 3}
+  - {fileID: 8300000, guid: c7291931f5423490384c94c9575eba9e, type: 3}
+  - {fileID: 8300000, guid: 3fd1af25c836d46d9bff8f95f504afae, type: 3}
+  - {fileID: 8300000, guid: 3a8b328f1575f4dd5bc7d6aeb1d9127c, type: 3}
+  - {fileID: 8300000, guid: 6dd3f1a70a314447f9ffd00f516d220e, type: 3}
+  - {fileID: 8300000, guid: 9fbca1ef99aee4665a2bbc92717c8129, type: 3}
+  - {fileID: 8300000, guid: e1452a2dc232d4ca9bfac0d622ecb370, type: 3}
+  - {fileID: 8300000, guid: 5876c903e64074eeca8501234a95f5be, type: 3}
+  - {fileID: 8300000, guid: 7c9d2ed552f544c82a4a6107d4fa46e6, type: 3}
+  - {fileID: 8300000, guid: 4cc83f29923c94e4c9ab69cd854370b0, type: 3}
+  - {fileID: 8300000, guid: 6728e387c5c6642c397d35f1df7090f0, type: 3}
+  - {fileID: 8300000, guid: ee61bfd378f294e65b896449b1d4f8a1, type: 3}
+  - {fileID: 8300000, guid: 324786e3f1d394943a8916cf6fe6ebfd, type: 3}
+  - {fileID: 8300000, guid: da5b09ae7d4e14053bc7fe695341d985, type: 3}
+  audioSource: {fileID: 1819186594}
+  music: {fileID: 1819186593}
 --- !u!1 &1822543583
 GameObject:
   m_ObjectHideFlags: 0
@@ -30803,7 +31894,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: -333977
+  mText: 0
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0

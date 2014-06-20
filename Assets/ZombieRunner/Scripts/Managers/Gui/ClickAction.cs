@@ -89,6 +89,8 @@ namespace Runner
 					GUIPanelManager.currentPanel = PanelType.GameMenu;
 					break;
 			}
+
+			Audio.PlaySound (12);
 		}
 	}
 }

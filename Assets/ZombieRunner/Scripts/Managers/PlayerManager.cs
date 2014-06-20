@@ -145,6 +145,8 @@ namespace Runner
 				Camera.main.transform.localPosition = defaultCameraPosition;
 
 				Destroy(go);
+
+				Audio.PlaySound (12);
 			}
 		}
 		

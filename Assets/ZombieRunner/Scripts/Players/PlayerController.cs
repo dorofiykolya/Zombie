@@ -610,6 +610,8 @@ namespace Runner
 				
 				Destroy(gameObject);
 			}
+
+			Audio.PlaySound (6 + ID);
 		}
 
 		public void OnPowerUpStarted()
@@ -729,6 +731,7 @@ namespace Runner
 					{
 						Missions.Dispatch("diemarinefromswat", 1);
 					}
+					Audio.PlaySound(1);
 					onDeath();
 				}
 
@@ -764,6 +767,8 @@ namespace Runner
 				var human = other.gameObject.GetComponent<ObstacleHuman>();
 				human.movement.Stop();
 				human.GetComponent<ObstacleAnimation>().death();
+
+				Audio.PlaySound (6 + human.ID);
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0)
 				{

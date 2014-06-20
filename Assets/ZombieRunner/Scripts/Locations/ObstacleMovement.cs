@@ -23,6 +23,9 @@ namespace Runner
 			{
 				isTriggered = true;
 				collider.enabled = false;
+
+				if(!parent.CompareTag("Human"))
+					Audio.PlaySound (4);
 			}
 			if(parent.CompareTag("Human"))
 			{

@@ -14,16 +14,11 @@ namespace Runner
         private static fastJSON.JSON json = fastJSON.JSON.Instance;
 		void Awake()
 		{
-			//Load ();
+			Load ();
 		}
 
         internal static void Load()
         {
-            if (PlayerPrefs.HasKey("CharacterId") == false)
-            {
-                return;
-            }
-
             var missionManager = GameObject.FindObjectOfType<MissionManager>();
 
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
@@ -51,7 +46,7 @@ namespace Runner
 			PlayerPrefs.SetFloat("Distance", PlayerData.Distance);
 			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
 			PlayerPrefs.SetInt("Multi", PlayerData.missionMulti);
-            PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionQueues));
+			PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionPlayerQueues));
 			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
         }
 

@@ -115,6 +115,7 @@ namespace Runner
 				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
 
 			StorageManager.Save ();
+			Audio.PlaySound (17);
 		}
 	}
 }

@@ -8,18 +8,19 @@ namespace Runner
     public class MissionManager : ComponentManager
     {
         public MissionQueue[] MissionQueues;
+		public MissionQueue[] MissionPlayerQueues;
 		public GameObject[] visualMissions = new GameObject[3];
 		public GameObject[] progressMissions = new GameObject[3];
 
         public MissionManager()
         {
-            MissionQueues = new MissionQueue[0];
+			MissionPlayerQueues = new MissionQueue[0];
         }
 
         public void Dispatch(string id, float value)
         {
             List<Mission> tempMissions = null;
-            foreach (var queue in MissionQueues)
+			foreach (var queue in MissionPlayerQueues)
             {
                 var result = queue.Dispatch(id, value);
                 if (result != null)
@@ -71,7 +72,7 @@ namespace Runner
 
         private void ClearLastMissions()
         {
-            foreach (var queue in MissionQueues)
+			foreach (var queue in MissionPlayerQueues)
             {
                 queue.LastMissions = new Mission[0];
             }
@@ -80,7 +81,7 @@ namespace Runner
         private void ClearStack()
         {
 			int index = 0;
-            foreach (var queue in MissionQueues)
+			foreach (var queue in MissionPlayerQueues)
             {
                 queue.ClearStack();
 				visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
@@ -91,8 +92,9 @@ namespace Runner
 
         public void Load(MissionQueue[] missions)
         {
-            if(missions == null) return;
-            MissionQueues = missions;
+            if(missions == null) 
+				missions = MissionQueues;
+			MissionPlayerQueues = missions;
         }
     }
 }

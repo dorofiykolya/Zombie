@@ -28,6 +28,7 @@ namespace Runner
         public GameManager Game { get; private set; }
         public LocationManager Location { get; private set; }
 		public PowerUpManager PowerUp { get; private set; }
+		public AudioManger Audio { get; private set; }
         public Manager Manager { get; private set; }
 
         public bool Initialized { get; private set; }
@@ -48,6 +49,7 @@ namespace Runner
             Cameras = Manager.CamerasManager;
             Waypoint = Manager.Waypoint;
 			PowerUp = Manager.PowerUp;
+			Audio = Manager.Audio;
 
             Initialize();
             Initialized = true;

@@ -14,6 +14,8 @@ namespace Runner
 				Missions.Dispatch(mission.Id, mission.Target);
 				Game.GamePause();
 			}
+
+			Audio.PlaySound (12);
 		}
 	}
 }
