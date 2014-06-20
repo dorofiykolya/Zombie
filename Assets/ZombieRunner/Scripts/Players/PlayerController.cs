@@ -756,6 +756,8 @@ namespace Runner
 				{
 					Missions.Dispatch("gatherbrainjessy", 1);
 				}
+
+				Audio.PlaySound(3);
             }
 			else if (other.gameObject.CompareTag("PowerUp"))
 			{
