@@ -25,9 +25,9 @@ namespace Runner
 				collider.enabled = false;
 
 				if(parent.name.ToLower().Contains("blue") || parent.name.ToLower().Contains("orange") || parent.name.ToLower().Contains("green"))
-					Audio.PlaySound (4);
-				else if(parent.name.ToLower().Contains("red"))
 					Audio.PlaySound (5);
+				else if(parent.name.ToLower().Contains("red"))
+					Audio.PlaySound (4);
 				else if(parent.name.ToLower().Contains("er"))
 					Audio.PlaySound (11);
 			}

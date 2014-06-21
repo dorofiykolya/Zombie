@@ -89,17 +89,17 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = 7;
+					offset.y = 9;
 				}
 				else if(ID == 2)
 				{
-					offset.y = -7;
+					offset.y = -9;
 				}
 				else
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						offset.y = Player.currentList[0].transform.position.z - Player.currentList.Count;
+						offset.y = Player.currentList[0].transform.position.z - Player.currentList.Count + 2;
 					}
 					else
 					{
@@ -249,21 +249,7 @@ namespace Runner
                 targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
 				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.fixedDeltaTime * speed);
-
-				if(!Player.isJumpPowerUp)
-				{
-					rotateVector.y = Mathf.Sign(targetPosition.x - transform.position.x) * 45 * ((8 - Vector3.Distance(transform.position, targetPosition)) / 8);
-
-					playerRotate.localEulerAngles = rotateVector;
-				}
             }
-			else
-			{
-				if(playerRotate.localEulerAngles.y != 0 && !Player.isJumpPowerUp)
-				{
-					playerRotate.localEulerAngles = Vector3.RotateTowards(playerRotate.position, transform.position, sideScrollSpeed * Time.fixedDeltaTime * 0.01f * speed, 0f);
-				}
-			}
 
 			//jump
 			if(bInAir)

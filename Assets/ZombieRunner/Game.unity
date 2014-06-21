@@ -6036,7 +6036,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -7031,7 +7031,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3016
+  startingRenderQueue: 3018
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -7426,7 +7426,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3037
+  startingRenderQueue: 3039
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -12905,7 +12905,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: -11990
+  mText: 46
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -14099,7 +14099,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: -11990
+  mText: 46
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -19679,7 +19679,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: CHARACTERS
+  mText: "\u041F\u0415\u0420\u0421\u041E\u041D\u0410\u0416\u0418"
   mFontSize: 31
   mFontStyle: 0
   mAlignment: 0
@@ -19873,7 +19873,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: SHOP
+  mText: "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
   mFontSize: 31
   mFontStyle: 0
   mAlignment: 0
@@ -20247,7 +20247,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3019
+  startingRenderQueue: 3021
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -21183,7 +21183,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3010
+  startingRenderQueue: 3012
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -25663,13 +25663,13 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 3.25500488, y: 201.043228, z: 500.102417, w: 230.076813}
+  mClipRange: {x: 3.25506592, y: 200.966415, z: 500.102417, w: 230.076813}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 154.744995, y: -202.043228}
+  mClipOffset: {x: 154.744934, y: -201.966415}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -25784,7 +25784,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3027
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -29504,7 +29504,7 @@ MonoBehaviour:
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
-      Current: 0
+      Current: 2
       Target: 10
       IsCompleted: 0
     CompletedMissions: []
@@ -29782,7 +29782,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
-      Current: 1
+      Current: 0
       Target: 5
       IsCompleted: 0
     CompletedMissions: []
@@ -30080,7 +30080,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
-      Current: 4
+      Current: 2
       Target: 10
       IsCompleted: 0
     CompletedMissions: []
@@ -30116,8 +30116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebcd30c9ee8c4772b5b585e8eefa5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonusChance: 100
-  _boomDistance: 100
+  _bonusChance: 2
+  _boomDistance: 0
   List:
   - {fileID: 11400000, guid: dc370c74e71c9476cb245508d5ff1b1d, type: 2}
   - {fileID: 11400000, guid: 6d90534ff9d2140beacff4600af646cb, type: 2}
@@ -31894,7 +31894,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 0
+  mText: 46
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -34548,7 +34548,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
