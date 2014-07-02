@@ -89,25 +89,25 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = 9;
+					offset.y = Player.GetMaxPlayers() / 2 * 5;
 				}
 				else if(ID == 2)
 				{
-					offset.y = -9;
+					offset.y = Player.GetMaxPlayers() / 2 * -5;
 				}
 				else
 				{
 					if(Player.currentList[0].ID == 4)
 					{
-						offset.y = Player.currentList[0].transform.position.z - Player.currentList.Count + 2;
+						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count - 1) * 5;
 					}
 					else
 					{
-						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count + 2) * (Random.value < .5? 1 : -1);
+						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count % 2 == 0 ? (Player.currentList.Count - 1) * 5 : (Player.currentList.Count - 1) * -5);
 					}
 				}
 				while(offset.x == 0)
-					offset.x = Random.Range(-3, 3);
+					offset.x = (Random.value < .5? 2 : -2);
             }
 
 			bInAir = false;
@@ -507,7 +507,7 @@ namespace Runner
 
         public void doSlide()
         {
-            if(!bInAir && !bInDuck)
+			if(!Player.currentList[0].bInAir && !Player.currentList[0].bInDuck)
 			{
 				intersectName = "";
 				duckPlayer();
@@ -581,6 +581,8 @@ namespace Runner
 				}
 				else
 				{
+					CurrencyManager.reviveCount *= 2;
+
 					am.death();
 
 					deathSpeed = Player.Speed / Player.MinimumSpeed;
@@ -666,6 +668,8 @@ namespace Runner
 
 				if(ID == 4)
 				{
+					Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
+
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
 

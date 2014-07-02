@@ -60,6 +60,7 @@ namespace Runner
 				case GUIAction.Shop:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Shop).Show();
+					GUIPanelManager.Get(PanelType.Shop).Adjust();
 					GUIPanelManager.currentPanel = PanelType.Shop;
 					break;
 				case GUIAction.Resume:
@@ -77,11 +78,29 @@ namespace Runner
 					}
 					break;
 				case GUIAction.Back:
-					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
-					GUIPanelManager.Get(PanelType.MainMenu).Show();
-					GUIPanelManager.currentPanel = PanelType.MainMenu;
+					if(States.Current == State.GAME)
+					{
+						Player.isStop = false;
+						GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+						GUIPanelManager.Get(PanelType.GameMenu).Show();
+						GUIPanelManager.currentPanel = PanelType.GameMenu;
+					}
+					else if(States.Current == State.LOSE)
+					{
+						GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+						GUIPanelManager.Get(PanelType.Lose).Show();
+						GUIPanelManager.currentPanel = PanelType.Lose;
+					}
+					else
+					{
+						GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+						GUIPanelManager.Get(PanelType.MainMenu).Show();
+						GUIPanelManager.currentPanel = PanelType.MainMenu;
+					}
 					break;
 				case GUIAction.Revive:
+					if(!PlayerData.SetBrains(-CurrencyManager.reviveCount))
+						return;
 					States.Current = State.GAME;
 					Player.Revive();
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();

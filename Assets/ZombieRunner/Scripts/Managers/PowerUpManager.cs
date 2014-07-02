@@ -22,6 +22,7 @@ namespace Runner
 		private static int bonusChance;
 		public int _bonusChance;
 		public int _boomDistance;
+		public GameObject _boomPrefab;
 		public ObstaclePowerUp[] List;
 		public List<PowerUpVisual> visualList;
 

@@ -69,10 +69,12 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.name.ToLower().Contains("bus") && !gameObject.name.ToLower().Contains("glass"))
+			var expl = gameObject.GetComponent<ObstacleObject> ();
+			
+			if(expl != null)
 			{
 				Debug.Log(gameObject.name);
-				(gameObject.collider as BoxCollider).size = new Vector3((gameObject.collider as BoxCollider).size.x, 20, (gameObject.collider as BoxCollider).size.z);
+				DestroyImmediate(expl, true);
 			}
 			
 			foreach (Transform child in gameObject.transform) 

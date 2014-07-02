@@ -8,7 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: props
   m_Shader: {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
-  m_ShaderKeywords: []
+  m_ShaderKeywords:
+  - UNITY_EDITOR_SHADOW_ON
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2

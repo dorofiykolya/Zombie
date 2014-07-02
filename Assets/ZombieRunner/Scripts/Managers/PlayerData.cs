@@ -29,6 +29,7 @@ namespace Runner
 			{
 				GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 				GUIPanelManager.Get(PanelType.Shop).Show();
+				GUIPanelManager.Get(PanelType.Shop).Adjust();
 				GUIPanelManager.currentPanel = PanelType.Shop;
 				return false;
 			}

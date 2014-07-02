@@ -68,7 +68,7 @@ namespace Runner
 				{
 					Missions.Dispatch ("slide", 1);
 
-                    for (int i = 0; i < Player.currentList.Count; i++)
+					for (int i = Player.currentList.Count - 1; i >= 0; i--)
 					{
                         Player.currentList[i].doSlide();
 					}

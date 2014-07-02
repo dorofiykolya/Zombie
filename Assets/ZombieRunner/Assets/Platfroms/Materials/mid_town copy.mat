@@ -9,7 +9,7 @@ Material:
   m_Name: mid_town copy
   m_Shader: {fileID: 4800000, guid: dde810be24443bd4fb7778b4cd523457, type: 3}
   m_ShaderKeywords:
-  - UNITY_EDITOR_SHADOW_OFF
+  - UNITY_EDITOR_SHADOW_ON
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -45,16 +45,16 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Shininess
-        second: 10
-      data:
-        first:
           name: _Dist
         second: .00300000003
       data:
         first:
           name: _ReflectVisible
         second: .0535714142
+      data:
+        first:
+          name: _Shininess
+        second: 10
       data:
         first:
           name: _EmissionLM
@@ -66,16 +66,16 @@ Material:
         second: {r: .588235319, g: .588235319, b: .588235319, a: 1}
       data:
         first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _NearCurve
         second: {r: 5000, g: 5000, b: 5000, a: 0}
       data:
         first:
           name: _FarCurve
         second: {r: 500, g: -250, b: 0, a: 0}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _ReflectColor

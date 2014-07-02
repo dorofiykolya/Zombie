@@ -26,8 +26,8 @@ namespace Runner
 
 		void Start ()
 		{
-			desc.text = "Andy, manager Increases the amount of zombies in party\r\n(Amount of Zombies: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
-			price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Done" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
+			desc.text = "Увеличивает лимит зомби в группе\r\n(Макс. кол-во зомби: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
+			price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 
 			int i;
 			for(i = 0; i < PlayerManager.levels[player]; i++)
@@ -123,23 +123,23 @@ namespace Runner
 			switch(player)
 			{
 				case 0:
-					desc.text = "Валера менеджер Увеличивает лимит зомби в группе\r\n(Макс. кол-во зомби: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
+					desc.text = "Увеличивает лимит зомби в группе\r\n(Макс. кол-во зомби: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
 				case 1:
-					desc.text = "Тоня домохозяйка Добавляет значение к множителю очков\r\n(Добавляет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "x)";
+					desc.text = "Добавляет значение к множителю очков\r\n(Добавляет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "x)";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
 				case 2:
-					desc.text = "Саня фанат шаурмы Увеличивает на 2 кол-во подбираемых мозгов\r\n(Живет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "с)";
+					desc.text = "Увеличивает на 2 кол-во подбираемых мозгов\r\n(Живет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "с)";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
 				case 3:
-					desc.text = "док.Белов Увеличивает шанс появления бонусов\r\n(+" + Player.collection[player].prefs[PlayerManager.levels[player]] + "%)";
+					desc.text = "Увеличивает шанс появления бонусов\r\n(+" + Player.collection[player].prefs[PlayerManager.levels[player]] + "%)";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
 				case 4:
-					desc.text = "Сержант Петров военный Ломает препятствия\r\n(Сила: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "ударов)";
+					desc.text = "Ломает препятствия\r\n(Сила: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "ударов)";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
 			}

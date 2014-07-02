@@ -8,10 +8,12 @@ namespace Runner
 		public UILabel gold;
 		public UILabel score;
 		public UILabel fatman;
+		public UILabel revive;
 
 		public GameObject _eatBrains;
 
 		public static int goldCount;
+		public static int reviveCount;
 		private static GameObject eatBrains;
 		private static float time;
 		private float scoreCount;
@@ -21,6 +23,8 @@ namespace Runner
 			goldCount = 0;
 			scoreCount = 0;
 
+			reviveCount = 250;
+
 			multi.text = "x" + (PlayerData.missionMulti / 3);
 			gold.text = "0";
 			score.text = "0";
@@ -29,6 +33,11 @@ namespace Runner
 
 			eatBrains = _eatBrains;
 			eatBrains.SetActive(false);
+		}
+
+		public override void GameStop ()
+		{
+			revive.text = reviveCount.ToString ();
 		}
 
 		public override void GameRestart ()

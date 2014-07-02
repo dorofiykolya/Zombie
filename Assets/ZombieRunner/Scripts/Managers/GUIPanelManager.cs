@@ -58,6 +58,10 @@ namespace Runner
 				transform.FindChild(State.LOAD.ToString()).gameObject.SetActive(States.Current == State.LOAD);
 				transform.FindChild(State.GAME.ToString()).gameObject.SetActive(States.Current == State.GAME || States.Current == State.LOSE);
 			}
+			else if(panel == PanelType.Shop)
+			{
+				transform.FindChild(State.LOAD.ToString()).gameObject.SetActive(States.Current == State.LOAD);
+			}
 		}
 		
 		public void Show()
