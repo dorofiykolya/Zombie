@@ -245,7 +245,6 @@ GameObject:
   - 4: {fileID: 400026}
   - 33: {fileID: 3300018}
   - 65: {fileID: 6500010}
-  - 114: {fileID: 11400026}
   - 54: {fileID: 5400006}
   - 23: {fileID: 2300018}
   m_Layer: 12
@@ -796,8 +795,6 @@ GameObject:
   - 33: {fileID: 3300068}
   - 23: {fileID: 2300068}
   - 114: {fileID: 11400092}
-  - 54: {fileID: 5400040}
-  - 65: {fileID: 6500044}
   m_Layer: 12
   m_Name: car_bus_glass
   m_TagString: Untagged
@@ -3509,7 +3506,7 @@ Transform:
   m_GameObject: {fileID: 100026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.70838928, y: 0, z: -258.350372}
-  m_LocalScale: {x: 80, y: 80, z: 80}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!4 &400028
@@ -7469,7 +7466,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100026}
-  m_Mesh: {fileID: 4300012, guid: 07c4b1c84b944fa478603bb4d70d7619, type: 3}
+  m_Mesh: {fileID: 4300012, guid: 13142edc284ab4df1acf7cd518e0e736, type: 3}
 --- !u!33 &3300020
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -8281,21 +8278,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!54 &5400040
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100092}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!54 &5400048
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -8799,8 +8781,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .0770953, y: .060288582, z: .0321000665}
-  m_Center: {x: 0, y: .0301440861, z: 1.52736902e-07}
+  m_Size: {x: 7.70952988, y: 6.02885818, z: 3.21000671}
+  m_Center: {x: 0, y: 3.01440859, z: 1.52587891e-05}
 --- !u!65 &6500012
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8993,18 +8975,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8, y: 16.5, z: 39.7117004}
   m_Center: {x: 0, y: 10, z: -2.0980835e-05}
---- !u!65 &6500044
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.28578949, y: 8, z: 12.9074707}
-  m_Center: {x: 0, y: 4.69847918, z: 0}
 --- !u!65 &6500048
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9608,30 +9578,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationOffset: 0
---- !u!114 &11400026
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1

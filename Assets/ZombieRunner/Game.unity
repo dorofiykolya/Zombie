@@ -6096,7 +6096,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -7091,7 +7091,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3016
+  startingRenderQueue: 3018
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -7486,7 +7486,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3037
+  startingRenderQueue: 3039
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -13053,7 +13053,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 88
+  mText: 92
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -14247,7 +14247,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 88
+  mText: 92
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -15511,7 +15511,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1020493692
 MonoBehaviour:
@@ -15980,7 +15980,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: "\u0421\u0435\u0440\u0436\u0430\u043D\u0442 \u0432\u043E\u0435\u043D\u043D\u044B\u0439"
+  mText: "\u0421\u0435\u0440\u0436\u0430\u043D\u0442 \u041F\u0435\u0442\u0440\u043E\u0432"
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
@@ -20415,7 +20415,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3019
+  startingRenderQueue: 3021
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -21351,7 +21351,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3010
+  startingRenderQueue: 3012
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -25843,7 +25843,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 3.25531006, y: 200.582352, z: 1140.20508, w: 230.076813}
@@ -25964,7 +25964,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3027
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -29654,7 +29654,7 @@ MonoBehaviour:
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
       Image: 
-      Current: 3
+      Current: 8
       Target: 15
       IsCompleted: 0
     CompletedMissions:
@@ -29924,7 +29924,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
       Image: 
-      Current: 0
+      Current: 59
       Target: 500
       IsCompleted: 0
     CompletedMissions:
@@ -29947,13 +29947,6 @@ MonoBehaviour:
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: destroyexplosive
-      Name: 
-      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
@@ -30227,12 +30220,12 @@ MonoBehaviour:
       Target: 1
       IsCompleted: 0
     CurrentMissions:
-    - Id: run
+    - Id: destroyexplosive
       Name: 
-      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
       Image: 
-      Current: 349.627136
-      Target: 2500
+      Current: 0
+      Target: 2
       IsCompleted: 0
     CompletedMissions:
     - Id: infect
@@ -30241,6 +30234,13 @@ MonoBehaviour:
       Image: 
       Current: 10
       Target: 10
+      IsCompleted: 1
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      Image: 
+      Current: 2500.4978
+      Target: 2500
       IsCompleted: 1
     LastMissions: []
     Stack: 1
@@ -30730,7 +30730,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1844819254
 MonoBehaviour:
@@ -34692,7 +34692,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}

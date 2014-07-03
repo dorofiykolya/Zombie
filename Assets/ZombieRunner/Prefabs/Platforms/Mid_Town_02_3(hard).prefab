@@ -473,7 +473,6 @@ GameObject:
   - 33: {fileID: 3300022}
   - 23: {fileID: 2300022}
   - 114: {fileID: 11400060}
-  - 114: {fileID: 11400396}
   m_Layer: 12
   m_Name: car_taxi_glass
   m_TagString: Untagged
@@ -728,8 +727,6 @@ GameObject:
   - 33: {fileID: 3300044}
   - 23: {fileID: 2300044}
   - 114: {fileID: 11400158}
-  - 54: {fileID: 5400118}
-  - 65: {fileID: 6500034}
   m_Layer: 12
   m_Name: car_green_glass
   m_TagString: Untagged
@@ -7393,21 +7390,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!54 &5400118
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100080}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!54 &5400122
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -7733,18 +7715,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.91269493, y: 3.89906788, z: 2.91269684}
   m_Center: {x: 2.86102295e-06, y: 1.94952464, z: 3.81469727e-05}
---- !u!65 &6500034
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 10, z: 0}
 --- !u!65 &6500040
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9925,27 +9895,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shaderList:
-  - {fileID: 4800000, guid: b8ee7603122974ba3bc316f990e3a57a, type: 3}
-  - {fileID: 4800000, guid: 0c8fbbe4410755944a77d9cf85b018c7, type: 3}
-  - {fileID: 4800000, guid: 629e5d1c5ec60db4e9a83b3943cb2f9b, type: 3}
-  shaderDistances:
-  - 50
-  - 10
-  - 10
-  shaderQualities: 000000000100000004000000
-  shaderCulling: 1
---- !u!114 &11400396
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100052}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8c3f8c7a973d6c41b61ae3126d582d3, type: 3}

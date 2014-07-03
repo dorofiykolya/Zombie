@@ -95,7 +95,7 @@ namespace Runner
 								}
 								else
 								{
-									player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, 0);
+									player.TargetPosition = new Vector3(Player.currentList[0].transform.position.x, player.transform.position.y, 0);
 								}
 							}
 						}
@@ -171,7 +171,7 @@ namespace Runner
 				}
 				else
 				{
-					player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -15);
+					player.TargetPosition = new Vector3(Player.currentList[0].transform.position.x, player.transform.position.y, -20);
 				}
 			}
 		}

@@ -631,7 +631,10 @@ namespace Runner
 
 		void OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.CompareTag("Obstacle") && !Player.isJumpPowerUp && !Player.isRevive)
+			if (Player.isJumpPowerUp)
+				return;
+
+            if (other.gameObject.CompareTag("Obstacle") && !Player.isRevive)
             {
 				if(other.collider.bounds.center.y < 10 && fContactPointY == 0)
 				{
