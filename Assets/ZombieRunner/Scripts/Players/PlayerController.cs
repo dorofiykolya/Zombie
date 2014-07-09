@@ -103,7 +103,7 @@ namespace Runner
 						isPlaced = false;
 						for(int i = 0; i < Player.currentList.Count; i++)
 						{
-							if(Mathf.RoundToInt(Player.currentList[i].transform.position.z) == j)
+							if(Mathf.RoundToInt(Player.currentList[i].transform.position.z) == -j)
 							{
 								isPlaced = true;
 								break;
@@ -591,7 +591,7 @@ namespace Runner
 			board.gameObject.SetActive (true);
 			Player.isJumpPowerUp = true;
 			glideSpeed = 100;
-
+			am.skate ();
 			for(int i = 1; i < Player.currentList.Count; i++)
 			{
 				Player.currentList[i].onDeath();
@@ -726,7 +726,7 @@ namespace Runner
 			{
 				PowerUp.UseBonus(other.gameObject.GetComponent<ObstaclePowerUp>());
 			}
-			else if (other.gameObject.CompareTag("Human") && !Player.isJumpPowerUp)
+			else if (other.gameObject.CompareTag("Human"))
 			{
 				other.gameObject.collider.enabled = false;
 				var human = other.gameObject.GetComponent<ObstacleHuman>();
@@ -759,7 +759,7 @@ namespace Runner
 
 				Audio.PlaySound (6 + human.ID);
 
-				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0)
+				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{
 					particle.Emit(50);
 

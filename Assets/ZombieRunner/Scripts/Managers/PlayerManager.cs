@@ -85,6 +85,10 @@ namespace Runner
 						speed += MinimumSpeed * 0.1f;
 						return Mathf.Clamp(speed, MinimumSpeed, 80 + MinimumSpeed * 0.1f);
 					}
+					if(isJumpPowerUp)
+					{
+						return 100;
+					}
 					return Mathf.Clamp(speed, MinimumSpeed, 80);
 				}
 			}

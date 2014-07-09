@@ -28,6 +28,7 @@ namespace Runner
 			animation[SLIDE_LEFT].wrapMode = WrapMode.ClampForever;
 			animation[DEATH].wrapMode = WrapMode.ClampForever;
 			animation[SLIDE].wrapMode = WrapMode.Loop;
+			animation[SKATE].wrapMode = WrapMode.Loop;
 
 			if(Player.isStop)
 				idle();
@@ -43,6 +44,7 @@ namespace Runner
 			animation[SLIDE].speed = speed;
 			animation[SLIDE_RIGHT].speed = speed;
 			animation[SLIDE_LEFT].speed = speed;
+			animation [SKATE].speed = speed;
 		}
 
         public void idle()
