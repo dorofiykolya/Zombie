@@ -168,10 +168,7 @@ namespace Runner
 				if(player.isPatientZero)
 				{
 					player.OnPowerUpStarted();
-				}
-				else
-				{
-					player.TargetPosition = new Vector3(Player.currentList[0].transform.position.x, player.transform.position.y, -20);
+					return;
 				}
 			}
 		}

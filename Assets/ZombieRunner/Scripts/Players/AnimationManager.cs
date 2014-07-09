@@ -13,6 +13,7 @@ namespace Runner
 		private const string EAT = "Eat";
 		private const string DEATH = "Death";
 		private const string IDLE = "Idle";
+		private const string SKATE = "Skate";
 
 		public float animationOffset = 0.0f;
 
@@ -74,6 +75,14 @@ namespace Runner
 			animation.Rewind (SLIDE);
 			animation.CrossFade(SLIDE, 0.1f);
         }
+
+		public void skate()
+		{
+			if(current == SKATE) return;
+			current = SKATE;
+			animation.Rewind (SKATE);
+			animation.CrossFade(SKATE, 0.1f);
+		}
 
 		public IEnumerator slideRight()
 		{

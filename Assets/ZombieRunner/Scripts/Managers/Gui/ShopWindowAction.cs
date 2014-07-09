@@ -47,14 +47,6 @@ namespace Runner
 			if(current == -1)
 				return;
 
-			if(desc != null)
-				descText = desc.text;
-
-			if(current != 3)
-				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
-			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
-
 			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
 			{
 				price.text = "Готово";
@@ -63,6 +55,16 @@ namespace Runner
 			{
 				price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
 			}
+
+			if (desc == null)
+				return;
+			
+			descText = desc.text;
+			
+			if(current != 3)
+				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
+			else
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
 		}
 
 		void OnClick()

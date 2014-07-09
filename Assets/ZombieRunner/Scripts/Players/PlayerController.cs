@@ -211,14 +211,14 @@ namespace Runner
 			//board flight animation
 			if(Player.isJumpPowerUp && isPatientZero)
 			{
-				am.idle();
+				am.skate();
 
-				if(transform.position.y == 26)
+				if(transform.position.y == 3)
 				{
 					glideEnable = false;
 				}
 
-				if(transform.position.y == 28)
+				if(transform.position.y == 5)
 				{
 					glideSpeed = 5;
 					glideEnable = true;
@@ -226,16 +226,16 @@ namespace Runner
 
 				if(glideEnable)
 				{
-					targetPosition.y = 26;
+					targetPosition.y = 3;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 				else
 				{
-					targetPosition.y = 28;
+					targetPosition.y = 5;
 					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 
-				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y + 20 - transform.position.y, Player.defaultCameraPosition.z);
+				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - transform.position.y, Player.defaultCameraPosition.z);
 			}
 
 			//change waypoint
@@ -278,7 +278,7 @@ namespace Runner
 				bInJump = true;
 				bInAir = true;
 				fDistance = 0;
-				fCurrentUpwardVelocity = CalculateJumpVerticalSpeed(jumpHeight);
+				fCurrentUpwardVelocity = CalculateJumpVerticalSpeed(jumpHeight + fContactPointY);
 				fCurrentHeight = transform.position.y;
 			}
 
@@ -296,6 +296,7 @@ namespace Runner
 					{
 						isBridge = false;
 						fContactPointY = 0;
+						Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 						bridgeHeight = Vector3.zero;
 						return;
 					}
@@ -520,49 +521,22 @@ namespace Runner
 
         public void changeTarget(Vector3 position, bool right)
         {
-            if (isPatientZero)
-            {
-                TargetPosition = position;
+			TargetPosition = position;
 
-				if(bInJump || Player.isJumpPowerUp)
-					return;
+			if(bInJump || Player.isJumpPowerUp)
+				return;
 
-				if(right) 
-				{
-					StartCoroutine(am.slideRight()); 
-				}
-				else 
-				{
-					StartCoroutine(am.slideLeft());
-				}
-            }
-            else
-            {
-                StopAllCoroutines();
-                StartCoroutine(changeDelay(position, right));
-            }
-        }
-
-        IEnumerator changeDelay(Vector3 position, bool right)
-        {
-            yield return new WaitForSeconds(Random.Range(0.05f, 0.1f));
-
-            TargetPosition = position;
-
-			if(!bInJump)
-			{			
-				if(right) 
-				{
-					StartCoroutine(am.slideRight()); 
-				}
-				else 
-				{
-					StartCoroutine(am.slideLeft());
-				}
+			if(right) 
+			{
+				StartCoroutine(am.slideRight()); 
 			}
-		}
+			else 
+			{
+				StartCoroutine(am.slideLeft());
+			}
+        }
 		
-		void onDeath()
+		public void onDeath()
 		{
 			if(isPatientZero)
 			{
@@ -607,6 +581,12 @@ namespace Runner
 			board.gameObject.SetActive (true);
 			Player.isJumpPowerUp = true;
 			glideSpeed = 100;
+
+			for(int i = 1; i < Player.currentList.Count; i++)
+			{
+				Player.currentList[i].onDeath();
+				i--;
+			}
 		}
 
 		public void OnPowerUpEnded()
@@ -631,9 +611,6 @@ namespace Runner
 
 		void OnCollisionEnter(Collision other)
         {
-			if (Player.isJumpPowerUp)
-				return;
-
             if (other.gameObject.CompareTag("Obstacle") && !Player.isRevive)
             {
 				if(other.collider.bounds.center.y < 10 && fContactPointY == 0)
@@ -669,7 +646,7 @@ namespace Runner
 					return;
 				}
 
-				if(ID == 4)
+				if(ID == 4 || Player.isJumpPowerUp)
 				{
 					Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
 
@@ -690,7 +667,7 @@ namespace Runner
 
 				soldierLife--;
 
-				if(soldierLife <= 0)
+				if(soldierLife <= 0 && !Player.isJumpPowerUp)
 				{
 					if(other.gameObject.name.ToLower().Contains("taxi") && ID == 3)
 					{
@@ -735,33 +712,40 @@ namespace Runner
 				brigeDistance = Player.Distance;
 				bridgeHeight = Vector3.zero;
 			}
-			else if (other.gameObject.CompareTag("Currency"))
-            {
-                CurrencyManager.goldCount += (1 + Player.GetGoldBonus());
-				other.transform.GetComponent<ObstacleCurrency>().isPickUp = true;
-				other.gameObject.collider.enabled = false;
-				Missions.Dispatch("gatherbrain", 1);
-				if(ID == 4)
-				{
-					Missions.Dispatch("gatherbrainbymarine", 1);
-				}
-				else if(ID == 1)
-				{
-					Missions.Dispatch("gatherbrainjessy", 1);
-				}
-
-				Audio.PlaySound(3);
-            }
 			else if (other.gameObject.CompareTag("PowerUp"))
 			{
 				PowerUp.UseBonus(other.gameObject.GetComponent<ObstaclePowerUp>());
 			}
-			else if (other.gameObject.CompareTag("Human"))
+			else if (other.gameObject.CompareTag("Human") && !Player.isJumpPowerUp)
 			{
 				other.gameObject.collider.enabled = false;
 				var human = other.gameObject.GetComponent<ObstacleHuman>();
 				human.movement.Stop();
 				human.GetComponent<ObstacleAnimation>().death();
+
+				int price = 0;
+				switch(human.ID)
+				{
+				case 0:
+					price = 20;
+					break;
+				case 1:
+					price = 15;
+					break;
+				case 2:
+					price = 10;
+					break;
+				case 3:
+					price = 50;
+					break;
+				case 4:
+					price = 5;
+					break;
+				}
+
+				Missions.Dispatch("gatherbrain", price);
+				CurrencyManager.goldCount += price;
+				CurrencyManager.showEatBrains();
 
 				Audio.PlaySound (6 + human.ID);
 
@@ -794,11 +778,6 @@ namespace Runner
 					{
 						Missions.Dispatch("infectbydrwhite", 1);
 					}
-				}
-				else
-				{
-					CurrencyManager.goldCount += 20;
-					CurrencyManager.showEatBrains();
 				}
 			}
         }

@@ -2989,6 +2989,7 @@ Animation:
   - {fileID: 7400008, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   - {fileID: 7400010, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   - {fileID: 7400012, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
+  - {fileID: 7400014, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3096,6 +3097,7 @@ Animation:
   - {fileID: 7400008, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400010, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400012, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
+  - {fileID: 7400014, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6096,7 +6098,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3031
+  startingRenderQueue: 3029
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -7091,7 +7093,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3018
+  startingRenderQueue: 3016
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -7321,6 +7323,7 @@ Animation:
   - {fileID: 7400008, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400010, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400012, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
+  - {fileID: 7400014, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7486,7 +7489,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3039
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -9075,6 +9078,7 @@ Animation:
   - {fileID: 7400008, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400010, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400012, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
+  - {fileID: 7400014, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13053,7 +13057,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 92
+  mText: 2841898
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -14247,7 +14251,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 92
+  mText: 2841898
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -15511,7 +15515,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: OnActivate
+  functionName: 
   startsChecked: 0
 --- !u!114 &1020493692
 MonoBehaviour:
@@ -16838,6 +16842,7 @@ Animation:
   - {fileID: 7400008, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400010, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400012, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
+  - {fileID: 7400014, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -19968,8 +19973,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 1112713754}
   m_AABB:
-    m_Center: {x: -2.04096031, y: .613632798, z: -.0476167202}
-    m_Extent: {x: 5.21141863, y: 4.17701483, z: 5.17386627}
+    m_Center: {x: -2.04096031, y: .613632798, z: .333532333}
+    m_Extent: {x: 5.21141863, y: 4.17701483, z: 5.55501556}
   m_DirtyAABB: 0
 --- !u!1 &1295363276
 GameObject:
@@ -20415,7 +20420,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3021
+  startingRenderQueue: 3019
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -21351,7 +21356,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3012
+  startingRenderQueue: 3010
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -24457,8 +24462,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 1800905792}
   m_AABB:
-    m_Center: {x: -.899799228, y: .105253935, z: 1.74701047}
-    m_Extent: {x: 4.09489346, y: 4.01140404, z: 4.95223522}
+    m_Center: {x: -.899799228, y: -.37435627, z: 1.74701047}
+    m_Extent: {x: 4.09489346, y: 4.49101448, z: 4.95223522}
   m_DirtyAABB: 0
 --- !u!1 &1565108255
 GameObject:
@@ -25409,8 +25414,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 193415802}
   m_AABB:
-    m_Center: {x: -2.57470012, y: -.682238579, z: -.155986547}
-    m_Extent: {x: 5.62632465, y: 4.61535454, z: 6.83280945}
+    m_Center: {x: -3.07564235, y: -.682238579, z: -.155986547}
+    m_Extent: {x: 6.12726688, y: 4.61535454, z: 6.83280945}
   m_DirtyAABB: 0
 --- !u!1 &1667746852
 GameObject:
@@ -25843,13 +25848,13 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3037
+  startingRenderQueue: 3035
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 3.25531006, y: 200.582352, z: 1140.20508, w: 230.076813}
+  mClipRange: {x: 3.25537109, y: 200.505539, z: 1140.20508, w: 230.076813}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 474.74469, y: -201.582352}
+  mClipOffset: {x: 474.744629, y: -201.505539}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -25964,7 +25969,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3027
+  startingRenderQueue: 3025
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -28290,47 +28295,46 @@ MonoBehaviour:
   startPlatforms:
   - {fileID: 11400000, guid: 84f899f3ad7971542bf96f9f84625b62, type: 2}
   platforms:
-  - {fileID: 11400000, guid: 2264626cf0345a749aecdfd7d38f24a8, type: 2}
-  - {fileID: 11400000, guid: 535a95d46b98d2246a69b3402074d77f, type: 2}
-  - {fileID: 11400000, guid: 1b106e9d0b5b99545b80819b89def177, type: 2}
-  - {fileID: 11400000, guid: 690f6e85d6d6fe54e9b3d71765901a32, type: 2}
-  - {fileID: 11400000, guid: 3cc63b6612b47fa458fced5c987ecb47, type: 2}
+  - {fileID: 11400000, guid: d9b14ce1459b835459c8c45974011d0b, type: 2}
   - {fileID: 11400000, guid: 032d53e0e7a6d0645ba821004b283b93, type: 2}
-  - {fileID: 11400000, guid: 4ab0d548e220a0c489e7634ca378dd24, type: 2}
-  - {fileID: 11400000, guid: 454de878259b70846bb141b8fa8a16d5, type: 2}
-  - {fileID: 11400000, guid: 25842551953001643948d55423130505, type: 2}
-  - {fileID: 11400000, guid: 337d76b2999405d48bfa4ad8b797783e, type: 2}
   - {fileID: 11400000, guid: 1e168e1c957fcbc419ec15cda0caeb0b, type: 2}
-  - {fileID: 11400000, guid: 6c9934f2419751f4384ce56847e33e7a, type: 2}
-  - {fileID: 11400000, guid: cdf15c391f9a5eb4fa4b0b15c91854f7, type: 2}
-  - {fileID: 11400000, guid: 3f6cf28ccae898d4dbf680ea199fd90b, type: 2}
   - {fileID: 11400000, guid: 1e64eb5cd1fd7e540bbb752c844c1051, type: 2}
+  - {fileID: 11400000, guid: 337d76b2999405d48bfa4ad8b797783e, type: 2}
+  - {fileID: 11400000, guid: 25842551953001643948d55423130505, type: 2}
+  - {fileID: 11400000, guid: 2264626cf0345a749aecdfd7d38f24a8, type: 2}
+  - {fileID: 11400000, guid: 3cc63b6612b47fa458fced5c987ecb47, type: 2}
+  - {fileID: 11400000, guid: 4ab0d548e220a0c489e7634ca378dd24, type: 2}
+  - {fileID: 11400000, guid: 494edfb5ae1c15b4aaa4c05555419eff, type: 2}
+  - {fileID: 11400000, guid: 690f6e85d6d6fe54e9b3d71765901a32, type: 2}
+  - {fileID: 11400000, guid: 6c9934f2419751f4384ce56847e33e7a, type: 2}
   - {fileID: 11400000, guid: 8abfa968b68ef3640944c2557eff134b, type: 2}
-  - {fileID: 11400000, guid: 4bb249d983bed5b4bb8497eb1aa6c6b4, type: 2}
+  - {fileID: 11400000, guid: 96056c938fa3516409ca040066f04edb, type: 2}
+  - {fileID: 11400000, guid: 9e2ad3010c9217f489f2eedee0a984c3, type: 2}
+  - {fileID: 11400000, guid: ab2852afd28fde14c8dc61393f7913a0, type: 2}
   - {fileID: 11400000, guid: baec9c380d1dcda4995dfaeae6d35dc5, type: 2}
   - {fileID: 11400000, guid: affe9c1ff2d5d304194d8732e5caa8f6, type: 2}
-  - {fileID: 11400000, guid: ab2852afd28fde14c8dc61393f7913a0, type: 2}
-  - {fileID: 11400000, guid: 9e2ad3010c9217f489f2eedee0a984c3, type: 2}
-  - {fileID: 11400000, guid: 494edfb5ae1c15b4aaa4c05555419eff, type: 2}
-  - {fileID: 11400000, guid: 96056c938fa3516409ca040066f04edb, type: 2}
-  - {fileID: 11400000, guid: c98feabc1ddc3fb4e83f275f03145e03, type: 2}
   - {fileID: 11400000, guid: ccd19144539daf5438bedd56da64722e, type: 2}
+  - {fileID: 11400000, guid: c98feabc1ddc3fb4e83f275f03145e03, type: 2}
+  - {fileID: 11400000, guid: cdf15c391f9a5eb4fa4b0b15c91854f7, type: 2}
   - {fileID: 11400000, guid: cf381c6fb56e1f84ea608833e09ec931, type: 2}
   - {fileID: 11400000, guid: d1a1997827ec9bb4eb07fb5f085a4b90, type: 2}
   - {fileID: 11400000, guid: d2364a280b7f87349a0ca163e1a81afb, type: 2}
-  - {fileID: 11400000, guid: d9b14ce1459b835459c8c45974011d0b, type: 2}
   - {fileID: 11400000, guid: ea2472e05a228d24da1cdb378b542818, type: 2}
   - {fileID: 11400000, guid: ea3abcddbb38d334a8ea4c8b963953f9, type: 2}
   - {fileID: 11400000, guid: f73cc8f1cd64fa74681721742b4a45fb, type: 2}
   - {fileID: 11400000, guid: f90140db8aa6fba468557355dde04c95, type: 2}
+  - {fileID: 11400000, guid: 4bb249d983bed5b4bb8497eb1aa6c6b4, type: 2}
+  - {fileID: 11400000, guid: 1b106e9d0b5b99545b80819b89def177, type: 2}
+  - {fileID: 11400000, guid: 535a95d46b98d2246a69b3402074d77f, type: 2}
+  - {fileID: 11400000, guid: 3f6cf28ccae898d4dbf680ea199fd90b, type: 2}
   transitionPlatforms: []
   platformsInfo:
   - type: 0
     distance: 0
   - type: 1
-    distance: 5000
+    distance: 3000
   - type: 2
-    distance: 20000
+    distance: 6000
   SetDisposeDistance: 50
   SetMinDisposeMultiply: 1.5
   SetGenerateDistance: 500
@@ -29397,15 +29401,6 @@ MonoBehaviour:
     Stack: 1
   MissionPlayerQueues:
   - QueueMissions:
-    - Id: jumpwithjessy
-      Name: 
-      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
-        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
-        \u0441 \u0422\u043E\u043D\u0435\u0439 "
-      Image: 
-      Current: 0
-      Target: 10
-      IsCompleted: 0
     - Id: upgradeandy
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
@@ -29649,13 +29644,14 @@ MonoBehaviour:
       Target: 5
       IsCompleted: 0
     CurrentMissions:
-    - Id: jumpoverobstacles
+    - Id: jumpwithjessy
       Name: 
-      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
-        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
+        \u0441 \u0422\u043E\u043D\u0435\u0439 "
       Image: 
-      Current: 8
-      Target: 15
+      Current: 2
+      Target: 10
       IsCompleted: 0
     CompletedMissions:
     - Id: jump
@@ -29666,18 +29662,17 @@ MonoBehaviour:
       Current: 11
       Target: 10
       IsCompleted: 1
+    - Id: jumpoverobstacles
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 15
+      Target: 15
+      IsCompleted: 1
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: slideunderbus
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u043E\u043C
-        2 \u0440\u0430\u0437\u0430"
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
     - Id: dieswat
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
@@ -29920,12 +29915,14 @@ MonoBehaviour:
       Target: 1000
       IsCompleted: 0
     CurrentMissions:
-    - Id: gatherbrain
+    - Id: slideunderbus
       Name: 
-      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u043E\u043C
+        2 \u0440\u0430\u0437\u0430"
       Image: 
-      Current: 59
-      Target: 500
+      Current: 0
+      Target: 2
       IsCompleted: 0
     CompletedMissions:
     - Id: slideundersign
@@ -29943,6 +29940,13 @@ MonoBehaviour:
       Image: 
       Current: 2
       Target: 2
+      IsCompleted: 1
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 502
+      Target: 500
       IsCompleted: 1
     LastMissions: []
     Stack: 1
@@ -30274,7 +30278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebcd30c9ee8c4772b5b585e8eefa5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonusChance: 2
+  _bonusChance: 100
   _boomDistance: 0
   _boomPrefab: {fileID: 100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 2}
   List:
@@ -30362,7 +30366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio:
-  - {fileID: 8300000, guid: a6938f6fb6bdb433fb2861fc5cd35878, type: 3}
+  - {fileID: 8300000, guid: a7c97ecf8682f46e593f998b54b3992f, type: 3}
   - {fileID: 8300000, guid: 03e27129d26ce47479c85ebb8d520d3c, type: 3}
   - {fileID: 8300000, guid: 7421020cc96e947f7b136c83d4411d75, type: 3}
   - {fileID: 8300000, guid: 3dbe62081de864570aff674c67cbd585, type: 3}
@@ -30730,7 +30734,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: OnActivate
+  functionName: 
   startsChecked: 0
 --- !u!114 &1844819254
 MonoBehaviour:
@@ -32011,7 +32015,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 56
+  mText: 2841898
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -34692,7 +34696,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3031
+  startingRenderQueue: 3029
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
