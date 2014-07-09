@@ -98,12 +98,13 @@ namespace Runner
 				else
 				{
 					bool isPlaced;
-					for(int j = 0; j < 3 * Player.currentList.Count; j += 3)
+					float posZ = Mathf.RoundToInt(Player.currentList[0].transform.position.z);
+					for(float j = posZ; j >  posZ - (3 * Player.currentList.Count); j -= 3)
 					{
 						isPlaced = false;
 						for(int i = 0; i < Player.currentList.Count; i++)
 						{
-							if(Mathf.RoundToInt(Player.currentList[i].transform.position.z) == -j)
+							if(Mathf.RoundToInt(Player.currentList[i].transform.position.z) == j)
 							{
 								isPlaced = true;
 								break;
@@ -111,7 +112,7 @@ namespace Runner
 						}
 						if(!isPlaced)
 						{
-							offset.y = Player.currentList[0].transform.position.z - j;
+							offset.y = j;
 							break;
 						}
 					}
@@ -559,7 +560,7 @@ namespace Runner
 
                     Camera.main.transform.parent = Player.currentList[0].gameObject.transform;
 					
-					Camera.main.transform.localPosition = new Vector3(0, Camera.main.transform.localPosition.y, Camera.main.transform.localPosition.z);
+					Camera.main.transform.localPosition = Player.defaultCameraPosition;
 					
 					Destroy(gameObject);
 				}
@@ -659,7 +660,7 @@ namespace Runner
 				if(ID == 4 || Player.isJumpPowerUp)
 				{
 					Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
-
+					Audio.PlaySound (14);
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
 

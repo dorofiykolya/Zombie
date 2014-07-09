@@ -200,6 +200,7 @@ namespace Runner
 				Missions.Dispatch("destroyexplosivecars", 1);
 				Missions.Dispatch("destroyexplosive", 1);
 			}
+			Audio.PlaySound (14);
 		}
 
 		public static void AddPowerUpObjects(PlatformObject p)
