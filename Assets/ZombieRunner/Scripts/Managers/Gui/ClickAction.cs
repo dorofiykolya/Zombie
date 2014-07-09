@@ -99,7 +99,7 @@ namespace Runner
 					}
 					break;
 				case GUIAction.Revive:
-					if(!PlayerData.SetBrains(-CurrencyManager.reviveCount))
+					if(!PlayerData.SetBrains(-Currency.reviveCount))
 						return;
 					States.Current = State.GAME;
 					Player.Revive();

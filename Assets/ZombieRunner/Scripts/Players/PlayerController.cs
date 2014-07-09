@@ -89,21 +89,31 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = Player.GetMaxPlayers() / 2 * 5;
+					offset.y = (Player.GetMaxPlayers() - (Player.currentList.Count - 2)) * 3;
 				}
 				else if(ID == 2)
 				{
-					offset.y = Player.GetMaxPlayers() / 2 * -5;
+					offset.y = Player.GetMaxPlayers() * -3;
 				}
 				else
 				{
-					if(Player.currentList[0].ID == 4)
+					bool isPlaced;
+					for(int j = 0; j < 3 * Player.currentList.Count; j += 3)
 					{
-						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count - 1) * 5;
-					}
-					else
-					{
-						offset.y = Player.currentList[0].transform.position.z - (Player.currentList.Count % 2 == 0 ? (Player.currentList.Count - 1) * 5 : (Player.currentList.Count - 1) * -5);
+						isPlaced = false;
+						for(int i = 0; i < Player.currentList.Count; i++)
+						{
+							if(Mathf.RoundToInt(Player.currentList[i].transform.position.z) == j)
+							{
+								isPlaced = true;
+								break;
+							}
+						}
+						if(!isPlaced)
+						{
+							offset.y = Player.currentList[0].transform.position.z - j;
+							break;
+						}
 					}
 				}
 				while(offset.x == 0)
@@ -555,7 +565,7 @@ namespace Runner
 				}
 				else
 				{
-					CurrencyManager.reviveCount *= 2;
+					Currency.reviveCount *= 2;
 
 					am.death();
 
@@ -744,8 +754,8 @@ namespace Runner
 				}
 
 				Missions.Dispatch("gatherbrain", price);
-				CurrencyManager.goldCount += price;
-				CurrencyManager.showEatBrains();
+				Currency.goldCount += price;
+				Currency.showEatBrains(price);
 
 				Audio.PlaySound (6 + human.ID);
 

@@ -9,12 +9,12 @@ namespace Runner
 		public UILabel score;
 		public UILabel fatman;
 		public UILabel revive;
+		public UILabel brains;
 
-		public GameObject _eatBrains;
+		public GameObject eatBrains;
 
-		public static int goldCount;
-		public static int reviveCount;
-		private static GameObject eatBrains;
+		public int goldCount;
+		public int reviveCount;
 		private static float time;
 		private float scoreCount;
 
@@ -31,7 +31,6 @@ namespace Runner
 
 			fatman.text = "";
 
-			eatBrains = _eatBrains;
 			eatBrains.SetActive(false);
 		}
 
@@ -46,8 +45,9 @@ namespace Runner
 			Initialize ();
 		}
 
-		public static void showEatBrains()
+		public void showEatBrains(int price)
 		{
+			brains.text = "+" + price.ToString ();
 			eatBrains.SetActive(true);
 			time = Time.timeSinceLevelLoad + 1;
 		}

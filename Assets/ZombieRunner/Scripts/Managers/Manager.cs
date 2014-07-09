@@ -35,6 +35,7 @@ namespace Runner
         public LocationManager Location { get; private set; }
 		public PowerUpManager PowerUp { get; private set; }
 		public AudioManger Audio { get; private set; }
+		public CurrencyManager Currency { get; private set; }
 
 		private List<IComponentManager> components = new List<IComponentManager>(2048);
 
@@ -54,6 +55,7 @@ namespace Runner
             Waypoint = GetComponent<WaypointManager>();
 			PowerUp = GetComponent<PowerUpManager>();
 			Audio = GetComponent<AudioManger>();
+			Currency = GetComponent<CurrencyManager> ();
             gameController = new GameController(Game, this);
 
 			var componentManagers = GetComponents<ComponentManager>();
