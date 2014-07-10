@@ -39,7 +39,7 @@ namespace Runner
 		public float gravity = 500;
 		public float speedCoeff = 4;
 
-		private float glideSpeed = 100;
+		private float glideSpeed = 2;
 
 		[HideInInspector]
 		public bool bInAir;
@@ -89,11 +89,11 @@ namespace Runner
             {
 				if(ID == 4)
 				{
-					offset.y = (Player.GetMaxPlayers() - (Player.currentList.Count - 2)) * 3;
+                    offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) + (Player.GetMaxPlayers() - (Player.currentList.Count - 2)) * 3;
 				}
 				else if(ID == 2)
 				{
-					offset.y = Player.GetMaxPlayers() * -3;
+					offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) - Player.GetMaxPlayers() * -3;
 				}
 				else
 				{
@@ -197,7 +197,7 @@ namespace Runner
             speed = Player.Speed / Player.MinimumSpeed;
 
 			//revive
-			if(Player.isRevive)
+			if(Player.isRevive && isPatientZero)
 			{
 				if(Time.timeSinceLevelLoad - reviveTime > 3)
 				{
@@ -224,14 +224,13 @@ namespace Runner
 			{
 				am.skate();
 
-				if(transform.position.y == 3)
+				if(Mathf.RoundToInt(transform.position.y) == 3)
 				{
 					glideEnable = false;
 				}
 
-				if(transform.position.y == 5)
+                if (Mathf.RoundToInt(transform.position.y) >= 5)
 				{
-					glideSpeed = 5;
 					glideEnable = true;
 				}
 
@@ -299,7 +298,7 @@ namespace Runner
 				var length = Player.Distance - brigeDistance;
 				if(length < 100)
 				{
-					targetPosition.y = 8;
+					targetPosition.y = Player.isJumpPowerUp ? 12 : 8f;
 				}
 				else if(length > 100)
 				{
@@ -307,16 +306,16 @@ namespace Runner
 					{
 						isBridge = false;
 						fContactPointY = 0;
-						Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 						bridgeHeight = Vector3.zero;
 						return;
 					}
 
-					targetPosition.y = 0;
+                    targetPosition.y = Player.isJumpPowerUp ? 5 : 0f;
 				}
 
-				bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, 4 * Time.fixedDeltaTime * speed);
-				fContactPointY = bridgeHeight.y;
+                bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, (Player.isJumpPowerUp ? 8 : 5) * Time.fixedDeltaTime * speed);
+
+                Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 
 				if(!bInJump)
 				{
@@ -591,7 +590,6 @@ namespace Runner
 		{
 			board.gameObject.SetActive (true);
 			Player.isJumpPowerUp = true;
-			glideSpeed = 100;
 			am.skate ();
 			for(int i = 1; i < Player.currentList.Count; i++)
 			{
@@ -624,7 +622,7 @@ namespace Runner
         {
             if (other.gameObject.CompareTag("Obstacle") && !Player.isRevive)
             {
-				if(other.collider.bounds.center.y < 10 && fContactPointY == 0)
+				if(other.collider.bounds.center.y < 10 && fContactPointY == 0 && !Player.isJumpPowerUp)
 				{
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
@@ -651,10 +649,28 @@ namespace Runner
 				var targetX = Mathf.Round(other.transform.position.x);
 				var playerX = Mathf.Round(transform.position.x);
 
-				if(Waypoint.currentWP != Waypoint.transitWP)
+                if (Waypoint.currentWP != Waypoint.transitWP && !Player.isJumpPowerUp)
 				{
-					Waypoint.changeWP(Waypoint.currentWP < Waypoint.transitWP);
-					return;
+                    int objectWP = 0;
+                    float objectX = other.transform.position.x;
+                    if(objectX > 4)
+                    {
+                        objectWP = 2;
+                    }
+                    else if(objectX < -4)
+                    {
+                        objectWP = 0;
+                    }
+                    else
+                    {
+                        objectWP = 1;
+                    }
+
+                    if(objectWP != Waypoint.transitWP)
+                    {
+                        Waypoint.changeWP(Waypoint.currentWP < Waypoint.transitWP);
+                        return;
+                    }
 				}
 
 				if(ID == 4 || Player.isJumpPowerUp)
@@ -754,7 +770,10 @@ namespace Runner
 					break;
 				}
 
+                price *= Player.GetGoldBonus();
+
 				Missions.Dispatch("gatherbrain", price);
+                PlayerData.SetBrains(price);
 				Currency.goldCount += price;
 				Currency.showEatBrains(price);
 

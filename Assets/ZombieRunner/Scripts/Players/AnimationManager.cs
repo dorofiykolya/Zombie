@@ -92,7 +92,7 @@ namespace Runner
 			current = SLIDE_RIGHT;
 			animation.PlayQueued(SLIDE_RIGHT, QueueMode.PlayNow);
 			yield return new WaitForSeconds( animation[SLIDE_RIGHT].length );
-			run();
+			if(current != SLIDE && current != JUMP) run();
 		}
 
 		public IEnumerator slideLeft()
@@ -101,7 +101,7 @@ namespace Runner
 			current = SLIDE_LEFT;
 			animation.PlayQueued(SLIDE_LEFT, QueueMode.PlayNow);
 			yield return new WaitForSeconds( animation[SLIDE_LEFT].length );
-			run();
+            if (current != SLIDE && current != JUMP) run();
 		}
 
 		public void death()

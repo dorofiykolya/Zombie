@@ -87,7 +87,7 @@ namespace Runner
 					}
 					if(isJumpPowerUp)
 					{
-						return 100;
+						return 80;
 					}
 					return Mathf.Clamp(speed, MinimumSpeed, 80);
 				}
@@ -218,10 +218,10 @@ namespace Runner
 		{
 			if(GetCurrentById(2).ID == 2)
 			{
-				return 1;
+				return 2;
 			}
 			
-			return 0;
+			return 1;
 		}
 
 		public int GetMaxPlayers()

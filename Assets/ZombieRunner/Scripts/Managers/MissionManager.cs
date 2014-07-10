@@ -83,11 +83,52 @@ namespace Runner
 			int index = 0;
 			foreach (var queue in MissionPlayerQueues)
             {
-                queue.ClearStack();
+                CheckCurrentProgress(queue);
 				visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
 				visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = queue.CurrentMissions[0];
 				index++;
             }
+        }
+
+        private void CheckCurrentProgress(MissionQueue queue)
+        {
+            switch(queue.CurrentMissions[0].Id)
+            {
+                case "unlocksgtwall":
+                    if (PlayerManager.levels[4] > 0)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "unlockdrwhite":
+                    if (PlayerManager.levels[3] > 0)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "unlockbobby":
+                    if (PlayerManager.levels[2] > 0)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "upgradeandy":
+                    if (PlayerManager.levels[0] >= queue.CurrentMissions[0].Target)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "upgradejessy":
+                    if (PlayerManager.levels[1] >= queue.CurrentMissions[0].Target)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "upgradebobby":
+                    if (PlayerManager.levels[2] >= queue.CurrentMissions[0].Target)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "upgradedrwhite":
+                    if (PlayerManager.levels[3] >= queue.CurrentMissions[0].Target)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+                case "upgradesgtwall":
+                    if (PlayerManager.levels[4] >= queue.CurrentMissions[0].Target)
+                        queue.CurrentMissions[0].IsCompleted = true;
+                    break;
+            }
+
+            queue.ClearStack();
         }
 
         public void Load(MissionQueue[] missions)

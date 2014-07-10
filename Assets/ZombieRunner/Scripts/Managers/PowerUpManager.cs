@@ -27,12 +27,14 @@ namespace Runner
 		public List<PowerUpVisual> visualList;
 
 		public int scorePowerup{ get; private set; }
+        public float magnetPowerup { get; private set; }
 
 		public override void Initialize()
 		{
 			PowerUpContainer = new GameObject("PowerUpContainer");
 			ListById = List;
 			scorePowerup = 1;
+			magnetPowerup = 1;
 			States.OnChanged += OnChanged;
 		}
 		
@@ -46,14 +48,6 @@ namespace Runner
 			StopAllCoroutines ();
 
 			scorePowerup = 1;
-
-			foreach(PlayerController player in Player.currentList)
-			{
-				if(player.isPatientZero)
-				{
-					player.magnet.enabled = false;
-				}
-			}
 		}
 
 		public void OnChanged(State state)
@@ -77,13 +71,7 @@ namespace Runner
 					{
 						if(i == 0)
 						{
-							foreach(PlayerController player in Player.currentList)
-							{
-								if(player.isPatientZero)
-								{
-									player.magnet.enabled = false;
-								}
-							}
+                            magnetPowerup = 1;
 						}
 						else if(i == 1)
 						{
@@ -149,14 +137,7 @@ namespace Runner
 		public void Magnet(ObstaclePowerUp p)
 		{
 			visualList [0].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
-
-			foreach(PlayerController player in Player.currentList)
-			{
-				if(player.isPatientZero)
-				{
-					player.magnet.enabled = true;
-				}
-			}
+            magnetPowerup = 0.5f;
 		}
 
 		public void Flight(ObstaclePowerUp p)
