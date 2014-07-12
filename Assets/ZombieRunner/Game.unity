@@ -30256,7 +30256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ebcd30c9ee8c4772b5b585e8eefa5fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bonusChance: 100
+  _bonusChance: 2
   _boomDistance: 0
   _boomPrefab: {fileID: 100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 2}
   List:
@@ -30280,7 +30280,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819186574}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1

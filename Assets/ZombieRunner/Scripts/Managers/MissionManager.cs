@@ -92,6 +92,8 @@ namespace Runner
 
         private void CheckCurrentProgress(MissionQueue queue)
         {
+			queue.ClearStack();
+
             switch(queue.CurrentMissions[0].Id)
             {
                 case "unlocksgtwall":
