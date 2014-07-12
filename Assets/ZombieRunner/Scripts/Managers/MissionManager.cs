@@ -84,8 +84,18 @@ namespace Runner
 			foreach (var queue in MissionPlayerQueues)
             {
                 CheckCurrentProgress(queue);
-				visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
-				visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = queue.CurrentMissions[0];
+
+				if (queue.CurrentMissions.Length == 0)
+				{
+					visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = "";
+					visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = null;
+				}
+				else
+				{
+					visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
+					visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = queue.CurrentMissions[0];
+				}
+
 				index++;
             }
         }
@@ -93,6 +103,9 @@ namespace Runner
         private void CheckCurrentProgress(MissionQueue queue)
         {
 			queue.ClearStack();
+
+			if (queue.CurrentMissions.Length == 0)
+				return;
 
             switch(queue.CurrentMissions[0].Id)
             {
