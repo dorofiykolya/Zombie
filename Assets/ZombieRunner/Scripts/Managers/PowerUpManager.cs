@@ -10,12 +10,14 @@ namespace Runner
 	{
 		[HideInInspector]
 		public float time;
+		[HideInInspector]
 		public UILabel text;
 		public GameObject visual;
 	}
 
 	public class PowerUpManager : ComponentManager
 	{
+		public static int[] levels = new int[]{0, 0, 0, 0};
 		public static GameObject PowerUpContainer{get;private set;}
 		private static ObstaclePowerUp[] ListById;
 		private static Dictionary<int,List<ObstaclePowerUp>> PoolById = new Dictionary<int, List<ObstaclePowerUp>>();
@@ -43,11 +45,13 @@ namespace Runner
 			for(int i = 0; i < visualList.Count; i++)
 			{
 				visualList[i].visual.SetActive(false);
+				visualList[i].time = 0;
 			}
 
 			StopAllCoroutines ();
 
 			scorePowerup = 1;
+			magnetPowerup = 1;
 		}
 
 		public void OnChanged(State state)
@@ -83,7 +87,7 @@ namespace Runner
 								}
 								else
 								{
-									player.TargetPosition = new Vector3(Player.currentList[0].transform.position.x, player.transform.position.y, 0);
+									player.targetPosition = new Vector3(Player.currentList[0].transform.position.x, player.transform.position.y, 0);
 								}
 							}
 						}
@@ -106,12 +110,12 @@ namespace Runner
 		public void UseBonus(ObstaclePowerUp p)
 		{
 			RemovePowerUpObject (p);
-			if (p.currentLevel == 0)
+			if (PowerUpManager.levels[p.Id] == 0)
 				return;
 			Missions.Dispatch("pickupanybonus", 1);
 			switch (p.Id)
 			{
-			case 1:
+			case 0:
 				Magnet(p);
 				Missions.Dispatch("pickupmagnet", 1);
 				if(Player.Current.ID == 1)
@@ -123,11 +127,11 @@ namespace Runner
 				Boom(p);
 				Missions.Dispatch("pickupexplosive", 1);
 				break;
-			case 4:
+			case 1:
 				Flight(p);
 				Missions.Dispatch("pickupboard", 1);
 				break;
-			case 5:
+			case 2:
 				ScoreBoost(p);
 				Missions.Dispatch("pickupstar", 1);
 				break;
@@ -136,13 +140,13 @@ namespace Runner
 
 		public void Magnet(ObstaclePowerUp p)
 		{
-			visualList [0].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+			visualList [0].time = Time.timeSinceLevelLoad + p.effect[PowerUpManager.levels[p.Id]];
             magnetPowerup = 0.5f;
 		}
 
 		public void Flight(ObstaclePowerUp p)
 		{
-			visualList [1].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+			visualList [1].time = Time.timeSinceLevelLoad + p.effect[PowerUpManager.levels[p.Id]];
 
 			foreach(PlayerController player in Player.currentList)
 			{
@@ -156,20 +160,20 @@ namespace Runner
 
 		public void ScoreBoost(ObstaclePowerUp p)
 		{
-			visualList [2].time = Time.timeSinceLevelLoad + p.effect[p.currentLevel];
+			visualList [2].time = Time.timeSinceLevelLoad + p.effect[PowerUpManager.levels[p.Id]];
 
 			scorePowerup = 2;
 		}
 
 		public void Boom(ObstaclePowerUp p)
 		{
-			Collider[] boomCollider = Physics.OverlapSphere(new Vector3(0, 0, _boomDistance), p.effect[p.currentLevel], 1 << 12);
+			Collider[] boomCollider = Physics.OverlapSphere(new Vector3(0, 0, _boomDistance), p.effect[PowerUpManager.levels[p.Id]], 1 << 12);
 
 			foreach(Collider boom in boomCollider)
 			{
 				boom.transform.localScale = Vector3.zero;
 				boom.gameObject.collider.enabled = false;
-				Instantiate(_boomPrefab, boom.transform.position, Quaternion.identity);
+				//Instantiate(_boomPrefab, boom.transform.position, Quaternion.identity);
 				if(boom.gameObject.name.ToLower().Contains("red"))
 				{
 					Missions.Dispatch("dieredcar", 1);

@@ -5,14 +5,17 @@ namespace Runner
     public class PlayerController : ComponentManager
     {
 
-        private Vector3 targetPosition;
+		public Vector3 targetPosition;
+		private Vector3 transit;
         public Vector3 TargetPosition
         {
-            set
+            get
             {
-                targetPosition.x = value.x + offset.x;
-				targetPosition.y = value.y;
-                targetPosition.z = value.z + offset.y;
+				transit.x = targetPosition.x + offset.x;
+				transit.y = targetPosition.y;
+				transit.z = targetPosition.z + offset.y;
+
+				return transit;
             }
         }
 
@@ -93,7 +96,7 @@ namespace Runner
 				}
 				else if(ID == 2)
 				{
-					offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) - Player.GetMaxPlayers() * -3;
+					offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) + Player.GetMaxPlayers() * -3;
 				}
 				else
 				{
@@ -134,9 +137,9 @@ namespace Runner
 			magnet = GameObject.Find ("Player").collider as SphereCollider;
 			board = transform.FindChild("Board");
 
-            TargetPosition = transform.position;
+            targetPosition = transform.position;
 			targetPosition.x = Waypoint.wayPoints[Waypoint.currentWP].position.x + offset.x;
-            transform.position = targetPosition;
+            transform.position = TargetPosition;
 
 			am = transform.FindChild ("Player").GetComponent<AnimationManager>();
 
@@ -237,28 +240,27 @@ namespace Runner
 				if(glideEnable)
 				{
 					targetPosition.y = 3;
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
+					transform.position = Vector3.MoveTowards(transform.position, TargetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 				else
 				{
 					targetPosition.y = 5;
-					transform.position = Vector3.MoveTowards(transform.position, targetPosition, glideSpeed * Time.fixedDeltaTime * speed);
+					transform.position = Vector3.MoveTowards(transform.position, TargetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
 
 				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - transform.position.y, Player.defaultCameraPosition.z);
 			}
 
 			//change waypoint
-            if (transform.position.x != targetPosition.x)
+            if (transform.position.x != TargetPosition.x)
             {
-				if(Mathf.Abs(transform.position.x - targetPosition.x) <= 4)
+				if(Mathf.Abs(transform.position.x - TargetPosition.x) <= 4)
 				{
 					Waypoint.transitWP = Waypoint.currentWP;
 				}
 
-                targetPosition.z = transform.position.z;
 				targetPosition.y = transform.position.y;
-				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.fixedDeltaTime * speed);
+				transform.position = Vector3.MoveTowards(transform.position, TargetPosition, sideScrollSpeed * Time.fixedDeltaTime * speed);
             }
 
 			//jump
@@ -313,7 +315,7 @@ namespace Runner
                     targetPosition.y = Player.isJumpPowerUp ? 5 : 0f;
 				}
 
-                bridgeHeight = Vector3.MoveTowards(bridgeHeight, targetPosition, (Player.isJumpPowerUp ? 8 : 5) * Time.fixedDeltaTime * speed);
+                bridgeHeight = Vector3.MoveTowards(bridgeHeight, TargetPosition, (Player.isJumpPowerUp ? 8 : 5) * Time.fixedDeltaTime * speed);
 
                 Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 
@@ -366,7 +368,7 @@ namespace Runner
 			if(transform.position.y != 0)
 			{
 				targetPosition.y = 0;
-				transform.position = Vector3.MoveTowards(transform.position, targetPosition, sideScrollSpeed * Time.fixedDeltaTime * deathSpeed);
+				transform.position = Vector3.MoveTowards(transform.position, TargetPosition, sideScrollSpeed * Time.fixedDeltaTime * deathSpeed);
 			}
 		}
 
@@ -531,7 +533,7 @@ namespace Runner
 
         public void changeTarget(Vector3 position, bool right)
         {
-			TargetPosition = position;
+			targetPosition = position;
 
 			if(bInJump || Player.isJumpPowerUp)
 				return;
@@ -675,7 +677,7 @@ namespace Runner
 
 				if(ID == 4 || Player.isJumpPowerUp)
 				{
-					Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
+					//Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
 					Audio.PlaySound (14);
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;

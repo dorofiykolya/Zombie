@@ -15,6 +15,7 @@ namespace Runner
 
     public class PlayerValues : ComponentManager 
 	{
+		[HideInInspector]
 		public static int player = 0;
 		private static Renderer currentRenderer;
 
@@ -70,6 +71,8 @@ namespace Runner
 
 					if(!PlayerData.SetBrains(-Player.collection[player].prices[PlayerManager.levels[player]]))
 						return;
+
+					PlayerManager.levels[player] = Mathf.Clamp(PlayerManager.levels[player] + 1, 0, 5);
 					
 					switch(player)
 					{
@@ -81,19 +84,28 @@ namespace Runner
 							break;
 						case 2:
 							if(PlayerManager.levels[player] == 1)
+							{
+								Player.Change(player);
 								Missions.Dispatch ("unlockbobby", PlayerManager.levels[player]);
+							}
 							else
 								Missions.Dispatch ("upgradebobby", PlayerManager.levels[player]);
 							break;
 						case 3:
 							if(PlayerManager.levels[player] == 1)
+							{
+								Player.Change(player);
 								Missions.Dispatch ("unlockdrwhite", PlayerManager.levels[player]);
+							}
 							else
 								Missions.Dispatch ("upgradedrwhite", PlayerManager.levels[player]);
 							break;
 						case 4:
 							if(PlayerManager.levels[player] == 1)
+							{
+								Player.Change(player);
 								Missions.Dispatch ("unlocksgtwall", PlayerManager.levels[player]);
+							}
 							else
 								Missions.Dispatch ("upgradesgtwall", PlayerManager.levels[player]);
 							break;
@@ -101,14 +113,21 @@ namespace Runner
 
 					Audio.PlaySound (17);
 
-					PlayerManager.levels[player] = Mathf.Clamp(PlayerManager.levels[player] + 1, 0, 5);
-
 					StorageManager.Save();
 
 					break;
 			}
-			if(currentRenderer != null)
+
+			if(PlayerManager.levels[player] == 0)
+			{
+				humanRenderer.sharedMaterial.color = Color.black;
+				currentRenderer = humanRenderer;
+				desc.text = "";
+			}
+			else if(currentRenderer != null)
+			{
 				currentRenderer.sharedMaterial.color = Color.white;
+			}
 
 			int i;
 			for(i = 0; i < PlayerManager.levels[player]; i++)
@@ -142,13 +161,6 @@ namespace Runner
 					desc.text = "Ломает препятствия\r\n(Сила: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "ударов)";
 					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 					break;
-			}
-
-			if(PlayerManager.levels[player] == 0)
-			{
-				humanRenderer.sharedMaterial.color = Color.black;
-				currentRenderer = humanRenderer;
-				desc.text = "";
 			}
 		}
 	}

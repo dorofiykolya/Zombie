@@ -27,6 +27,11 @@ namespace Runner
 			PlayerData.missionMulti = PlayerPrefs.GetInt("Multi");
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
+			var powerLevels = Deserialize(PlayerPrefs.GetString("PowerLevels")) as int[];
+			if(powerLevels != null)
+			{
+				PowerUpManager.levels = powerLevels;
+			}
 			var characterLevels = Deserialize(PlayerPrefs.GetString("CharacterLevels")) as int[];
 			if(characterLevels == null)
 			{
@@ -48,6 +53,7 @@ namespace Runner
 			PlayerPrefs.SetInt("Multi", PlayerData.missionMulti);
 			PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionPlayerQueues));
 			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
+			PlayerPrefs.SetString("PowerLevels", Serialize (PowerUpManager.levels));
         }
 
         private static string Serialize(object obj)

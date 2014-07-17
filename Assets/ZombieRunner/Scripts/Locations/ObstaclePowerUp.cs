@@ -6,7 +6,6 @@ namespace Runner
 	public class ObstaclePowerUp : LocationObject 
 	{
 		public int Id;
-		public int currentLevel;
 		public int[] prices;
 		public int[] effect;
 

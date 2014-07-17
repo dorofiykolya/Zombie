@@ -11,7 +11,7 @@ namespace Runner
 		{
 			if(mission != null)
 			{
-				if(PlayerData.SetBrains(-500))
+				if(PlayerData.SetBrains(-5000))
 				{
 					Missions.Dispatch(mission.Id, mission.Target);
 					Game.GamePause();

@@ -3,7 +3,6 @@ using System.Collections;
 using System;
 namespace Runner
 {
-	[ExecuteInEditMode]
     public class PlatformManager : ComponentManager
 	{
 		public PlatformTypeValue[] List;

@@ -24,7 +24,7 @@ namespace Runner
 
 		private string descText;
 
-		public override void Initialize ()
+		void Start ()
 		{
 			int current = -1;
 
@@ -47,13 +47,13 @@ namespace Runner
 			if(current == -1)
 				return;
 
-			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
+			if(PowerUpManager.levels[current] == PowerUp.List[current].prices.Length)
 			{
 				price.text = "Готово";
 			}
 			else
 			{
-				price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
+				price.text = PowerUp.List[current].prices[PowerUpManager.levels[current]].ToString();
 			}
 
 			if (desc == null)
@@ -62,9 +62,9 @@ namespace Runner
 			descText = desc.text;
 			
 			if(current != 3)
-				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
+				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " сек)";
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " м)";
 		}
 
 		void OnClick()
@@ -100,25 +100,25 @@ namespace Runner
 			if(current == -1)
 				return;
 
-			if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length) return;
+			if(PowerUpManager.levels[current] == PowerUp.List[current].prices.Length) return;
 
-			if(PlayerData.SetBrains(-PowerUp.List[current].prices[PowerUp.List[current].currentLevel]))
+			if(PlayerData.SetBrains(-PowerUp.List[current].prices[PowerUpManager.levels[current]]))
 			{
-				PowerUp.List[current].currentLevel = Mathf.Min(PowerUp.List[current].currentLevel + 1, PowerUp.List[current].prices.Length);
-				if(PowerUp.List[current].currentLevel == PowerUp.List[current].prices.Length)
+				PowerUpManager.levels[current] = Mathf.Min(PowerUpManager.levels[current] + 1, PowerUp.List[current].prices.Length);
+				if(PowerUpManager.levels[current] == PowerUp.List[current].prices.Length)
 				{
 					price.text = "Готово";
 				}
 				else
 				{
-					price.text = PowerUp.List[current].prices[PowerUp.List[current].currentLevel].ToString();
+					price.text = PowerUp.List[current].prices[PowerUpManager.levels[current]].ToString();
 				}
 			}
 
 			if(current != 3)
-				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " сек)";
+				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " сек)";
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUp.List [current].currentLevel] + " м)";
+				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " м)";
 
 			StorageManager.Save ();
 			Audio.PlaySound (17);

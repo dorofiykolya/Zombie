@@ -4643,6 +4643,7 @@ Transform:
   m_Children:
   - {fileID: 1442651381}
   - {fileID: 261161042}
+  - {fileID: 309761591}
   - {fileID: 767938346}
   - {fileID: 555890822}
   - {fileID: 222334368}
@@ -5659,6 +5660,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: 1
+--- !u!1 &309761590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 309761591}
+  - 114: {fileID: 309761592}
+  m_Layer: 11
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &309761591
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309761590}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.10351562e-05, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 266381275}
+--- !u!114 &309761592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309761590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 266381275}
+    relative: 0
+    absolute: -10
+  rightAnchor:
+    target: {fileID: 266381275}
+    relative: 1
+    absolute: 10
+  bottomAnchor:
+    target: {fileID: 266381275}
+    relative: 0
+    absolute: -10
+  topAnchor:
+    target: {fileID: 266381275}
+    relative: 1
+    absolute: 10
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 660
+  mHeight: 980
+  mDepth: 0
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: .673469365
+  mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
+  mSpriteName: back
+  mType: 1
+  mFillDirection: 2
+  mFillAmount: 1
+  mInvert: 0
+  mFillCenter: 1
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
 --- !u!1 &319173794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6098,7 +6174,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -7093,7 +7169,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3016
+  startingRenderQueue: 3018
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -7489,7 +7565,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3037
+  startingRenderQueue: 3039
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -9195,7 +9271,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 555890821}
   m_LocalRotation: {x: 0, y: .984807789, z: 0, w: .173647985}
-  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalPosition: {x: 0, y: -20, z: -50}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 266381275}
@@ -11491,7 +11567,7 @@ MonoBehaviour:
   mText: "\u0412\u044B\u043F\u043E\u043B\u043D\u0438 3 \u043C\u0438\u0441\u0441\u0438\u0438
     \u0438 \u043F\u043E\u043B\u0443\u0447\u0438 +1 \u043A \u043C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044E
     \u043E\u0447\u043A\u043E\u0432, \u0438\u043B\u0438 \u043F\u0440\u043E\u043F\u0443\u0441\u0442\u0438
-    \u043B\u044E\u0431\u0443\u044E \u0437\u0430 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+    \u043B\u044E\u0431\u0443\u044E \u0437\u0430 5000 \u043C\u043E\u0437\u0433\u043E\u0432"
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
@@ -13057,7 +13133,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 2669908
+  mText: 10750000
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -14251,7 +14327,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 2669908
+  mText: 10750000
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -15515,7 +15591,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1020493692
 MonoBehaviour:
@@ -20420,7 +20496,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3019
+  startingRenderQueue: 3021
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -21356,7 +21432,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3010
+  startingRenderQueue: 3012
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -25848,13 +25924,13 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 4.10412598, y: 200.083069, z: 500.102417, w: 230.076797}
+  mClipRange: {x: 4.10430908, y: 199.852631, z: 500.102417, w: 230.076828}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 153.895874, y: -201.083069}
+  mClipOffset: {x: 153.895691, y: -200.852631}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -25969,7 +26045,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3027
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -28219,7 +28295,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1819186575}
-  - 114: {fileID: 1819186587}
   - 114: {fileID: 1819186586}
   - 114: {fileID: 1819186578}
   - 114: {fileID: 1819186581}
@@ -28295,38 +28370,38 @@ MonoBehaviour:
   startPlatforms:
   - {fileID: 11400000, guid: 84f899f3ad7971542bf96f9f84625b62, type: 2}
   platforms:
-  - {fileID: 11400000, guid: ea2472e05a228d24da1cdb378b542818, type: 2}
-  - {fileID: 11400000, guid: 032d53e0e7a6d0645ba821004b283b93, type: 2}
-  - {fileID: 11400000, guid: 3cc63b6612b47fa458fced5c987ecb47, type: 2}
-  - {fileID: 11400000, guid: d9b14ce1459b835459c8c45974011d0b, type: 2}
-  - {fileID: 11400000, guid: 337d76b2999405d48bfa4ad8b797783e, type: 2}
-  - {fileID: 11400000, guid: f73cc8f1cd64fa74681721742b4a45fb, type: 2}
-  - {fileID: 11400000, guid: 25842551953001643948d55423130505, type: 2}
-  - {fileID: 11400000, guid: 9e2ad3010c9217f489f2eedee0a984c3, type: 2}
-  - {fileID: 11400000, guid: 4bb249d983bed5b4bb8497eb1aa6c6b4, type: 2}
-  - {fileID: 11400000, guid: affe9c1ff2d5d304194d8732e5caa8f6, type: 2}
-  - {fileID: 11400000, guid: ea3abcddbb38d334a8ea4c8b963953f9, type: 2}
-  - {fileID: 11400000, guid: ab2852afd28fde14c8dc61393f7913a0, type: 2}
-  - {fileID: 11400000, guid: baec9c380d1dcda4995dfaeae6d35dc5, type: 2}
-  - {fileID: 11400000, guid: 2264626cf0345a749aecdfd7d38f24a8, type: 2}
-  - {fileID: 11400000, guid: 1e168e1c957fcbc419ec15cda0caeb0b, type: 2}
-  - {fileID: 11400000, guid: cdf15c391f9a5eb4fa4b0b15c91854f7, type: 2}
-  - {fileID: 11400000, guid: 96056c938fa3516409ca040066f04edb, type: 2}
-  - {fileID: 11400000, guid: 1e64eb5cd1fd7e540bbb752c844c1051, type: 2}
-  - {fileID: 11400000, guid: 8abfa968b68ef3640944c2557eff134b, type: 2}
-  - {fileID: 11400000, guid: 4ab0d548e220a0c489e7634ca378dd24, type: 2}
-  - {fileID: 11400000, guid: cf381c6fb56e1f84ea608833e09ec931, type: 2}
-  - {fileID: 11400000, guid: f90140db8aa6fba468557355dde04c95, type: 2}
-  - {fileID: 11400000, guid: 1b106e9d0b5b99545b80819b89def177, type: 2}
-  - {fileID: 11400000, guid: ccd19144539daf5438bedd56da64722e, type: 2}
-  - {fileID: 11400000, guid: d1a1997827ec9bb4eb07fb5f085a4b90, type: 2}
   - {fileID: 11400000, guid: 3f6cf28ccae898d4dbf680ea199fd90b, type: 2}
+  - {fileID: 11400000, guid: 032d53e0e7a6d0645ba821004b283b93, type: 2}
+  - {fileID: 11400000, guid: ea2472e05a228d24da1cdb378b542818, type: 2}
+  - {fileID: 11400000, guid: 9e2ad3010c9217f489f2eedee0a984c3, type: 2}
+  - {fileID: 11400000, guid: 25842551953001643948d55423130505, type: 2}
+  - {fileID: 11400000, guid: d9b14ce1459b835459c8c45974011d0b, type: 2}
+  - {fileID: 11400000, guid: f73cc8f1cd64fa74681721742b4a45fb, type: 2}
+  - {fileID: 11400000, guid: 337d76b2999405d48bfa4ad8b797783e, type: 2}
+  - {fileID: 11400000, guid: 6c9934f2419751f4384ce56847e33e7a, type: 2}
+  - {fileID: 11400000, guid: 96056c938fa3516409ca040066f04edb, type: 2}
+  - {fileID: 11400000, guid: ccd19144539daf5438bedd56da64722e, type: 2}
   - {fileID: 11400000, guid: 535a95d46b98d2246a69b3402074d77f, type: 2}
   - {fileID: 11400000, guid: 690f6e85d6d6fe54e9b3d71765901a32, type: 2}
   - {fileID: 11400000, guid: 494edfb5ae1c15b4aaa4c05555419eff, type: 2}
-  - {fileID: 11400000, guid: 6c9934f2419751f4384ce56847e33e7a, type: 2}
+  - {fileID: 11400000, guid: 3cc63b6612b47fa458fced5c987ecb47, type: 2}
   - {fileID: 11400000, guid: d2364a280b7f87349a0ca163e1a81afb, type: 2}
+  - {fileID: 11400000, guid: baec9c380d1dcda4995dfaeae6d35dc5, type: 2}
+  - {fileID: 11400000, guid: 4ab0d548e220a0c489e7634ca378dd24, type: 2}
+  - {fileID: 11400000, guid: 8abfa968b68ef3640944c2557eff134b, type: 2}
+  - {fileID: 11400000, guid: d1a1997827ec9bb4eb07fb5f085a4b90, type: 2}
+  - {fileID: 11400000, guid: cdf15c391f9a5eb4fa4b0b15c91854f7, type: 2}
+  - {fileID: 11400000, guid: 4bb249d983bed5b4bb8497eb1aa6c6b4, type: 2}
+  - {fileID: 11400000, guid: f90140db8aa6fba468557355dde04c95, type: 2}
+  - {fileID: 11400000, guid: 1e168e1c957fcbc419ec15cda0caeb0b, type: 2}
+  - {fileID: 11400000, guid: 1e64eb5cd1fd7e540bbb752c844c1051, type: 2}
+  - {fileID: 11400000, guid: 2264626cf0345a749aecdfd7d38f24a8, type: 2}
+  - {fileID: 11400000, guid: 1b106e9d0b5b99545b80819b89def177, type: 2}
   - {fileID: 11400000, guid: c98feabc1ddc3fb4e83f275f03145e03, type: 2}
+  - {fileID: 11400000, guid: ea3abcddbb38d334a8ea4c8b963953f9, type: 2}
+  - {fileID: 11400000, guid: affe9c1ff2d5d304194d8732e5caa8f6, type: 2}
+  - {fileID: 11400000, guid: cf381c6fb56e1f84ea608833e09ec931, type: 2}
+  - {fileID: 11400000, guid: ab2852afd28fde14c8dc61393f7913a0, type: 2}
   transitionPlatforms: []
   platformsInfo:
   - type: 0
@@ -28506,18 +28581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 644621c7722f59947bfe141d77eb5a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1819186587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1819186574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe536f21f9ee30c40b0b1a7548666284, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
 --- !u!114 &1819186588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29379,6 +29442,23 @@ MonoBehaviour:
     Stack: 1
   MissionPlayerQueues:
   - QueueMissions:
+    - Id: jumpoverobstacles
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      Image: 
+      Current: 0
+      Target: 15
+      IsCompleted: 0
+    - Id: jumpwithjessy
+      Name: 
+      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
+        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
+        \u0441 \u0422\u043E\u043D\u0435\u0439 "
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
     - Id: upgradeandy
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
@@ -29622,35 +29702,33 @@ MonoBehaviour:
       Target: 5
       IsCompleted: 0
     CurrentMissions:
-    - Id: jumpwithjessy
-      Name: 
-      Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
-        \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
-        \u0441 \u0422\u043E\u043D\u0435\u0439 "
-      Image: 
-      Current: 2
-      Target: 10
-      IsCompleted: 0
-    CompletedMissions:
     - Id: jump
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
-      Current: 11
+      Current: 0
       Target: 10
-      IsCompleted: 1
-    - Id: jumpoverobstacles
-      Name: 
-      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
-        15 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
-      Image: 
-      Current: 15
-      Target: 15
-      IsCompleted: 1
+      IsCompleted: 0
+    CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
+    - Id: diebus
+      Name: 
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
+        2 \u0440\u0430\u0437\u0430"
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
+    - Id: gatherbrain
+      Name: 
+      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      Image: 
+      Current: 0
+      Target: 500
+      IsCompleted: 0
     - Id: dieswat
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
@@ -29739,14 +29817,6 @@ MonoBehaviour:
       Current: 0
       Target: 5
       IsCompleted: 0
-    - Id: slideunderbus
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 4 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
-      Image: 
-      Current: 0
-      Target: 4
-      IsCompleted: 0
     - Id: dieambulance
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
@@ -29769,14 +29839,6 @@ MonoBehaviour:
       Image: 
       Current: 0
       Target: 500
-      IsCompleted: 0
-    - Id: slideunderbus
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 10 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430\u043C\u0438"
-      Image: 
-      Current: 0
-      Target: 10
       IsCompleted: 0
     - Id: unlockdrwhite
       Name: 
@@ -29893,42 +29955,32 @@ MonoBehaviour:
       Target: 1000
       IsCompleted: 0
     CurrentMissions:
-    - Id: slideunderbus
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u043E\u043C
-        2 \u0440\u0430\u0437\u0430"
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
-    CompletedMissions:
     - Id: slideundersign
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
-      Current: 5
+      Current: 1
       Target: 5
-      IsCompleted: 1
-    - Id: diebus
-      Name: 
-      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
-        2 \u0440\u0430\u0437\u0430"
-      Image: 
-      Current: 2
-      Target: 2
-      IsCompleted: 1
-    - Id: gatherbrain
-      Name: 
-      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
-      Image: 
-      Current: 502
-      Target: 500
-      IsCompleted: 1
+      IsCompleted: 0
+    CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      Image: 
+      Current: 0
+      Target: 2500
+      IsCompleted: 0
+    - Id: destroyexplosive
+      Name: 
+      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
+      Image: 
+      Current: 0
+      Target: 2
+      IsCompleted: 0
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
@@ -30202,28 +30254,14 @@ MonoBehaviour:
       Target: 1
       IsCompleted: 0
     CurrentMissions:
-    - Id: destroyexplosive
-      Name: 
-      Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 2 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u044F "
-      Image: 
-      Current: 0
-      Target: 2
-      IsCompleted: 0
-    CompletedMissions:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
       Image: 
-      Current: 10
+      Current: 1
       Target: 10
-      IsCompleted: 1
-    - Id: run
-      Name: 
-      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
-      Image: 
-      Current: 2500.4978
-      Target: 2500
-      IsCompleted: 1
+      IsCompleted: 0
+    CompletedMissions: []
     LastMissions: []
     Stack: 1
   visualMissions:
@@ -30266,13 +30304,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 09589c811191a4c30825cba177de8a77, type: 2}
   visualList:
   - time: 0
-    text: {fileID: 1972370680}
+    text: {fileID: 0}
     visual: {fileID: 906450888}
   - time: 0
-    text: {fileID: 1155750001}
+    text: {fileID: 0}
     visual: {fileID: 1572228027}
   - time: 0
-    text: {fileID: 728883722}
+    text: {fileID: 0}
     visual: {fileID: 1954254150}
 --- !u!82 &1819186593
 AudioSource:
@@ -30280,7 +30318,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819186574}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -30712,7 +30750,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1844819254
 MonoBehaviour:
@@ -31993,7 +32031,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 605296526
+  mText: 0
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -34674,7 +34712,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3029
+  startingRenderQueue: 3031
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}

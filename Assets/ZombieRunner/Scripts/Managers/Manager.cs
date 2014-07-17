@@ -12,7 +12,6 @@ namespace Runner
 	[RequireComponent(typeof(Runner.StateManager))]
 	[RequireComponent(typeof(Runner.EffectManager))]
 	[RequireComponent(typeof(Runner.PlatformInfoManager))]
-	[RequireComponent(typeof(Runner.StatisticsManager))]
 	[RequireComponent(typeof(Runner.WaypointManager))]
     [RequireComponent(typeof(Runner.SettingManager))]
     [RequireComponent(typeof(Runner.MissionManager))]

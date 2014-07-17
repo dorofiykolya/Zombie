@@ -218,6 +218,7 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Controllers\LocationObjectShaderController.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Controllers\SpriteRotator.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Gui\LabelFormat.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Gui\Preloader.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Gui\UICoinsLabel.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Gui\UIScoreLabel.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Gui\UIScoreMultiplierLabel.cs" />
@@ -269,7 +270,6 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\SettingManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\State.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\StateManager.cs" />
-     <Compile Include="Assets\ZombieRunner\Scripts\Managers\StatisticsManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\StorageManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\TimerManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Players\AnimationManager.cs" />

@@ -132,7 +132,7 @@ namespace Runner
 				GameObject go = currentList[0].gameObject;
 
 				currentList[0].GameStop();
-				currentList[0] = (Runner.PlayerController)GameObject.Instantiate(GetById(PlayerValues.player));
+				currentList[0] = (Runner.PlayerController)GameObject.Instantiate(GetById(id));
 
 				PlayerData.CharacterId = id;
 				var game = GameObject.FindGameObjectWithTag("Player");
@@ -156,9 +156,8 @@ namespace Runner
 		
 		public void Select(int id)
 		{
-            currentList.Add((Runner.PlayerController)GameObject.Instantiate(GetById(PlayerValues.player)));
-			
-			PlayerData.CharacterId = id;
+            currentList.Add((Runner.PlayerController)GameObject.Instantiate(GetById(PlayerData.CharacterId)));
+
 			var game = GameObject.FindGameObjectWithTag("Player");
 			if(game == null)
 			{

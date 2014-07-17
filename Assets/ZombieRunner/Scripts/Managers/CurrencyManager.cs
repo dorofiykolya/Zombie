@@ -53,6 +53,9 @@ namespace Runner
 
 		void Update()
 		{
+			if (States.Current != State.GAME)
+				return;
+
 			scoreCount += (Player.Speed / Player.MinimumSpeed * ((1 + PlayerData.missionMulti / 3) + Player.GetMult()) * PowerUp.scorePowerup) / 5;
 			score.text = ((int)scoreCount).ToString();
 			multi.text = "x" + (((1 + PlayerData.missionMulti / 3) + Player.GetMult()) * PowerUp.scorePowerup);

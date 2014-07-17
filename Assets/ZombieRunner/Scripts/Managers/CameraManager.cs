@@ -3,7 +3,6 @@ using System.Collections;
 
 namespace Runner
 {
-	[ExecuteInEditMode]
     public class CameraManager : ComponentManager
     {
 	
