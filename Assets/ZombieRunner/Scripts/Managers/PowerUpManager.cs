@@ -10,7 +10,6 @@ namespace Runner
 	{
 		[HideInInspector]
 		public float time;
-		[HideInInspector]
 		public UILabel text;
 		public GameObject visual;
 	}

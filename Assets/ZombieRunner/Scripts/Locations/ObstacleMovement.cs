@@ -49,7 +49,7 @@ namespace Runner
 			{
 				if (parent.localPosition.z <= parentCoord.z + transform.localPosition.z)
 				{
-					float distance = speed * (Player.Speed / Player.MinimumSpeed) * Time.deltaTime * PowerUp.magnetPowerup;
+					float distance = speed * (Player.Speed / Player.MinimumSpeed) * Time.deltaTime * (parent.CompareTag("Human") ? PowerUp.magnetPowerup : 1);
 					parent.position = Vector3.MoveTowards(parent.position, transform.position, distance);
 				}
 				else
