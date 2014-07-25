@@ -21,6 +21,7 @@ namespace Runner
 		public ShopAction action;
 		public UILabel price;
 		public UILabel desc;
+		public UISprite lockIcon;
 
 		private string descText;
 
@@ -46,6 +47,11 @@ namespace Runner
 
 			if(current == -1)
 				return;
+
+			if(PowerUpManager.levels[current] > 0)
+			{
+				lockIcon.gameObject.SetActive(false);
+			}
 
 			if(PowerUpManager.levels[current] == PowerUp.List[current].prices.Length)
 			{
@@ -122,6 +128,10 @@ namespace Runner
 
 			StorageManager.Save ();
 			Audio.PlaySound (17);
+			if(PowerUpManager.levels[current] > 0)
+			{
+				lockIcon.gameObject.SetActive(false);
+			}
 		}
 	}
 }

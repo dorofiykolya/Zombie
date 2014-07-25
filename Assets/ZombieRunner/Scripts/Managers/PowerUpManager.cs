@@ -172,7 +172,8 @@ namespace Runner
 			{
 				boom.transform.localScale = Vector3.zero;
 				boom.gameObject.collider.enabled = false;
-				//Instantiate(_boomPrefab, boom.transform.position, Quaternion.identity);
+				var go = Instantiate(_boomPrefab, new Vector3(0, 10, 0), Quaternion.identity) as GameObject;
+				go.transform.parent = boom.transform;
 				if(boom.gameObject.name.ToLower().Contains("red"))
 				{
 					Missions.Dispatch("dieredcar", 1);

@@ -30,9 +30,7 @@ namespace Runner
 
 		private string intersectName = "";
 
-		private float tCurrentAngle = 0.0f;
 		private float fCurrentUpwardVelocity = 0.0f;
-		private float fDistance = 0.0f;
 		private float fCurrentHeight = 0.0f;
 		private float fContactPointY = 0.0f;
 
@@ -53,7 +51,6 @@ namespace Runner
 		[HideInInspector]
 		public bool bInDuck;
 		private bool bDiveFlag;
-		private bool bExecuteLand;
 		private bool isBridge;
 		private Vector3 bridgeHeight;
 		private float brigeDistance;
@@ -61,7 +58,6 @@ namespace Runner
         private AnimationManager am;
 
         private Vector2 offset = Vector2.zero;
-		private Vector3 rotateVector = Vector3.zero;
 
         public float sideScrollSpeed;
         public float slideDuration;
@@ -75,7 +71,6 @@ namespace Runner
 		private float speed;
 		private float deathSpeed;
 
-		private Transform playerRotate;
 		private ParticleSystem particle;
 		private bool blink;
 		private float blinkTime;
@@ -86,7 +81,6 @@ namespace Runner
 			offset.y = 0;
 
 			fContactPointY = 0;
-			fDistance = 0;
 
             if (!isPatientZero)
             {
@@ -130,7 +124,6 @@ namespace Runner
 			bInJump = false;
 			bInDuck = false;
 			bDiveFlag = false;
-			bExecuteLand = false;
 			isBridge = false;
 			bridgeHeight = Vector3.zero;
 
@@ -156,7 +149,6 @@ namespace Runner
 				reviveTime = Time.timeSinceLevelLoad;
 			}
 
-			playerRotate = transform.FindChild ("Player").transform;
 			particle = transform.FindChild ("Smoke").GetComponent<ParticleSystem> ();
 			particle.Stop ();
 
@@ -286,10 +278,8 @@ namespace Runner
 			if(bJumpFlag == true)
 			{
 				bJumpFlag = false;
-				bExecuteLand = true;
 				bInJump = true;
 				bInAir = true;
-				fDistance = 0;
 				fCurrentUpwardVelocity = CalculateJumpVerticalSpeed(jumpHeight + fContactPointY);
 				fCurrentHeight = transform.position.y;
 			}
@@ -511,7 +501,7 @@ namespace Runner
 				{
 					Missions.Dispatch("jumponbridge", 1);
 				}
-				if(ID == 2)
+				if(ID == 1)
 				{
 					Missions.Dispatch("jumpwithjessy", 1);
 				}
@@ -677,7 +667,8 @@ namespace Runner
 
 				if(ID == 4 || Player.isJumpPowerUp)
 				{
-					//Instantiate(PowerUp._boomPrefab, other.transform.position, Quaternion.identity);
+					var go = Instantiate(PowerUp._boomPrefab, new Vector3(0, 10, 0), Quaternion.identity) as GameObject;
+					go.transform.parent = other.transform;
 					Audio.PlaySound (14);
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
@@ -779,12 +770,11 @@ namespace Runner
 				Currency.goldCount += price;
 				Currency.showEatBrains(price);
 
-				Audio.PlaySound (6 + human.ID);
+				Audio.PlaySound (18 + human.ID);
+				particle.Emit(50);
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{
-					particle.Emit(50);
-
 					Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(human.ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();

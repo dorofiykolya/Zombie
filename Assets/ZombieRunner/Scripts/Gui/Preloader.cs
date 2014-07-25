@@ -4,6 +4,8 @@ using System.Collections;
 public class Preloader : MonoBehaviour 
 {
 	public GUIStyle preloder;
+	public GUIStyle back;
+	public GUIStyle front;
 	private AsyncOperation loadOp;
 	private string[] hints = new string[]{"Чтобы пополнить запас мозгов, догоните любого человека",
 										"С помощью Валеры, можно собрать группу до 6 зомби",
@@ -32,5 +34,7 @@ public class Preloader : MonoBehaviour
 	void OnGUI()
 	{
 		GUI.Box (new Rect ((Screen.width - Screen.height * 0.75f) / 2, 0, Screen.height * 0.75f, Screen.height), hints[hintId], preloder);
+		GUI.Box (new Rect (Screen.width * 0.2f, Screen.height * 0.85f, Screen.width * 0.6f, Screen.height * 0.05f), "", back);
+		if(loadOp != null) GUI.Box (new Rect (Screen.width * 0.2f, Screen.height * 0.85f, (Screen.width * 0.6f) * loadOp.progress, Screen.height * 0.05f), "", front);
 	}
 }

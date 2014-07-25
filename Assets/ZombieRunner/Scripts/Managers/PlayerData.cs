@@ -8,13 +8,17 @@ namespace Runner
     [Serializable]
 	public class PlayerData
 	{
-		public static float Distance = 0;
+		public static int Distance = 0;
 		private static int BrainsAmount = 0;
 		public static int CharacterId = 0;
 		public static int PlatformType = 0;
 		public static float PlatformTypeRemainingDistance = 0;
 		public static float MaxDistance = 0;
 		public static int missionMulti = 0;
+
+		public static string playerID;
+		public static string realName;
+		public static int creation;
 
 		public static event System.Action<string> OnChanged;
 

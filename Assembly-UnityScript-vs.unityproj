@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -70,8 +70,14 @@
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\Tonemapping.js" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\Triangles.js" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\Vignetting.js" />
-     <Compile Include="Assets\Detonator Explosion Framework\Sample Supporting Emitters\Detonator Spray Helper.js" />
-     <Compile Include="Assets\Detonator Explosion Framework\TestScene\DetonatorTest.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\DestroyRubble.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\FireFade.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\Move.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\RubbleCreater.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\Scale.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\_DemoScene\ExplosionAtPoint.js" />
+     <Compile Include="Assets\Ian&apos;s Explosion Pack\_DemoScene\GUIEffectPicker.js" />
+     <Compile Include="Assets\JSON Tests\UnityScript\Test_UnityScript.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderFader.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderInOut.js" />
      <Compile Include="Assets\ShurikenMagic\Scripts\SM_TransRimShaderIrisator.js" />
@@ -95,6 +101,7 @@
      <None Include="Assets\NGUI\ReadMe - 3.5.1.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Ian&apos;s Explosion Pack\Projectors\Sources\Shaders\Projector Multiply.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
@@ -115,7 +122,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Specular Curve Reflective.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
-     <None Include="Assets\ZombieRunner\Temp\CgBatchOutput.shader" />
+     <None Include="Assets\Ian&apos;s Explosion Pack\Shaders\Add_Layer.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
@@ -127,7 +134,6 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Transparent Diffuse Curve.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
-     <None Include="Assets\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Transparent Base Curve.shader" />
      <None Include="Assets\Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
@@ -135,6 +141,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (AlphaClip).shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\Ian&apos;s Explosion Pack\Shaders\Particle Alpha Blend-.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
@@ -143,9 +150,9 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
-     <None Include="Assets\ZombieRunner\Temp\CgBatchInput.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\Ian&apos;s Explosion Pack\Shaders\AdditiveAlways.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Assets\sky5X\README.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
@@ -194,6 +201,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\ShurikenMagic\Shaders\SM_2sided_transparent.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\JSON Tests\TroubleShoot.txt" />
      <None Include="Assets\Mesh Explosion\Read Me.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Curve.shader" />
@@ -207,6 +215,13 @@
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\ShurikenMagic\Shaders\SM_TransparentRim.shader" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="Assets\plugins\ICSharpCode.SharpZipLib">
+ <HintPath>Assets\plugins\ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{672124EC-4DC8-A14A-9F1D-3CB930625F59}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -41,8 +41,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: ba1337a57a504470ab0e6d9fc4090601, type: 2}
   mSprites:
   - name: back
-    x: 1170
-    y: 411
+    x: 1435
+    y: 371
     width: 60
     height: 58
     borderLeft: 0
@@ -67,8 +67,34 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: board_shop_icon
+    x: 1210
+    y: 80
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: board_shop_icon_new
     x: 513
     y: 22
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: board_shop_locked_icon_new
+    x: 1947
+    y: 932
     width: 95
     height: 92
     borderLeft: 0
@@ -132,8 +158,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: coins_placeholder
-    x: 1863
-    y: 859
+    x: 1339
+    y: 584
     width: 168
     height: 58
     borderLeft: 0
@@ -158,8 +184,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: explosive_shop_icon
-    x: 1902
-    y: 932
+    x: 1210
+    y: 173
     width: 95
     height: 92
     borderLeft: 0
@@ -170,9 +196,35 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: few_brains
+  - name: explosive_shop_locked_icon
+    x: 513
+    y: 115
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: fatso
     x: 1074
-    y: 347
+    y: 190
+    width: 135
+    height: 150
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: few_brains
+    x: 1339
+    y: 399
     width: 94
     height: 91
     borderLeft: 0
@@ -197,8 +249,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: great_pile_of_brains
-    x: 1074
-    y: 255
+    x: 1339
+    y: 215
     width: 94
     height: 91
     borderLeft: 0
@@ -210,8 +262,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: greater_pile_of_brains
-    x: 1074
-    y: 163
+    x: 1339
+    y: 123
     width: 94
     height: 91
     borderLeft: 0
@@ -235,6 +287,19 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: housewife
+    x: 1074
+    y: 341
+    width: 135
+    height: 150
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: leaderboard_delim
     x: 0
     y: 101
@@ -249,10 +314,49 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: magnet_shop_icon
-    x: 1074
-    y: 531
+    x: 1210
+    y: 359
     width: 95
     height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: magnet_shop_locked_icon
+    x: 1210
+    y: 266
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: manager
+    x: 1074
+    y: 39
+    width: 135
+    height: 150
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: marine
+    x: 634
+    y: 33
+    width: 135
+    height: 150
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -289,7 +393,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: missions_progress_bar_66_percent
     x: 1074
-    y: 685
+    y: 769
     width: 494
     height: 41
     borderLeft: 0
@@ -340,8 +444,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pile_of_brains
-    x: 1074
-    y: 439
+    x: 1339
+    y: 307
     width: 94
     height: 91
     borderLeft: 0
@@ -353,7 +457,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: placeholder_shadow
-    x: 1074
+    x: 1508
     y: 624
     width: 510
     height: 18
@@ -380,9 +484,22 @@ MonoBehaviour:
     paddingBottom: 0
   - name: podlozhka_for_missions_bar
     x: 1074
-    y: 769
+    y: 685
     width: 494
     height: 41
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: professor
+    x: 1074
+    y: 492
+    width: 135
+    height: 150
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -405,8 +522,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: settings
-    x: 1170
-    y: 470
+    x: 1435
+    y: 430
     width: 60
     height: 65
     borderLeft: 0
@@ -418,8 +535,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_icon_placeholder
-    x: 1170
-    y: 536
+    x: 1435
+    y: 496
     width: 86
     height: 87
     borderLeft: 0
@@ -431,8 +548,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_icon_placeholder_revers
-    x: 1074
-    y: 74
+    x: 1339
+    y: 34
     width: 90
     height: 88
     borderLeft: 0
@@ -445,7 +562,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: shop_placeholder
     x: 1074
-    y: 811
+    y: 918
     width: 508
     height: 106
     borderLeft: 0
@@ -458,7 +575,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: shop_placeholder_revers
     x: 1074
-    y: 918
+    y: 811
     width: 508
     height: 106
     borderLeft: 0
@@ -470,8 +587,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_screen_button
-    x: 1773
-    y: 927
+    x: 1210
+    y: 545
     width: 128
     height: 97
     borderLeft: 0
@@ -522,8 +639,21 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: star_shop_icon
-    x: 513
-    y: 115
+    x: 1339
+    y: 491
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: star_shop_locked_icon
+    x: 1210
+    y: 452
     width: 95
     height: 92
     borderLeft: 0
@@ -548,8 +678,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tabbar_active
-    x: 634
-    y: 96
+    x: 1773
+    y: 937
     width: 173
     height: 87
     borderLeft: 0
@@ -561,8 +691,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tabbar_deactive
-    x: 634
-    y: 8
+    x: 1863
+    y: 830
     width: 173
     height: 87
     borderLeft: 0
@@ -574,8 +704,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: toggle_arrow
-    x: 1074
-    y: 17
+    x: 1210
+    y: 23
     width: 77
     height: 56
     borderLeft: 0

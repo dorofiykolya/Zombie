@@ -21,6 +21,7 @@ namespace Runner
 			{
 				movement.Stop();
 				GetComponent<ObstacleAnimation> ().death ();
+				Audio.PlaySound(18 + ID);
 			}
 		}
 		

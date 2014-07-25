@@ -36,6 +36,7 @@ namespace Runner
 
 		public override void GameStop ()
 		{
+			PlayerData.Distance = (int)scoreCount;
 			revive.text = reviveCount.ToString ();
 		}
 

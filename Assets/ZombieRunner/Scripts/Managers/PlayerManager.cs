@@ -13,7 +13,6 @@ namespace Runner
 			isJumpPowerUp = false;
 			isRevive = false;
             PlayerData.PlatformTypeRemainingDistance = 0.0f;
-            PlayerData.Distance = 0.0f;
 
             Camera.main.transform.parent = null;
 
@@ -34,8 +33,6 @@ namespace Runner
 		{
 			Distance += Mathf.Abs(moveSpeed);
 			PlayerData.PlatformTypeRemainingDistance -= Mathf.Abs(moveSpeed);
-			PlayerData.Distance = Distance;
-            PlayerData.MaxDistance = Mathf.Max(PlayerData.MaxDistance, Distance);
 		}
 		
 	
