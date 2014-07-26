@@ -50,6 +50,7 @@ namespace Runner
 				case GUIAction.Leaderboard:
 					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
 					GUIPanelManager.Get(PanelType.Leaderboard).Show();
+					GUIPanelManager.Get(PanelType.Leaderboard).Adjust();
 					GUIPanelManager.currentPanel = PanelType.Leaderboard;
 					break;
 				case GUIAction.Characters:

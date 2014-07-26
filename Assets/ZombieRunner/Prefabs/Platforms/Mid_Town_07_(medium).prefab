@@ -3890,7 +3890,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.00001907, y: 3, z: -126.607742}
+  m_LocalPosition: {x: -8.00001907, y: 5, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400000}
@@ -5704,7 +5704,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100344}
-  m_LocalRotation: {x: -.661595881, y: -.320084065, z: -.180495664, w: .653650165}
+  m_LocalRotation: {x: -.661595821, y: -.320084035, z: -.18049565, w: .653650105}
   m_LocalPosition: {x: -1.18219495, y: 1.1920929e-07, z: 0}
   m_LocalScale: {x: 1.00000012, y: 1.00000012, z: 1}
   m_Children: []
@@ -7652,8 +7652,8 @@ MonoBehaviour:
   shaderCulling: 1
   Mode: 0
   Level: 0
-  MinimumDistance: 0
-  Type: 1
+  MinimumDistance: 3000
+  Type: 2
   TypeTo: 0
   InPlatformList: 0
   NextPlatforms: []

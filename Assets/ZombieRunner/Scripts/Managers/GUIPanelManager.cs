@@ -62,6 +62,11 @@ namespace Runner
 			{
 				transform.FindChild(State.LOAD.ToString()).gameObject.SetActive(States.Current == State.LOAD);
 			}
+			else if(panel == PanelType.Leaderboard)
+			{
+				transform.FindChild(State.LOAD.ToString()).gameObject.SetActive(States.Current == State.LOAD);
+				transform.FindChild(State.GAME.ToString()).gameObject.SetActive(States.Current == State.GAME || States.Current == State.LOSE);
+			}
 		}
 		
 		public void Show()

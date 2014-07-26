@@ -41,6 +41,26 @@ namespace Runner
 				platform = collection[i];
 				if(platform.AllowDispose == false)
 				{
+					if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 219)
+					{
+						if(platform.name.Contains(TutorialAction.HUMANS))
+						{
+							TutorialAction.showTutorial(TutorialAction.HUMANS);
+						}
+						else if(platform.name.Contains(TutorialAction.SLIDE_DOWN))
+						{
+							TutorialAction.showTutorial(TutorialAction.SLIDE_DOWN);
+						}
+						else if(platform.name.Contains(TutorialAction.SLIDE_SIDES))
+						{
+							TutorialAction.showTutorial(TutorialAction.SLIDE_SIDES);
+						}
+						else if(platform.name.Contains(TutorialAction.SLIDE_UP))
+						{
+							TutorialAction.showTutorial(TutorialAction.SLIDE_UP);
+						}
+					}
+
 					if(platform.transform.position.z < distance.z)
 					{
 						platform.AllowDispose = true;

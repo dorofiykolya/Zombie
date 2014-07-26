@@ -6,7 +6,6 @@ using Runner;
 using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(Runner.LocationObject))]
-[CanEditMultipleObjects]
 public class LocationObjectEditor : Editor
 {
     private static Shader currentAddShader;

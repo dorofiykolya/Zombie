@@ -36,6 +36,7 @@ namespace Runner
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
+			PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
 
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
@@ -71,6 +72,7 @@ namespace Runner
 			PlayerPrefs.SetString("PowerLevels", Serialize (PowerUpManager.levels));
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
 			PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
+			PlayerPrefs.SetInt("Tutorial", PlayerData.tutorial);
         }
 
         private static string Serialize(object obj)

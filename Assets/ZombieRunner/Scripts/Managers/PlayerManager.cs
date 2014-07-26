@@ -255,7 +255,7 @@ namespace Runner
 			{
 				if(Camera.main.transform.localPosition != defaultCameraPosition)
 				{
-					Camera.main.transform.localPosition = Vector3.MoveTowards(Camera.main.transform.position, defaultCameraPosition, 100f * Time.deltaTime);
+					Camera.main.transform.localPosition = Vector3.MoveTowards(Camera.main.transform.position, defaultCameraPosition, 20f * Time.deltaTime);
 				}
 				else
 				{

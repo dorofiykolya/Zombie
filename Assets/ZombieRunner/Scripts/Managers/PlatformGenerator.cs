@@ -13,6 +13,7 @@ namespace Runner
         private LocationDisposeManager _disposedManager;
         private PlayerManager _player;
         private LocationPlatformManager _platformsManager;
+		private int tutorialCount;
 
         public PlatformGenerator(LocationChildren Platforms, LocationDisposeManager DisposedManager, PlayerManager player, LocationPlatformManager PlatformsManager)
         {
@@ -25,6 +26,7 @@ namespace Runner
 		public void Reset()
 		{
 			_next = null;
+			tutorialCount = 0;
 		}
 			
 		public void Generate(float speed, Runner.PlayerController player)
@@ -52,7 +54,7 @@ namespace Runner
 				int nextType = -1;
 				if(PlayerData.PlatformTypeRemainingDistance <= 0.0f && isStartPlatform == false)
 				{
-					nextType = _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
+					nextType = (PlayerData.tutorial == 0 && tutorialCount < 4)? 0 : _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
 					if(nextType == -1)
 					{
 						nextType = platform.Type;	
@@ -87,8 +89,18 @@ namespace Runner
                 _platforms.Add(platform);
 				_next = platform.GetNextRandom();
 				count++;
+				tutorialCount++;
+				if(PlayerData.tutorial == 0 && tutorialCount == 4)
+				{
+					PlayerData.PlatformType = 1;
+					_platformsManager.deleteTutorialType();
+				}
+				else if(PlayerData.tutorial == 0 && tutorialCount == 6)
+				{
+					PlayerData.tutorial = 1;
+					TutorialAction.hideTutorial();
+				}
 			}
-
 		}
 		
 		public void Move(float speed, Runner.PlayerController player)

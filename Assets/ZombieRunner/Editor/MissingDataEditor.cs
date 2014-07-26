@@ -16,8 +16,6 @@ namespace Runner
 
 		void OnGUI()
 		{
-			coin = EditorGUILayout.ObjectField ("mind", coin, typeof(Mesh)) as Mesh;
-
 			if (GUILayout.Button("ADD"))
 			{
 				AddAnimation();
@@ -69,12 +67,9 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			var expl = gameObject.GetComponent<ObstacleObject> ();
-			
-			if(expl != null)
+			if(gameObject.CompareTag("Bonus"))
 			{
-				Debug.Log(gameObject.name);
-				DestroyImmediate(expl, true);
+				gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 5, gameObject.transform.localPosition.y);
 			}
 			
 			foreach (Transform child in gameObject.transform) 

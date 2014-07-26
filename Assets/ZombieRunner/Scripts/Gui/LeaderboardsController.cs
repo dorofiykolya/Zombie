@@ -24,7 +24,7 @@ namespace Runner
 			if (PlayerData.playerID == null)
 				return;
 
-			//if(PlayerData.creation <= 0)
+			if(PlayerData.creation <= 0)
 				StartCoroutine (CreatePlayer ());
 
 			StartGetLeaders();
@@ -44,7 +44,8 @@ namespace Runner
 
 		private IEnumerator GetLeaders()
 		{
-			WWW www = new WWW("http://red-clove.com.ua/modules/runner_score.php?id="+PlayerData.playerID+"&score="+PlayerData.Distance);
+			string query = string.Format("http://red-clove.com.ua/modules/runner_score.php?id={0}&score={1}&realname={2}", PlayerData.playerID, PlayerData.Distance, PlayerData.realName);
+			WWW www = new WWW(query);
 			yield return www;
 			var array = www.text.Split(new string[]{"playerPosition"}, System.StringSplitOptions.None);
 			var jsonleaders = SimpleJSON.JSON.Parse (array[0]).AsArray;

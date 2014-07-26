@@ -712,10 +712,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bits: {fileID: 5400000, guid: e783a9d1979ae41c7874787d01e7f237, type: 2}
-  vel: 200
-  up: 200
-  amount: 20
-  amountRandom: 5
+  vel: 1
+  up: 1
+  amount: 1
+  amountRandom: 1
   useUp: 0
 --- !u!1002 &11400001
 EditorExtensionImpl:
@@ -737,7 +737,7 @@ MonoBehaviour:
   - {fileID: 1500000}
   - {fileID: 1500008}
   - {fileID: 1500004}
-  scale: .5
+  scale: .800000012
   minsize:
   - 20
   - 200

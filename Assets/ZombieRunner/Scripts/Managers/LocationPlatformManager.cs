@@ -167,6 +167,10 @@ namespace Runner
 			typeDistance = new Dictionary<int, float>(info.Length);
 			foreach(var i in info)
 			{
+				if(PlayerData.tutorial != 0 && i.type == 0)
+				{
+					continue;
+				}
 				if(typeDistance.ContainsKey(i.type))
 				{
 					ErrorManager.Show("Error", "PlatformInfoManager. Check Platform Info, duplicate of type:" + i.type);
@@ -208,6 +212,11 @@ namespace Runner
 			}
 			
 			return -1;
+		}
+
+		public void deleteTutorialType()
+		{
+			typeSortedList.RemoveAt (0);
 		}
 		
 		public float GetDistanceByType(int type)

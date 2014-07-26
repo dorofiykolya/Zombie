@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Runner;
+
 namespace Runner
 {
 	[AddComponentMenu("Runner/Platform")]
@@ -8,8 +9,8 @@ namespace Runner
 	{
 	    public PlatformMode Mode;
 		public int Level = 0;
-		public float MinimumDistance = 0;
-		public int Type = 0;
+		public int MinimumDistance;
+		public int Type;
 	    public int TypeTo = 0;
 		public bool InPlatformList;
 		public int Id {get;set;}

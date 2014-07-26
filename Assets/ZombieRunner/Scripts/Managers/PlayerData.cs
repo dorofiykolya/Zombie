@@ -19,6 +19,7 @@ namespace Runner
 		public static string playerID;
 		public static string realName;
 		public static int creation;
+		public static int tutorial;
 
 		public static event System.Action<string> OnChanged;
 
