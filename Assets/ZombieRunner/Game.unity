@@ -1169,7 +1169,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 83558829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -215.499908, y: 416.999969, z: 0}
+  m_LocalPosition: {x: -535.500061, y: 416.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1081003841}
@@ -1417,7 +1417,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108571672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 562651590}
@@ -1454,13 +1454,13 @@ MonoBehaviour:
     absolute: -12
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 816
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .77696079
+  aspectRatio: 1.56127453
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: background
   mType: 0
@@ -2650,7 +2650,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 181958749}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246.051147, y: -416.076813, z: 1}
+  m_LocalPosition: {x: -566.102539, y: -416.076813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 438253936}
@@ -2990,6 +2990,7 @@ Animation:
   - {fileID: 7400010, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   - {fileID: 7400012, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   - {fileID: 7400014, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
+  - {fileID: 7400016, guid: ee7031f3f5e7e4fe59fbf348b0becc43, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3098,6 +3099,7 @@ Animation:
   - {fileID: 7400010, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400012, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400014, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
+  - {fileID: 7400016, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3343,7 +3345,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 210466139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.1369629, y: 0, z: 0}
+  m_LocalPosition: {x: -346.188354, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1182086175}
@@ -3418,7 +3420,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 213192100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1138302479}
@@ -3452,13 +3454,13 @@ MonoBehaviour:
     absolute: -12
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 816
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .77696079
+  aspectRatio: 1.56127453
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: background
   mType: 0
@@ -3498,7 +3500,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 222334367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -241.051147, y: -416.076813, z: 0}
+  m_LocalPosition: {x: -561.102539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1589992908}
@@ -4162,7 +4164,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235320214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -63, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -63, z: 0}
   m_LocalScale: {x: .999839962, y: .999839962, z: .999839962}
   m_Children: []
   m_Father: {fileID: 1356201057}
@@ -4195,13 +4197,13 @@ MonoBehaviour:
     absolute: -54
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 510
+  mWidth: 1150
   mHeight: 18
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 28.333334
+  aspectRatio: 63.8888893
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: placeholder_shadow
   mType: 0
@@ -4505,7 +4507,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 260320618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246.051147, y: -416.076813, z: 0}
+  m_LocalPosition: {x: -566.102539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 911365183}
@@ -4638,7 +4640,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 261161041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266381275}
@@ -5642,7 +5644,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 307812087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 274.500031, y: 432.999969, z: 0}
+  m_LocalPosition: {x: 594.500061, y: 432.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 753311683}
@@ -5774,7 +5776,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309761590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266381275}
@@ -5807,13 +5809,13 @@ MonoBehaviour:
     absolute: 10
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 660
+  mWidth: 1300
   mHeight: 980
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .673469365
+  aspectRatio: 1.32653058
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: back
   mType: 1
@@ -6641,7 +6643,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372571720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -415.999969, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -415.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 771898403}
@@ -6726,7 +6728,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 375935673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1256482617}
@@ -6763,13 +6765,13 @@ MonoBehaviour:
     absolute: -12
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 816
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .77696079
+  aspectRatio: 1.56127453
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: background
   mType: 0
@@ -7522,6 +7524,7 @@ Animation:
   - {fileID: 7400010, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400012, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400014, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
+  - {fileID: 7400016, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -8345,7 +8348,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 493651708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -430.076813, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -430.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308300327}
@@ -8597,7 +8600,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 495420490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.05127, y: -416.576813, z: 1}
+  m_LocalPosition: {x: 566.102539, y: -416.576813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 770029581}
@@ -8819,7 +8822,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 500007482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 326.465271, y: 10, z: 0}
+  m_LocalPosition: {x: 646.516602, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 181061883}
@@ -9367,6 +9370,7 @@ Animation:
   - {fileID: 7400010, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400012, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400014, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
+  - {fileID: 7400016, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -10444,7 +10448,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 639037563}
   m_LocalRotation: {x: .173648268, y: 0, z: 0, w: .98480773}
-  m_LocalPosition: {x: 0, y: 24, z: -32}
+  m_LocalPosition: {x: -.120792389, y: 26.1182747, z: -34.3026695}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10622,7 +10626,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 662216273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.0512619, y: 80, z: 0}
+  m_LocalPosition: {x: 385.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704266255}
@@ -11366,7 +11370,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702867290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 243.05127, y: 246.076813, z: 0}
+  m_LocalPosition: {x: 563.102539, y: 246.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308300327}
@@ -11662,7 +11666,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713322061}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1227339779}
@@ -11696,13 +11700,13 @@ MonoBehaviour:
     absolute: -12
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 816
   mDepth: 3
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .77696079
+  aspectRatio: 1.56127453
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: background
   mType: 0
@@ -12656,7 +12660,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 767938345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -120, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -120, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266381275}
@@ -12689,13 +12693,13 @@ MonoBehaviour:
     absolute: -70
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 600
+  mWidth: 1240
   mHeight: 100
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6
+  aspectRatio: 12.3999996
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -15744,7 +15748,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003086111}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -245.999908, y: -415.999969, z: 0}
+  m_LocalPosition: {x: -566.000061, y: -415.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1031082299}
@@ -16530,7 +16534,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042216880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 185.05127, y: 80, z: 0}
+  m_LocalPosition: {x: 505.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704266255}
@@ -16609,7 +16613,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053611302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200.55127, y: -416.076813, z: 0}
+  m_LocalPosition: {x: 520.602539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 181700381}
@@ -16818,7 +16822,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1060980528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 105.051262, y: 80, z: 0}
+  m_LocalPosition: {x: 425.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704266255}
@@ -17345,6 +17349,7 @@ Animation:
   - {fileID: 7400010, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400012, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400014, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
+  - {fileID: 7400016, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17376,7 +17381,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1095889136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.000031, y: -415.999969, z: 0}
+  m_LocalPosition: {x: 566.000061, y: -415.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 581173828}
@@ -18352,13 +18357,13 @@ MonoBehaviour:
     absolute: -30
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 50
   mDepth: 6
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 12.6800003
+  aspectRatio: 25.4799995
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -18407,7 +18412,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1140229943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.0512619, y: 80, z: 0}
+  m_LocalPosition: {x: 385.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 538907407}
@@ -19398,7 +19403,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1194861065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.05127, y: 0, z: 0}
+  m_LocalPosition: {x: 465.102539, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1726956767}
@@ -19640,7 +19645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208332511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.05127, y: 80, z: 0}
+  m_LocalPosition: {x: 465.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704266255}
@@ -19850,13 +19855,13 @@ MonoBehaviour:
     absolute: -30
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 50
   mDepth: 6
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 12.6800003
+  aspectRatio: 25.4799995
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -20157,7 +20162,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1251504124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04156494, y: 337.076813, z: 0}
+  m_LocalPosition: {x: 4.04159546, y: 337.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1483861604}
@@ -20265,13 +20270,13 @@ MonoBehaviour:
     absolute: -30
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 934
+  mWidth: 1574
   mHeight: 60
   mDepth: 6
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 15.5666666
+  aspectRatio: 26.2333336
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -20563,8 +20568,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 1112713754}
   m_AABB:
-    m_Center: {x: -2.03834963, y: .613628507, z: .333532095}
-    m_Extent: {x: 5.20880842, y: 4.17701626, z: 5.55501556}
+    m_Center: {x: -2.03834963, y: .613628387, z: .333532095}
+    m_Extent: {x: 5.20880842, y: 4.17701721, z: 5.55501556}
   m_DirtyAABB: 0
 --- !u!1 &1295363276
 GameObject:
@@ -21176,7 +21181,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1318177912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 60, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1473828488}
@@ -21213,13 +21218,13 @@ MonoBehaviour:
     absolute: -12
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 634
+  mWidth: 1274
   mHeight: 816
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .77696079
+  aspectRatio: 1.56127453
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: background
   mType: 0
@@ -21255,7 +21260,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1319824746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 331.465332, y: 0, z: 0}
+  m_LocalPosition: {x: 651.516602, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 181061883}
@@ -21334,7 +21339,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1328995064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.05127, y: -416.576813, z: 0}
+  m_LocalPosition: {x: 566.102539, y: -416.576813, z: 0}
   m_LocalScale: {x: 1.0001601, y: 1.0001601, z: 1.0001601}
   m_Children:
   - {fileID: 247815534}
@@ -22516,7 +22521,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1374341973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246.051147, y: -416.076813, z: 0}
+  m_LocalPosition: {x: -566.102539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 291476389}
@@ -22839,7 +22844,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1396705603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04156494, y: 337.076813, z: 0}
+  m_LocalPosition: {x: 4.04159546, y: 337.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1483861604}
@@ -23670,7 +23675,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442651380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 200, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: 200, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 266381275}
@@ -23985,7 +23990,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468649549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -205.499908, y: -415.999969, z: 0}
+  m_LocalPosition: {x: -525.500061, y: -415.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 461498857}
@@ -24246,7 +24251,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477623278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 331.465332, y: 0, z: 0}
+  m_LocalPosition: {x: 651.516602, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 181061883}
@@ -25337,7 +25342,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569974177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -63, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2114434170}
@@ -25370,13 +25375,13 @@ MonoBehaviour:
     absolute: -54
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 510
+  mWidth: 1150
   mHeight: 18
   mDepth: 7
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 28.333334
+  aspectRatio: 63.8888893
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: placeholder_shadow
   mType: 0
@@ -26212,8 +26217,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 193415802}
   m_AABB:
-    m_Center: {x: -3.07564235, y: -.682238579, z: -.155986547}
-    m_Extent: {x: 6.12726688, y: 4.61535454, z: 6.83280945}
+    m_Center: {x: -3.07564235, y: -.18540287, z: -.155986547}
+    m_Extent: {x: 6.12726688, y: 5.11219025, z: 6.83280945}
   m_DirtyAABB: 0
 --- !u!1 &1667746852
 GameObject:
@@ -26330,7 +26335,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1671147029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -416.076813, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 116606216}
@@ -26566,7 +26571,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1692359456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160, y: -180, z: 0}
+  m_LocalPosition: {x: -480, y: -180, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 872985733}
@@ -26649,10 +26654,10 @@ MonoBehaviour:
   startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: 3.84771729, y: 199.199722, z: 500.102417, w: 230.076813}
+  mClipRange: {x: 2.90539551, y: 198.892471, z: 1140.20508, w: 230.076813}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 26
-  mClipOffset: {x: 154.152283, y: -200.199722}
+  mClipOffset: {x: 475.094604, y: -199.892471}
 --- !u!1 &1692690642
 GameObject:
   m_ObjectHideFlags: 0
@@ -27343,7 +27348,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723933560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -416.076813, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 57778214}
@@ -27375,7 +27380,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725850888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246.051147, y: -416.076813, z: 1}
+  m_LocalPosition: {x: -566.102539, y: -416.076813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 83056388}
@@ -27881,7 +27886,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1757138973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.05127, y: -416.576813, z: 0}
+  m_LocalPosition: {x: 566.102539, y: -416.576813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 422921922}
@@ -28178,7 +28183,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786153890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130, y: 212.576813, z: 0}
+  m_LocalPosition: {x: 130.000061, y: 212.576813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2114434170}
@@ -28529,7 +28534,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1805380117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5, y: -415.999969, z: 0}
+  m_LocalPosition: {x: 35.500061, y: -415.999969, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1336620571}
@@ -29336,6 +29341,7 @@ MonoBehaviour:
   isStop: 0
   isJumpPowerUp: 0
   isRevive: 0
+  isStart: 0
   defaultCameraPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1819186582
 MonoBehaviour:
@@ -29502,14 +29508,14 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
-        \u0441 \u0422\u043E\u043D\u0435\u0439 "
+        \u0441 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29525,7 +29531,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradejessy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29540,7 +29546,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29548,15 +29554,15 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: pickupmagnet
       Name: 
-      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0439
-        \u043C\u0430\u0433\u043D\u0438\u0442 2 \u0440\u0430\u0437\u0430"
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u0430\u0433\u043D\u0438\u0442
+        2 \u0440\u0430\u0437\u0430"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
     - Id: upgradejessy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29579,7 +29585,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradebobby
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0421\u0430\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29610,8 +29616,8 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradedrwhite
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043A\u0442\u043E\u0440\u0430
-        \u0411\u0435\u043B\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
@@ -29627,7 +29633,7 @@ MonoBehaviour:
     - Id: pickupmagnetbyjessy
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
       Image: 
       Current: 0
       Target: 2
@@ -29649,7 +29655,7 @@ MonoBehaviour:
     - Id: upgradesgtwall
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
-        \u041F\u0435\u0442\u0440\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
@@ -29665,7 +29671,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -29725,7 +29731,7 @@ MonoBehaviour:
     - Id: gatherbrainjessy
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
       Image: 
       Current: 0
       Target: 1000
@@ -29764,7 +29770,7 @@ MonoBehaviour:
     - Id: unlockbobby
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0421\u0430\u043D\u044E"
+        \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430"
       Image: 
       Current: 0
       Target: 1
@@ -29772,7 +29778,8 @@ MonoBehaviour:
     - Id: slideundersignbobby
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u0421\u0430\u043D\u0435\u0439 \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+        \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u043C \u043F\u043E\u0434
+        5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
       Current: 0
       Target: 5
@@ -29781,7 +29788,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
         \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
-        (\u0421\u0430\u043D\u044F \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
+        (\u0442\u043E\u043B\u0441\u0442\u044F\u043A \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
       Image: 
       Current: 0
       Target: 5
@@ -29804,7 +29811,7 @@ MonoBehaviour:
     - Id: unlockdrwhite
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0434\u043E\u043A\u0442\u043E\u0440\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
       Image: 
       Current: 0
       Target: 1
@@ -29827,14 +29834,14 @@ MonoBehaviour:
     - Id: unlocksgtwall
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430 \u041F\u0435\u0442\u0440\u043E\u0432\u0430"
+        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: diemarinefromswat
       Name: 
-      Description: "\u0414\u0430\u0442\u044C \u0441\u043E\u043B\u0434\u0430\u0442\u0443
+      Description: "\u0414\u0430\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
       Image: 
@@ -29940,7 +29947,7 @@ MonoBehaviour:
     - Id: infecthousewifewithjessy
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
-        \u0438\u0433\u0440\u0430\u044F \u0422\u043E\u043D\u0435\u0439"
+        \u0438\u0433\u0440\u0430\u044F \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 1
@@ -29970,7 +29977,7 @@ MonoBehaviour:
     - Id: revivejessy
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
-        \u0422\u043E\u043D\u0435\u0439"
+        \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 1
@@ -29984,8 +29991,8 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: destroyobstaclesjessy
       Name: 
-      Description: "\u0414\u0430\u0442\u044C \u0422\u043E\u043D\u0435 \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C
-        5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      Description: "\u0414\u0430\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0435
+        \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
       Current: 0
       Target: 5
@@ -30048,7 +30055,7 @@ MonoBehaviour:
     - Id: infectbydrwhite
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
       Image: 
       Current: 0
       Target: 20
@@ -30056,7 +30063,7 @@ MonoBehaviour:
     - Id: destroytaximarine
       Name: 
       Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
-        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u043E\u043C"
       Image: 
       Current: 0
       Target: 4
@@ -30067,26 +30074,18 @@ MonoBehaviour:
     Stack: 1
   MissionPlayerQueues:
   - QueueMissions:
-    - Id: jump
-      Name: 
-      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
-        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
-      Image: 
-      Current: 0
-      Target: 10
-      IsCompleted: 0
     - Id: jumpwithjessy
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
-        \u0441 \u0422\u043E\u043D\u0435\u0439 "
+        \u0441 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 10
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30102,7 +30101,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradejessy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30117,7 +30116,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30125,15 +30124,15 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: pickupmagnet
       Name: 
-      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u043E\u0437\u0433\u043E\u0432\u043E\u0439
-        \u043C\u0430\u0433\u043D\u0438\u0442 2 \u0440\u0430\u0437\u0430"
+      Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u0430\u0433\u043D\u0438\u0442
+        2 \u0440\u0430\u0437\u0430"
       Image: 
       Current: 0
       Target: 2
       IsCompleted: 0
     - Id: upgradejessy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0422\u043E\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30156,7 +30155,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradebobby
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0421\u0430\u043D\u044E
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30187,8 +30186,8 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradedrwhite
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043A\u0442\u043E\u0440\u0430
-        \u0411\u0435\u043B\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
@@ -30204,7 +30203,7 @@ MonoBehaviour:
     - Id: pickupmagnetbyjessy
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
       Image: 
       Current: 0
       Target: 2
@@ -30226,7 +30225,7 @@ MonoBehaviour:
     - Id: upgradesgtwall
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
-        \u041F\u0435\u0442\u0440\u043E\u0432\u0430 \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+        \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
       Target: 2
@@ -30242,7 +30241,7 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: upgradeandy
       Name: 
-      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0412\u0430\u043B\u0435\u0440\u0443
+      Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
       Image: 
       Current: 0
@@ -30255,19 +30254,19 @@ MonoBehaviour:
       Current: 0
       Target: 3
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: slideundersign
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
@@ -30302,7 +30301,7 @@ MonoBehaviour:
     - Id: gatherbrainjessy
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0422\u043E\u043D\u044E"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
       Image: 
       Current: 0
       Target: 1000
@@ -30341,7 +30340,7 @@ MonoBehaviour:
     - Id: unlockbobby
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0421\u0430\u043D\u044E"
+        \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430"
       Image: 
       Current: 0
       Target: 1
@@ -30349,7 +30348,8 @@ MonoBehaviour:
     - Id: slideundersignbobby
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u0421\u0430\u043D\u0435\u0439 \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+        \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u043C \u043F\u043E\u0434
+        5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
       Image: 
       Current: 0
       Target: 5
@@ -30358,7 +30358,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
         \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
-        (\u0421\u0430\u043D\u044F \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
+        (\u0442\u043E\u043B\u0441\u0442\u044F\u043A \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
       Image: 
       Current: 0
       Target: 5
@@ -30381,7 +30381,7 @@ MonoBehaviour:
     - Id: unlockdrwhite
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0434\u043E\u043A\u0442\u043E\u0440\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+        \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
       Image: 
       Current: 0
       Target: 1
@@ -30404,14 +30404,14 @@ MonoBehaviour:
     - Id: unlocksgtwall
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
-        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430 \u041F\u0435\u0442\u0440\u043E\u0432\u0430"
+        \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430"
       Image: 
       Current: 0
       Target: 1
       IsCompleted: 0
     - Id: diemarinefromswat
       Name: 
-      Description: "\u0414\u0430\u0442\u044C \u0441\u043E\u043B\u0434\u0430\u0442\u0443
+      Description: "\u0414\u0430\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
       Image: 
@@ -30451,18 +30451,19 @@ MonoBehaviour:
       Current: 0
       Target: 5
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: slideundersign
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: infect
-      Name: 
-      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
-      Image: 
-      Current: 0
-      Target: 10
-      IsCompleted: 0
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
@@ -30517,7 +30518,7 @@ MonoBehaviour:
     - Id: infecthousewifewithjessy
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
-        \u0438\u0433\u0440\u0430\u044F \u0422\u043E\u043D\u0435\u0439"
+        \u0438\u0433\u0440\u0430\u044F \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 1
@@ -30547,7 +30548,7 @@ MonoBehaviour:
     - Id: revivejessy
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
-        \u0422\u043E\u043D\u0435\u0439"
+        \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
       Image: 
       Current: 0
       Target: 1
@@ -30561,8 +30562,8 @@ MonoBehaviour:
       IsCompleted: 0
     - Id: destroyobstaclesjessy
       Name: 
-      Description: "\u0414\u0430\u0442\u044C \u0422\u043E\u043D\u0435 \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C
-        5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      Description: "\u0414\u0430\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0435
+        \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       Image: 
       Current: 0
       Target: 5
@@ -30625,7 +30626,7 @@ MonoBehaviour:
     - Id: infectbydrwhite
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
-        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0411\u0435\u043B\u043E\u0432\u0430"
+        \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
       Image: 
       Current: 0
       Target: 20
@@ -30633,12 +30634,19 @@ MonoBehaviour:
     - Id: destroytaximarine
       Name: 
       Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
-        \u0442\u0430\u043A\u0441\u0438 \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+        \u0442\u0430\u043A\u0441\u0438 \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u043E\u043C"
       Image: 
       Current: 0
       Target: 4
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
@@ -30812,7 +30820,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822543583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.05127, y: -416.576813, z: 1}
+  m_LocalPosition: {x: 566.102539, y: -416.576813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1295363277}
@@ -31207,7 +31215,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854710491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.0512695, y: 438.076813, z: 0}
+  m_LocalPosition: {x: 370.102539, y: 438.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455190715}
@@ -31586,7 +31594,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1863697491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 246.000031, y: -416.499969, z: 0}
+  m_LocalPosition: {x: 566.000061, y: -416.499969, z: 0}
   m_LocalScale: {x: .999839962, y: .999839962, z: .999839962}
   m_Children:
   - {fileID: 1814155575}
@@ -31822,7 +31830,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1880379252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 215.05127, y: -416.076813, z: 0}
+  m_LocalPosition: {x: 535.102539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 522287342}
@@ -31982,7 +31990,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889655934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.1369858, y: 10, z: 0}
+  m_LocalPosition: {x: -351.188354, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1182086175}
@@ -32074,7 +32082,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1891907769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -246.051147, y: -416.076813, z: 0}
+  m_LocalPosition: {x: -566.102539, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 122048379}
@@ -32282,7 +32290,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1906151667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 225.05127, y: 80, z: 0}
+  m_LocalPosition: {x: 545.1026, y: 80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 704266255}
@@ -32383,7 +32391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917508917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 226.05127, y: 369.076813, z: 0}
+  m_LocalPosition: {x: 546.102539, y: 369.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 149038774}
@@ -32504,7 +32512,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 190
+  mText: 0
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -33225,7 +33233,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972581486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 202.05127, y: 438.076813, z: 0}
+  m_LocalPosition: {x: 522.102539, y: 438.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2043064369}
@@ -33939,7 +33947,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2042349290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -416.076813, z: 0}
+  m_LocalPosition: {x: 6.10351562e-05, y: -416.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 790077033}
@@ -34239,7 +34247,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2053308727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -416.076813, z: 1}
+  m_LocalPosition: {x: 6.10351562e-05, y: -416.076813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1160237235}
@@ -34667,7 +34675,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068042673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -278.551147, y: 438.576813, z: 0}
+  m_LocalPosition: {x: -598.602539, y: 438.576813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308300327}
@@ -34941,7 +34949,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078758859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.958408356, y: 347.076813, z: 0}
+  m_LocalPosition: {x: -.958351135, y: 347.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1483861604}
@@ -35332,7 +35340,7 @@ Transform:
   m_PrefabInternal: {fileID: 1111340593}
   m_GameObject: {fileID: 2113470916}
   m_LocalRotation: {x: 0, y: 0, z: -.707106292, w: .707107246}
-  m_LocalPosition: {x: -0, y: 0, z: .611563921}
+  m_LocalPosition: {x: -0, y: 0, z: -2.66796899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2031132433}
@@ -35661,7 +35669,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2127129623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -416.076813, z: 1}
+  m_LocalPosition: {x: 6.10351562e-05, y: -416.076813, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1280403409}
@@ -36020,7 +36028,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2140445565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.1369629, y: 0, z: 0}
+  m_LocalPosition: {x: -346.188354, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1182086175}

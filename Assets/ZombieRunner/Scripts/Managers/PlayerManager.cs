@@ -12,6 +12,7 @@ namespace Runner
             Distance = 0;
 			isJumpPowerUp = false;
 			isRevive = false;
+			isStart = true;
             PlayerData.PlatformTypeRemainingDistance = 0.0f;
 
             Camera.main.transform.parent = null;
@@ -56,7 +57,10 @@ namespace Runner
 		[HideInInspector]
 		public bool isRevive;
 		[HideInInspector]
+		public bool isStart;
+		[HideInInspector]
 		public Vector3 defaultCameraPosition;
+		private Vector3 startCameraPosition = new Vector3(0, 10, -11);
 
 		public static int[] levels;
 		public static int[] defaultLevels = new int[]{1, 1, 0, 0, 0};
@@ -64,6 +68,7 @@ namespace Runner
         public override void Initialize()
         {
             defaultCameraPosition = Camera.main.transform.position;
+			isStart = true;
         }
 		
 		public float Speed
@@ -143,7 +148,7 @@ namespace Runner
 				currentList[0].gameObject.transform.parent = game.transform;
 				
 				Camera.main.transform.parent = currentList[0].gameObject.transform;
-				Camera.main.transform.localPosition = defaultCameraPosition;
+				Camera.main.transform.localPosition = startCameraPosition;
 
 				Destroy(go);
 
@@ -173,7 +178,7 @@ namespace Runner
 			}
 
 			Camera.main.transform.parent = currentList[0].gameObject.transform;
-			Camera.main.transform.localPosition = defaultCameraPosition;
+			Camera.main.transform.localPosition = startCameraPosition;
 		}
 		
 		public Runner.PlayerController GetById(int id)
@@ -245,6 +250,18 @@ namespace Runner
 			SideScrollSpeed = this.sideScrollSpeed;
 			MinimumSpeed = this.minimumSpeed;
 			SpeedDistanceMultiply = this.speedDistanceMultiply;
+
+			if(States.Current == State.GAME && isStart)
+			{
+				if(Camera.main.transform.localPosition != defaultCameraPosition)
+				{
+					Camera.main.transform.localPosition = Vector3.MoveTowards(Camera.main.transform.position, defaultCameraPosition, 100f * Time.deltaTime);
+				}
+				else
+				{
+					isStart = false;
+				}
+			}
 		}
 		
 	}

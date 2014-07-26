@@ -14,6 +14,7 @@ namespace Runner
 		private const string DEATH = "Death";
 		private const string IDLE = "Idle";
 		private const string SKATE = "Skate";
+		private const string START = "Start";
 
 		public float animationOffset = 0.0f;
 
@@ -29,9 +30,10 @@ namespace Runner
 			animation[DEATH].wrapMode = WrapMode.ClampForever;
 			animation[SLIDE].wrapMode = WrapMode.Loop;
 			animation[SKATE].wrapMode = WrapMode.Loop;
+			animation[START].wrapMode = WrapMode.Loop;
 
 			if(Player.isStop)
-				idle();
+				start();
 			else
 				run();
         }
@@ -45,6 +47,7 @@ namespace Runner
 			animation[SLIDE_RIGHT].speed = speed;
 			animation[SLIDE_LEFT].speed = speed;
 			animation [SKATE].speed = speed;
+			animation [START].speed = speed;
 		}
 
         public void idle()
@@ -109,6 +112,13 @@ namespace Runner
 			if(current == DEATH) return;
 			current = DEATH;
 			animation.Play(DEATH);
+		}
+
+		public void start()
+		{
+			if(current == START) return;
+			current = START;
+			animation.Play(START);
 		}
     }
 }
