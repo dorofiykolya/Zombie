@@ -23,12 +23,6 @@ public class Preloader : MonoBehaviour
 		preloder.padding.left = preloder.padding.right = (int)(Screen.height * 0.75f - Screen.width) / 2;
 		hintId = Random.Range (0, hints.Length - 1);
 
-		StartCoroutine (LoadLevel());
-	}
-
-	private IEnumerator LoadLevel()
-	{
-		yield return new WaitForSeconds (3);
 		loadOp = Application.LoadLevelAsync("Game");
 	}
 

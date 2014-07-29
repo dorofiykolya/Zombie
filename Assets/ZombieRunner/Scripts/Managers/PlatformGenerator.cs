@@ -31,6 +31,10 @@ namespace Runner
 			
 		public void Generate(float speed, Runner.PlayerController player)
 		{
+			if(PlayerData.tutorial == 0 && tutorialCount == 0)
+			{
+				PlayerData.PlatformType = 0;
+			}
 			Runner.PlatformObject platform = _platforms.Last;
 			bool isStartPlatform = false;
 			if(platform == null)

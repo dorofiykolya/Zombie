@@ -43,8 +43,8 @@ namespace Runner
             Platforms = new LocationChildren(PlatformContainer, DisposedPlatformContainer, PlatformsManager);
             DisposedManager = new LocationDisposeManager(Platforms);
             Generator = new PlatformGenerator(Platforms, DisposedManager, Player, PlatformsManager);
-            
-            PlayerData.PlatformType = 0;
+
+			PlayerData.PlatformType = 1;
 
             DisposeDistance = SetDisposeDistance;
             MinDisposeMultiply = SetMinDisposeMultiply;

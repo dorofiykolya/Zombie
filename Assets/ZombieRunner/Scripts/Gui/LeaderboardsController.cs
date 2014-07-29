@@ -32,7 +32,7 @@ namespace Runner
 
 		private IEnumerator CreatePlayer()
 		{
-			string query = string.Format("http://red-clove.com.ua/modules/runner_create.php?id={0}&score={1}&realname={2}", PlayerData.playerID, PlayerData.Distance, PlayerData.realName);
+			string query = string.Format("http://gamearx.net/runner_create.php?id={0}&score={1}&realname={2}", PlayerData.playerID, PlayerData.Distance, PlayerData.realName);
 			WWW www = new WWW(query);
 			yield return www;
 			if(www.text == "1")
@@ -44,7 +44,7 @@ namespace Runner
 
 		private IEnumerator GetLeaders()
 		{
-			string query = string.Format("http://red-clove.com.ua/modules/runner_score.php?id={0}&score={1}&realname={2}", PlayerData.playerID, PlayerData.Distance, PlayerData.realName);
+			string query = string.Format("http://gamearx.net/runner_score.php?id={0}&score={1}&realname={2}", PlayerData.playerID, PlayerData.Distance, PlayerData.realName);
 			WWW www = new WWW(query);
 			yield return www;
 			var array = www.text.Split(new string[]{"playerPosition"}, System.StringSplitOptions.None);

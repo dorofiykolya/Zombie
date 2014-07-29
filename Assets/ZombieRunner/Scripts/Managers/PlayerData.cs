@@ -11,7 +11,7 @@ namespace Runner
 		public static int Distance = 0;
 		private static int BrainsAmount = 0;
 		public static int CharacterId = 0;
-		public static int PlatformType = 0;
+		public static int PlatformType = 1;
 		public static float PlatformTypeRemainingDistance = 0;
 		public static float MaxDistance = 0;
 		public static int missionMulti = 0;

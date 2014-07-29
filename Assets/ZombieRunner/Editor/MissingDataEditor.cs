@@ -69,7 +69,7 @@ namespace Runner
 		{
 			if(gameObject.CompareTag("Bonus"))
 			{
-				gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 5, gameObject.transform.localPosition.y);
+				gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 5, gameObject.transform.localPosition.z);
 			}
 			
 			foreach (Transform child in gameObject.transform) 
