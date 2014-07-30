@@ -45,7 +45,7 @@ namespace Runner
 		
 		void Update()
 		{
-            if (States.Current == State.LOSE || States.Current == State.LOAD || Camera.main.transform.localPosition != Player.defaultCameraPosition)
+            if (States.Current == State.LOSE || States.Current == State.LOAD || Player.isStart)
 			{
 				return;
 			}

@@ -27,6 +27,15 @@ namespace Runner
 		{
 			_next = null;
 			tutorialCount = 0;
+
+			if(PlayerData.tutorial == 0 && tutorialCount == 0)
+			{
+				PlayerData.PlatformType = 0;
+			}
+			else
+			{
+				PlayerData.PlatformType = 1;
+			}
 		}
 			
 		public void Generate(float speed, Runner.PlayerController player)
