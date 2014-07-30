@@ -766,6 +766,10 @@ namespace Runner
                 price *= Player.GetGoldBonus();
 
 				Missions.Dispatch("gatherbrain", price);
+				if(ID == 1)
+				{
+					Missions.Dispatch("gatherbrainjessy", price);
+				}
                 PlayerData.SetBrains(price);
 				Currency.goldCount += price;
 				Currency.showEatBrains(price);
@@ -775,6 +779,14 @@ namespace Runner
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{
+					for(int i = 0; i < Player.currentList.Count; i++)
+					{
+						if(Player.currentList[i].ID == 2 && human.ID == 2)
+						{
+							return;
+						}
+					}
+
 					Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(human.ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();
