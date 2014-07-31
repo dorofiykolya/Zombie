@@ -146,8 +146,7 @@ namespace Runner
 
 				currentList[0].Initialize();
 				currentList[0].gameObject.transform.parent = game.transform;
-				
-				Camera.main.transform.parent = currentList[0].gameObject.transform;
+
 				Camera.main.transform.localPosition = startCameraPosition;
 
 				Destroy(go);
@@ -177,7 +176,6 @@ namespace Runner
 				currentList[i].gameObject.transform.parent = game.transform;
 			}
 
-			Camera.main.transform.parent = currentList[0].gameObject.transform;
 			Camera.main.transform.localPosition = startCameraPosition;
 		}
 		

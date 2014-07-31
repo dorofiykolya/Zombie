@@ -8749,8 +8749,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 4, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500004
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8773,8 +8773,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500008
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8833,8 +8833,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500018
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8845,8 +8845,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500020
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8941,8 +8941,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500036
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8977,8 +8977,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500042
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -8989,8 +8989,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500044
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9013,8 +9013,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500048
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9037,8 +9037,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 6, z: 2}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Size: {x: 2, y: 10, z: 2}
+  m_Center: {x: 0, y: 5, z: 10}
 --- !u!65 &6500052
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9091,11 +9091,7 @@ Animation:
   m_Animations:
   - {fileID: 7400018, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400004, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400002, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400006, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400008, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400010, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400012, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9108,16 +9104,11 @@ Animation:
   m_GameObject: {fileID: 100116}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
+  m_Animation: {fileID: 7400018, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_Animations:
   - {fileID: 7400018, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400002, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400004, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400006, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400008, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400010, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400012, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400000, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9134,11 +9125,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400002, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400004, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400006, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400008, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400010, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400012, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9155,11 +9142,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400002, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400004, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   - {fileID: 7400006, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400008, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400010, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
-  - {fileID: 7400012, guid: 025f808934b7246d796f4d5f8f0d7ad3, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9176,11 +9159,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400002, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400004, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400006, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400008, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400010, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400012, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9197,11 +9176,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400002, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400004, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400006, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400008, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400010, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400012, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9214,16 +9189,11 @@ Animation:
   m_GameObject: {fileID: 100458}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
+  m_Animation: {fileID: 7400018, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_Animations:
   - {fileID: 7400018, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400002, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400004, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   - {fileID: 7400006, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400008, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400010, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400012, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
-  - {fileID: 7400000, guid: dede94f0d9a814c5e85e77cd69412fda, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9240,11 +9210,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400002, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400004, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   - {fileID: 7400006, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400008, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400010, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
-  - {fileID: 7400012, guid: b8ec031a2fba3439290cbcb302d6c3c9, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9261,12 +9227,7 @@ Animation:
   m_Animations:
   - {fileID: 7400018, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400004, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400002, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   - {fileID: 7400006, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400008, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400010, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400012, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
-  - {fileID: 7400000, guid: 24660f8e543874af0be77e9d59338e9e, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

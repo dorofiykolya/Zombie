@@ -239,8 +239,6 @@ namespace Runner
 					targetPosition.y = 5;
 					transform.position = Vector3.MoveTowards(transform.position, TargetPosition, glideSpeed * Time.fixedDeltaTime * speed);
 				}
-
-				Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - transform.position.y, Player.defaultCameraPosition.z);
 			}
 
 			//change waypoint
@@ -253,6 +251,12 @@ namespace Runner
 
 				targetPosition.y = transform.position.y;
 				transform.position = Vector3.MoveTowards(transform.position, TargetPosition, sideScrollSpeed * Time.fixedDeltaTime * speed);
+				if(isPatientZero)
+				{
+					Camera.main.transform.localPosition = Vector3.MoveTowards(Camera.main.transform.position, 
+				                                                          new Vector3(TargetPosition.x, Camera.main.transform.localPosition.y, Camera.main.transform.localPosition.z),
+				                                                          sideScrollSpeed * Time.fixedDeltaTime * speed);
+				}
             }
 
 			//jump
@@ -269,10 +273,6 @@ namespace Runner
 
 				targetPosition.y = fCurrentHeight;
 				transform.position = new Vector3(transform.position.x, fCurrentHeight, transform.position.z);
-				if(isPatientZero)  
-				{
-					Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
-				}
 			}
 
 			if(bJumpFlag == true)
@@ -306,8 +306,6 @@ namespace Runner
 				}
 
                 bridgeHeight = Vector3.MoveTowards(bridgeHeight, TargetPosition, (Player.isJumpPowerUp ? 8 : 5) * Time.fixedDeltaTime * speed);
-
-                Camera.main.transform.localPosition = new Vector3(Player.defaultCameraPosition.x, Player.defaultCameraPosition.y - fCurrentHeight, Player.defaultCameraPosition.z);
 
 				if(!bInJump)
 				{
@@ -548,10 +546,6 @@ namespace Runner
 
                     Player.currentList[0].isPatientZero = true;
 					Player.currentList[0].offset = Vector2.zero;
-
-                    Camera.main.transform.parent = Player.currentList[0].gameObject.transform;
-					
-					Camera.main.transform.localPosition = Player.defaultCameraPosition;
 					
 					Destroy(gameObject);
 				}

@@ -12,10 +12,12 @@ namespace Runner
 		private GameObject[] selectList;
 		private Vector2 scrollPosition;
 
-		private Mesh coin;
+		private GameObject copiedComponent;
 
 		void OnGUI()
 		{
+			copiedComponent = EditorGUILayout.ObjectField (copiedComponent, typeof(GameObject)) as GameObject;
+
 			if (GUILayout.Button("ADD"))
 			{
 				AddAnimation();
@@ -67,9 +69,20 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.CompareTag("Bonus"))
+			if(gameObject.name.Contains("Human"))
 			{
-				gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 5, gameObject.transform.localPosition.z);
+				if(gameObject.transform.localPosition.x > 4 && gameObject.transform.localPosition.x < 12)
+				{
+					gameObject.transform.localPosition = new Vector3(8, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+				}
+				else if(gameObject.transform.localPosition.x > -4 && gameObject.transform.localPosition.x < 4)
+				{
+					gameObject.transform.localPosition = new Vector3(0, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+				}
+				else if(gameObject.transform.localPosition.x > -12 && gameObject.transform.localPosition.x < -4)
+				{
+					gameObject.transform.localPosition = new Vector3(-8, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+				}
 			}
 			
 			foreach (Transform child in gameObject.transform) 
