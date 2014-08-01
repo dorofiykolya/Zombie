@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_OSX;UNITY_TEAM_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -68,13 +68,6 @@
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\VortexEffect.cs" />
      <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\DestoryBoom.cs" />
      <Compile Include="Assets\JSON Tests\CSharp\Test_CSharp.cs" />
-     <Compile Include="Assets\Mesh Explosion\Demo\ClickOrTapToExplode.cs" />
-     <Compile Include="Assets\Mesh Explosion\Demo\ReloadScene.cs" />
-     <Compile Include="Assets\Mesh Explosion\Internal\DestroyAfterTime.cs" />
-     <Compile Include="Assets\Mesh Explosion\Internal\DestroyOnFadeCompletion.cs" />
-     <Compile Include="Assets\Mesh Explosion\Internal\Fade.cs" />
-     <Compile Include="Assets\Mesh Explosion\Internal\MeshExplosion.cs" />
-     <Compile Include="Assets\Mesh Explosion\MeshExploder.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -224,7 +217,6 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Locations\ObstaclePowerUp.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Locations\ObstacleType.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Locations\PlatformObject.cs" />
-     <Compile Include="Assets\ZombieRunner\Scripts\Locations\PlayerController.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\AudioManger.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\CameraManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\ComponentManager.cs" />
@@ -240,7 +232,6 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\MissionAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\ShopWindowAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\TutorialAction.cs" />
-     <Compile Include="Assets\ZombieRunner\Scripts\Managers\InputManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LightManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LocationChildren.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LocationDisposeManager.cs" />
@@ -387,7 +378,6 @@
      <None Include="Assets\ShurikenMagic\Shaders\SM_2sided_transparent.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\JSON Tests\TroubleShoot.txt" />
-     <None Include="Assets\Mesh Explosion\Read Me.txt" />
      <None Include="Assets\Assets\Effects\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\ZombieRunner\Assets\Shaders\Diffuse Curve.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />

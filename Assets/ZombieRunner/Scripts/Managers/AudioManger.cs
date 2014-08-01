@@ -4,20 +4,20 @@ namespace Runner
 {
 	public class AudioManger : ComponentManager
 	{
-		public AudioClip[] audio;
+		public AudioClip[] audioclip;
 
 		public AudioSource audioSource;
 		public AudioSource music;
 
 		public void PlaySound(int id)
 		{
-			audioSource.PlayOneShot (audio [id]);
+			audioSource.PlayOneShot (audioclip [id]);
 		}
 
 		public override void Initialize ()
 		{
 			music.loop = true;
-			music.clip = audio [0];
+			music.clip = audioclip [0];
 			music.Play ();
 		}
 	}

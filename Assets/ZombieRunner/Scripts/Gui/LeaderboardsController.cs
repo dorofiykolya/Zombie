@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -54,14 +54,19 @@ namespace Runner
 			for(int i = 0; i < jsonleaders.Count; i++)
 			{
 				slots[i].score.text = jsonleaders[i]["score"];
-				slots[i].name.text = jsonleaders[i]["realname"];
+				slots[i].playername.text = jsonleaders[i]["realname"];
+                if(jsonleaders[i]["realname"] == PlayerData.realName)
+                    slots[i].playername.color = new Color(246, 255, 0);
+                else
+                    slots[i].playername.color = Color.white;
 				slots[i].gameObject.SetActive(true);
 			}
 
 			if(int.Parse(jsonplayer[0]["COUNT(*)"]) > 10)
 			{
 				slots[10].score.text = PlayerData.Distance.ToString();
-				slots[10].name.text = PlayerData.realName;
+				slots[10].playername.text = PlayerData.realName;
+                slots[10].playername.color = new Color(246, 255, 0);
 				slots[10].place.text = jsonplayer[0]["COUNT(*)"];
 				slots[10].gameObject.SetActive(true);
 			}

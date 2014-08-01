@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -317,7 +317,6 @@ public class ShaderQualityWindowEditor : EditorWindow
             {
                 var s = copyShaders[i];
                 var d = copyDistances[i];
-                var q = copyQuality[i];
                 if (d == distance && s == shader)
                 {
                     changed = true;

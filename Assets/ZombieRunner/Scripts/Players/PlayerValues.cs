@@ -35,7 +35,7 @@ namespace Runner
 			{
 				stars.GetChild(i).gameObject.SetActive(true);
 			}
-			for(i = i; i < stars.childCount; i++)
+			for(; i < stars.childCount; i++)
 			{
 				stars.GetChild(i).gameObject.SetActive(false);
 			}
@@ -134,7 +134,7 @@ namespace Runner
 			{
 				stars.GetChild(i).gameObject.SetActive(true);
 			}
-			for(i = i; i < stars.childCount; i++)
+			for(; i < stars.childCount; i++)
 			{
 				stars.GetChild(i).gameObject.SetActive(false);
 			}

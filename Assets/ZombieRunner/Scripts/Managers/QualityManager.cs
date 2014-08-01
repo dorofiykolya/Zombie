@@ -13,7 +13,7 @@ namespace Runner
 		public override void Initialize ()
 		{
 			#if UNITY_IPHONE    
-			switch (iPhoneSettings.generation)
+			switch (iPhone.generation)
 			{
 			case iPhoneGeneration.iPad2Gen:
 			case iPhoneGeneration.iPhone4:

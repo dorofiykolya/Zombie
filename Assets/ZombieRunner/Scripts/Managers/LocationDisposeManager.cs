@@ -41,7 +41,7 @@ namespace Runner
 				platform = collection[i];
 				if(platform.AllowDispose == false)
 				{
-					if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 219)
+					if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 210)
 					{
 						if(platform.name.Contains(TutorialAction.HUMANS))
 						{

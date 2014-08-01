@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace Runner
@@ -19,6 +19,11 @@ namespace Runner
 			tutorialScenes = _tutorialScenes;
 		}
 
+        void OnEnable()
+        {
+            hideTutorial();
+        }
+
 		public static void showTutorial(string type)
 		{
 			for(int i = 0; i < tutorialScenes.Length; i++)
@@ -36,7 +41,10 @@ namespace Runner
 
 		public static void hideTutorial()
 		{
-			current.SetActive (false);
+            if (current != null)
+            {
+                current.SetActive(false);
+            }
 		}
 	}
 }

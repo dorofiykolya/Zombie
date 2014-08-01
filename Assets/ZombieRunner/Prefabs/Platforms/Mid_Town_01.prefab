@@ -10,9 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
-  - 64: {fileID: 6400000}
   m_Layer: 9
   m_Name: Mid_Town_01
   m_TagString: Untagged
@@ -956,7 +954,6 @@ GameObject:
   - 33: {fileID: 3300004}
   - 23: {fileID: 2300004}
   - 65: {fileID: 6500010}
-  - 114: {fileID: 11400024}
   - 54: {fileID: 5400004}
   - 114: {fileID: 11400022}
   m_Layer: 12
@@ -1012,7 +1009,6 @@ GameObject:
   - 33: {fileID: 3300008}
   - 23: {fileID: 2300008}
   - 65: {fileID: 6500012}
-  - 114: {fileID: 11400032}
   - 54: {fileID: 5400006}
   - 114: {fileID: 11400030}
   m_Layer: 12
@@ -2018,7 +2014,6 @@ GameObject:
   - 33: {fileID: 3300012}
   - 23: {fileID: 2300012}
   - 65: {fileID: 6500022}
-  - 114: {fileID: 11400056}
   - 54: {fileID: 5400012}
   - 114: {fileID: 11400054}
   m_Layer: 12
@@ -2074,7 +2069,6 @@ GameObject:
   - 33: {fileID: 3300016}
   - 23: {fileID: 2300016}
   - 65: {fileID: 6500024}
-  - 114: {fileID: 11400064}
   - 54: {fileID: 5400014}
   - 114: {fileID: 11400062}
   m_Layer: 12
@@ -2095,7 +2089,6 @@ GameObject:
   - 33: {fileID: 3300018}
   - 23: {fileID: 2300018}
   - 65: {fileID: 6500026}
-  - 114: {fileID: 11400068}
   - 54: {fileID: 5400016}
   - 114: {fileID: 11400066}
   m_Layer: 12
@@ -2151,7 +2144,6 @@ GameObject:
   - 33: {fileID: 3300022}
   - 23: {fileID: 2300022}
   - 65: {fileID: 6500028}
-  - 114: {fileID: 11400076}
   - 54: {fileID: 5400018}
   - 114: {fileID: 11400074}
   m_Layer: 12
@@ -2207,7 +2199,6 @@ GameObject:
   - 33: {fileID: 3300026}
   - 23: {fileID: 2300026}
   - 65: {fileID: 6500030}
-  - 114: {fileID: 11400084}
   - 54: {fileID: 5400020}
   - 114: {fileID: 11400082}
   m_Layer: 12
@@ -2263,7 +2254,6 @@ GameObject:
   - 33: {fileID: 3300030}
   - 23: {fileID: 2300030}
   - 65: {fileID: 6500032}
-  - 114: {fileID: 11400092}
   - 54: {fileID: 5400022}
   - 114: {fileID: 11400090}
   m_Layer: 12
@@ -8714,31 +8704,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &6400000
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 05ccba83257153c46a67ddb649878603, type: 3}
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 292.144562, y: 172.115814, z: 640.000366}
-  m_Center: {x: .020324707, y: -40.8917389, z: 1.52587891e-05}
 --- !u!65 &6500002
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -9412,30 +9377,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400024
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9478,30 +9419,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400032
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9656,30 +9573,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9722,30 +9615,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9761,30 +9630,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400068
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9827,30 +9672,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400076
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9893,30 +9714,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400084
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9959,30 +9756,6 @@ MonoBehaviour:
   shaderDistances: []
   shaderQualities: 
   shaderCulling: 1
---- !u!114 &11400092
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 20
-  maxSpeed: 20
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 1
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: .125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!114 &11400094
 MonoBehaviour:
   m_ObjectHideFlags: 1

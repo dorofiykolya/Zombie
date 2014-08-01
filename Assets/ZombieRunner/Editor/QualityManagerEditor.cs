@@ -9,7 +9,6 @@ using UnityEngine;
 [CanEditMultipleObjects]
 public class QualityManagerEditor : UnityEditor.Editor
 {
-    private bool sFoldoutLocationObject = false;
     public override void OnInspectorGUI()
     {
         //GUI.color = ColorEditor.Title;

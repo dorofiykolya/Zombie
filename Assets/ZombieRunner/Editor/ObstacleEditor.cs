@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
-using UnityEngine;
 using Runner;
 [CustomEditor(typeof(Runner.Obstacle))]
 [CanEditMultipleObjects]

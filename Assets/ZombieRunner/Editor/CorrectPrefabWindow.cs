@@ -68,17 +68,7 @@ public class CorrectPrefabWindow : EditorWindow {
 
 	void FixExplode(GameObject go)
 	{
-		var expl = go.GetComponent<MeshExploder> ();
-		
-		if(expl != null)
-		{
-			DestroyImmediate(expl, true);
-		}
-		
-		foreach (var g in go.GetChildren()) 
-		{
-			FixExplode(g);
-		}
+
 	}
 
 	void FixBloom(GameObject go)

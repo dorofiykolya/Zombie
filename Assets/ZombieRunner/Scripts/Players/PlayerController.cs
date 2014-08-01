@@ -20,7 +20,7 @@ namespace Runner
         }
 
         public bool isPatientZero = true;
-        public BoxCollider collider;
+        public BoxCollider colliderBox;
 		public SphereCollider magnet { get; private set; }
 
         public int ID = 0;
@@ -61,6 +61,7 @@ namespace Runner
 
         public float sideScrollSpeed;
         public float slideDuration;
+        private float slideTime;
 
 		[HideInInspector]
 		public float bornTime;
@@ -75,10 +76,12 @@ namespace Runner
 		private bool blink;
 		private float blinkTime;
 
-        public void Initialize()
+        public override void Initialize()
         {
 			offset.x = 0;
 			offset.y = 0;
+
+            slideTime = 0;
 
 			fContactPointY = 0;
 
@@ -190,6 +193,11 @@ namespace Runner
 
 			//update game speed
             speed = Player.Speed / Player.MinimumSpeed;
+
+            if (bInDuck && slideTime <= Time.timeSinceLevelLoad)
+            {
+                slideDurationTimer();
+            }
 
 			//revive
 			if(Player.isRevive && isPatientZero)
@@ -437,17 +445,15 @@ namespace Runner
 
 			am.slide();
 
-			Vector3 height = collider.center;
+			Vector3 height = colliderBox.center;
 			height.y /= 6;
-			collider.center = height;
+			colliderBox.center = height;
 
-			StartCoroutine (slideDurationTimer ());
+            slideTime = Time.timeSinceLevelLoad + slideDuration;
 		}
 
-		private IEnumerator slideDurationTimer ()
+		private void slideDurationTimer ()
 		{
-			yield return new WaitForSeconds(slideDuration);
-
 			bInDuck = false;
 
 			restoreAfterDuck ();
@@ -457,9 +463,9 @@ namespace Runner
 
 		private void restoreAfterDuck()
 		{
-			Vector3 height = collider.center;
+			Vector3 height = colliderBox.center;
 			height.y *= 6;
-			collider.center = height;
+			colliderBox.center = height;
 			
 			if (!isPatientZero)
 				return;
@@ -631,9 +637,6 @@ namespace Runner
 						return;
 					}
 				}
-
-				var targetX = Mathf.Round(other.transform.position.x);
-				var playerX = Mathf.Round(transform.position.x);
 
                 if (Waypoint.currentWP != Waypoint.transitWP && !Player.isJumpPowerUp)
 				{

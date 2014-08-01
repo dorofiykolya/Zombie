@@ -9,12 +9,10 @@ namespace Runner
     public class GameController
     {
         private GameManager game;
-        private Manager manager;
 
         public GameController(GameManager game, Manager manager)
         {
             this.game = game;
-            this.manager = manager;
             AddHandlers();
         }
 

@@ -9,14 +9,7 @@ public class StageCamera : MonoBehaviour
 	public float width = 320.0f;
 	public float height = 480.0f;
 	public Stage stage;
-	private Transform mTransform;
 
-	// Use this for initialization
-	void Start () 
-	{
-		mTransform = transform;
-	}
-	
 	// Update is called once per frame
 	void Update () 
 	{

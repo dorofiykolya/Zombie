@@ -5,7 +5,7 @@ namespace Runner
 {
 	public class LeaderboardSlot : MonoBehaviour 
 	{
-		public UILabel name;
+		public UILabel playername;
 		public UILabel place;
 		public UILabel score;
 	}

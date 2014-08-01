@@ -38,7 +38,6 @@ namespace Runner
 
 		private List<IComponentManager> components = new List<IComponentManager>(2048);
 
-        private GameController gameController;
 
 	    void Awake()
 	    {
@@ -55,7 +54,6 @@ namespace Runner
 			PowerUp = GetComponent<PowerUpManager>();
 			Audio = GetComponent<AudioManger>();
 			Currency = GetComponent<CurrencyManager> ();
-            gameController = new GameController(Game, this);
 
 			var componentManagers = GetComponents<ComponentManager>();
             foreach (var c in componentManagers)

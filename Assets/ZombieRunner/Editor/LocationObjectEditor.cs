@@ -96,7 +96,6 @@ public class LocationObjectEditor : Editor
                     {
                         var s = target.shaderList[i];
                         var d = target.shaderDistances[i];
-                        var q = target.shaderQualities[i];
                         if (d == distance && s == shader)
                         {
                             changed = true;
@@ -294,7 +293,6 @@ public class LocationObjectEditor : Editor
             var len = shaderList.Length;
             for (; i < len; i++)
             {
-                var s = shaderList[i];
                 var d = shaderDistance[i];
                 var q = shaderQuality[i];
                 if (index != i)

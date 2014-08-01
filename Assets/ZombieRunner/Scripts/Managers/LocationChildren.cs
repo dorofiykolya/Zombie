@@ -72,12 +72,10 @@ namespace Runner
 			vectorHelper.Set(0,0,-move);
 			var len = list.Count;
 			Runner.PlatformObject p;
-			float distance;
 			for(var i = 0; i < len; i++)
 			{
 				p = list[i];
 				p.Move(vectorHelper);
-				distance = p.Distance(player);
 			}
 		}
 		

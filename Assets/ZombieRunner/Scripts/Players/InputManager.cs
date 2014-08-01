@@ -104,24 +104,26 @@ namespace Runner
 					switch (sSwipeDirection)
 					{
 						case SwipeDirection.Jump:
-							if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
-							{
-								Missions.Dispatch ("jump", 1);
+                            if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
+                            {
+                                Missions.Dispatch ("jump", 1);
+                                
                                 for (int i = 0; i < Player.currentList.Count; i++)
-								{
+                                {
                                     Player.currentList[i].doJump();
-								}
-							}
+                                }
+                            }
 							break;
 						case SwipeDirection.Duck:
-							if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
-							{
-								Missions.Dispatch ("slide", 1);
-                                for (int i = 0; i < Player.currentList.Count; i++)
-								{
+                            if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
+                            {
+                                Missions.Dispatch ("slide", 1);
+                                
+                                for (int i = Player.currentList.Count - 1; i >= 0; i--)
+                                {
                                     Player.currentList[i].doSlide();
-								}
-							}
+                                }
+                            }
 						break;
 						case SwipeDirection.Left:
                             Waypoint.changeWP(false);

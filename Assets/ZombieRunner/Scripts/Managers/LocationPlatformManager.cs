@@ -12,7 +12,6 @@ namespace Runner
 	{
 		private Runner.PlatformObject[] list;
 		private Runner.PlatformObject[] startList;
-		private Runner.PlatformInfo[] infoList;
 		private Dictionary<int,float> typeDistance;
 		private Dictionary<int,List<int>> tempPlatforms;
 		private List<KeyValuePair<int, float>> typeSortedList;
@@ -37,7 +36,6 @@ namespace Runner
 				var size = Vector3.zero;
 				if(render == null)
 				{
-					List<Renderer> rList = new List<Renderer>();
 					var children = p.gameObject.GetChildren();
 					
 					var renders = from GameObject rl in children
@@ -143,8 +141,7 @@ namespace Runner
 				
 				outDic.Add(p.TypeTo, p);
 			}
-			
-			var checkResult = CheckTransitionCount(checkList.Count);
+
 			if(checkList.Count != list.Length)
 			{
 				ErrorManager.Show("Error", string.Format("LocationManager ParsePlatformTransition list is not correct"));
@@ -163,7 +160,6 @@ namespace Runner
 		
 		private void ParseInfo(Runner.PlatformInfo[] info)
 		{
-			infoList = info;
 			typeDistance = new Dictionary<int, float>(info.Length);
 			foreach(var i in info)
 			{

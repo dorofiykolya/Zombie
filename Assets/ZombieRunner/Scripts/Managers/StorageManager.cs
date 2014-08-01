@@ -13,6 +13,8 @@ namespace Runner
     {
 		void Awake()
 		{
+            Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
+
 			Load ();
 
 			if(PlayerData.playerID == "")
