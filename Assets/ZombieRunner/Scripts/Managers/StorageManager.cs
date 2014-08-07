@@ -15,7 +15,7 @@ namespace Runner
 		{
             Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
 
-			Load ();
+            Load ();
 
 			if(PlayerData.playerID == "")
 			{

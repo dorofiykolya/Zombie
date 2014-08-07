@@ -22,6 +22,7 @@ namespace Runner
 		public UILabel price;
 		public UILabel desc;
 		public UISprite lockIcon;
+        public Transform stars;
 
 		private string descText;
 
@@ -68,9 +69,19 @@ namespace Runner
 			descText = desc.text;
 			
 			if(current != 3)
-				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " сек)";
+				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " м)";
+				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
+
+            int i;
+            for(i = 0; i < PowerUpManager.levels[current]; i++)
+            {
+                stars.GetChild(i).gameObject.SetActive(true);
+            }
+            for(; i < stars.childCount; i++)
+            {
+                stars.GetChild(i).gameObject.SetActive(false);
+            }
 		}
 
 		void OnClick()
@@ -122,9 +133,9 @@ namespace Runner
 			}
 
 			if(current != 3)
-				desc.text = descText + " (длится " + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " сек)";
+				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
 			else
-				desc.text = descText + " (" + PowerUp.List [current].effect [PowerUpManager.levels[current]] + " м)";
+				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
 
 			StorageManager.Save ();
 			Audio.PlaySound (17);
@@ -132,6 +143,15 @@ namespace Runner
 			{
 				lockIcon.gameObject.SetActive(false);
 			}
+            int i;
+            for(i = 0; i < PowerUpManager.levels[current]; i++)
+            {
+                stars.GetChild(i).gameObject.SetActive(true);
+            }
+            for(; i < stars.childCount; i++)
+            {
+                stars.GetChild(i).gameObject.SetActive(false);
+            }
 		}
 	}
 }

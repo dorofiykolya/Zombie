@@ -25,9 +25,33 @@ namespace Runner
 		public UILabel desc;
 		public UILabel price;
 
+        private string[] russian = new string[]{
+            "Увеличивает лимит зомби в группе. Максимальное число зомби:",
+            "Добавляет значение к множителю очков. Добавляет:",
+            "Удваивает значение получаемых мозгов. Вы можете иметь только одного толстяка в группе. Живет (сек):",
+            "Увеличивает шанс появления бонусов. Увеличивает на:",
+            "Ломает препятствия. Ломает:"
+        };
+
+        private string[] english = new string[]{
+            "Increases the amount of zombies in party. Max amount of zombies:",
+            "Adds value to score multiplier. Adds:",
+            "Doubles the value of brains that he gathers. You can have only one fatso at a time. Lives (sec):",
+            "Increases the chance of power-ups. Increases on:",
+            "Can break the obstacles. Breaks:"
+        };
+
 		void Start ()
 		{
-			desc.text = "Увеличивает лимит зомби в группе\r\n(Макс. кол-во зомби: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
+            if (Localization.language == "English")
+            {
+                desc.text = english[0] + " " + Player.collection[player].prefs[PlayerManager.levels[player]];
+            } 
+            else if (Localization.language == "Russian")
+            {
+                desc.text = russian[0] + " " + Player.collection[player].prefs[PlayerManager.levels[player]];
+            }
+			
 			price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
 
 			int i;
@@ -138,30 +162,16 @@ namespace Runner
 			{
 				stars.GetChild(i).gameObject.SetActive(false);
 			}
-
-			switch(player)
-			{
-				case 0:
-					desc.text = "Увеличивает лимит зомби в группе\r\n(Макс. кол-во зомби: " + Player.collection[player].prefs[PlayerManager.levels[player]] + ")";
-					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
-					break;
-				case 1:
-					desc.text = "Добавляет значение к множителю очков\r\n(Добавляет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "x)";
-					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
-					break;
-				case 2:
-					desc.text = "Увеличивает на 2 кол-во подбираемых мозгов\r\n(Живет: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "с)";
-					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
-					break;
-				case 3:
-					desc.text = "Увеличивает шанс появления бонусов\r\n(+" + Player.collection[player].prefs[PlayerManager.levels[player]] + "%)";
-					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
-					break;
-				case 4:
-					desc.text = "Ломает препятствия\r\n(Сила: " + Player.collection[player].prefs[PlayerManager.levels[player]] + "ударов)";
-					price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
-					break;
-			}
+            if (Localization.language == "English")
+            {
+                desc.text = english[player] + " " + Player.collection[player].prefs[PlayerManager.levels[player]];
+                price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Done" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
+            } 
+            else if (Localization.language == "Russian")
+            {
+                desc.text = russian[player] + " " + Player.collection[player].prefs[PlayerManager.levels[player]];
+                price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Done" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
+            }
 		}
 	}
 }

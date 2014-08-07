@@ -15,7 +15,9 @@ namespace Runner
 		Credits,
 		Home,
 		Back,
-		Revive
+		Revive,
+        Eng,
+        Ru
 	}
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
@@ -108,6 +110,12 @@ namespace Runner
 					GUIPanelManager.Get(PanelType.GameMenu).Show();
 					GUIPanelManager.currentPanel = PanelType.GameMenu;
 					break;
+                case GUIAction.Eng:
+                    Localization.language = "English";
+                    break;
+                case GUIAction.Ru:
+                    Localization.language = "Russian";
+                    break;
 			}
 
 			Audio.PlaySound (12);

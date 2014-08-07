@@ -41,7 +41,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: ba1337a57a504470ab0e6d9fc4090601, type: 2}
   mSprites:
   - name: back
-    x: 1107
+    x: 1554
     y: 1594
     width: 60
     height: 58
@@ -67,8 +67,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: board_shop_icon
-    x: 1719
-    y: 1730
+    x: 509
+    y: 148
     width: 95
     height: 92
     borderLeft: 0
@@ -80,8 +80,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: board_shop_icon_new
-    x: 513
-    y: 255
+    x: 523
+    y: 645
     width: 95
     height: 92
     borderLeft: 0
@@ -93,8 +93,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: board_shop_locked_icon_new
-    x: 509
-    y: 148
+    x: 513
+    y: 255
     width: 95
     height: 92
     borderLeft: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     paddingTop: 89
     paddingBottom: 91
   - name: brains_amount_icon_shop
-    x: 576
-    y: 945
+    x: 492
+    y: 351
     width: 48
     height: 42
     borderLeft: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 2
   - name: character_screen_button
-    x: 1020
+    x: 1173
     y: 1853
     width: 189
     height: 97
@@ -158,8 +158,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: coins_placeholder
-    x: 1861
-    y: 1839
+    x: 1777
+    y: 1705
     width: 168
     height: 58
     borderLeft: 0
@@ -183,11 +183,11 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: explosive_shop_icon
-    x: 634
-    y: 1560
-    width: 95
-    height: 92
+  - name: ENG
+    x: 1020
+    y: 1899
+    width: 152
+    height: 149
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: explosive_shop_locked_icon
+  - name: explosive_shop_icon
     x: 730
     y: 1560
     width: 95
@@ -209,8 +209,21 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: explosive_shop_locked_icon
+    x: 826
+    y: 1560
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: fatso
-    x: 770
+    x: 1042
     y: 1672
     width: 135
     height: 150
@@ -223,7 +236,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: few_brains
-    x: 921
+    x: 1114
     y: 1561
     width: 94
     height: 91
@@ -249,7 +262,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 1
   - name: great_pile_of_brains
-    x: 826
+    x: 1209
     y: 1561
     width: 94
     height: 91
@@ -262,8 +275,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: greater_pile_of_brains
-    x: 1600
-    y: 1672
+    x: 1304
+    y: 1561
     width: 94
     height: 91
     borderLeft: 0
@@ -275,7 +288,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: home_screen_button
-    x: 1020
+    x: 1173
     y: 1951
     width: 209
     height: 97
@@ -314,8 +327,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: magnet_shop_icon
-    x: 1911
-    y: 1730
+    x: 1018
+    y: 1560
     width: 95
     height: 92
     borderLeft: 0
@@ -327,8 +340,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: magnet_shop_locked_icon
-    x: 1815
-    y: 1730
+    x: 922
+    y: 1560
     width: 95
     height: 92
     borderLeft: 0
@@ -340,8 +353,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: manager
-    x: 1861
-    y: 1898
+    x: 770
+    y: 1672
     width: 135
     height: 150
     borderLeft: 0
@@ -353,8 +366,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: marine
-    x: 1725
-    y: 1898
+    x: 906
+    y: 1672
     width: 135
     height: 150
     borderLeft: 0
@@ -366,7 +379,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: mission_screen_button
-    x: 906
+    x: 1178
     y: 1725
     width: 189
     height: 97
@@ -379,20 +392,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: missions_progress_bar_33_percent
-    x: 1230
-    y: 1881
-    width: 494
-    height: 41
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: missions_progress_bar_66_percent
-    x: 1230
+    x: 1383
     y: 1923
     width: 494
     height: 41
@@ -404,9 +404,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: missions_progress_bar_full
-    x: 1230
+  - name: missions_progress_bar_66_percent
+    x: 1383
     y: 1965
+    width: 494
+    height: 41
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: missions_progress_bar_full
+    x: 1383
+    y: 2007
     width: 494
     height: 41
     borderLeft: 0
@@ -431,7 +444,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: multiplier_background
-    x: 1168
+    x: 1615
     y: 1594
     width: 60
     height: 58
@@ -444,8 +457,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pause
-    x: 1725
-    y: 1834
+    x: 1490
+    y: 1589
     width: 63
     height: 63
     borderLeft: 0
@@ -457,7 +470,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: pile_of_brains
-    x: 1505
+    x: 1946
     y: 1672
     width: 94
     height: 91
@@ -483,7 +496,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: podlozhka_for_amount_of_brains
-    x: 1096
+    x: 1368
     y: 1760
     width: 279
     height: 62
@@ -496,8 +509,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: podlozhka_for_missions_bar
-    x: 1230
-    y: 2007
+    x: 1383
+    y: 1881
     width: 494
     height: 41
     borderLeft: 0
@@ -509,8 +522,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: professor
-    x: 440
-    y: 837
+    x: 1878
+    y: 1856
     width: 135
     height: 150
     borderLeft: 0
@@ -521,8 +534,21 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: RU
+    x: 440
+    y: 838
+    width: 152
+    height: 149
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: score_placeholder
-    x: 1505
+    x: 1777
     y: 1764
     width: 213
     height: 58
@@ -535,10 +561,10 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: settings
-    x: 1789
-    y: 1832
-    width: 60
-    height: 65
+    x: 1020
+    y: 1827
+    width: 66
+    height: 71
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -548,7 +574,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_icon_placeholder
-    x: 1270
+    x: 1542
     y: 1672
     width: 86
     height: 87
@@ -561,7 +587,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_icon_placeholder_revers
-    x: 1016
+    x: 1399
     y: 1564
     width: 90
     height: 88
@@ -600,7 +626,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shop_screen_button
-    x: 1376
+    x: 1648
     y: 1725
     width: 128
     height: 97
@@ -626,8 +652,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: star
-    x: 576
-    y: 869
+    x: 593
+    y: 912
     width: 38
     height: 36
     borderLeft: 0
@@ -639,8 +665,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: star_background
-    x: 576
-    y: 906
+    x: 593
+    y: 949
     width: 40
     height: 38
     borderLeft: 0
@@ -651,7 +677,33 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: star_background1
+    x: 593
+    y: 881
+    width: 30
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: star_shop_icon
+    x: 634
+    y: 1560
+    width: 95
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: star_shop_locked_icon
     x: 509
     y: 41
     width: 95
@@ -664,11 +716,11 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: star_shop_locked_icon
-    x: 523
-    y: 645
-    width: 95
-    height: 92
+  - name: star1
+    x: 593
+    y: 852
+    width: 28
+    height: 28
     borderLeft: 0
     borderRight: 0
     borderTop: 0
@@ -691,19 +743,6 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: tabbar_active
-    x: 1096
-    y: 1672
-    width: 173
-    height: 87
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
-  - name: tabbar_deactive
     x: 811
     y: 1826
     width: 173
@@ -716,9 +755,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: tabbar_deactive
+    x: 1368
+    y: 1672
+    width: 173
+    height: 87
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: toggle_arrow
-    x: 1230
-    y: 1824
+    x: 1087
+    y: 1842
     width: 77
     height: 56
     borderLeft: 0
