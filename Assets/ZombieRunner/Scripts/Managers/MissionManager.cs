@@ -92,7 +92,7 @@ namespace Runner
 				}
 				else
 				{
-					visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = queue.CurrentMissions[0].Description + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
+                    visualMissions[index].transform.FindChild("Label").GetComponent<UILabel>().text = (Localization.language == "Russian" ? queue.CurrentMissions[0].Description : queue.CurrentMissions[0].DescriptionEnglish) + " " + queue.CurrentMissions[0].Current + "/" + queue.CurrentMissions[0].Target;
 					visualMissions[index].transform.FindChild("Button").GetComponent<MissionAction>().mission = queue.CurrentMissions[0];
 				}
 

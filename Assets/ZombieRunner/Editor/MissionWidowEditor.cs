@@ -136,6 +136,7 @@ namespace Runner
                     mission.Id = EditorGUILayout.TextField("Id", mission.Id);
                     mission.Name = EditorGUILayout.TextField("Name", mission.Name);
                     mission.Description = EditorGUILayout.TextField("Description", mission.Description);
+                    mission.DescriptionEnglish = EditorGUILayout.TextField("Description English", mission.DescriptionEnglish);
                     mission.Image = EditorGUILayout.TextField("Image", mission.Image);
                     mission.Target = EditorGUILayout.FloatField("Target", mission.Target);
                     EditorGUILayout.LabelField("Current", mission.Current.ToString());

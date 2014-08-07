@@ -12,6 +12,7 @@ namespace Runner
         public string Id;
         public string Name;
         public string Description;
+        public string DescriptionEnglish;
         public string Image;
         public float Current;
         public float Target;

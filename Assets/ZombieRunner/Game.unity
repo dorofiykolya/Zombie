@@ -705,6 +705,7 @@ MonoBehaviour:
     Id: 
     Name: 
     Description: 
+    DescriptionEnglish: 
     Image: 
     Current: 0
     Target: 0
@@ -4272,7 +4273,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224898051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20, y: 7, z: 0}
+  m_LocalPosition: {x: -20, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 675828626}
@@ -4489,6 +4490,7 @@ MonoBehaviour:
     Id: 
     Name: 
     Description: 
+    DescriptionEnglish: 
     Image: 
     Current: 0
     Target: 0
@@ -4621,7 +4623,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 230729451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 4, z: 0}
+  m_LocalPosition: {x: -7, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1366202507}
@@ -6901,7 +6903,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .674489796
+  aspectRatio: 1.32653058
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: back
   mType: 1
@@ -9312,7 +9314,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.90625
+  aspectRatio: 15.90625
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -9863,7 +9865,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6.01000023
+  aspectRatio: 12.3999996
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -10774,7 +10776,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.3125
+  aspectRatio: 15.3125
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -13770,7 +13772,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702315821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: 11, z: 0}
+  m_LocalPosition: {x: -14, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1346628003}
@@ -15229,7 +15231,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6.01000023
+  aspectRatio: 12.3999996
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -15611,6 +15613,7 @@ MonoBehaviour:
     Id: 
     Name: 
     Description: 
+    DescriptionEnglish: 
     Image: 
     Current: 0
     Target: 0
@@ -16809,7 +16812,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 833550430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 20, z: 0}
+  m_LocalPosition: {x: -3, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 675828626}
@@ -16857,7 +16860,7 @@ MonoBehaviour:
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
-  mMaxLineCount: 0
+  mMaxLineCount: 1
   mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
@@ -22591,7 +22594,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1179855301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 8, z: 0}
+  m_LocalPosition: {x: -4, y: -10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 251789167}
@@ -24074,7 +24077,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1279862372}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.00006056, y: 22.671875, z: 0}
+  m_LocalPosition: {x: -2.00006056, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 251789167}
@@ -24122,7 +24125,7 @@ MonoBehaviour:
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
-  mMaxLineCount: 0
+  mMaxLineCount: 1
   mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
@@ -28019,7 +28022,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443539513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 27, z: 0}
+  m_LocalPosition: {x: 6, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1346628003}
@@ -28067,7 +28070,7 @@ MonoBehaviour:
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
-  mMaxLineCount: 0
+  mMaxLineCount: 1
   mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
@@ -28476,7 +28479,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.132653
+  aspectRatio: 5.39795923
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: home_screen_button
   mType: 0
@@ -34717,6 +34720,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Jump over 10 obstacles
       Image: 
       Current: 0
       Target: 10
@@ -34726,6 +34730,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
         \u0441 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Jump 10 times being in party with housewife
       Image: 
       Current: 0
       Target: 10
@@ -34734,6 +34739,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -34742,6 +34748,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 8 \u0442\u0430\u043A\u0441\u0438"
+      DescriptionEnglish: Jump over 8 taxis
       Image: 
       Current: 0
       Target: 8
@@ -34750,6 +34757,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade housewife to level 2
       Image: 
       Current: 0
       Target: 2
@@ -34757,6 +34765,7 @@ MonoBehaviour:
     - Id: jump
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 100 \u0440\u0430\u0437"
+      DescriptionEnglish: Jump 100 times
       Image: 
       Current: 0
       Target: 100
@@ -34765,6 +34774,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to level 3
       Image: 
       Current: 0
       Target: 3
@@ -34773,6 +34783,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u0430\u0433\u043D\u0438\u0442
         2 \u0440\u0430\u0437\u0430"
+      DescriptionEnglish: Pick up 2 brain magnets
       Image: 
       Current: 0
       Target: 2
@@ -34781,6 +34792,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade housewife to lvl 3
       Image: 
       Current: 0
       Target: 3
@@ -34788,6 +34800,7 @@ MonoBehaviour:
     - Id: pickupanybonus
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u0435\u043B\u0435\u0439"
+      DescriptionEnglish: Pick up 5 power-ups
       Image: 
       Current: 0
       Target: 5
@@ -34796,6 +34809,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 20 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u043D\u0430 \u043C\u043E\u0441\u0442\u0443"
+      DescriptionEnglish: Jump 20 times on bridge
       Image: 
       Current: 0
       Target: 20
@@ -34804,6 +34818,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade fatso to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -34812,6 +34827,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         40 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump over 40 cars
       Image: 
       Current: 0
       Target: 40
@@ -34820,6 +34836,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         5 \u0431\u043E\u0447\u0435\u043A"
+      DescriptionEnglish: Jump over 5 barrels
       Image: 
       Current: 0
       Target: 5
@@ -34827,6 +34844,7 @@ MonoBehaviour:
     - Id: pickupexplosive
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0438"
+      DescriptionEnglish: Pick up 3 explosive liquids
       Image: 
       Current: 0
       Target: 3
@@ -34835,6 +34853,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade professor to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -34843,6 +34862,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
         15 \u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump on 15 orange cars
       Image: 
       Current: 0
       Target: 15
@@ -34851,6 +34871,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
+      DescriptionEnglish: Pick up 2 magnets playing as housewife
       Image: 
       Current: 0
       Target: 2
@@ -34858,6 +34879,7 @@ MonoBehaviour:
     - Id: jump
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 200 \u0440\u0430\u0437"
+      DescriptionEnglish: Jump 200 times
       Image: 
       Current: 0
       Target: 200
@@ -34865,6 +34887,7 @@ MonoBehaviour:
     - Id: pickupmagnet
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430"
+      DescriptionEnglish: Pick up 2 magnets
       Image: 
       Current: 0
       Target: 2
@@ -34873,6 +34896,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade sergeant to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -34882,6 +34906,7 @@ MonoBehaviour:
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 25 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438\u0445
         \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump over 25 police cars
       Image: 
       Current: 0
       Target: 0
@@ -34890,6 +34915,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to lvl 4
       Image: 
       Current: 0
       Target: 4
@@ -34897,6 +34923,7 @@ MonoBehaviour:
     - Id: pickupstar
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0437\u0432\u0435\u0437\u0434\u044B"
+      DescriptionEnglish: Pick up 3 stars
       Image: 
       Current: 0
       Target: 3
@@ -34910,6 +34937,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 5 signs
       Image: 
       Current: 0
       Target: 5
@@ -34917,6 +34945,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 500 brains
       Image: 
       Current: 0
       Target: 500
@@ -34925,6 +34954,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from 5 SWAT cards
       Image: 
       Current: 0
       Target: 5
@@ -34933,6 +34963,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         40 \u0440\u0430\u0437"
+      DescriptionEnglish: Slide 40 times
       Image: 
       Current: 0
       Target: 40
@@ -34941,6 +34972,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
         \u043E\u0442 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Die 2 times from red cars
       Image: 
       Current: 0
       Target: 2
@@ -34949,6 +34981,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
+      DescriptionEnglish: Collect 1000 brains playing as housewife
       Image: 
       Current: 0
       Target: 1000
@@ -34957,6 +34990,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 \u0431\u043E\u0447\u043A\u043E\u0439"
+      DescriptionEnglish: Slide under the barrel
       Image: 
       Current: 0
       Target: 1
@@ -34965,6 +34999,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 11 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
         \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
+      DescriptionEnglish: Die from 11 traffic cones
       Image: 
       Current: 0
       Target: 11
@@ -34972,6 +35007,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 5000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 5000 brains
       Image: 
       Current: 0
       Target: 5000
@@ -34980,6 +35016,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         50 \u0440\u0430\u0437"
+      DescriptionEnglish: Slide 50 times
       Image: 
       Current: 0
       Target: 50
@@ -34988,6 +35025,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430"
+      DescriptionEnglish: Unlock fatso
       Image: 
       Current: 0
       Target: 1
@@ -34997,6 +35035,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u043C \u043F\u043E\u0434
         5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 5 signs as fatso
       Image: 
       Current: 0
       Target: 5
@@ -35006,6 +35045,7 @@ MonoBehaviour:
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
         \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
         (\u0442\u043E\u043B\u0441\u0442\u044F\u043A \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
+      DescriptionEnglish: Let fatso die without touching obstacles
       Image: 
       Current: 0
       Target: 5
@@ -35014,6 +35054,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
         \u043F\u043E\u043C\u043E\u0449\u0438"
+      DescriptionEnglish: Die from ambulance
       Image: 
       Current: 0
       Target: 1
@@ -35021,6 +35062,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 500 brains
       Image: 
       Current: 0
       Target: 500
@@ -35029,6 +35071,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
+      DescriptionEnglish: Unlock professor
       Image: 
       Current: 0
       Target: 1
@@ -35037,6 +35080,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0414\u0430\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0442\u0430\u043A\u0441\u0438"
+      DescriptionEnglish: Let professor die from taxi
       Image: 
       Current: 0
       Target: 1
@@ -35044,6 +35088,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 10000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 10000 brains
       Image: 
       Current: 0
       Target: 10000
@@ -35052,6 +35097,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430"
+      DescriptionEnglish: unlock sergeant
       Image: 
       Current: 0
       Target: 1
@@ -35061,6 +35107,7 @@ MonoBehaviour:
       Description: "\u0414\u0430\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
+      DescriptionEnglish: Let sergeant die from SWAT car
       Image: 
       Current: 0
       Target: 1
@@ -35069,6 +35116,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
         \u043F\u043E\u043C\u043E\u0449\u0438 5 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from ambulance 5 times
       Image: 
       Current: 0
       Target: 5
@@ -35077,6 +35125,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 40 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 40 signs
       Image: 
       Current: 0
       Target: 40
@@ -35085,6 +35134,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
         10 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from bus 10 times
       Image: 
       Current: 0
       Target: 10
@@ -35094,6 +35144,7 @@ MonoBehaviour:
       Description: "\u0414\u0430\u0442\u044C \u0443\u043C\u0435\u0440\u0435\u0442\u044C
         5 \u0437\u043E\u043C\u0431\u0438 \u0438\u0437 \u0433\u0440\u0443\u043F\u043F\u044B
         \u043D\u043E \u043D\u0435 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u043C\u0443"
+      DescriptionEnglish: Let 5 of your zombies die instead of your main
       Image: 
       Current: 0
       Target: 5
@@ -35106,6 +35157,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: infect 10 humans
       Image: 
       Current: 0
       Target: 10
@@ -35113,6 +35165,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      DescriptionEnglish: Run 2500 m in 1 run
       Image: 
       Current: 0
       Target: 2500
@@ -35120,6 +35173,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
+      DescriptionEnglish: Run 5000 m in 1 run
       Image: 
       Current: 0
       Target: 5000
@@ -35128,6 +35182,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         1 \u0440\u0430\u0437"
+      DescriptionEnglish: Revive once
       Image: 
       Current: 0
       Target: 1
@@ -35135,6 +35190,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 25 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 25 humans
       Image: 
       Current: 0
       Target: 25
@@ -35143,6 +35199,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 3500 \u043C
         \u043F\u043E \u043F\u0440\u0430\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435"
+      DescriptionEnglish: Run 3500 m on the right side
       Image: 
       Current: 0
       Target: 3500
@@ -35150,6 +35207,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 10 humans
       Image: 
       Current: 0
       Target: 10
@@ -35157,6 +35215,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 7500 \u043C"
+      DescriptionEnglish: Run 7500 m in 1 run
       Image: 
       Current: 0
       Target: 7500
@@ -35165,6 +35224,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0438\u0433\u0440\u0430\u044F \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Infect housewife with help of housewife
       Image: 
       Current: 0
       Target: 1
@@ -35172,6 +35232,7 @@ MonoBehaviour:
     - Id: destroyexplosive
       Name: 
       Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 20 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: blow up 20 obstacles
       Image: 
       Current: 0
       Target: 20
@@ -35180,6 +35241,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         2 \u0440\u0430\u0437\u0430"
+      DescriptionEnglish: Revive twice
       Image: 
       Current: 0
       Target: 2
@@ -35187,6 +35249,7 @@ MonoBehaviour:
     - Id: infectfatso
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 5 \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u0432"
+      DescriptionEnglish: Infect 5 fatsos
       Image: 
       Current: 0
       Target: 5
@@ -35195,6 +35258,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Revive with housewife
       Image: 
       Current: 0
       Target: 1
@@ -35202,6 +35266,7 @@ MonoBehaviour:
     - Id: infectprofessor
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 3 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u0432"
+      DescriptionEnglish: Infect 3 professors
       Image: 
       Current: 0
       Target: 3
@@ -35210,6 +35275,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0414\u0430\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0435
         \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Let housewife blow up 5 obstacles
       Image: 
       Current: 0
       Target: 5
@@ -35217,6 +35283,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 50 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 50 humans
       Image: 
       Current: 0
       Target: 50
@@ -35226,6 +35293,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 1000 \u043C\u0435\u0442\u0440\u043E\u0432
         \u043F\u043E \u043B\u0435\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
         \u0434\u043E\u0440\u043E\u0433\u0438"
+      DescriptionEnglish: Run 1000 m on the left side
       Image: 
       Current: 0
       Target: 1000
@@ -35234,6 +35302,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
         \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      DescriptionEnglish: Destroy 5 obstacles with sergeant
       Image: 
       Current: 0
       Target: 5
@@ -35242,6 +35311,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 20000 \u043C
         \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
+      DescriptionEnglish: Run 20000 m with professor
       Image: 
       Current: 0
       Target: 20000
@@ -35249,6 +35319,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 50000 \u043C"
+      DescriptionEnglish: Run 50000 m in 1 run
       Image: 
       Current: 0
       Target: 50000
@@ -35256,6 +35327,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 30 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 30 humans
       Image: 
       Current: 0
       Target: 30
@@ -35265,6 +35337,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u043F\u043E
         \u043B\u0435\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435
         10000 \u043C"
+      DescriptionEnglish: Run 10000 m on the left side
       Image: 
       Current: 0
       Target: 10000
@@ -35273,6 +35346,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
+      DescriptionEnglish: Infect 20 humans by professor
       Image: 
       Current: 0
       Target: 20
@@ -35281,6 +35355,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
         \u0442\u0430\u043A\u0441\u0438 \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u043E\u043C"
+      DescriptionEnglish: Destroy 4 taxis with sergeant
       Image: 
       Current: 0
       Target: 4
@@ -35295,6 +35370,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Jump over 10 obstacles
       Image: 
       Current: 0
       Target: 10
@@ -35304,6 +35380,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u0432 \u0433\u0440\u0443\u043F\u043F\u0435
         \u0441 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Jump 10 times being in party with housewife
       Image: 
       Current: 0
       Target: 10
@@ -35312,6 +35389,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -35320,6 +35398,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 8 \u0442\u0430\u043A\u0441\u0438"
+      DescriptionEnglish: Jump over 8 taxis
       Image: 
       Current: 0
       Target: 8
@@ -35328,6 +35407,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade housewife to level 2
       Image: 
       Current: 0
       Target: 2
@@ -35335,6 +35415,7 @@ MonoBehaviour:
     - Id: jump
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 100 \u0440\u0430\u0437"
+      DescriptionEnglish: Jump 100 times
       Image: 
       Current: 0
       Target: 100
@@ -35343,6 +35424,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to level 3
       Image: 
       Current: 0
       Target: 3
@@ -35351,6 +35433,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u0430\u0433\u043D\u0438\u0442
         2 \u0440\u0430\u0437\u0430"
+      DescriptionEnglish: Pick up 2 brain magnets
       Image: 
       Current: 0
       Target: 2
@@ -35359,6 +35442,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0434\u043E 3 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade housewife to lvl 3
       Image: 
       Current: 0
       Target: 3
@@ -35366,6 +35450,7 @@ MonoBehaviour:
     - Id: pickupanybonus
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 5 \u0443\u043B\u0443\u0447\u0448\u0438\u0442\u0435\u043B\u0435\u0439"
+      DescriptionEnglish: Pick up 5 power-ups
       Image: 
       Current: 0
       Target: 5
@@ -35374,6 +35459,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 20 \u0440\u0430\u0437
         \u043D\u0430\u0445\u043E\u0434\u044F\u0441\u044C \u043D\u0430 \u043C\u043E\u0441\u0442\u0443"
+      DescriptionEnglish: Jump 20 times on bridge
       Image: 
       Current: 0
       Target: 20
@@ -35382,6 +35468,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade fatso to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -35390,6 +35477,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         40 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump over 40 cars
       Image: 
       Current: 0
       Target: 40
@@ -35398,6 +35486,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         5 \u0431\u043E\u0447\u0435\u043A"
+      DescriptionEnglish: Jump over 5 barrels
       Image: 
       Current: 0
       Target: 5
@@ -35405,6 +35494,7 @@ MonoBehaviour:
     - Id: pickupexplosive
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0432\u0437\u0440\u044B\u0432\u0447\u0430\u0442\u043A\u0438"
+      DescriptionEnglish: Pick up 3 explosive liquids
       Image: 
       Current: 0
       Target: 3
@@ -35413,6 +35503,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade professor to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -35421,6 +35512,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C \u043D\u0430
         15 \u043E\u0440\u0430\u043D\u0436\u0435\u0432\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump on 15 orange cars
       Image: 
       Current: 0
       Target: 15
@@ -35429,6 +35521,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
+      DescriptionEnglish: Pick up 2 magnets playing as housewife
       Image: 
       Current: 0
       Target: 2
@@ -35436,6 +35529,7 @@ MonoBehaviour:
     - Id: jump
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 200 \u0440\u0430\u0437"
+      DescriptionEnglish: Jump 200 times
       Image: 
       Current: 0
       Target: 200
@@ -35443,6 +35537,7 @@ MonoBehaviour:
     - Id: pickupmagnet
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 2 \u043C\u0430\u0433\u043D\u0438\u0442\u0430"
+      DescriptionEnglish: Pick up 2 magnets
       Image: 
       Current: 0
       Target: 2
@@ -35451,6 +35546,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430
         \u0434\u043E 2 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade sergeant to lvl 2
       Image: 
       Current: 0
       Target: 2
@@ -35460,6 +35556,7 @@ MonoBehaviour:
       Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
         \u0447\u0435\u0440\u0435\u0437 25 \u043F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0438\u0445
         \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Jump over 25 police cars
       Image: 
       Current: 0
       Target: 0
@@ -35468,6 +35565,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C \u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0430
         \u0434\u043E 4 \u0443\u0440\u043E\u0432\u043D\u044F"
+      DescriptionEnglish: Upgrade manager to lvl 4
       Image: 
       Current: 0
       Target: 4
@@ -35475,6 +35573,7 @@ MonoBehaviour:
     - Id: pickupstar
       Name: 
       Description: "\u041F\u043E\u0434\u043E\u0431\u0440\u0430\u0442\u044C 3 \u0437\u0432\u0435\u0437\u0434\u044B"
+      DescriptionEnglish: Pick up 3 stars
       Image: 
       Current: 0
       Target: 3
@@ -35488,6 +35587,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 5 signs
       Image: 
       Current: 0
       Target: 5
@@ -35495,6 +35595,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 500 brains
       Image: 
       Current: 0
       Target: 500
@@ -35503,6 +35604,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from 5 SWAT cards
       Image: 
       Current: 0
       Target: 5
@@ -35511,6 +35613,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         40 \u0440\u0430\u0437"
+      DescriptionEnglish: Slide 40 times
       Image: 
       Current: 0
       Target: 40
@@ -35519,6 +35622,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 2 \u0440\u0430\u0437\u0430
         \u043E\u0442 \u043A\u0440\u0430\u0441\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+      DescriptionEnglish: Die 2 times from red cars
       Image: 
       Current: 0
       Target: 2
@@ -35527,6 +35631,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 1000 \u043C\u043E\u0437\u0433\u043E\u0432
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443"
+      DescriptionEnglish: Collect 1000 brains playing as housewife
       Image: 
       Current: 0
       Target: 1000
@@ -35535,6 +35640,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 \u0431\u043E\u0447\u043A\u043E\u0439"
+      DescriptionEnglish: Slide under the barrel
       Image: 
       Current: 0
       Target: 1
@@ -35543,6 +35649,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 11 \u0434\u043E\u0440\u043E\u0436\u043D\u044B\u0445
         \u043A\u043E\u043D\u0443\u0441\u043E\u0432"
+      DescriptionEnglish: Die from 11 traffic cones
       Image: 
       Current: 0
       Target: 11
@@ -35550,6 +35657,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 5000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 5000 brains
       Image: 
       Current: 0
       Target: 5000
@@ -35558,6 +35666,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         50 \u0440\u0430\u0437"
+      DescriptionEnglish: Slide 50 times
       Image: 
       Current: 0
       Target: 50
@@ -35566,6 +35675,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u0430"
+      DescriptionEnglish: Unlock fatso
       Image: 
       Current: 0
       Target: 1
@@ -35575,6 +35685,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u043C \u043F\u043E\u0434
         5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 5 signs as fatso
       Image: 
       Current: 0
       Target: 5
@@ -35584,6 +35695,7 @@ MonoBehaviour:
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C 5 \u0440\u0430\u0437
         \u043D\u0435 \u043A\u043E\u0441\u0430\u044F\u0441\u044C \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
         (\u0442\u043E\u043B\u0441\u0442\u044F\u043A \u043F\u043E\u043C\u043E\u0436\u0435\u0442)"
+      DescriptionEnglish: Let fatso die without touching obstacles
       Image: 
       Current: 0
       Target: 5
@@ -35592,6 +35704,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
         \u043F\u043E\u043C\u043E\u0449\u0438"
+      DescriptionEnglish: Die from ambulance
       Image: 
       Current: 0
       Target: 1
@@ -35599,6 +35712,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 500 brains
       Image: 
       Current: 0
       Target: 500
@@ -35607,6 +35721,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
+      DescriptionEnglish: Unlock professor
       Image: 
       Current: 0
       Target: 1
@@ -35615,6 +35730,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0414\u0430\u0442\u044C \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0442\u0430\u043A\u0441\u0438"
+      DescriptionEnglish: Let professor die from taxi
       Image: 
       Current: 0
       Target: 1
@@ -35622,6 +35738,7 @@ MonoBehaviour:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 10000 \u043C\u043E\u0437\u0433\u043E\u0432"
+      DescriptionEnglish: Collect 10000 brains
       Image: 
       Current: 0
       Target: 10000
@@ -35630,6 +35747,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u0442\u044C
         \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0430"
+      DescriptionEnglish: unlock sergeant
       Image: 
       Current: 0
       Target: 1
@@ -35639,6 +35757,7 @@ MonoBehaviour:
       Description: "\u0414\u0430\u0442\u044C \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u0443
         \u0443\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
         \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430"
+      DescriptionEnglish: Let sergeant die from SWAT car
       Image: 
       Current: 0
       Target: 1
@@ -35647,6 +35766,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0441\u043A\u043E\u0440\u043E\u0439
         \u043F\u043E\u043C\u043E\u0449\u0438 5 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from ambulance 5 times
       Image: 
       Current: 0
       Target: 5
@@ -35655,6 +35775,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
         \u043F\u043E\u0434 40 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 40 signs
       Image: 
       Current: 0
       Target: 40
@@ -35663,6 +35784,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u0430\u0432\u0442\u043E\u0431\u0443\u0441\u0430
         10 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from bus 10 times
       Image: 
       Current: 0
       Target: 10
@@ -35672,6 +35794,7 @@ MonoBehaviour:
       Description: "\u0414\u0430\u0442\u044C \u0443\u043C\u0435\u0440\u0435\u0442\u044C
         5 \u0437\u043E\u043C\u0431\u0438 \u0438\u0437 \u0433\u0440\u0443\u043F\u043F\u044B
         \u043D\u043E \u043D\u0435 \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u043C\u0443"
+      DescriptionEnglish: Let 5 of your zombies die instead of your main
       Image: 
       Current: 0
       Target: 5
@@ -35684,6 +35807,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: infect 10 humans
       Image: 
       Current: 0
       Target: 10
@@ -35691,6 +35815,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      DescriptionEnglish: Run 2500 m in 1 run
       Image: 
       Current: 0
       Target: 2500
@@ -35698,6 +35823,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
+      DescriptionEnglish: Run 5000 m in 1 run
       Image: 
       Current: 0
       Target: 5000
@@ -35706,6 +35832,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         1 \u0440\u0430\u0437"
+      DescriptionEnglish: Revive once
       Image: 
       Current: 0
       Target: 1
@@ -35713,6 +35840,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 25 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 25 humans
       Image: 
       Current: 0
       Target: 25
@@ -35721,6 +35849,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 3500 \u043C
         \u043F\u043E \u043F\u0440\u0430\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435"
+      DescriptionEnglish: Run 3500 m on the right side
       Image: 
       Current: 0
       Target: 3500
@@ -35728,6 +35857,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 10 humans
       Image: 
       Current: 0
       Target: 10
@@ -35735,6 +35865,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 7500 \u043C"
+      DescriptionEnglish: Run 7500 m in 1 run
       Image: 
       Current: 0
       Target: 7500
@@ -35743,6 +35874,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0443
         \u0438\u0433\u0440\u0430\u044F \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Infect housewife with help of housewife
       Image: 
       Current: 0
       Target: 1
@@ -35750,6 +35882,7 @@ MonoBehaviour:
     - Id: destroyexplosive
       Name: 
       Description: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C 20 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: blow up 20 obstacles
       Image: 
       Current: 0
       Target: 20
@@ -35758,6 +35891,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         2 \u0440\u0430\u0437\u0430"
+      DescriptionEnglish: Revive twice
       Image: 
       Current: 0
       Target: 2
@@ -35765,6 +35899,7 @@ MonoBehaviour:
     - Id: infectfatso
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 5 \u0442\u043E\u043B\u0441\u0442\u044F\u043A\u043E\u0432"
+      DescriptionEnglish: Infect 5 fatsos
       Image: 
       Current: 0
       Target: 5
@@ -35773,6 +35908,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
         \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u043E\u0439"
+      DescriptionEnglish: Revive with housewife
       Image: 
       Current: 0
       Target: 1
@@ -35780,6 +35916,7 @@ MonoBehaviour:
     - Id: infectprofessor
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 3 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u0432"
+      DescriptionEnglish: Infect 3 professors
       Image: 
       Current: 0
       Target: 3
@@ -35788,6 +35925,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0414\u0430\u0442\u044C \u0434\u043E\u043C\u043E\u0445\u043E\u0437\u044F\u0439\u043A\u0435
         \u0432\u0437\u043E\u0440\u0432\u0430\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Let housewife blow up 5 obstacles
       Image: 
       Current: 0
       Target: 5
@@ -35795,6 +35933,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 50 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 50 humans
       Image: 
       Current: 0
       Target: 50
@@ -35804,6 +35943,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 1000 \u043C\u0435\u0442\u0440\u043E\u0432
         \u043F\u043E \u043B\u0435\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u0435
         \u0434\u043E\u0440\u043E\u0433\u0438"
+      DescriptionEnglish: Run 1000 m on the left side
       Image: 
       Current: 0
       Target: 1000
@@ -35812,6 +35952,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0420\u0430\u0437\u0440\u0443\u0448\u0438\u0442\u044C 5 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439
         \u0441\u043E\u043B\u0434\u0430\u0442\u043E\u043C"
+      DescriptionEnglish: Destroy 5 obstacles with sergeant
       Image: 
       Current: 0
       Target: 5
@@ -35820,6 +35961,7 @@ MonoBehaviour:
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 20000 \u043C
         \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u043E\u043C"
+      DescriptionEnglish: Run 20000 m with professor
       Image: 
       Current: 0
       Target: 20000
@@ -35827,6 +35969,7 @@ MonoBehaviour:
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 50000 \u043C"
+      DescriptionEnglish: Run 50000 m in 1 run
       Image: 
       Current: 0
       Target: 50000
@@ -35834,6 +35977,7 @@ MonoBehaviour:
     - Id: infect
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 30 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: Infect 30 humans
       Image: 
       Current: 0
       Target: 30
@@ -35843,6 +35987,7 @@ MonoBehaviour:
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C \u043F\u043E
         \u043B\u0435\u0432\u043E\u0439 \u0434\u043E\u0440\u043E\u0436\u043A\u0435
         10000 \u043C"
+      DescriptionEnglish: Run 10000 m on the left side
       Image: 
       Current: 0
       Target: 10000
@@ -35851,6 +35996,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 20 \u043B\u044E\u0434\u0435\u0439
         \u0438\u0433\u0440\u0430\u044F \u0437\u0430 \u043F\u0440\u043E\u0444\u0435\u0441\u0441\u043E\u0440\u0430"
+      DescriptionEnglish: Infect 20 humans by professor
       Image: 
       Current: 0
       Target: 20
@@ -35859,6 +36005,7 @@ MonoBehaviour:
       Name: 
       Description: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C 4
         \u0442\u0430\u043A\u0441\u0438 \u0441\u0435\u0440\u0436\u0430\u043D\u0442\u043E\u043C"
+      DescriptionEnglish: Destroy 4 taxis with sergeant
       Image: 
       Current: 0
       Target: 4
@@ -37417,7 +37564,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.93877554
+  aspectRatio: 5.20408154
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: character_screen_button
   mType: 0
@@ -39227,7 +39374,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988477450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 35, z: 0}
+  m_LocalPosition: {x: -5, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1366202507}
@@ -39275,7 +39422,7 @@ MonoBehaviour:
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
-  mMaxLineCount: 0
+  mMaxLineCount: 1
   mEffectStyle: 0
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
