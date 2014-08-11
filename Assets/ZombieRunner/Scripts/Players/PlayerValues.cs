@@ -28,7 +28,7 @@ namespace Runner
         private string[] russian = new string[]{
             "Увеличивает лимит зомби в группе. Максимальное число зомби:",
             "Добавляет значение к множителю очков. Добавляет:",
-            "Удваивает значение получаемых мозгов. Вы можете иметь только одного толстяка в группе. Живет (сек):",
+            "Удваивает значение получаемых мозгов. Живет (сек):",
             "Увеличивает шанс появления бонусов. Увеличивает на:",
             "Ломает препятствия. Ломает:"
         };
@@ -36,7 +36,7 @@ namespace Runner
         private string[] english = new string[]{
             "Increases the amount of zombies in party. Max amount of zombies:",
             "Adds value to score multiplier. Adds:",
-            "Doubles the value of brains that he gathers. You can have only one fatso at a time. Lives (sec):",
+            "Doubles the value of brains that he gathers. Lives (sec):",
             "Increases the chance of power-ups. Increases on:",
             "Can break the obstacles. Breaks:"
         };
@@ -170,7 +170,7 @@ namespace Runner
             else if (Localization.language == "Russian")
             {
                 desc.text = russian[player] + " " + Player.collection[player].prefs[PlayerManager.levels[player]];
-                price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Done" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
+                price.text = PlayerManager.levels[player] == Player.collection[player].prices.Length ? "Готово" : Player.collection[player].prices[PlayerManager.levels[player]].ToString();
             }
 		}
 	}

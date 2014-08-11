@@ -67,7 +67,14 @@ namespace Runner
 
 			if(Player.currentList[0].ID == 2 && Player.currentList.Count == 1 && !Player.isStop)
 			{
-				fatman.text = "Укуси кого-то или умрешь через: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+                if(Localization.language == "Russian")
+                {
+                    fatman.text = "Укуси кого-то или умрешь через: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+                }
+                else if(Localization.language == "English")
+                {
+                    fatman.text = "Bite someone or you will die in: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+                }
 			}
 			else
 			{

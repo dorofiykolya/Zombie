@@ -24,8 +24,6 @@ namespace Runner
 		public UISprite lockIcon;
         public Transform stars;
 
-		private string descText;
-
 		void Start ()
 		{
 			int current = -1;
@@ -65,13 +63,8 @@ namespace Runner
 
 			if (desc == null)
 				return;
-			
-			descText = desc.text;
-			
-			if(current != 3)
-				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
-			else
-				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
+
+            desc.text = PowerUp.List [current].effect [PowerUpManager.levels[current]].ToString();
 
             int i;
             for(i = 0; i < PowerUpManager.levels[current]; i++)
@@ -132,10 +125,7 @@ namespace Runner
 				}
 			}
 
-			if(current != 3)
-				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
-			else
-				desc.text = descText + " " + PowerUp.List [current].effect [PowerUpManager.levels[current]];
+            desc.text = PowerUp.List [current].effect [PowerUpManager.levels[current]].ToString();
 
 			StorageManager.Save ();
 			Audio.PlaySound (17);
