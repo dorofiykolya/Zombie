@@ -13,8 +13,9 @@ namespace Runner
     {
 		void Awake()
 		{
+            #if UNITY_IPHONE
             Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
-
+            #endif
             Load ();
 
 			if(PlayerData.playerID == "")
