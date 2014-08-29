@@ -16,6 +16,7 @@ namespace Runner
 		public static float MaxDistance = 0;
 		public static int missionMulti = 0;
 
+        public static string[] zombieTutorial;
 		public static string playerID;
 		public static string realName;
 		public static int creation;

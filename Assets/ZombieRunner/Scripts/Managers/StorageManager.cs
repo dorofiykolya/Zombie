@@ -13,7 +13,7 @@ namespace Runner
     {
 		void Awake()
 		{
-            Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
+            //Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
 
             Load ();
 
@@ -39,6 +39,13 @@ namespace Runner
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
 			PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
+            var tutorial = PlayerPrefs.GetString("Zombie");
+            if (tutorial == "")
+            {
+                tutorial = "0,0,0,0,0";
+            }
+
+            PlayerData.zombieTutorial = tutorial.Split(',');
 
             var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
             missionManager.Load(missions);
@@ -75,6 +82,7 @@ namespace Runner
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
 			PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
 			PlayerPrefs.SetInt("Tutorial", PlayerData.tutorial);
+            PlayerPrefs.SetString("Zombie", String.Join(",", PlayerData.zombieTutorial));
         }
 
         private static string Serialize(object obj)

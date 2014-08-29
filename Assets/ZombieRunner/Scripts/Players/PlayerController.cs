@@ -76,6 +76,8 @@ namespace Runner
 		private bool blink;
 		private float blinkTime;
 
+        private float tutorialZombieTime;
+
         public override void Initialize()
         {
 			offset.x = 0;
@@ -128,6 +130,7 @@ namespace Runner
 			bInDuck = false;
 			bDiveFlag = false;
 			isBridge = false;
+            tutorialZombieTime = 0f;
 			bridgeHeight = Vector3.zero;
 
 			magnet = GameObject.Find ("Player").collider as SphereCollider;
@@ -214,6 +217,12 @@ namespace Runner
 					blinkTime = Time.timeSinceLevelLoad;
 				}
 			}
+
+            if (tutorialZombieTime < Time.timeSinceLevelLoad && Time.timeScale == 0.01f)
+            {
+                Time.timeScale = 1f;
+                TutorialAction.hideTutorial();
+            }
 
 			//fatman dies
 			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > prefs[PlayerManager.levels[ID]] && !Player.isJumpPowerUp)
@@ -773,6 +782,15 @@ namespace Runner
 
 				Audio.PlaySound (18 + human.ID);
 				particle.Emit(50);
+
+                if(PlayerData.zombieTutorial[human.ID] == "0")
+                {
+                    TutorialAction.showTutorial("00" + (5 + human.ID));
+                    Time.timeScale = 0.01f;
+                    PlayerData.zombieTutorial[human.ID] = "1";
+                    tutorialZombieTime = Time.timeSinceLevelLoad + 3f;
+                    StorageManager.Save();
+                }
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{

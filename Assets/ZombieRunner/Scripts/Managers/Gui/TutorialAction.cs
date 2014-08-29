@@ -9,6 +9,11 @@ namespace Runner
 		public const string	SLIDE_DOWN = "002";
 		public const string	SLIDE_UP = "004";
 		public const string	SLIDE_SIDES = "003";
+        public const string HUMAN1 = "005";
+        public const string HUMAN2 = "006";
+        public const string HUMAN3 = "007";
+        public const string HUMAN4 = "008";
+        public const string HUMAN5 = "009";
 
 		public GameObject[] _tutorialScenes;
 		private static GameObject[] tutorialScenes;
