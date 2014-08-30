@@ -2419,7 +2419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &137264854
 Transform:
   m_ObjectHideFlags: 0
@@ -3690,6 +3690,11 @@ MonoBehaviour:
   - {fileID: 611329267}
   - {fileID: 392630805}
   - {fileID: 792651649}
+  - {fileID: 553663822}
+  - {fileID: 137264853}
+  - {fileID: 765740859}
+  - {fileID: 545013615}
+  - {fileID: 1495678627}
 --- !u!1 &188198420
 GameObject:
   m_ObjectHideFlags: 0
@@ -5874,7 +5879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &266381275
 Transform:
   m_ObjectHideFlags: 0
@@ -7030,7 +7035,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 100
+  mText: 330
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -7667,7 +7672,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -8972,7 +8977,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3022
+  startingRenderQueue: 3024
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -9332,7 +9337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &431086155
 Transform:
   m_ObjectHideFlags: 0
@@ -9397,7 +9402,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3044
+  startingRenderQueue: 3046
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -11698,7 +11703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &545013616
 Transform:
   m_ObjectHideFlags: 0
@@ -11815,7 +11820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &553663823
 Transform:
   m_ObjectHideFlags: 0
@@ -15871,7 +15876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &753311683
 Transform:
   m_ObjectHideFlags: 0
@@ -15972,7 +15977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &765740860
 Transform:
   m_ObjectHideFlags: 0
@@ -17180,7 +17185,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 0
+  mText: 330
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -18887,7 +18892,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 0
+  mText: 330
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -25873,7 +25878,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3027
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -26959,7 +26964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1356201057
 Transform:
   m_ObjectHideFlags: 0
@@ -27023,7 +27028,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3014
+  startingRenderQueue: 3016
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -30242,7 +30247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1495678628
 Transform:
   m_ObjectHideFlags: 0
@@ -32964,7 +32969,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3041
+  startingRenderQueue: 3043
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 7.56088257, y: 195.74321, z: 500.540527, w: 230.076813}
@@ -33017,7 +33022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1694370992
 Transform:
   m_ObjectHideFlags: 0
@@ -33082,7 +33087,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3031
+  startingRenderQueue: 3033
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -36838,15 +36843,6 @@ MonoBehaviour:
     Stack: 1
   MissionPlayerQueues:
   - QueueMissions:
-    - Id: jump
-      Name: 
-      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
-        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
-      DescriptionEnglish: Jump over 10 obstacles
-      Image: 
-      Current: 0
-      Target: 10
-      IsCompleted: 0
     - Id: jumpwithjessy
       Name: 
       Description: "\u041F\u0440\u044B\u0433\u043D\u0443\u0442\u044C 10 \u0440\u0430\u0437
@@ -37050,20 +37046,20 @@ MonoBehaviour:
       Current: 0
       Target: 3
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Jump over 10 obstacles
+      Image: 
+      Current: 0
+      Target: 10
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: slideundersign
-      Name: 
-      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
-        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
-      DescriptionEnglish: Slide under 5 signs
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
@@ -37271,19 +37267,20 @@ MonoBehaviour:
       Current: 0
       Target: 5
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: slideundersign
+      Name: 
+      Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
+        \u043F\u043E\u0434 5 \u0437\u043D\u0430\u043A\u0430\u043C\u0438"
+      DescriptionEnglish: Slide under 5 signs
+      Image: 
+      Current: 0
+      Target: 5
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: infect
-      Name: 
-      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
-      DescriptionEnglish: infect 10 humans
-      Image: 
-      Current: 0
-      Target: 10
-      IsCompleted: 0
     - Id: run
       Name: 
       Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
@@ -37482,7 +37479,15 @@ MonoBehaviour:
       Current: 0
       Target: 4
       IsCompleted: 0
-    CurrentMissions: []
+    CurrentMissions:
+    - Id: infect
+      Name: 
+      Description: "\u0417\u0430\u0440\u0430\u0437\u0438\u0442\u044C 10 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+      DescriptionEnglish: infect 10 humans
+      Image: 
+      Current: 3
+      Target: 10
+      IsCompleted: 0
     CompletedMissions: []
     LastMissions: []
     Stack: 1
@@ -37540,7 +37545,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819186574}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
@@ -38662,7 +38667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1861380099
 Transform:
   m_ObjectHideFlags: 0
@@ -43447,7 +43452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2114434170
 Transform:
   m_ObjectHideFlags: 0
@@ -43513,7 +43518,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
