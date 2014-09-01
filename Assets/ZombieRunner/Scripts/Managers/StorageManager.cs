@@ -33,7 +33,7 @@ namespace Runner
 
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
 			PlayerData.Distance = PlayerPrefs.GetInt("Distance");
-			PlayerData.SetBrains(PlayerPrefs.GetInt("Brains"));
+			PlayerData.SetBrains(Mathf.Max(0, PlayerPrefs.GetInt("Brains")));
 			PlayerData.missionMulti = PlayerPrefs.GetInt("Multi");
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");

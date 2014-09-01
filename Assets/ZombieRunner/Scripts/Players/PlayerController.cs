@@ -137,7 +137,7 @@ namespace Runner
 			board = transform.FindChild("Board");
 
             targetPosition = transform.position;
-			targetPosition.x = Waypoint.wayPoints[Waypoint.currentWP].position.x + offset.x;
+			targetPosition.x = Waypoint.wayPoints[Waypoint.currentWP].position.x;
             transform.position = TargetPosition;
 
 			am = transform.FindChild ("Player").GetComponent<AnimationManager>();
@@ -218,7 +218,7 @@ namespace Runner
 				}
 			}
 
-            if (tutorialZombieTime < Time.timeSinceLevelLoad && Time.timeScale == 0.01f)
+            if (tutorialZombieTime < Time.timeSinceLevelLoad && Time.timeScale == 0.01f && isPatientZero)
             {
                 Time.timeScale = 1f;
                 TutorialAction.hideTutorial();
@@ -788,7 +788,7 @@ namespace Runner
                     TutorialAction.showTutorial("00" + (5 + human.ID));
                     Time.timeScale = 0.01f;
                     PlayerData.zombieTutorial[human.ID] = "1";
-                    tutorialZombieTime = Time.timeSinceLevelLoad + 3f;
+                    tutorialZombieTime = Time.timeSinceLevelLoad + 0.05f;
                     StorageManager.Save();
                 }
 
