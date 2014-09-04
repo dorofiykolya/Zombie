@@ -26,7 +26,7 @@ namespace Runner
         public int ID = 0;
 
 		public int[] prices;
-		public int[] prefs;
+		public float[] prefs;
 
 		private string intersectName = "";
 
@@ -65,6 +65,7 @@ namespace Runner
 
 		[HideInInspector]
 		public float bornTime;
+        private float lifeTime = 20f;
 		private int soldierLife;
 		private float reviveTime;
 
@@ -92,10 +93,6 @@ namespace Runner
 				if(ID == 4)
 				{
                     offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) + (Player.GetMaxPlayers() - (Player.currentList.Count - 2)) * 3;
-				}
-				else if(ID == 2)
-				{
-					offset.y = Mathf.RoundToInt(Player.currentList[0].transform.position.z) + Player.GetMaxPlayers() * -3;
 				}
 				else
 				{
@@ -142,13 +139,11 @@ namespace Runner
 
 			am = transform.FindChild ("Player").GetComponent<AnimationManager>();
 
-			if(ID == 2)
-			{
-				bornTime = Time.timeSinceLevelLoad;
-			}
+            bornTime = Time.timeSinceLevelLoad + lifeTime;
+			
 			if(ID == 4)
 			{
-				soldierLife = prefs[PlayerManager.levels[ID]];
+                soldierLife = (int)prefs[PlayerManager.levels[ID]];
 			}
 			if(Player.isRevive)
 			{
@@ -171,13 +166,11 @@ namespace Runner
 		{
 			if(state == State.GAME)
 			{
-				if(ID == 2)
-				{
-					bornTime = Time.timeSinceLevelLoad;
-				}
+                bornTime = Time.timeSinceLevelLoad + lifeTime;
+				
 				if(ID == 4)
 				{
-					soldierLife = prefs[PlayerManager.levels[ID]];
+                    soldierLife = (int)prefs[PlayerManager.levels[ID]];
 				}
 				if(am != null)
 					am.run();
@@ -224,8 +217,7 @@ namespace Runner
                 TutorialAction.hideTutorial();
             }
 
-			//fatman dies
-			if(ID == 2 && Time.timeSinceLevelLoad - bornTime > prefs[PlayerManager.levels[ID]] && !Player.isJumpPowerUp)
+			if(Time.timeSinceLevelLoad > bornTime && !Player.isJumpPowerUp)
 			{
 				Missions.Dispatch("diewithouttouching", 1);
 				onDeath();
@@ -358,13 +350,11 @@ namespace Runner
 
 			reviveTime = Time.timeSinceLevelLoad;
 
-			if(ID == 2)
-			{
-				bornTime = Time.timeSinceLevelLoad;
-			}
+            bornTime = Time.timeSinceLevelLoad + lifeTime;
+			
 			if(ID == 4)
 			{
-				soldierLife = prefs[PlayerManager.levels[ID]];
+                soldierLife = (int)prefs[PlayerManager.levels[ID]];
 			}
 		}
 
@@ -769,7 +759,11 @@ namespace Runner
 					break;
 				}
 
-                price *= Player.GetGoldBonus();
+                bornTime = Mathf.Min(Time.timeSinceLevelLoad + lifeTime, bornTime + Mathf.CeilToInt(price / 10f));
+
+                Currency.showEatBrains(price, Player.GetGoldBonus());
+
+                price = Mathf.CeilToInt(price * Player.GetGoldBonus());
 
 				Missions.Dispatch("gatherbrain", price);
 				if(ID == 1)
@@ -778,7 +772,6 @@ namespace Runner
 				}
                 PlayerData.SetBrains(price);
 				Currency.goldCount += price;
-				Currency.showEatBrains(price);
 
 				Audio.PlaySound (18 + human.ID);
 				particle.Emit(50);

@@ -30,21 +30,25 @@ Material:
     m_Floats:
       data:
         first:
+          name: _Shininess
+        second: 10
+      data:
+        first:
           name: _Dist
         second: .00300000003
       data:
         first:
           name: _ReflectVisible
         second: 1
-      data:
-        first:
-          name: _Shininess
-        second: 10
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: .101960786, g: .388235301, b: .572549045, a: .686274529}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _NearCurve
@@ -53,7 +57,3 @@ Material:
         first:
           name: _FarCurve
         second: {r: 500, g: -250, b: 0, a: 0}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}

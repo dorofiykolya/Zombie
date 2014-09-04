@@ -5851,7 +5851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &266381275
 Transform:
   m_ObjectHideFlags: 0
@@ -7007,7 +7007,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 1830000
+  mText: 1836619
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -7092,7 +7092,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .673469365
+  aspectRatio: 1.32653058
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: back
   mType: 1
@@ -7644,7 +7644,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 550}
@@ -8949,7 +8949,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3022
+  startingRenderQueue: 3024
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 500, w: 390}
@@ -9309,7 +9309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431086155
 Transform:
   m_ObjectHideFlags: 0
@@ -9374,7 +9374,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3044
+  startingRenderQueue: 3046
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -9730,7 +9730,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.90625
+  aspectRatio: 15.90625
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -10387,7 +10387,7 @@ MonoBehaviour:
     absolute: 100
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 600
+  mWidth: 1240
   mHeight: 100
   mDepth: 6
   autoResizeBoxCollider: 0
@@ -11316,7 +11316,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.3125
+  aspectRatio: 15.3125
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -14563,7 +14563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702867290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 242.832306, y: 246.076813, z: 0}
+  m_LocalPosition: {x: 563.102539, y: 246.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308300327}
@@ -15805,7 +15805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &753311683
 Transform:
   m_ObjectHideFlags: 0
@@ -16044,7 +16044,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 6
+  aspectRatio: 12.3999996
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
@@ -17086,7 +17086,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 1830410
+  mText: 1836612
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -18793,7 +18793,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
-  mText: 1830410
+  mText: 1836612
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -20178,7 +20178,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1020493692
 MonoBehaviour:
@@ -23716,7 +23716,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1183261798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -70.0899963, y: -.280000001, z: 0}
+  m_LocalPosition: {x: -80, y: -.280000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1538160435}
@@ -23750,20 +23750,20 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 248
+  mWidth: 100
   mHeight: 50
   mDepth: 8
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.96000004
+  aspectRatio: 2
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
   mFont: {fileID: 0}
   mText: +20
   mFontSize: 40
   mFontStyle: 0
-  mAlignment: 0
+  mAlignment: 3
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 1
@@ -25779,7 +25779,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3025
+  startingRenderQueue: 3000
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -26865,7 +26865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1356201057
 Transform:
   m_ObjectHideFlags: 0
@@ -26929,7 +26929,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3014
+  startingRenderQueue: 3016
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -29564,7 +29564,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.132653
+  aspectRatio: 5.39795923
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: home_screen_button
   mType: 0
@@ -30456,6 +30456,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1183261799}
+  - {fileID: 1727022117}
   m_Father: {fileID: 1308300327}
   m_RootOrder: 2
 --- !u!114 &1538160436
@@ -32842,7 +32843,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3041
+  startingRenderQueue: 3043
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 7.56088257, y: 195.74321, z: 500.540527, w: 230.076813}
@@ -32895,7 +32896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1694370992
 Transform:
   m_ObjectHideFlags: 0
@@ -32960,7 +32961,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3031
+  startingRenderQueue: 3033
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -33869,6 +33870,95 @@ MonoBehaviour:
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 1
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
+--- !u!1 &1727022116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1727022117}
+  - 114: {fileID: 1727022118}
+  m_Layer: 11
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727022117
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727022116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40, y: -50, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1538160435}
+  m_RootOrder: 1
+--- !u!114 &1727022118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727022116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 200
+  mHeight: 50
+  mDepth: 8
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 4
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 12800000, guid: 492afb462b4654294893cf9c322785d1, type: 3}
+  mFont: {fileID: 0}
+  mText: +20 sec
+  mFontSize: 40
+  mFontStyle: 0
+  mAlignment: 3
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 1
@@ -35930,6 +36020,7 @@ MonoBehaviour:
   fatman: {fileID: 493651710}
   revive: {fileID: 767938347}
   brains: {fileID: 1183261800}
+  seconds: {fileID: 0}
   eatBrains: {fileID: 1538160434}
   goldCount: 0
   reviveCount: 0
@@ -36926,22 +37017,22 @@ MonoBehaviour:
         \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
       DescriptionEnglish: Jump over 10 obstacles
       Image: 
-      Current: 6
+      Current: 10
       Target: 10
-      IsCompleted: 0
+      IsCompleted: 1
     CompletedMissions: []
-    LastMissions: []
+    LastMissions:
+    - Id: jump
+      Name: 
+      Description: "\u041F\u0435\u0440\u0435\u043F\u0440\u044B\u0433\u043D\u0443\u0442\u044C
+        \u0447\u0435\u0440\u0435\u0437 10 \u043F\u0440\u0435\u043F\u044F\u0442\u0441\u0442\u0432\u0438\u0439"
+      DescriptionEnglish: Jump over 10 obstacles
+      Image: 
+      Current: 10
+      Target: 10
+      IsCompleted: 1
     Stack: 1
   - QueueMissions:
-    - Id: dieswat
-      Name: 
-      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
-        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
-      DescriptionEnglish: Die from 5 SWAT cards
-      Image: 
-      Current: 0
-      Target: 5
-      IsCompleted: 0
     - Id: slide
       Name: 
       Description: "\u041F\u0440\u043E\u0441\u043A\u043E\u043B\u044C\u0437\u043D\u0443\u0442\u044C
@@ -37133,14 +37224,15 @@ MonoBehaviour:
       Target: 5
       IsCompleted: 0
     CurrentMissions:
-    - Id: gatherbrain
+    - Id: dieswat
       Name: 
-      Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
-      DescriptionEnglish: Collect 500 brains
+      Description: "\u0423\u043C\u0435\u0440\u0435\u0442\u044C \u043E\u0442 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0441\u043F\u0435\u0446\u043D\u0430\u0437\u0430 5 \u0440\u0430\u0437"
+      DescriptionEnglish: Die from 5 SWAT cards
       Image: 
-      Current: 500
-      Target: 500
-      IsCompleted: 1
+      Current: 0
+      Target: 5
+      IsCompleted: 0
     CompletedMissions:
     - Id: slideundersign
       Name: 
@@ -37151,7 +37243,6 @@ MonoBehaviour:
       Current: 5
       Target: 5
       IsCompleted: 1
-    LastMissions:
     - Id: gatherbrain
       Name: 
       Description: "\u0421\u043E\u0431\u0440\u0430\u0442\u044C 500 \u043C\u043E\u0437\u0433\u043E\u0432"
@@ -37160,16 +37251,9 @@ MonoBehaviour:
       Current: 500
       Target: 500
       IsCompleted: 1
+    LastMissions: []
     Stack: 1
   - QueueMissions:
-    - Id: run
-      Name: 
-      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
-      DescriptionEnglish: Run 5000 m in 1 run
-      Image: 
-      Current: 0
-      Target: 5000
-      IsCompleted: 0
     - Id: revive
       Name: 
       Description: "\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u043D\u0443\u0442\u044C
@@ -37355,11 +37439,11 @@ MonoBehaviour:
     CurrentMissions:
     - Id: run
       Name: 
-      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
-      DescriptionEnglish: Run 2500 m in 1 run
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 5000 \u043C"
+      DescriptionEnglish: Run 5000 m in 1 run
       Image: 
-      Current: 688.394287
-      Target: 2500
+      Current: 796.628723
+      Target: 5000
       IsCompleted: 0
     CompletedMissions:
     - Id: infect
@@ -37369,6 +37453,14 @@ MonoBehaviour:
       Image: 
       Current: 10
       Target: 10
+      IsCompleted: 1
+    - Id: run
+      Name: 
+      Description: "\u041F\u0440\u043E\u0431\u0435\u0436\u0430\u0442\u044C 2500 \u043C"
+      DescriptionEnglish: Run 2500 m in 1 run
+      Image: 
+      Current: 2748.0127
+      Target: 2500
       IsCompleted: 1
     LastMissions: []
     Stack: 1
@@ -38199,7 +38291,7 @@ MonoBehaviour:
   checkSprite: {fileID: 0}
   checkAnimation: {fileID: 0}
   eventReceiver: {fileID: 0}
-  functionName: 
+  functionName: OnActivate
   startsChecked: 0
 --- !u!114 &1844819254
 MonoBehaviour:
@@ -38375,7 +38467,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854710491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.8323059, y: 438.076813, z: 0}
+  m_LocalPosition: {x: 370.102539, y: 438.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455190715}
@@ -38548,7 +38640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1861380099
 Transform:
   m_ObjectHideFlags: 0
@@ -39144,7 +39236,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.93877554
+  aspectRatio: 5.20408154
   mAtlas: {fileID: 11400000, guid: 49504d92b4ebd41d68cdd95fc297841f, type: 2}
   mSpriteName: character_screen_button
   mType: 0
@@ -39627,7 +39719,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917508917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 225.832306, y: 369.076813, z: 0}
+  m_LocalPosition: {x: 546.102539, y: 369.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 149038774}
@@ -40637,7 +40729,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972581486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 201.832306, y: 438.076813, z: 0}
+  m_LocalPosition: {x: 522.102539, y: 438.076813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2043064369}
@@ -42369,7 +42461,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068042673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -278.332306, y: 438.576813, z: 0}
+  m_LocalPosition: {x: -598.602539, y: 438.576813, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1308300327}
@@ -43333,7 +43425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2114434170
 Transform:
   m_ObjectHideFlags: 0
@@ -43399,7 +43491,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3035
+  startingRenderQueue: 3037
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}

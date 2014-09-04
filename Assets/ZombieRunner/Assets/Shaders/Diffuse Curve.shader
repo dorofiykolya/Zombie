@@ -50,28 +50,25 @@ Shader "Curve/Diffuse Curve" {
 				fragmentInput o;
 
 				// Apply the curve
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
-				#ifndef SHADOWS_OFF	
-					#if UNITY_EDITOR_SHADOW_ON
-						TRANSFER_VERTEX_TO_FRAGMENT(o);
-					#endif
-				#endif
-
-				float distanceSquared = o.pos.z * o.pos.z * _Dist;
-				o.pos.x += (distanceSquared / _NearCurve.x * _FarCurve.x);
-				o.pos.y += (distanceSquared / _NearCurve.y * _FarCurve.y);
+                float4 pos = mul(UNITY_MATRIX_MV, v.vertex);
+                float distanceSquared = pos.z * pos.z * _Dist;
+                pos.x += (_FarCurve.x - max(1.0 - distanceSquared / _NearCurve.x, 0.0) * _FarCurve.x);
+                pos.y += (_FarCurve.y - max(1.0 - distanceSquared / _NearCurve.y, 0.0) * _FarCurve.y);
+                o.pos = mul(UNITY_MATRIX_P, pos); 
 				o.uv = v.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
 				o.uvLM = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
 
 				#if UNITY_UV_STARTS_AT_TOP
-					if (_MainTex_TexelSize.y < 0)
-						o.uv.y = 1.0-o.uv.y;
+				if (_MainTex_TexelSize.y < 0)
+					o.uv.y = 1.0-o.uv.y;
 				#endif
-
+				
 				#ifndef SHADOWS_OFF		
-					#ifndef UNITY_EDITOR_SHADOW_ON	 
-						TRANSFER_VERTEX_TO_FRAGMENT(o);
-					#endif
+					#if UNITY_EDITOR_SHADOW_ON	 
+	      			o._ShadowCoord = ComputeScreenPos(mul(UNITY_MATRIX_MVP, v.vertex));
+	      			#else
+	      			TRANSFER_VERTEX_TO_FRAGMENT(o);
+	      			#endif
 				#endif
 
 				return o;
@@ -82,11 +79,13 @@ Shader "Curve/Diffuse Curve" {
 				fixed4 color = tex2D(_MainTex, i.uv);
 
 				#ifdef LIGHTMAP_ON
-					color.rgb *= DecodeLightmap (tex2D (unity_Lightmap, i.uvLM));
+				fixed3 lm = DecodeLightmap (tex2D (unity_Lightmap, i.uvLM));
+				color.rgb *= lm;
 				#endif
 				
 				#ifndef SHADOWS_OFF			  	
-					color.rgb *= LIGHT_ATTENUATION(i);
+				fixed atten = LIGHT_ATTENUATION(i);
+				color.rgb *= atten;
 				#endif
 
 				return color;

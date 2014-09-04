@@ -191,43 +191,47 @@ namespace Runner
 			return collection[0];
 		}
 
-		public Runner.PlayerController GetCurrentById(int id)
+		public int GetCurrentCountById(int id)
 		{
+            int count = 0;
 			foreach(var a in currentList)
 			{
 				if(a.ID == id)
 				{
-					return a;
+                    count++;
 				}
 			}
-			return currentList[0];
+            return count;
 		}
 
 		public int GetMult()
 		{
-			if(GetCurrentById(1).ID == 1)
-			{
-				return Player.collection[1].prefs[PlayerManager.levels[1]];
-			}
+            var count = GetCurrentCountById(1);
+            if(count != 0)
+            {
+                return (int)Player.collection[1].prefs[PlayerManager.levels[1]] * count;
+            }
 			
 			return 0;
 		}
 
-		public int GetGoldBonus()
+		public float GetGoldBonus()
 		{
-			if(GetCurrentById(2).ID == 2)
-			{
-				return 2;
-			}
+            var count = GetCurrentCountById(2);
+            if(count != 0)
+            {
+                return 1 + (Player.collection[2].prefs[PlayerManager.levels[2]] * count);
+            }
 			
 			return 1;
 		}
 
 		public int GetMaxPlayers()
 		{
-			if(GetCurrentById(0).ID == 0)
+            var count = GetCurrentCountById(0);
+            if(count != 0)
 			{
-				return Player.collection[0].prefs[PlayerManager.levels[0]];
+                return (int)Player.collection[0].prefs[PlayerManager.levels[0]];
 			}
 
 			return 2;

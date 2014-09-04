@@ -57,7 +57,7 @@ namespace Runner
 		{
 			if(state == State.GAME)
 			{
-				bonusChance = _bonusChance + Player.collection[3].prefs[PlayerManager.levels[3]];
+                bonusChance = _bonusChance + (int)Player.collection[3].prefs[PlayerManager.levels[3]];
 			}
 		}
 

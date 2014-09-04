@@ -10,6 +10,7 @@ namespace Runner
 		public UILabel fatman;
 		public UILabel revive;
 		public UILabel brains;
+        public UILabel seconds;
 
 		public GameObject eatBrains;
 
@@ -48,9 +49,17 @@ namespace Runner
 			Initialize ();
 		}
 
-		public void showEatBrains(int price)
+		public void showEatBrains(int price, float bonus)
 		{
-			brains.text = "+" + price.ToString ();
+            if (Localization.language == "Russian")
+            {
+                seconds.text = "+" + Mathf.CeilToInt(price / 10f).ToString() + " сек";
+            }
+            else
+            {
+                seconds.text = "+" + Mathf.CeilToInt(price / 10f).ToString() + " sec";
+            }
+            brains.text = "+" + Mathf.CeilToInt(price * bonus).ToString();
 			eatBrains.SetActive(true);
 			time = Time.timeSinceLevelLoad + 1;
 		}
@@ -65,15 +74,15 @@ namespace Runner
 			multi.text = "x" + (((1 + PlayerData.missionMulti / 3) + Player.GetMult()) * PowerUp.scorePowerup);
 			gold.text = goldCount.ToString ();
 
-			if(Player.currentList[0].ID == 2 && Player.currentList.Count == 1 && !Player.isStop)
+			if(!Player.isStop)
 			{
                 if(Localization.language == "Russian")
                 {
-                    fatman.text = "Укуси кого-то или умрешь через: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+                    fatman.text = "Укуси кого-то или умрешь через: " + Mathf.Round(Player.currentList[0].bornTime - Time.timeSinceLevelLoad);
                 }
                 else if(Localization.language == "English")
                 {
-                    fatman.text = "Bite someone or you will die in: " + Mathf.Round(Player.collection[2].prefs[PlayerManager.levels[2]] - (Time.timeSinceLevelLoad - Player.currentList[0].bornTime));
+                    fatman.text = "Bite someone or you will die in: " + Mathf.Round(Player.currentList[0].bornTime - Time.timeSinceLevelLoad);
                 }
 			}
 			else
