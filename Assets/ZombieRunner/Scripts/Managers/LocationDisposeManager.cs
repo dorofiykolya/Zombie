@@ -41,8 +41,15 @@ namespace Runner
 				platform = collection[i];
 				if(platform.AllowDispose == false)
 				{
-					if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 210)
+                    if(PlayerData.tutorial == 0 && platform.transform.position.z > 200 && platform.transform.position.z < 210)
+                    {
+                        TutorialAction.tutorialShown = false;
+                    }
+
+                    if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 210 && !TutorialAction.tutorialShown)
 					{
+                        TutorialAction.tutorialShown = true;
+
 						if(platform.name.Contains(TutorialAction.HUMANS))
 						{
 							TutorialAction.showTutorial(TutorialAction.HUMANS);
@@ -59,6 +66,31 @@ namespace Runner
 						{
 							TutorialAction.showTutorial(TutorialAction.SLIDE_UP);
 						}
+                        else if(platform.name.Contains(TutorialAction.HUMAN1))
+                        {
+                            TutorialAction.showTutorial(TutorialAction.HUMAN1);
+                            Time.timeScale = 0;
+                        }
+                        else if(platform.name.Contains(TutorialAction.HUMAN2))
+                        {
+                            TutorialAction.showTutorial(TutorialAction.HUMAN2);
+                            Time.timeScale = 0;
+                        }
+                        else if(platform.name.Contains(TutorialAction.HUMAN3))
+                        {
+                            TutorialAction.showTutorial(TutorialAction.HUMAN3);
+                            Time.timeScale = 0;
+                        }
+                        else if(platform.name.Contains(TutorialAction.HUMAN4))
+                        {
+                            TutorialAction.showTutorial(TutorialAction.HUMAN4);
+                            Time.timeScale = 0;
+                        }
+                        else if(platform.name.Contains(TutorialAction.HUMAN5))
+                        {
+                            TutorialAction.showTutorial(TutorialAction.HUMAN5);
+                            Time.timeScale = 0;
+                        }
 					}
 
 					if(platform.transform.position.z < distance.z)

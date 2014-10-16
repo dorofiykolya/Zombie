@@ -28,7 +28,7 @@ namespace Runner
 			_next = null;
 			tutorialCount = 0;
 
-			if(PlayerData.tutorial == 0 && tutorialCount == 0)
+			if(PlayerData.tutorial == 0)
 			{
 				PlayerData.PlatformType = 0;
 			}
@@ -40,10 +40,6 @@ namespace Runner
 			
 		public void Generate(float speed, Runner.PlayerController player)
 		{
-			if(PlayerData.tutorial == 0 && tutorialCount == 0)
-			{
-				PlayerData.PlatformType = 0;
-			}
 			Runner.PlatformObject platform = _platforms.Last;
 			bool isStartPlatform = false;
 			if(platform == null)
@@ -67,7 +63,7 @@ namespace Runner
 				int nextType = -1;
 				if(PlayerData.PlatformTypeRemainingDistance <= 0.0f && isStartPlatform == false)
 				{
-					nextType = (PlayerData.tutorial == 0 && tutorialCount < 4)? 0 : _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
+					nextType = PlayerData.tutorial == 0 ? 0 : _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
 					if(nextType == -1)
 					{
 						nextType = platform.Type;	
@@ -103,12 +99,12 @@ namespace Runner
 				_next = platform.GetNextRandom();
 				count++;
 				tutorialCount++;
-				if(PlayerData.tutorial == 0 && tutorialCount == 4)
+				if(PlayerData.tutorial != 0)
 				{
 					PlayerData.PlatformType = 1;
 					_platformsManager.deleteTutorialType();
 				}
-				else if(PlayerData.tutorial == 0 && tutorialCount == 6)
+				else if(PlayerData.tutorial == 0 && tutorialCount == 10)
 				{
 					PlayerData.tutorial = 1;
 					TutorialAction.hideTutorial();

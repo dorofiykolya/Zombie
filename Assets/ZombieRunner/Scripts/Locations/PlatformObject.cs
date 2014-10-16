@@ -81,7 +81,8 @@ namespace Runner
     public enum PlatformMode
     {
         Platform,
-        Transition
+        Transition,
+        Tutorial
     }
 }
 

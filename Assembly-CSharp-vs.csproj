@@ -66,6 +66,7 @@
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Assets\Effects\Image Effects (Pro Only)\VortexEffect.cs" />
+     <Compile Include="Assets\GUITouchScroll\GUITouchScroll.cs" />
      <Compile Include="Assets\Ian&apos;s Explosion Pack\Scripts\DestoryBoom.cs" />
      <Compile Include="Assets\JSON Tests\CSharp\Test_CSharp.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
@@ -228,10 +229,13 @@
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\AudioToggle.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\ClickAction.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\LevelAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\MissionAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\ResolutionLayout.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\ShopWindowAction.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\TutorialAction.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\Gui\TutorialClick.cs" />
+     <Compile Include="Assets\ZombieRunner\Scripts\Managers\LevelsManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LightManager.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LocationChildren.cs" />
      <Compile Include="Assets\ZombieRunner\Scripts\Managers\LocationDisposeManager.cs" />

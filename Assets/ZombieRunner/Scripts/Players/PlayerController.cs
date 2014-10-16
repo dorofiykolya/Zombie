@@ -65,15 +65,15 @@ namespace Runner
 
 		[HideInInspector]
 		public float bornTime;
-        private float lifeTime = 20f;
+        private float lifeTime = 120f;
 		private int soldierLife;
 		private float reviveTime;
 
         public float Distance { get { return Player.Distance; } }
 		private float speed;
 		private float deathSpeed;
-
-		private ParticleSystem particle;
+        [HideInInspector]
+		public ParticleSystem particle;
 		private bool blink;
 		private float blinkTime;
 
@@ -210,12 +210,6 @@ namespace Runner
 					blinkTime = Time.timeSinceLevelLoad;
 				}
 			}
-
-            if (tutorialZombieTime < Time.timeSinceLevelLoad && Time.timeScale == 0.01f && isPatientZero)
-            {
-                Time.timeScale = 1f;
-                TutorialAction.hideTutorial();
-            }
 
 			if(Time.timeSinceLevelLoad > bornTime && !Player.isJumpPowerUp)
 			{
@@ -775,15 +769,6 @@ namespace Runner
 
 				Audio.PlaySound (18 + human.ID);
 				particle.Emit(50);
-
-                if(PlayerData.zombieTutorial[human.ID] == "0")
-                {
-                    TutorialAction.showTutorial("00" + (5 + human.ID));
-                    Time.timeScale = 0.01f;
-                    PlayerData.zombieTutorial[human.ID] = "1";
-                    tutorialZombieTime = Time.timeSinceLevelLoad + 0.05f;
-                    StorageManager.Save();
-                }
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{

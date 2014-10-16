@@ -302,7 +302,6 @@ namespace Runner
 				where p.MinimumDistance <= distance && HasInTempPlatform(p) == false
 					select p;
 
-
 			var len = result.Count();
 			PlatformObject current = null;
 			if(len == 1)

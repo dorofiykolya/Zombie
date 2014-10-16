@@ -29,8 +29,6 @@ namespace Runner
 
         internal static void Load()
         {
-            var missionManager = GameObject.FindObjectOfType<MissionManager>();
-
             PlayerData.CharacterId = PlayerPrefs.GetInt("CharacterId");
 			PlayerData.Distance = PlayerPrefs.GetInt("Distance");
 			PlayerData.SetBrains(Mathf.Max(0, PlayerPrefs.GetInt("Brains")));
@@ -38,7 +36,7 @@ namespace Runner
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
-			PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
+            PlayerData.tutorial = 0;//PlayerPrefs.GetInt ("Tutorial");
             var tutorial = PlayerPrefs.GetString("Zombie");
             if (tutorial == "")
             {
@@ -46,9 +44,6 @@ namespace Runner
             }
 
             PlayerData.zombieTutorial = tutorial.Split(',');
-
-            var missions = Deserialize(PlayerPrefs.GetString("Missions")) as MissionQueue[];
-            missionManager.Load(missions);
 
 			var powerLevels = Deserialize(PlayerPrefs.GetString("PowerLevels")) as int[];
 			if(powerLevels != null)
@@ -69,14 +64,11 @@ namespace Runner
 
         internal static void Save()
         {
-            var missionManager = GameObject.FindObjectOfType<MissionManager>();
-
             PlayerPrefs.SetInt("CharacterId", PlayerData.CharacterId);
 			if(PlayerData.Distance > PlayerPrefs.GetInt("Distance"))
 				PlayerPrefs.SetInt("Distance", PlayerData.Distance);
 			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
 			PlayerPrefs.SetInt("Multi", PlayerData.missionMulti);
-			PlayerPrefs.SetString("Missions", Serialize(missionManager.MissionPlayerQueues));
 			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
 			PlayerPrefs.SetString("PowerLevels", Serialize (PowerUpManager.levels));
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
