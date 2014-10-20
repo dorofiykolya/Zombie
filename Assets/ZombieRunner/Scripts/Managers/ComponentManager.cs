@@ -18,6 +18,7 @@ namespace Runner
 
     public class ComponentManager : MonoBehaviour, IComponentManager
     {
+        public LevelsManager Level { get; private set; }
         public MissionManager Missions { get; private set; }
         public QualityManager Quality { get; private set; }
         public PlayerManager Player { get; private set; }
@@ -52,6 +53,7 @@ namespace Runner
 			PowerUp = Manager.PowerUp;
 			Audio = Manager.Audio;
 			Currency = Manager.Currency;
+            Level = Manager.Level;
 
             Initialize();
             Initialized = true;

@@ -60,21 +60,5 @@ namespace Runner
 			GUIPanelManager.Get(PanelType.Lose).Show();
 			GUIPanelManager.currentPanel = PanelType.Lose;
 		}
-        
-		void OnGUI ()
-		{
-			if (currentState == State.LOAD && GUIPanelManager.currentPanel == PanelType.MainMenu) 
-			{
-				if (GUI.Button (new Rect (0, Screen.height * .2f, Screen.width, Screen.height * .6f), "", GUIStyle.none)) 
-				{
-					Player.isStop = false;
-					SetState (State.GAME);
-					GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
-					GUIPanelManager.Get(PanelType.GameMenu).Show();
-					GUIPanelManager.currentPanel = PanelType.GameMenu;
-					Game.GameStart();
-				}
-			}
-		}
 	}
 }

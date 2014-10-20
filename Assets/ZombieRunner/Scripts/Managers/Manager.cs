@@ -35,6 +35,7 @@ namespace Runner
 		public PowerUpManager PowerUp { get; private set; }
 		public AudioManger Audio { get; private set; }
 		public CurrencyManager Currency { get; private set; }
+        public LevelsManager Level { get; private set; }
 
 		private List<IComponentManager> components = new List<IComponentManager>(2048);
 
@@ -54,6 +55,7 @@ namespace Runner
 			PowerUp = GetComponent<PowerUpManager>();
 			Audio = GetComponent<AudioManger>();
 			Currency = GetComponent<CurrencyManager> ();
+            Level = GetComponent<LevelsManager>();
 
 			var componentManagers = GetComponents<ComponentManager>();
             foreach (var c in componentManagers)

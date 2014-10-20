@@ -36,14 +36,14 @@ namespace Runner
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
-            PlayerData.tutorial = 0;//PlayerPrefs.GetInt ("Tutorial");
-            var tutorial = PlayerPrefs.GetString("Zombie");
-            if (tutorial == "")
-            {
-                tutorial = "0,0,0,0,0";
-            }
+            PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
 
-            PlayerData.zombieTutorial = tutorial.Split(',');
+            PlayerData.currentLevels = Deserialize(PlayerPrefs.GetString("Levels")) as LevelsManager.Level[];
+            if (PlayerData.currentLevels == null)
+            {
+                var levelManager = GameObject.FindObjectOfType<LevelsManager>();
+                PlayerData.currentLevels = levelManager.Levels;
+            }
 
 			var powerLevels = Deserialize(PlayerPrefs.GetString("PowerLevels")) as int[];
 			if(powerLevels != null)
@@ -74,7 +74,6 @@ namespace Runner
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
 			PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
 			PlayerPrefs.SetInt("Tutorial", PlayerData.tutorial);
-            PlayerPrefs.SetString("Zombie", String.Join(",", PlayerData.zombieTutorial));
         }
 
         private static string Serialize(object obj)

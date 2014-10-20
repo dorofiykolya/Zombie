@@ -49,6 +49,28 @@ namespace Runner
         private void Draw(LevelsManager manager)
         {
             GUI.color = Color.white;
+
+            if (manager.Stars == null || manager.Stars.Length != 3)
+            {
+                manager.Stars = new UISprite[3];
+            }
+
+            if (manager.Labels == null || manager.Labels.Length != 3)
+            {
+                manager.Labels = new UILabel[3];
+            }
+
+            for(int i = 0; i < manager.Stars.Length; i++)
+            {
+                manager.Stars[i] = EditorGUILayout.ObjectField("Star " + i, manager.Stars[i], typeof(UISprite)) as UISprite;
+            }
+
+            for(int i = 0; i < manager.Labels.Length; i++)
+            {
+                manager.Labels[i] = EditorGUILayout.ObjectField("Label " + i, manager.Labels[i], typeof(UILabel)) as UILabel;
+            }
+
+            manager.bar = EditorGUILayout.ObjectField("Bar", manager.bar, typeof(UISprite)) as UISprite;
             
             mFold = EditorGUILayout.Foldout(mFold, "EDIT LEVELS");
             if (mFold)

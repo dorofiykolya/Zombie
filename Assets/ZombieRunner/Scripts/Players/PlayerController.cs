@@ -381,31 +381,23 @@ namespace Runner
 					return;
 				if(intersectName != "")
 				{
-					Missions.Dispatch("jumpoverobstacles", 1);
+					Level.Dispatch("task 2", 1);
 				}
-				if(intersectName.ToLower().Contains("taxi"))
+				else if(intersectName.ToLower().Contains("taxi"))
 				{
-					Missions.Dispatch("jumpovertaxi", 1);
+                    Level.Dispatch("task 29", 1);
 				}
-				if(intersectName.ToLower().Contains("cone"))
+                else if(intersectName.ToLower().Contains("red"))
 				{
-					Missions.Dispatch("jumpovercone", 1);
+                    Level.Dispatch("task 11", 1);
 				}
-				if(intersectName.ToLower().Contains("red"))
+                else if(intersectName.ToLower().Contains("barrel"))
 				{
-					Missions.Dispatch("jumpoverredcar", 1);
+                    Level.Dispatch("task 25", 1);
 				}
-				if(intersectName.ToLower().Contains("car"))
+                else if(intersectName.ToLower().Contains("police"))
 				{
-					Missions.Dispatch("jumpovercars", 1);
-				}
-				if(intersectName.ToLower().Contains("barrel"))
-				{
-					Missions.Dispatch("jumpoverbarrel", 1);
-				}
-				if(intersectName.ToLower().Contains("police"))
-				{
-					Missions.Dispatch("jumpoverpolice", 1);
+                    Level.Dispatch("task 7", 1);
 				}
 			}
 		}
@@ -464,7 +456,9 @@ namespace Runner
 				return;
 			if(intersectName.ToLower().Contains("sign"))
 			{
-				Missions.Dispatch("slideundersign", 1);
+				Level.Dispatch("task 9", 1);
+                Level.Dispatch("task 16", 1);
+                Level.Dispatch("task 33", 1);
 			}
 			if(intersectName.ToLower().Contains("bus"))
 			{
@@ -476,7 +470,7 @@ namespace Runner
 			}
 			if(intersectName.ToLower().Contains("barrel"))
 			{
-				Missions.Dispatch("slideunderbarrel", 1);
+                Level.Dispatch("task 28", 1);
 			}
 		}
 
@@ -496,7 +490,7 @@ namespace Runner
 				am.jump();
 				if(isBridge && isPatientZero)
 				{
-					Missions.Dispatch("jumponbridge", 1);
+                    Level.Dispatch("task 13", 1);
 				}
 				if(ID == 1)
 				{
@@ -759,11 +753,11 @@ namespace Runner
 
                 price = Mathf.CeilToInt(price * Player.GetGoldBonus());
 
-				Missions.Dispatch("gatherbrain", price);
-				if(ID == 1)
-				{
-					Missions.Dispatch("gatherbrainjessy", price);
-				}
+				Level.Dispatch("task 6", price);
+                Level.Dispatch("task 19", price);
+                Level.Dispatch("task 27", price);
+                Level.Dispatch("task 42", price);
+
                 PlayerData.SetBrains(price);
 				Currency.goldCount += price;
 
@@ -787,24 +781,22 @@ namespace Runner
 					var game = GameObject.FindGameObjectWithTag("Player");
                     Player.currentList[Player.currentList.Count - 1].gameObject.transform.parent = game.transform;
 
-					Missions.Dispatch ("infect", 1);
+                    Level.Dispatch ("task 5", 1);
+                    Level.Dispatch ("task 12", 1);
 
-					if(human.ID == 3)
+					if(human.ID == 1)
 					{
-						Missions.Dispatch("infectprofessor", 1);
+						Missions.Dispatch("task 17", 1);
 					}
-					else if(human.ID == 2)
-					{
-						Missions.Dispatch("infectfatso", 1);
-					}
-					else if(ID == 1 && human.ID == 1)
-					{
-						Missions.Dispatch("infecthousewifewithjessy", 1);
-					}
-					if(ID == 3)
-					{
-						Missions.Dispatch("infectbydrwhite", 1);
-					}
+                    else if(human.ID == 2)
+                    {
+                        Missions.Dispatch("task 22", 1);
+                    }
+                    else if(human.ID == 3)
+                    {
+                        Missions.Dispatch("task 37", 1);
+                        Missions.Dispatch("task 45", 1);
+                    }
 				}
 			}
         }

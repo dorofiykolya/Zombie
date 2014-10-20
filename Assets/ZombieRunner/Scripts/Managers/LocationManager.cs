@@ -82,19 +82,22 @@ namespace Runner
 			Generator.Generate(moveSpeed, player);
 			Platforms.Move(moveSpeed, player);
 			DisposedManager.Update(player);
-			Missions.Dispatch ("run", player.Distance);
-			if(Waypoint.currentWP == 0)
-			{
-				Missions.Dispatch("runonleft", player.Distance);
-			}
-			else if(Waypoint.currentWP == 2)
-			{
-				Missions.Dispatch("runonright", player.Distance);
-			}
-			if(Player.Current.ID == 3)
-			{
-				Missions.Dispatch("rundrwhite", player.Distance);
-			}
+            Level.Dispatch ("task 1", Mathf.Abs(moveSpeed));
+            Level.Dispatch ("task 3", Mathf.Abs(moveSpeed));
+            Level.Dispatch ("task 8", Mathf.Abs(moveSpeed));
+            Level.Dispatch ("task 15", Mathf.Abs(moveSpeed));
+            if(Waypoint.currentWP == 0)
+            {
+                Level.Dispatch("task 23", Math.Abs(moveSpeed));
+            }
+            else if(Waypoint.currentWP == 1)
+            {
+                Level.Dispatch("task 47", Math.Abs(moveSpeed));
+            }
+            else if(Waypoint.currentWP == 2)
+            {
+                Level.Dispatch("task 32", Math.Abs(moveSpeed));
+            }
 		}
 
         public override void GameRestart()

@@ -54,7 +54,8 @@ namespace Runner
 			{
                 if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 				{
-					Missions.Dispatch ("jump", 1);
+					Level.Dispatch ("task 18", 1);
+                    Level.Dispatch ("task 44", 1);
 
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{
@@ -66,7 +67,9 @@ namespace Runner
 			{
 				if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
 				{
-					Missions.Dispatch ("slide", 1);
+                    Level.Dispatch ("task 4", 1);
+                    Level.Dispatch ("task 21", 1);
+                    Level.Dispatch ("task 36", 1);
 
 					for (int i = Player.currentList.Count - 1; i >= 0; i--)
 					{
@@ -106,7 +109,8 @@ namespace Runner
 						case SwipeDirection.Jump:
                             if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
                             {
-                                Missions.Dispatch ("jump", 1);
+                                Level.Dispatch ("task 18", 1);
+                                Level.Dispatch ("task 44", 1);
                                 
                                 for (int i = 0; i < Player.currentList.Count; i++)
                                 {
@@ -117,7 +121,9 @@ namespace Runner
 						case SwipeDirection.Duck:
                             if (!Player.currentList[0].bInDuck && !Player.isJumpPowerUp)
                             {
-                                Missions.Dispatch ("slide", 1);
+                                Level.Dispatch ("task 4", 1);
+                                Level.Dispatch ("task 21", 1);
+                                Level.Dispatch ("task 36", 1);
                                 
                                 for (int i = Player.currentList.Count - 1; i >= 0; i--)
                                 {

@@ -22,6 +22,8 @@ namespace Runner
 		public static int creation;
 		public static int tutorial;
 
+        public static LevelsManager.Level[] currentLevels;
+
 		public static event System.Action<string> OnChanged;
 
 		public static int Brains
