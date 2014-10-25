@@ -26,6 +26,10 @@ namespace Runner
         public UILabel[] Labels;
         public UISprite bar;
 
+        public UISprite[] WindowSprite;
+        public UILabel[] WindowText;
+        public UILabel WindowDesc;
+
         public static string currentLevel;
 
         private float currentProgress;
@@ -33,6 +37,27 @@ namespace Runner
         public override void GameStart()
         {
             GameRestart();
+        }
+
+        public override void GameStop()
+        {
+            bool isComplete = false;
+            foreach (var level in PlayerData.currentLevels)
+            {
+                if(isComplete)
+                {
+                    isComplete = false;
+                    level.IsCompleted = true;
+                }
+
+                if(level.Current >= level.Target1)
+                {
+                    isComplete = true;
+                }
+            }
+
+            StorageManager.Save();
+            GamePause();
         }
 
         public override void GameRestart()
@@ -54,6 +79,25 @@ namespace Runner
                     Labels[2].text = level.Target3.ToString();
                     
                     return;
+                }
+            }
+        }
+
+        public override void GamePause()
+        {
+            foreach (var level in PlayerData.currentLevels)
+            {
+                if (level.Id == currentLevel)
+                {
+                    WindowText [0].text = level.Target1.ToString();
+                    WindowText [1].text = level.Target2.ToString();
+                    WindowText [2].text = level.Target3.ToString();
+
+                    WindowSprite[0].spriteName = level.Current >= level.Target1 ? "toggle_arrow" : "star_yellow";
+                    WindowSprite[1].spriteName = level.Current >= level.Target2 ? "toggle_arrow" : "star_yellow";
+                    WindowSprite[2].spriteName = level.Current >= level.Target3 ? "toggle_arrow" : "star_yellow";
+
+                    WindowDesc.text = Localization.language == "Russian" ? level.DescriptionRussian : level.DescriptionEnglish;
                 }
             }
         }

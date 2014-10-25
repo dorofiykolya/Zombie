@@ -69,20 +69,9 @@ namespace Runner
 
 		private void Adjustment(GameObject gameObject) 
 		{
-			if(gameObject.name.Contains("Human"))
+			if(gameObject.name.Contains("Star"))
 			{
-				if(gameObject.transform.localPosition.x > 4 && gameObject.transform.localPosition.x < 12)
-				{
-					gameObject.transform.localPosition = new Vector3(8, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
-				}
-				else if(gameObject.transform.localPosition.x > -4 && gameObject.transform.localPosition.x < 4)
-				{
-					gameObject.transform.localPosition = new Vector3(0, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
-				}
-				else if(gameObject.transform.localPosition.x > -12 && gameObject.transform.localPosition.x < -4)
-				{
-					gameObject.transform.localPosition = new Vector3(-8, gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
-				}
+                gameObject.AddComponent<TweenScale>();
 			}
 			
 			foreach (Transform child in gameObject.transform) 

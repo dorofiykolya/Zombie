@@ -71,6 +71,28 @@ namespace Runner
             }
 
             manager.bar = EditorGUILayout.ObjectField("Bar", manager.bar, typeof(UISprite)) as UISprite;
+
+            if (manager.WindowSprite == null || manager.WindowSprite.Length != 3)
+            {
+                manager.WindowSprite = new UISprite[3];
+            }
+            
+            if (manager.WindowText == null || manager.WindowText.Length != 3)
+            {
+                manager.WindowText = new UILabel[3];
+            }
+            
+            for(int i = 0; i < manager.Stars.Length; i++)
+            {
+                manager.WindowSprite[i] = EditorGUILayout.ObjectField("Window Star " + i, manager.WindowSprite[i], typeof(UISprite)) as UISprite;
+            }
+            
+            for(int i = 0; i < manager.Labels.Length; i++)
+            {
+                manager.WindowText[i] = EditorGUILayout.ObjectField("Window Label " + i, manager.WindowText[i], typeof(UILabel)) as UILabel;
+            }
+            
+            manager.WindowDesc = EditorGUILayout.ObjectField("Desc", manager.WindowDesc, typeof(UILabel)) as UILabel;
             
             mFold = EditorGUILayout.Foldout(mFold, "EDIT LEVELS");
             if (mFold)

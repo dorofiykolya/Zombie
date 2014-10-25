@@ -40,17 +40,12 @@ namespace Runner
 			}
 		}
 
-        public override void Initialize()
-        {
-            Current = State.LOAD;
-			GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
-			GUIPanelManager.Get(PanelType.MainMenu).Show();
-			GUIPanelManager.currentPanel = PanelType.MainMenu;
-        }
-
 		public override void GameRestart ()
 		{
-			Initialize ();
+            Current = State.LOAD;
+            GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+            GUIPanelManager.Get(PanelType.MainMenu).Show();
+            GUIPanelManager.currentPanel = PanelType.MainMenu;
 		}
 
 		public override void GameStop ()

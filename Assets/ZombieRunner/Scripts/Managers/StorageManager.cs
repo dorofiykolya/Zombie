@@ -70,6 +70,7 @@ namespace Runner
 			PlayerPrefs.SetInt("Brains", PlayerData.Brains);
 			PlayerPrefs.SetInt("Multi", PlayerData.missionMulti);
 			PlayerPrefs.SetString("CharacterLevels", Serialize (PlayerManager.levels));
+            PlayerPrefs.SetString("Levels", Serialize (PlayerData.currentLevels));
 			PlayerPrefs.SetString("PowerLevels", Serialize (PowerUpManager.levels));
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
 			PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
