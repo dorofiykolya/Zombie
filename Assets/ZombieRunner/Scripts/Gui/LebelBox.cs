@@ -25,7 +25,7 @@ namespace Runner
 
             int level = int.Parse(name.Split(' ')[1]);
 
-            collider.enabled = false;
+            //collider.enabled = false;
 
             if (!PlayerData.currentLevels [level - 1].IsCompleted && level != 1)
                 return false;

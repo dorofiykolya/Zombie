@@ -383,7 +383,7 @@ namespace Runner
 				{
 					Level.Dispatch("task 2", 1);
 				}
-				else if(intersectName.ToLower().Contains("taxi"))
+				if(intersectName.ToLower().Contains("taxi"))
 				{
                     Level.Dispatch("task 29", 1);
 				}
@@ -397,6 +397,7 @@ namespace Runner
 				}
                 else if(intersectName.ToLower().Contains("police"))
 				{
+                    Debug.Log("7");
                     Level.Dispatch("task 7", 1);
 				}
 			}
