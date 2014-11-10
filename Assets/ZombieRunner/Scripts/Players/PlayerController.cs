@@ -195,6 +195,14 @@ namespace Runner
                 slideDurationTimer();
             }
 
+            //levels
+            if (isPatientZero)
+            {
+                Level.Dispatch("task 14", Time.fixedDeltaTime);
+                Level.Dispatch("task 24", Time.fixedDeltaTime);
+                Level.Dispatch("task 43", Time.fixedDeltaTime);
+            }
+
 			//revive
 			if(Player.isRevive && isPatientZero)
 			{
@@ -213,7 +221,6 @@ namespace Runner
 
 			if(Time.timeSinceLevelLoad > bornTime && !Player.isJumpPowerUp)
 			{
-				Missions.Dispatch("diewithouttouching", 1);
 				onDeath();
 			}
 
@@ -221,6 +228,9 @@ namespace Runner
 			if(Player.isJumpPowerUp && isPatientZero)
 			{
 				am.skate();
+
+                Level.Dispatch("task 26", Time.fixedDeltaTime);
+                Level.Dispatch("task 41", Time.fixedDeltaTime);
 
 				if(Mathf.RoundToInt(transform.position.y) == 3)
 				{
@@ -400,6 +410,14 @@ namespace Runner
 				{
                     Level.Dispatch("task 7", 1);
 				}
+                else if(intersectName.ToLower().Contains("taxi"))
+                {
+                    Level.Dispatch("task 48", 1);
+                }
+                else if(intersectName.ToLower().Contains("trash"))
+                {
+                    Level.Dispatch("task 35", 1);
+                }
 			}
 		}
 
@@ -544,8 +562,6 @@ namespace Runner
 			}
 			else
 			{
-				Missions.Dispatch("die5butnotmain", 1);
-
                 Player.currentList.Remove(this);
 				
 				Destroy(gameObject);
@@ -699,14 +715,6 @@ namespace Runner
 
 				if (Player.currentList.Count < Player.GetMaxPlayers() && PlayerManager.levels[human.ID] != 0 && !Player.isJumpPowerUp)
 				{
-					for(int i = 0; i < Player.currentList.Count; i++)
-					{
-						if(Player.currentList[i].ID == 2 && human.ID == 2)
-						{
-							return;
-						}
-					}
-
 					Player.currentList.Add((Runner.PlayerController)GameObject.Instantiate(Player.GetById(human.ID)));
                     Player.currentList[Player.currentList.Count - 1].isPatientZero = false;
                     Player.currentList[Player.currentList.Count - 1].Initialize();
@@ -729,6 +737,10 @@ namespace Runner
                     {
                         Level.Dispatch("task 37", 1);
                         Level.Dispatch("task 45", 1);
+                    }
+                    else if(human.ID == 4 && Player.currentList[0].ID == 4)
+                    {
+                        Level.Dispatch("task 38", 1);
                     }
 				}
 			}

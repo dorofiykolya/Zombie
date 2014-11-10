@@ -34,6 +34,7 @@ namespace Runner
 			}
 			else
 			{
+                _platformsManager.deleteTutorialType();
 				PlayerData.PlatformType = 1;
 			}
 		}
@@ -45,6 +46,7 @@ namespace Runner
 			if(platform == null)
 			{
 				platform = _platformsManager.GetRandomStartPlatform(Runner.PlayerData.PlatformType);
+
 				isStartPlatform = true;
 				if(platform == null)
 				{
@@ -99,12 +101,8 @@ namespace Runner
 				_next = platform.GetNextRandom();
 				count++;
 				tutorialCount++;
-				if(PlayerData.tutorial != 0)
-				{
-					PlayerData.PlatformType = 1;
-					_platformsManager.deleteTutorialType();
-				}
-				else if(PlayerData.tutorial == 0 && tutorialCount == 10)
+				
+				if(PlayerData.tutorial == 0 && tutorialCount == 10)
 				{
 					PlayerData.tutorial = 1;
 					TutorialAction.hideTutorial();

@@ -50,6 +50,7 @@ namespace Runner
             }
             else
             {
+                PlatformsManager.deleteTutorialType();
                 PlayerData.PlatformType = 1;
             }
 

@@ -212,7 +212,14 @@ namespace Runner
 
 		public void deleteTutorialType()
 		{
-			typeSortedList.RemoveAt (0);
+            for (int i = 0; i < typeSortedList.Count; i++)
+            {
+                if(typeSortedList[i].Key == 0)
+                {
+                    typeSortedList.RemoveAt(i);
+                    return;
+                }
+            }
 		}
 		
 		public float GetDistanceByType(int type)

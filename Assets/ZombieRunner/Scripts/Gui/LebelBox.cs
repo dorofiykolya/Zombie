@@ -57,7 +57,7 @@ namespace Runner
         void OnClick()
         {
             int level = int.Parse(name.Split(' ')[1]);
-            Debug.Log("click");
+            Debug.Log(PlayerData.tutorial);
             LevelsManager.currentLevel = "task " + level;
             
             var manager = GameObject.FindObjectOfType<Manager>();
