@@ -74,7 +74,7 @@ namespace Runner
 			multi.text = "x" + (((1 + PlayerData.missionMulti / 3) + Player.GetMult()) * PowerUp.scorePowerup);
 			gold.text = goldCount.ToString ();
 
-			if(!Player.isStop)
+			if(!Player.isStop && PlayerData.tutorial != 0)
 			{
                 if(Localization.language == "Russian")
                 {

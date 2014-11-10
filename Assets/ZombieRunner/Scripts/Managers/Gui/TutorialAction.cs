@@ -33,6 +33,10 @@ namespace Runner
 
 		public static void showTutorial(string type)
 		{
+            GameObject.Find("MultiLabel").GetComponent<TweenScale>().enabled = false;
+            GameObject.Find("MultiLabel").GetComponent<UILabel>().color = Color.white;
+            GameObject.Find("MultiLabel").transform.localScale = Vector3.one;
+
 			for(int i = 0; i < tutorialScenes.Length; i++)
 			{
 				if(tutorialScenes[i].name == type)
@@ -69,6 +73,9 @@ namespace Runner
                     
                     var game = GameObject.FindGameObjectWithTag("Player");
                     Player.currentList[Player.currentList.Count - 1].gameObject.transform.parent = game.transform;
+
+                    GameObject.Find("MultiLabel").GetComponent<TweenScale>().enabled = true;
+                    GameObject.Find("MultiLabel").GetComponent<UILabel>().color = Color.red;
                 }
                 else  if(current.name == HUMAN3)
                 {

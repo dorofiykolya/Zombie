@@ -36,7 +36,7 @@ namespace Runner
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
-            PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
+            PlayerData.tutorial = 0;//PlayerPrefs.GetInt ("Tutorial");
 
             PlayerData.currentLevels = Deserialize(PlayerPrefs.GetString("Levels")) as LevelsManager.Level[];
             if (PlayerData.currentLevels == null)

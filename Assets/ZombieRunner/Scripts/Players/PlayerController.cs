@@ -65,7 +65,7 @@ namespace Runner
 
 		[HideInInspector]
 		public float bornTime;
-        private float lifeTime = 120f;
+        private float lifeTime = 20f;
 		private int soldierLife;
 		private float reviveTime;
 
@@ -143,7 +143,14 @@ namespace Runner
 			
 			if(ID == 4)
 			{
-                soldierLife = (int)prefs[PlayerManager.levels[ID]];
+                if(PlayerData.tutorial == 0)
+                {
+                    soldierLife = 2;
+                }
+                else
+                {
+                    soldierLife = (int)prefs[PlayerManager.levels[ID]];
+                }
 			}
 			if(Player.isRevive)
 			{
@@ -219,7 +226,7 @@ namespace Runner
 				}
 			}
 
-			if(Time.timeSinceLevelLoad > bornTime && !Player.isJumpPowerUp)
+			if(Time.timeSinceLevelLoad > bornTime && !Player.isJumpPowerUp && PlayerData.tutorial != 0)
 			{
 				onDeath();
 			}

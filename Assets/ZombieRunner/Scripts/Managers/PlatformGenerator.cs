@@ -101,12 +101,18 @@ namespace Runner
 				_next = platform.GetNextRandom();
 				count++;
 				tutorialCount++;
-				
-				if(PlayerData.tutorial == 0 && tutorialCount == 10)
-				{
-					PlayerData.tutorial = 1;
-					TutorialAction.hideTutorial();
-				}
+
+                if(tutorialCount == 8)
+                {
+                    _platformsManager.deleteTutorialType();
+                    GameObject.Find("Game").GetComponent<PlayerManager>().currentList[0].bornTime = Time.timeSinceLevelLoad + 20f;
+                    PlayerData.PlatformType = 1;
+                }
+
+                if(PlayerData.tutorial == 0 && tutorialCount == 10)
+                {
+                    PlayerData.tutorial = 1;
+                }
 			}
 		}
 		

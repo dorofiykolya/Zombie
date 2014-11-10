@@ -109,8 +109,23 @@ namespace Runner
 		public void UseBonus(ObstaclePowerUp p)
 		{
 			RemovePowerUpObject (p);
-			if (PowerUpManager.levels[p.Id] == 0)
-				return;
+			if (PowerUpManager.levels [p.Id] == 0)
+            {
+                if(PlayerData.tutorial == 0)
+                {
+                    visualList [1].time = Time.timeSinceLevelLoad + p.effect[1];
+                    
+                    foreach(PlayerController player in Player.currentList)
+                    {
+                        if(player.isPatientZero)
+                        {
+                            player.OnPowerUpStarted();
+                            return;
+                        }
+                    }
+                }
+                return;
+            }
             Level.Dispatch("task 49", 1);
 			switch (p.Id)
 			{

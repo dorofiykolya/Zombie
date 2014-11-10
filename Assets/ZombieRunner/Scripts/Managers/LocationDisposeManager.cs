@@ -41,12 +41,12 @@ namespace Runner
 				platform = collection[i];
 				if(platform.AllowDispose == false)
 				{
-                    if(PlayerData.tutorial == 0 && platform.transform.position.z > 200 && platform.transform.position.z < 210)
+                    if(PlayerData.tutorial == 0 && platform.transform.position.z > 220 && platform.transform.position.z < 230)
                     {
                         TutorialAction.tutorialShown = false;
                     }
 
-                    if(PlayerData.tutorial == 0 && platform.transform.position.z < 220 && platform.transform.position.z > 210 && !TutorialAction.tutorialShown)
+                    if(PlayerData.tutorial == 0 && platform.transform.position.z < 170 && platform.transform.position.z > 150 && !TutorialAction.tutorialShown)
 					{
                         TutorialAction.tutorialShown = true;
 
