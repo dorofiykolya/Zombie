@@ -55,7 +55,6 @@ namespace Runner
                 if (!Player.currentList[0].bInAir && !Player.isJumpPowerUp)
 				{
 					Level.Dispatch ("task 18", 1);
-                    Level.Dispatch ("task 44", 1);
 
                     for (int i = 0; i < Player.currentList.Count; i++)
 					{

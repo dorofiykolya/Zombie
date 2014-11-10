@@ -382,8 +382,9 @@ namespace Runner
 				if(intersectName != "")
 				{
 					Level.Dispatch("task 2", 1);
+                    Level.Dispatch ("task 44", 1);
 				}
-				if(intersectName.ToLower().Contains("taxi"))
+				if(intersectName.ToLower().Contains("orange"))
 				{
                     Level.Dispatch("task 29", 1);
 				}
@@ -397,7 +398,6 @@ namespace Runner
 				}
                 else if(intersectName.ToLower().Contains("police"))
 				{
-                    Debug.Log("7");
                     Level.Dispatch("task 7", 1);
 				}
 			}
@@ -461,14 +461,6 @@ namespace Runner
                 Level.Dispatch("task 16", 1);
                 Level.Dispatch("task 33", 1);
 			}
-			if(intersectName.ToLower().Contains("bus"))
-			{
-				Missions.Dispatch("slideunderbus", 1);
-			}
-			if(intersectName.ToLower().Contains("sign") && ID == 2)
-			{
-				Missions.Dispatch("slideundersignbobby", 1);
-			}
 			if(intersectName.ToLower().Contains("barrel"))
 			{
                 Level.Dispatch("task 28", 1);
@@ -492,10 +484,6 @@ namespace Runner
 				if(isBridge && isPatientZero)
 				{
                     Level.Dispatch("task 13", 1);
-				}
-				if(ID == 1)
-				{
-					Missions.Dispatch("jumpwithjessy", 1);
 				}
 			}
         }
@@ -606,21 +594,6 @@ namespace Runner
 				{
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)
 					{
-						if(fContactPointY == 0)
-						{
-							if (isPatientZero)
-							{
-								Missions.Dispatch("jumpoverobstacles", 1);
-								if(other.gameObject.name.ToLower().Contains("orange"))
-								{
-									Missions.Dispatch("jumponorangecar", 1);
-								}
-								else if(other.gameObject.name.ToLower().Contains("bus"))
-								{
-									Missions.Dispatch("jumponbus", 1);
-								}
-							}
-						}
 						fContactPointY = transform.position.y;
 						return;
 					}
@@ -658,54 +631,13 @@ namespace Runner
 					other.transform.localScale = Vector3.zero;
 					other.gameObject.collider.enabled = false;
 
-					if(other.gameObject.name.ToLower().Contains("taxi"))
-					{
-						Missions.Dispatch("destroytaximarine", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("red"))
-					{
-						Missions.Dispatch("destroyredcar", 1);
-					}
-
-					Missions.Dispatch("destroyobstaclesmarine", 1);
+                    Level.Dispatch("task 39", 1);
 				}
 
 				soldierLife--;
 
 				if(soldierLife <= 0 && !Player.isJumpPowerUp)
 				{
-					if(other.gameObject.name.ToLower().Contains("taxi") && ID == 3)
-					{
-						Missions.Dispatch("diedrwhitetaxi", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("er"))
-					{
-						Missions.Dispatch("dieambulance", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("police"))
-					{
-						Missions.Dispatch("diefrompolice", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("cone"))
-					{
-						Missions.Dispatch("diecone", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("red"))
-					{
-						Missions.Dispatch("dieredcar", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("swat"))
-					{
-						Missions.Dispatch("dieswat", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("bus"))
-					{
-						Missions.Dispatch("diebus", 1);
-					}
-					if(other.gameObject.name.ToLower().Contains("swat") && ID == 4)
-					{
-						Missions.Dispatch("diemarinefromswat", 1);
-					}
 					Audio.PlaySound(1);
 					onDeath();
 				}
@@ -787,16 +719,16 @@ namespace Runner
 
 					if(human.ID == 1)
 					{
-						Missions.Dispatch("task 17", 1);
+                        Level.Dispatch("task 17", 1);
 					}
                     else if(human.ID == 2)
                     {
-                        Missions.Dispatch("task 22", 1);
+                        Level.Dispatch("task 22", 1);
                     }
                     else if(human.ID == 3)
                     {
-                        Missions.Dispatch("task 37", 1);
-                        Missions.Dispatch("task 45", 1);
+                        Level.Dispatch("task 37", 1);
+                        Level.Dispatch("task 45", 1);
                     }
 				}
 			}

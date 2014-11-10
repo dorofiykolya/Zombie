@@ -111,28 +111,22 @@ namespace Runner
 			RemovePowerUpObject (p);
 			if (PowerUpManager.levels[p.Id] == 0)
 				return;
-			Missions.Dispatch("pickupanybonus", 1);
+            Level.Dispatch("task 49", 1);
 			switch (p.Id)
 			{
 			case 0:
 				Magnet(p);
-				Missions.Dispatch("pickupmagnet", 1);
-				if(Player.Current.ID == 1)
-				{
-					Missions.Dispatch("pickupmagnetbyjessy", 1);
-				}
 				break;
 			case 3:
+                Level.Dispatch("task 46", 1);
 				Boom(p);
-				Missions.Dispatch("pickupexplosive", 1);
 				break;
 			case 1:
 				Flight(p);
-				Missions.Dispatch("pickupboard", 1);
 				break;
 			case 2:
 				ScoreBoost(p);
-				Missions.Dispatch("pickupstar", 1);
+                Level.Dispatch("task 31", 1);
 				break;
 			}
 		}
@@ -174,16 +168,7 @@ namespace Runner
 				boom.gameObject.collider.enabled = false;
 				var go = Instantiate(_boomPrefab, new Vector3(0, 10, 0), Quaternion.identity) as GameObject;
 				go.transform.parent = boom.transform;
-				if(boom.gameObject.name.ToLower().Contains("red"))
-				{
-					Missions.Dispatch("dieredcar", 1);
-				}
-				if(Player.Current.ID == 1)
-				{
-					Missions.Dispatch("destroyobstaclesjessy", 1);
-				}
-				Missions.Dispatch("destroyexplosivecars", 1);
-				Missions.Dispatch("destroyexplosive", 1);
+                Level.Dispatch("task 34", 1);
 			}
 			Audio.PlaySound (14);
 		}
