@@ -17,7 +17,8 @@ namespace Runner
 		Back,
 		Revive,
         Eng,
-        Ru
+        Ru,
+        Play
 	}
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
@@ -29,6 +30,14 @@ namespace Runner
 		{
 			switch(action)
 			{
+                case GUIAction.Play:
+                    Player.isStop = false;
+                    States.Current = State.GAME;
+                    GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
+                    GUIPanelManager.Get(PanelType.GameMenu).Show();
+                    GUIPanelManager.currentPanel = PanelType.GameMenu;
+                    Game.GameStart();
+                    break;
 				case GUIAction.Pause:
 					Player.isStop = true;
 					Game.GamePause();

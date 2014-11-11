@@ -29,6 +29,7 @@ namespace Runner
         public UISprite[] WindowSprite;
         public UILabel[] WindowText;
         public UILabel WindowDesc;
+        public UILabel WindowCurrent;
 
         public static string currentLevel;
 
@@ -68,7 +69,7 @@ namespace Runner
             {
                 if(level.Id == currentLevel)
                 {
-                    bar.width = (int)((level.Current / level.Target3) * 228f);
+                    bar.width = Mathf.Min(228, (int)((level.Current / level.Target3) * 228f));
 
                     Stars[0].enabled = level.Current >= level.Target1;
                     Stars[1].enabled = level.Current >= level.Target2;
@@ -98,12 +99,18 @@ namespace Runner
                     WindowSprite[2].spriteName = level.Current >= level.Target3 ? "toggle_arrow" : "star_yellow";
 
                     WindowDesc.text = Localization.language == "Russian" ? level.DescriptionRussian : level.DescriptionEnglish;
+                    WindowCurrent.text = (Localization.language == "Russian" ? "Текущий прогресс: " : "Current progress: ") + (int)currentProgress + "/" + level.Target3;
+
+                    return;
                 }
             }
         }
 
         public void Dispatch(string id, float value)
         {
+            if (PlayerData.tutorial == 0)
+                return;
+
             foreach (var level in PlayerData.currentLevels)
             {
                 if(level.Id == id && id == currentLevel)

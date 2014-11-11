@@ -93,6 +93,7 @@ namespace Runner
             }
             
             manager.WindowDesc = EditorGUILayout.ObjectField("Desc", manager.WindowDesc, typeof(UILabel)) as UILabel;
+            manager.WindowCurrent = EditorGUILayout.ObjectField("Current", manager.WindowCurrent, typeof(UILabel)) as UILabel;
             
             mFold = EditorGUILayout.Foldout(mFold, "EDIT LEVELS");
             if (mFold)

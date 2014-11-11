@@ -58,6 +58,10 @@ namespace Runner
 		public bool isRevive;
 		[HideInInspector]
 		public bool isStart;
+        [HideInInspector]
+        public bool isReverse;
+        [HideInInspector]
+        private float reverseTime;
 		[HideInInspector]
 		public Vector3 defaultCameraPosition;
 		private Vector3 startCameraPosition = new Vector3(0, 10, -11);
@@ -69,6 +73,7 @@ namespace Runner
         {
             defaultCameraPosition = Camera.main.transform.position;
 			isStart = true;
+            isReverse = false;
         }
 		
 		public float Speed
@@ -81,6 +86,9 @@ namespace Runner
 				}
 				else
 				{
+                    if(isReverse)
+                        return -10;
+
 					float speed = (Distance * 0.01f * SpeedDistanceMultiply) + MinimumSpeed;
 					if(Current.bInAir)
 					{
@@ -91,10 +99,16 @@ namespace Runner
 					{
 						return 80;
 					}
-					return Mathf.Clamp(speed, MinimumSpeed, 80);
+                    return Mathf.Clamp(speed, MinimumSpeed, 80);
 				}
 			}
 		}
+
+        public void TutorialReverse()
+        {
+            isReverse = true;
+            reverseTime = Time.timeSinceLevelLoad + 4;
+        }
 		
 		public Runner.PlayerController Current
 		{
@@ -115,13 +129,6 @@ namespace Runner
 			Waypoint.currentWP = Waypoint.transitWP;
 
 			currentList[0].Revive ();
-
-			Missions.Dispatch ("revive", 1);
-
-			if(Current.ID == 1)
-			{
-				Missions.Dispatch("revivejessy", 1);
-			}
 		}
 
 		public void Change(int id)
@@ -264,6 +271,11 @@ namespace Runner
 					isStart = false;
 				}
 			}
+
+            if (Time.timeSinceLevelLoad > reverseTime)
+            {
+                isReverse = false;
+            }
 		}
 		
 	}

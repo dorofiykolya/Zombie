@@ -52,6 +52,9 @@ namespace Runner
 
 		public static void hideTutorial()
 		{
+            if (PlayerData.tutorial != 0)
+                return;
+
             if (current != null)
             {
                 current.SetActive(false);

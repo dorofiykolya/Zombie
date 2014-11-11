@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="0dp"
+    android:padding="0dp"    
+    android:background="@drawable/com_neatplug_facebook_leaderboard_row_bg" >		
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_margin="0dp"              
+        android:orientation="horizontal" >
+        
+       <LinearLayout
+        android:id="@+id/com_neatplug_facebook_leaderboard_rank_layout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"        
+        android:background="@drawable/com_neatplug_facebook_leaderboard_rank_bg"
+        android:orientation="horizontal">
+        
+			    <TextView
+			    	android:id="@+id/com_neatplug_facebook_leaderboard_player_rank"
+			    	android:layout_width="50dp"
+			    	android:layout_height="wrap_content"
+			    	android:ellipsize="end"
+			    	android:singleLine="true"			    	
+			    	android:gravity="center"
+			    	android:layout_gravity="center"
+			    	android:scaleType="center"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+			    	android:textAppearance="?android:attr/textAppearanceMedium"
+			    	android:textColor="#555555"
+			    	android:layout_weight="1" />
+			    	
+			   	<ImageView
+	        	android:id="@+id/com_neatplug_facebook_leaderboard_player_icon"
+	        	android:layout_gravity="left"
+		        android:layout_width="50dp"
+		        android:layout_height="50dp"
+		        android:layout_margin="0dp"	        
+		        android:layout_weight="1" />
+    
+    	  </LinearLayout> 
+        
+        <TextView
+            android:id="@+id/com_neatplug_facebook_leaderboard_player_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:ellipsize="marquee"
+            android:textStyle="bold"
+            android:scaleType="center"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#555555"
+            android:layout_weight="1.1" />
+        
+        
+        <TextView
+            android:id="@+id/com_neatplug_facebook_leaderboard_player_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"     
+            android:layout_gravity="center_vertical"      
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:clickable="false"
+            android:singleLine="true"
+            android:ellipsize="none"
+            android:textStyle="bold"
+            android:scaleType="center"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#045FB4"
+            android:layout_weight="1" />
+      
+
+		</LinearLayout>
+    
+
+</RelativeLayout>

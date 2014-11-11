@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/com_neatplug_facebook_leaderboard_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/com_neatplug_facebook_leaderboard_header_bg" >
+
+        <TextView
+            android:id="@+id/com_neatplug_facebook_leaderboard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dip"                       
+            android:textSize="22sp"
+            android:textColor="#FFFFFF"
+            android:gravity="left|center_vertical"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:scaleType="center"
+            android:shadowColor="#66000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="@string/com_neatplug_facebook_leaderboard_title"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ImageView
+            android:id="@+id/com_neatplug_facebook_leaderboard_close_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="0dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/com_neatplug_facebook_leaderboard_close_button_bg" />
+    </RelativeLayout>
+
+    <ViewFlipper
+        android:id="@+id/com_neatplug_facebook_leaderboard_flipper"
+        android:layout_below="@+id/com_neatplug_facebook_leaderboard_header"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#EEEEEE">
+
+        <RelativeLayout
+            android:id="@+id/com_neatplug_facebook_leaderboard_cover_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/com_neatplug_facebook_leaderboard_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/com_neatplug_facebook_leaderboard_loading"
+                android:textColor="#222222"
+                android:scaleType="center"
+		            android:shadowColor="#FFFFFF"
+		            android:shadowDx="1"
+		            android:shadowDy="1"
+		            android:shadowRadius="1"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/com_neatplug_facebook_leaderboard_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ListView
+                android:id="@+id/com_neatplug_facebook_sns_leaderboard_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#40000000"
+                android:dividerHeight="1px" >
+            </ListView>
+        </RelativeLayout>
+    </ViewFlipper>
+
+</RelativeLayout>

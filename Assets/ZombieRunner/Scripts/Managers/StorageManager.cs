@@ -15,12 +15,14 @@ namespace Runner
 		{
             //Environment.SetEnvironmentVariable("MONO_REFLECTION_SERIALIZER", "yes");
 
+            Localization.language = Application.systemLanguage.ToString();
+
             Load ();
 
 			if(PlayerData.playerID == "")
 			{
 				PlayerData.playerID = SystemInfo.deviceUniqueIdentifier;
-				PlayerData.realName = "Player_" + UnityEngine.Random.Range(100000, 999999);
+				PlayerData.realName = "Player_" + UnityEngine.Random.Range(1000000, 9999999);
 
 				PlayerPrefs.SetString("RealName", PlayerData.realName);
 				PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
@@ -36,7 +38,7 @@ namespace Runner
 			PlayerData.playerID = PlayerPrefs.GetString ("PlayerID");
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
-            PlayerData.tutorial = 0;//PlayerPrefs.GetInt ("Tutorial");
+            PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
 
             PlayerData.currentLevels = Deserialize(PlayerPrefs.GetString("Levels")) as LevelsManager.Level[];
             if (PlayerData.currentLevels == null)

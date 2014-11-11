@@ -188,7 +188,7 @@ namespace Runner
 		void FixedUpdate()
         {
 			//falling down if player dies in air
-			if(Player.isStop)
+			if(Player.isStop || Player.isReverse)
 			{
 				deathFall();
 				return;
@@ -558,6 +558,12 @@ namespace Runner
 				}
 				else
 				{
+                    if(PlayerData.tutorial == 0)
+                    {
+                        Player.TutorialReverse();
+                        return;
+                    }
+
 					Currency.reviveCount *= 2;
 
 					am.death();

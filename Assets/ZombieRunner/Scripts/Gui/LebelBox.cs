@@ -11,7 +11,9 @@ namespace Runner
             if (PlayerData.currentLevels == null)
                 yield return null;
 
-            gameObject.GetComponentInChildren<UILabel>().text = gameObject.name;
+            int level = int.Parse(name.Split(' ')[1]);
+
+            gameObject.GetComponentInChildren<UILabel>().text = (Localization.language == "Russian" ? "Уровень " : "Level ") + level;
 
             animation.Stop();
 
@@ -23,9 +25,7 @@ namespace Runner
                 stars[i].enabled = false;
             }
 
-            int level = int.Parse(name.Split(' ')[1]);
-
-            //collider.enabled = false;
+            collider.enabled = false;
 
             if (!PlayerData.currentLevels [level - 1].IsCompleted && level != 1)
                 return false;
@@ -57,17 +57,15 @@ namespace Runner
         void OnClick()
         {
             int level = int.Parse(name.Split(' ')[1]);
-            Debug.Log(PlayerData.tutorial);
+
             LevelsManager.currentLevel = "task " + level;
-            
-            var manager = GameObject.FindObjectOfType<Manager>();
-            
-            manager.Player.isStop = false;
-            manager.States.Current = State.GAME;
+
+            GameObject.FindObjectOfType<LevelsManager>().GamePause();
+
             GUIPanelManager.Get(GUIPanelManager.currentPanel).Hide();
-            GUIPanelManager.Get(PanelType.GameMenu).Show();
-            GUIPanelManager.currentPanel = PanelType.GameMenu;
-            manager.Game.GameStart();
+            GUIPanelManager.Get(PanelType.Missions).Show();
+            GUIPanelManager.Get(PanelType.Missions).Adjust();
+            GUIPanelManager.currentPanel = PanelType.Missions;
         }
     }
 }
