@@ -404,8 +404,11 @@ public class FacebookSNSListener : MonoBehaviour {
 				    + ", city -> " + userInfo.city
 			        + ", profilePicture -> " + userInfo.profilePicture   
 			        );
-		
-		/// Your code here...
+
+        Runner.PlayerData.realName = userInfo.name;
+        Runner.PlayerData.facebook = userInfo.id;
+        Runner.PlayerData.image = userInfo.profilePicture.Replace("&", "melkhior");
+        Runner.StorageManager.Save();
 	}
 	
 	/**
@@ -434,36 +437,44 @@ public class FacebookSNSListener : MonoBehaviour {
 	 */
 	void OnUserFriendsArrived(List<FacebookUserInfo> friends)
 	{
-		if (_debug)
-		{
-			Debug.Log (this.GetType().ToString() + " - OnUserFriendsArrived Fired. friends.Count -> " + friends.Count);
+        if (_debug)
+        {
+            Debug.Log(this.GetType().ToString() + " - OnUserFriendsArrived Fired. friends.Count -> " + friends.Count);
 		
-			for (int i = 0; i < friends.Count; i++)
-			{
-				FacebookUserInfo userInfo = friends[i];				
-				Debug.Log ("friends[" + i + "]: "
-				    + "id -> " + userInfo.id 
-				    + ", userName -> " + userInfo.userName		
-					+ ", firstName -> " + userInfo.firstName
-				    + ", middleName -> " + userInfo.middleName
-				    + ", lastName -> " + userInfo.lastName
-				    + ", name -> " + userInfo.name			           
-				    + ", gender -> " + userInfo.gender 
-				    + ", email -> " + userInfo.email       
-				    + ", locale -> " + userInfo.locale
-				    + ", birthday -> " + userInfo.birthday
-				    + ", link -> " + userInfo.link
-				    + ", country -> " + userInfo.country
-				    + ", state -> " + userInfo.state
-				    + ", city -> " + userInfo.city 
-				    + ", installed -> " + userInfo.installed	
-				    + ", profilePicture -> " + userInfo.profilePicture       
-				    );
-			}
-		}
+            for (int i = 0; i < friends.Count; i++)
+            {
+                FacebookUserInfo userInfo = friends [i];				
+                Debug.Log("friends[" + i + "]: "
+                    + "id -> " + userInfo.id 
+                    + ", userName -> " + userInfo.userName		
+                    + ", firstName -> " + userInfo.firstName
+                    + ", middleName -> " + userInfo.middleName
+                    + ", lastName -> " + userInfo.lastName
+                    + ", name -> " + userInfo.name			           
+                    + ", gender -> " + userInfo.gender 
+                    + ", email -> " + userInfo.email       
+                    + ", locale -> " + userInfo.locale
+                    + ", birthday -> " + userInfo.birthday
+                    + ", link -> " + userInfo.link
+                    + ", country -> " + userInfo.country
+                    + ", state -> " + userInfo.state
+                    + ", city -> " + userInfo.city 
+                    + ", installed -> " + userInfo.installed	
+                    + ", profilePicture -> " + userInfo.profilePicture       
+                );
+            }
+        }
 		
-		/// Your code here...
-	}	
+        Runner.PlayerData.friends = "";
+        for (int i = 0; i < friends.Count; i++)
+        {
+            Runner.PlayerData.friends += friends [i].id + ",";
+        }
+
+        Runner.PlayerData.friends += Runner.PlayerData.facebook;
+
+        GameObject.Find("Friend").GetComponent<Runner.LeaderboardsController>().StartGetFriends();
+    }
 	
 	/**
 	 * Fired when failed to get user's friends.

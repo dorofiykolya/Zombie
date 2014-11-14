@@ -615,10 +615,52 @@ namespace Runner
 			}
 		}
 
+        private bool CheckBarricade(string obstacleName)
+        {
+            if(!obstacleName.Contains("barrikada"))
+               return false;
+
+            switch (LevelsManager.currentLevel)
+            {
+                case "task 10":
+                    if(Player.currentList.Count >= 2)
+                        return true;
+                    break;
+                case "task 20":
+                    if(Player.GetCurrentCountById(0) >= 2 && Player.GetCurrentCountById(1) >= 1)
+                        return true;
+                    break;
+                case "task 30":
+                    if(Player.GetCurrentCountById(0) >= 2 && Player.GetCurrentCountById(1) >= 1 && Player.GetCurrentCountById(2) >= 1)
+                        return true;
+                    break;
+                case "task 40":
+                    if(Player.GetCurrentCountById(0) >= 1 && Player.GetCurrentCountById(1) >= 2 && Player.GetCurrentCountById(2) >= 1 && Player.GetCurrentCountById(3) >= 1)
+                        return true;
+                    break;
+                case "task 50":
+                    if(Player.GetCurrentCountById(0) >= 1 && Player.GetCurrentCountById(1) >= 1 && Player.GetCurrentCountById(2) >= 1 && Player.GetCurrentCountById(3) >= 1 && Player.GetCurrentCountById(4) >= 1)
+                        return true;
+                    break;
+            }
+
+            return false;
+        }
+
 		void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.CompareTag("Obstacle") && !Player.isRevive)
             {
+                if(CheckBarricade(other.gameObject.name))
+                {
+                    var bo = Instantiate(PowerUp._boomPrefab, new Vector3(0, 10, 0), Quaternion.identity) as GameObject;
+                    bo.transform.parent = other.transform;
+                    Audio.PlaySound (14);
+                    other.transform.localScale = Vector3.zero;
+                    other.gameObject.collider.enabled = false;
+                    return;
+                }
+
 				if(other.collider.bounds.center.y < 10 && fContactPointY == 0 && !Player.isJumpPowerUp)
 				{
 					if(other.collider.bounds.size.y * .9f < other.contacts[0].point.y)

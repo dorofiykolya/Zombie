@@ -39,13 +39,13 @@ namespace Runner
                 else if(i == 2) stars[i].GetComponent<UISprite>().spriteName = PlayerData.currentLevels [level - 1].Current >= PlayerData.currentLevels [level - 1].Target3 ? "star_yellow" : "star_empty";
                 stars[i].from = Vector3.zero;
                 stars[i].to = new Vector3(0.01f, -0.01f, 0.01f);
-                stars[i].delay = (level + i) / 2f + 1f;
+                stars[i].delay = (level + i) / 10f + 1f;
                 stars[i].duration = 0.5f;
                 stars[i].ResetToBeginning();
                 stars[i].enabled = true;
             }
 
-            yield return new WaitForSeconds(level / 2f);
+            yield return new WaitForSeconds(level / 10f);
             animation.Play("Take 001");
     	}
 

@@ -34,6 +34,11 @@ namespace Runner
 		{
 			Distance += Mathf.Abs(moveSpeed);
 			PlayerData.PlatformTypeRemainingDistance -= Mathf.Abs(moveSpeed);
+
+            if (Distance > 100)
+            {
+                isGenBarricade = true;
+            }
 		}
 		
 	
@@ -50,6 +55,8 @@ namespace Runner
 		public float MinimumSpeed{get; private set;}
 		public float SpeedDistanceMultiply{get; private set;}
 		public float SideScrollSpeed{get;private set;}
+        [HideInInspector]
+        public bool isGenBarricade;
 		[HideInInspector]
 		public bool isStop;
 		[HideInInspector]
@@ -60,11 +67,9 @@ namespace Runner
 		public bool isStart;
         [HideInInspector]
         public bool isReverse;
-        [HideInInspector]
         private float reverseTime;
-		[HideInInspector]
-		public Vector3 defaultCameraPosition;
-		private Vector3 startCameraPosition = new Vector3(0, 10, -11);
+        private Vector3 defaultCameraPosition;
+		private Vector3 startCameraPosition = new Vector3(0, 30, -55);
 
 		public static int[] levels;
 		public static int[] defaultLevels = new int[]{1, 1, 0, 0, 0};

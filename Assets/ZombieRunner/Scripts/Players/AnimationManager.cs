@@ -33,7 +33,7 @@ namespace Runner
 			animation[START].wrapMode = WrapMode.Loop;
 
 			if(Player.isStop)
-				start();
+				idle();
 			else
 				run();
         }

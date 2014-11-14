@@ -19,6 +19,10 @@ namespace Runner
         public static string[] zombieTutorial;
 		public static string playerID;
 		public static string realName;
+        public static string facebook;
+        public static string image;
+        public static string friends;
+        public static string region;
 		public static int creation;
 		public static int tutorial;
 

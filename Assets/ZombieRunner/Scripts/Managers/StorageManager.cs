@@ -26,6 +26,7 @@ namespace Runner
 
 				PlayerPrefs.SetString("RealName", PlayerData.realName);
 				PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
+                Save();
 			}
 		}
 
@@ -39,6 +40,9 @@ namespace Runner
 			PlayerData.realName = PlayerPrefs.GetString ("RealName");
 			PlayerData.creation = PlayerPrefs.GetInt ("Creation");
             PlayerData.tutorial = PlayerPrefs.GetInt ("Tutorial");
+            PlayerData.region = PlayerPrefs.GetString("Region");
+            PlayerData.facebook = PlayerPrefs.GetString("Facebook");
+            PlayerData.image = PlayerPrefs.GetString("Image");
 
             PlayerData.currentLevels = Deserialize(PlayerPrefs.GetString("Levels")) as LevelsManager.Level[];
             if (PlayerData.currentLevels == null)
@@ -77,6 +81,9 @@ namespace Runner
 			PlayerPrefs.SetString("RealName", PlayerData.realName);
 			PlayerPrefs.SetString("PlayerID", PlayerData.playerID);
 			PlayerPrefs.SetInt("Tutorial", PlayerData.tutorial);
+            PlayerPrefs.SetString("Region", PlayerData.region);
+            PlayerPrefs.SetString("Facebook", PlayerData.facebook);
+            PlayerPrefs.SetString("Image", PlayerData.image);
         }
 
         private static string Serialize(object obj)

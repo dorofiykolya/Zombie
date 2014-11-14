@@ -18,7 +18,8 @@ namespace Runner
 		Revive,
         Eng,
         Ru,
-        Play
+        Play,
+        Facebook
 	}
 	
 	[AddComponentMenu("Runner/GUI/ClickAction")]
@@ -124,6 +125,9 @@ namespace Runner
                     break;
                 case GUIAction.Ru:
                     Localization.language = "Russian";
+                    break;
+                case GUIAction.Facebook:
+                    FacebookSNS.Instance().Login();
                     break;
 			}
 

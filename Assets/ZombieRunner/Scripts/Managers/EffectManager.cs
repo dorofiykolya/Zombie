@@ -43,11 +43,11 @@ namespace Runner
             }
         }
 
-		void OnGUI()
-		{
-			GUI.color = Color.black;
-			GUI.Label (new Rect (Screen.width / 2, 0, 100, 50), fps.ToString() + " " + UnityEngine.QualitySettings.GetQualityLevel());
-		}
+		//void OnGUI()
+		//{
+			//GUI.color = Color.black;
+			//GUI.Label (new Rect (Screen.width / 2, 0, 100, 50), fps.ToString() + " " + UnityEngine.QualitySettings.GetQualityLevel());
+		//}
 		
 		// Update is called once per frame
 		void Update ()

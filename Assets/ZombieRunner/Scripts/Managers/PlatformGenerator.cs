@@ -65,7 +65,7 @@ namespace Runner
 				int nextType = -1;
 				if(PlayerData.PlatformTypeRemainingDistance <= 0.0f && isStartPlatform == false)
 				{
-					nextType = PlayerData.tutorial == 0 ? 0 : _platformsManager.GetTypeByDistance(player.Distance, PlayerData.PlatformType, Random.Range(0,2) > 0);
+                    nextType = GetNextType();
 					if(nextType == -1)
 					{
 						nextType = platform.Type;	
@@ -115,6 +115,16 @@ namespace Runner
                 }
 			}
 		}
+
+        private int GetNextType()
+        {
+           if (PlayerData.tutorial == 0)
+                return 0;
+           if (_player.isGenBarricade)
+                return 10;
+
+           return _platformsManager.GetTypeByDistance(_player.Distance, PlayerData.PlatformType, Random.Range(0, 2) > 0);
+        }
 		
 		public void Move(float speed, Runner.PlayerController player)
 		{
